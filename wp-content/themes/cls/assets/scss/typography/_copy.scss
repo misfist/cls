@@ -1,0 +1,42 @@
+p {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+
+	cite {}
+}
+
+pre {}
+
+code,
+kbd,
+tt,
+var {}
+
+abbr, acronym {}
+
+mark,
+ins {}
+
+big {}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus {
+		text-decoration: underline;
+	}
+}

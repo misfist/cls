@@ -1,0 +1,26 @@
+
+html {
+	// font-size: $font__size_base;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: 400;
+	font-size: 1em;
+	margin: 0;
+	text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+optgroup,
+textarea {
+	font-weight: 400;
+	text-rendering: optimizeLegibility;
+}
+
+@import "headings";
+
+@import "copy";

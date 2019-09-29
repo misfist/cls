@@ -1,0 +1,430 @@
+/* !Block styles */
+
+.entry .entry-content > *,
+.entry .entry-summary > * {
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+	&.alignwide {}
+
+	&.alignfull {}
+
+	&.alignleft {}
+
+	&.alignright {}
+	&.aligncenter {}
+}
+
+/*
+ * Unset nested content selector styles
+ * - Prevents layout styles from cascading too deeply
+ * - helps with plugin compatibility
+ */
+.entry .entry-content,
+.entry .entry-summary {
+
+	.entry-content,
+	.entry-summary,
+	.entry {}
+}
+
+.entry .entry-content {
+
+	//! Paragraphs
+	p.has-background {
+		padding: 20px 30px;
+	}
+
+	//! Audio
+	.wp-block-audio {
+
+		width: 100%;
+
+		audio {
+			width: 100%;
+		}
+
+		&.alignleft audio,
+		&.alignright audio {}
+	}
+
+	//! Video
+	.wp-block-video {
+
+		video {
+			width: 100%;
+		}
+	}
+	
+	//! Latest posts, categories, archives
+	.wp-block-archives,
+	.wp-block-categories,
+	.wp-block-latest-posts {
+		padding: 0;
+		list-style: none;
+
+		li > a {}
+	}
+
+	.wp-block-archives,
+	.wp-block-categories {
+
+		&.aligncenter {
+			text-align: center;
+		}
+	}
+
+	//! Latest categories
+	.wp-block-categories {
+
+		ul {}
+
+		li ul {
+			list-style: none;
+			padding-left: 0;
+		}
+
+	}
+
+	//! Latest posts
+	.wp-block-latest-posts {
+
+		.wp-block-latest-posts__post-date {}
+
+		.wp-block-latest-posts__post-full-content,
+		.wp-block-latest-posts__post-excerpt {}
+
+		li {
+
+			&.menu-item-has-children,
+			&:last-child {
+				padding-bottom: 0;
+			}
+
+			:not(:last-child) .wp-block-latest-posts__post-excerpt {}
+		}
+
+		&.is-grid li {
+			a {
+				&:after {
+					content: '';
+				}
+			}
+			&:last-child {
+				margin-bottom: auto;
+				a:after {
+					content: '';
+				}
+			}
+		}
+	}
+
+	//! Latest preformatted text
+	.wp-block-preformatted {}
+
+	//! Verse
+	.wp-block-verse {}
+
+	//! Paragraphs
+	.has-drop-cap {
+		&:not(:focus):first-letter {}
+	}
+
+	//! Pullquote
+	.wp-block-pullquote {
+
+		blockquote {}
+
+		p {
+
+			em {
+				font-style: normal;
+			}
+
+		}
+
+		cite {
+			/*
+			 * This requires a rem-based font size calculation instead of our normal em-based one,
+			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
+			 */
+		}
+
+		&.alignleft,
+		&.alignright {
+			width: 100%;
+			padding: 0;
+
+			blockquote {
+
+				p:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+
+		&.is-style-solid-color {
+
+			p {}
+
+			a {}
+
+			cite {
+				color: inherit;
+			}
+
+			blockquote {
+				&.has-text-color p,
+				&.has-text-color a,
+				&.has-primary-color,
+				&.has-secondary-color,
+				&.has-dark-gray-color,
+				&.has-light-gray-color,
+				&.has-white-color {
+					color: inherit;
+				}
+			}
+
+			&.alignright,
+			&.alignleft {}
+
+			&.alignfull {}
+		}
+	}
+
+	//! Blockquote
+	.wp-block-quote {
+
+		&:not(.is-large),
+		&:not(.is-style-large) {}
+
+		p {}
+
+		cite {
+			/*
+			 * This requires a rem-based font size calculation instead of our normal em-based one,
+			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
+			 */
+		}
+
+		&.is-large,
+		&.is-style-large {
+
+			p {}
+
+			cite,
+			footer {
+				/*
+				 * This requires a rem-based font size calculation instead of our normal em-based one,
+				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
+				 */
+			}
+
+			@include breakpoint(medium) {
+				p {}
+			}
+		}
+	}
+
+	//! Image
+	.wp-block-image {
+		max-width: 100%;
+
+		img {
+			display: block;
+		}
+
+		.aligncenter {}
+
+		&.alignfull img {}
+	}
+
+	//! Cover Image
+	.wp-block-cover-image,
+	.wp-block-cover {
+		position: relative;
+		min-height: 430px;
+
+		.wp-block-cover-image-text,
+		.wp-block-cover-text,
+		h2 {}
+
+		&.alignleft,
+		&.alignright {}
+
+		&.alignfull {
+
+			.wp-block-cover-image-text,
+			.wp-block-cover-text,
+			h2 {}
+
+		}
+	}
+
+	//! Galleries
+	.wp-block-gallery {
+		list-style-type: none;
+		padding-left: 0;
+
+		.blocks-gallery-image:last-child,
+		.blocks-gallery-item:last-child {
+			margin-bottom: rem-calc(16);
+		}
+
+		figcaption a {}
+	}
+
+	//! Captions
+	.wp-block-audio figcaption,
+	.wp-block-video figcaption,
+	.wp-block-image figcaption,
+	.wp-block-gallery .blocks-gallery-image figcaption,
+	.wp-block-gallery .blocks-gallery-item figcaption {}
+
+	//! Separator
+	.wp-block-separator,
+	hr {
+
+		&.is-style-wide {}
+
+		&.is-style-dots {
+
+			&:before {}
+		}
+
+		/* Remove duplicate rule-line when a separator
+		 * is followed by an H1, or H2 */
+		& + h1,
+		& + h2 {
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	//! Twitter Embed
+	.wp-block-embed-twitter {
+		word-break: break-word;
+	}
+
+	//! Table
+	.wp-block-table {
+
+		th,
+		td {}
+	}
+
+	//! File
+	.wp-block-file {
+
+		.wp-block-file__button {
+
+			&:hover {}
+
+			&:focus {}
+		}
+	}
+
+	//! Code
+	.wp-block-code {
+		border-radius: 0;
+
+		code {
+			white-space: pre-wrap;
+			word-break: break-word;
+		}
+	}
+
+	//! Columns
+	.wp-block-columns {
+
+		.wp-block-column > * {
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@include breakpoint(medium) {
+			flex-wrap: nowrap;
+
+			.wp-block-column:not(:first-child) {
+				margin-left: rem-calc(32);
+			}
+		}
+	}
+	
+}
+
+
+/*
+Frontend styles for gutenberg blocks
+*/
+
+/** === Base Color Palatte === */
+@each $color, $code in $foundation-palette {
+
+	.has-#{$color}-background-color {
+		background-color: $code;
+	}
+  
+	.has-#{$color}-color {
+		color: $code;
+	}
+  }
+  
+  /** === Button === */
+  .wp-block-button {
+  
+	  // add general foundation button styling
+	  .wp-block-button__link {
+		  @extend .button;
+	  @each $color, $code in $foundation-palette {
+  
+		&.has-#{$color}-background-color {
+			background-color: $code;
+		}
+  
+		&.has-#{$color}-color {
+			color: $code;
+		}
+	  }
+	  }
+  
+	  // add special styling for squared buttons
+	  &.is-style-squared .wp-block-button__link {
+		  border-radius: 0;
+	  }
+  
+	  // add outline styles
+	  &.is-style-outline .wp-block-button__link{
+		  @extend .hollow;
+	  }
+  
+	  // set transparent background to block for outline button
+	  &.is-style-outline,
+	  &.is-style-outline:hover,
+	  &.is-style-outline:focus,
+	  &.is-style-outline:active {
+	  // background: transparent;
+	  .wp-block-button__link{
+		// background: transparent;
+	  }
+	  }
+  }
+  
+  /** === File === */
+  .wp-block-file .wp-block-file__button{
+	@include button();
+  }
+  
