@@ -31,9 +31,9 @@
 					wp_nav_menu(
 						array(
 							'theme_location' => 'menu-1',
-							'menu_class'     => 'main-menu menu',
+							'menu_class'     => 'main-menu menu dropdown',
 							'container'		 => false,
-							'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+							'items_wrap'     => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
 						)
 					);
 					?>
