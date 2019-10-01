@@ -2,7 +2,7 @@
 /**
  * Class SampleTest
  *
- * @package Core_Functionality
+ * @package Site_Functionality
  */
 
 /**

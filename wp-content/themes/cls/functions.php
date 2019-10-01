@@ -28,6 +28,11 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/widgets.php';
 
 /**
+ * Additional customizations.
+ */
+require get_template_directory() . '/inc/extras.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

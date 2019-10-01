@@ -3,7 +3,7 @@
  * Custom Fields
  *
  * @since   1.0.0
- * @package Core_Functionality
+ * @package Site_Functionality
  */
 
 // Exit if accessed directly.
@@ -19,7 +19,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 		'fields' => array(
 			array(
 				'key' => 'field_5d7be31ffeb67',
-				'label' => __( 'Label', 'core-functionality' ),
+				'label' => __( 'Label', 'site-functionality' ),
 				'name' => 'link_label',
 				'type' => 'text',
 				'instructions' => '',
@@ -30,15 +30,15 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 					'class' => '',
 					'id' => '',
 				),
-				'default_value' => __( 'Up Next', 'core-functionality' ),
-				'placeholder' => __( "Leave blank for 'Up Next'", 'core-functionality' ),
+				'default_value' => __( 'Up Next', 'site-functionality' ),
+				'placeholder' => __( "Leave blank for 'Up Next'", 'site-functionality' ),
 				'prepend' => '',
 				'append' => '',
 				'maxlength' => '',
 			),
 			array(
 				'key' => 'field_5d7be335feb68',
-				'label' => __( 'Link', 'core-functionality' ),
+				'label' => __( 'Link', 'site-functionality' ),
 				'name' => 'page_link',
 				'type' => 'link',
 				'instructions' => '',

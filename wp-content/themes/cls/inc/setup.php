@@ -94,7 +94,7 @@ if ( ! function_exists( 'gutenberg_starter_theme_setup' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( 'style-editor.css' );
+		add_editor_style( get_stylesheet_directory_uri() . '/dist/assets/css/style-editor.css' );
 
 		// Add custom editor font sizes.
 		add_theme_support(
@@ -127,51 +127,53 @@ if ( ! function_exists( 'gutenberg_starter_theme_setup' ) ) :
 			)
 		);
 
+		$color_palette =  array(
+			array(
+				'name'  => __( 'Primary', 'cls' ),
+				'slug'  => 'primary',
+				'color' => '#F58B6F',
+			),
+			array(
+				'name'  => __( 'Secondary', 'cls' ),
+				'slug'  => 'secondary',
+				'color' => '#8169B1',
+			),
+			array(
+				'name'  => __( 'Dark Blue', 'cls' ),
+				'slug'  => 'accent',
+				'color' => '#1B3E70',
+			),
+			array(
+				'name'  => __( 'Dark Gray', 'cls' ),
+				'slug'  => 'gray-dark',
+				'color' => '#333333',
+			),
+			array(
+				'name'  => __( 'Medium Gray', 'cls' ),
+				'slug'  => 'gray-medium',
+				'color' => '#CECECE',
+			),
+			array(
+				'name'  => __( 'Light Gray', 'cls' ),
+				'slug'  => 'gray-light',
+				'color' => '#EFEFEF',
+			),
+			array(
+				'name'  => __( 'White', 'cls' ),
+				'slug'  => 'white',
+				'color' => '#FFF',
+			),
+			array(
+				'name'  => __( 'Black', 'cls' ),
+				'slug'  => 'black',
+				'color' => '#000',
+			),
+		);
+
 		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'cls' ),
-					'slug'  => 'primary',
-					'color' => '#F58B6F',
-				),
-				array(
-					'name'  => __( 'Secondary', 'cls' ),
-					'slug'  => 'secondary',
-					'color' => '#8169B1',
-				),
-				array(
-					'name'  => __( 'Dark Blue', 'cls' ),
-					'slug'  => 'accent',
-					'color' => '#1B3E70',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'cls' ),
-					'slug'  => 'gray-dark',
-					'color' => '#333333',
-				),
-				array(
-					'name'  => __( 'Medium Gray', 'cls' ),
-					'slug'  => 'gray-medium',
-					'color' => '#CECECE',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'cls' ),
-					'slug'  => 'gray-light',
-					'color' => '#EFEFEF',
-				),
-				array(
-					'name'  => __( 'White', 'cls' ),
-					'slug'  => 'white',
-					'color' => '#FFF',
-				),
-				array(
-					'name'  => __( 'Black', 'cls' ),
-					'slug'  => 'black',
-					'color' => '#000',
-				),
-			)
+			$color_palette
         );
         
         // Disable custom colors.
@@ -179,6 +181,7 @@ if ( ! function_exists( 'gutenberg_starter_theme_setup' ) ) :
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'gutenberg_starter_theme_setup' );

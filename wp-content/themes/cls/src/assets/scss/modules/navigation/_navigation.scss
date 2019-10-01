@@ -6,6 +6,12 @@
   }
 }
 
+.main-navigation {
+  .sub-menu {
+    z-index: 2;
+  }
+}
+
 // Navigation breakpoints
 .mobile-menu,
 .site-title-bar {

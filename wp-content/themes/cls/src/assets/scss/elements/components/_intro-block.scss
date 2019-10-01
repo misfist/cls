@@ -1,0 +1,50 @@
+/* Intro Block */
+@each $color, $code in $foundation-palette {
+  
+	.has-#{$color}-page-color {
+        .wp-block-customblocks-intro ,
+        .wp-block-functionality-intro {
+			background-color: $code;
+		}
+	}
+}
+
+.has-primary-page-color,
+.has-secondary-page-color,
+.has-accent-page-color {
+    .wp-block-customblocks-intro {
+        color: $white;
+    }
+}
+
+.has-secondary-page-color {
+    .wp-block-customblocks-intro {}
+}
+
+.has-accent-page-color {
+    .wp-block-customblocks-intro {}
+}
+
+.has-light-gray-page-color {
+    .wp-block-customblocks-intro {}
+}
+
+.has-white-gray-page-color {
+    .wp-block-customblocks-intro {}
+}
+
+
+
+/* Content Footer Block */
+
+/* Page CTA */
+
+/* Speech Bubble */
+
+/* Year Slider */
+
+/* Tabs */
+
+/* Twitter Feeds */
+
+/* Number Counter */

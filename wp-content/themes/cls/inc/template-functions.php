@@ -19,6 +19,12 @@ function gutenberg_starter_theme_body_classes( $classes ) {
 		global $post;
 		if ( isset( $post ) ) {
 			$classes[] = $post->post_type . '-' . $post->post_name;
+
+			if( function_exists( 'get_field' ) ) {
+				if( $page_color = get_field( 'page-color' ) ) {
+					$classes[] = sprintf( 'has-%s-page-color', sanitize_title( $page_color ) );
+				}
+			}
 		}
 	}
 	return $classes;
