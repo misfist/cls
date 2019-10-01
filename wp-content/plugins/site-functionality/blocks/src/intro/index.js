@@ -1,5 +1,5 @@
 /**
- * BLOCK: footnotes
+ * BLOCK: intro
  *
  * Registering a basic block with Gutenberg.
  * Simple block, renders and saves the same content without any interactivity.
@@ -11,20 +11,16 @@ import './style.scss';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.editor;
 
-const BLOCKS_TEMPLATE = [
-    [ 'core/heading', {
-		level: 2,
-		content: __( 'Footnotes', 'site-functionality' ),
-		className: 'footnotes-title'
-	} ],
-    [ 'core/list', { 
-		placeholder: __( 'Add footnotes items', 'site-functionality' ),
-		tagName: 'ol',
-		type: 'ol'
-	} ],
-];
+const {
+	InnerBlocks,
+} = wp.editor;
+
+const blockAttributes = {
+	backgroundColor: {
+		type: "string",
+    }
+}
 
 /**
  * Register: aa Gutenberg Block.
@@ -39,19 +35,17 @@ const BLOCKS_TEMPLATE = [
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'core-functionality/footnotes', {
-	title: __( 'Footnotes', 'core-functionality' ), 
-	icon: {
-		background: "#11155e",
-		foreground: '#ffffff',
-		src: 'editor-ol',
-	},
-	category: 'common',
+registerBlockType( 'customblocks/intro', {
+	title: __( 'Intro Section', 'site-functionality' ), 
+	icon: 'editor-aligncenter',
+	category: 'layout',
 	keywords: [
-		__( 'footnotes', 'core-functionality' ),
-		__( 'reference', 'core-functionality' ),
+		__( 'intro', 'site-functionality' ),
+		__( 'section', 'site-functionality' ),
 	],
-	className: 'footnotes',
+	anchor: true,
+	customClassName: true,
+	className: 'intro',
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -65,15 +59,13 @@ registerBlockType( 'core-functionality/footnotes', {
 		const { attributes: {}, className, getAttributes, setAttributes } = props;
 
 		return (
-			<footer 
+			<section 
 				className={className}
-				id="page-footnotes"
 			>
-				<InnerBlocks
-					template={ BLOCKS_TEMPLATE }
-					templateLock= 'all'
-				/>
-			</footer>
+				<div className="wp-block-functionality-intro__inner-container inner-container">
+					<InnerBlocks />
+				</div>
+			</section>
 		);
 	},
 
@@ -89,11 +81,11 @@ registerBlockType( 'core-functionality/footnotes', {
 		const { attributes: {}, className } = props;
 
 		return (
-			<footer 
-				id="page-footnotes"
-			>
-				<InnerBlocks.Content />
-		  </footer>
+			<section>
+				<div className="wp-block-functionality-intro__inner-container inner-container">
+					<InnerBlocks.Content />
+				</div>
+		  </section>
 		);
 	  },
 } );

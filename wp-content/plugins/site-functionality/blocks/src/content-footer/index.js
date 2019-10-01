@@ -1,5 +1,5 @@
 /**
- * BLOCK: group
+ * BLOCK: content footer
  *
  * Registering a basic block with Gutenberg.
  * Simple block, renders and saves the same content without any interactivity.
@@ -8,26 +8,13 @@
 //  Import CSS.
 import './editor.scss';
 import './style.scss';
-import classnames from 'classnames';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
 const {
-	InspectorControls,
 	InnerBlocks,
-	ColorPalette,
 } = wp.editor;
-const {
-	PanelBody,
-    PanelRow,
-} = wp.components;
-
-const blockAttributes = {
-	backgroundColor: {
-		type: "string",
-    }
-}
 
 /**
  * Register: aa Gutenberg Block.
@@ -42,25 +29,17 @@ const blockAttributes = {
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'customblocks/group', {
-	title: __( 'Group', 'site-functionality' ), 
-	icon: 'screenoptions',
+registerBlockType( 'customblocks/content-footer', {
+	title: __( 'Content Footer Section', 'site-functionality' ), 
+	icon: 'format-aside',
 	category: 'layout',
 	keywords: [
-		__( 'group', 'site-functionality' ),
+		__( 'footer', 'site-functionality' ),
 		__( 'section', 'site-functionality' ),
 	],
-	keywords: [
-		__( 'group section content', 'core-blocks' ),
-	],
-	attributes: blockAttributes,
-	supports: {
-		align: [ 'full', 'wide' ],
-	},
-	alignWide: true,
 	anchor: true,
 	customClassName: true,
-	className: 'group',
+	className: 'content-footer',
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -71,32 +50,13 @@ registerBlockType( 'customblocks/group', {
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
 	edit: props => {
-		const { attributes: { backgroundColor }, className, getAttributes, setAttributes } = props;
-
-		const classNames = classnames( className,  {
-			'has-background': backgroundColor,
-			'block-group': true
-		} );
+		const { attributes: {}, className, getAttributes, setAttributes } = props;
 
 		return (
 			<section 
-				className={classNames}
+				className={className}
 			>
-				<InspectorControls> 
-					<PanelBody
-						title={ __( 'Color Settings', 'core-blocks' ) }
-					>
-						<PanelRow>
-							<ColorPalette
-								value={backgroundColor}
-								onChange={backgroundColor => {
-									setAttributes({ backgroundColor });
-								}}
-							/>
-						</PanelRow>
-					</PanelBody>
-				</InspectorControls>
-				<div className="wp-block-functionality-group__inner-container inner-container">
+				<div className="wp-block-functionality-intro__inner-container inner-container">
 					<InnerBlocks />
 				</div>
 			</section>
@@ -112,18 +72,11 @@ registerBlockType( 'customblocks/group', {
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
 	save: props => {
-		const { attributes: {backgroundColor}, className } = props;
-
-		const classNames = classnames( className, {
-			'has-background': backgroundColor,
-			'block-group': true
-		} );
+		const { attributes: {}, className } = props;
 
 		return (
-			<section 
-				className={classNames}
-			>
-				<div className="wp-block-functionality-group__inner-container inner-container">
+			<section>
+				<div className="wp-block-functionality-intro__inner-container inner-container">
 					<InnerBlocks.Content />
 				</div>
 		  </section>

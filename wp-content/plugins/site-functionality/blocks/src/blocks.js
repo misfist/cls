@@ -9,7 +9,6 @@
  * Webpack is compiling as the input file.
  */
 
-import './footnotes';
 import './group';
-import './formats';
-// import './filters';
+import './intro';
+import './footer-content';
