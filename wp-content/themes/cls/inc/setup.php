@@ -103,25 +103,31 @@ if ( ! function_exists( 'gutenberg_starter_theme_setup' ) ) :
 				array(
 					'name'      => __( 'Small', 'cls' ),
 					'shortName' => __( 'S', 'cls' ),
-					'size'      => 19.5,
+					'size'      => 14,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'cls' ),
 					'shortName' => __( 'M', 'cls' ),
-					'size'      => 22,
+					'size'      => 16,
 					'slug'      => 'normal',
 				),
 				array(
 					'name'      => __( 'Large', 'cls' ),
 					'shortName' => __( 'L', 'cls' ),
-					'size'      => 36.5,
+					'size'      => 24,
 					'slug'      => 'large',
+				),
+				array(
+					'name'      => __( 'X-Large', 'cls' ),
+					'shortName' => __( 'XL', 'cls' ),
+					'size'      => 32,
+					'slug'      => 'x-large',
 				),
 				array(
 					'name'      => __( 'Huge', 'cls' ),
 					'shortName' => __( 'XL', 'cls' ),
-					'size'      => 49.5,
+					'size'      => 36,
 					'slug'      => 'huge',
 				),
 			)

@@ -3,6 +3,10 @@ body:not(.home) {
         > article > .entry-header {
             background-color: get-color(accent);
             color: white;
+
+            .entry-title {
+                margin-bottom: 0;
+            }
         }
     }
 }

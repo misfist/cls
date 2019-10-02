@@ -11,7 +11,10 @@
 
 @include foundation-typography;
 @include foundation-button;
-@include foundation-table;
+
+/* Utilities */
+
+@import "./utilities/util";
 
 /* Typography */
 

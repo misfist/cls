@@ -19,6 +19,8 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content/content', 'page' );
 
+			get_template_part( 'template-parts/component/component', 'timeline' );
+
 		endwhile; // End of the loop.
 		?>
 
