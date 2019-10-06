@@ -145,7 +145,7 @@ if ( ! function_exists( 'gutenberg_starter_theme_setup' ) ) :
 				'color' => '#8169B1',
 			),
 			array(
-				'name'  => __( 'Dark Blue', 'cls' ),
+				'name'  => __( 'Blue', 'cls' ),
 				'slug'  => 'accent',
 				'color' => '#1B3E70',
 			),

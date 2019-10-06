@@ -33,8 +33,8 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
                 'choices' => array(
                     '#F58B6F' => 'primary',
                     '#8169B1' => 'secondary',
-                    '#1B3E70' => 'accent',
-                    '#EFEFEF' => 'light gray',
+                    '#1E4F92' => 'accent-light',
+                    '#EFEFEF' => 'gray-light',
                     '#ffffff' => 'white',
                 ),
                 'allow_null' => 1,

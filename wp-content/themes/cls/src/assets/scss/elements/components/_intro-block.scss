@@ -1,4 +1,9 @@
 /* Intro Block */
+.wp-block-customblocks-intro {
+    background-color: $primary-color;
+    color: $white;
+}
+
 @each $color, $code in $foundation-palette {
   
 	.has-#{$color}-page-color {
@@ -9,11 +14,10 @@
 	}
 }
 
-.has-primary-page-color,
-.has-secondary-page-color,
-.has-accent-page-color {
+.has-white-page-color,
+.has-gray-light-page-color {
     .wp-block-customblocks-intro {
-        color: $white;
+        color: $body-font-color;
     }
 }
 
