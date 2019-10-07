@@ -16,19 +16,13 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
      * Displays as modal on small screens
      */
     .timeline-controls {
-        // padding-top: rem-calc(30);
-        // padding-bottom: rem-calc(30);
-        // background-color: get-color( accent-light );
-        // border-radius: rem-calc(50);
 
         .timeline-wrapper {
             position: relative;
-            // padding-top: rem-calc(30);
-            // padding-bottom: rem-calc(30);
             padding: rem-calc(33); //[sic]
             background-color: get-color( accent-light );
             border-radius: rem-calc(20);
-            margin: rem-calc(33);
+            margin: rem-calc(33); //[sic]
         }
 
         ul {
@@ -36,9 +30,9 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
             margin-left: 0;
             
             a {
+                position: relative;
                 display: block;
                 color: white;
-                position: relative;
     
                 &:hover,
                 &:focus,
@@ -108,12 +102,7 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
                 background-color: rgba($black,0.95);
                 border-radius: 0;
 
-                ul {
-                    // margin: rem-calc(33) auto auto auto;
-                    // padding: rem-calc(33); //[sic]
-                    // border-radius: rem-calc(20);
-                    // background-color: get-color(accent-light);
-                }
+                ul {}
             }
 
             .previous,

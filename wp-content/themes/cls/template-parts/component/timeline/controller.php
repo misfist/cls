@@ -27,8 +27,8 @@
 		endforeach; ?>
 		</ul>
 
-		<button class="close-button" data-close aria-label="Close modal" type="button">
-			<span aria-hidden="true">&times;</span>
+		<button class="close-button" aria-label="Close modal" type="button">
+			<span aria-hidden="true" class="icon"></span>
 		</button>
 	</div><!-- .timeline-wrapper -->
 </nav><!-- .timeline-controls -->

@@ -40,3 +40,31 @@ function gutenberg_starter_theme_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'gutenberg_starter_theme_pingback_header' );
+
+function cls_render_page_intro() {
+	global $post;
+	$blocks = parse_blocks( $post->post_content );
+	foreach( $blocks as $block ) {
+		if( 'custom/intro' === $block['blockName'] ) {
+			echo render_block( $block );
+			break;
+		}
+	}
+}
+
+function cls_the_content() {
+	global $post;
+	$blocks = parse_blocks( $post->post_content );
+	if( $blocks ) {
+		$content = '';
+		foreach( $blocks as $block ) {
+			if( 'custom/intro' === $block['blockName'] ) {
+				continue;
+			} else {
+				$content .= render_block( $blocks );
+			}
+		}
+		echo apply_filters( 'the_content', $content );
+	}
+	return;
+}

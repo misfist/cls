@@ -1,5 +1,8 @@
 /* Intro Block */
-.wp-block-customblocks-intro {
+.wp-block-custom-intro,
+.page-intro,
+.entry-intro,
+.entry-intro {
     padding: rem-calc(20);
     background-color: $primary-color;
     color: $white;
@@ -8,8 +11,9 @@
 @each $color, $code in $foundation-palette {
   
 	.has-#{$color}-page-color {
-        .wp-block-customblocks-intro ,
-        .wp-block-functionality-intro {
+        .wp-block-custom-intro,
+        .page-intro,
+    .entry-intro {
 			background-color: $code;
 		}
 	}
@@ -17,27 +21,36 @@
 
 .has-white-page-color,
 .has-gray-light-page-color {
-    .wp-block-customblocks-intro {
+    .wp-block-custom-intro,
+    .page-intro,
+    .entry-intro {
         color: $body-font-color;
     }
 }
 
 .has-secondary-page-color {
-    .wp-block-customblocks-intro {}
+    .wp-block-custom-intro,
+    .page-intro,
+    .entry-intro {}
 }
 
 .has-accent-page-color {
-    .wp-block-customblocks-intro {}
+    .wp-block-custom-intro,
+    .page-intro,
+    .entry-intro {}
 }
 
 .has-light-gray-page-color {
-    .wp-block-customblocks-intro {}
+    .wp-block-custom-intro,
+    .page-intro,
+    .entry-intro {}
 }
 
 .has-white-gray-page-color {
-    .wp-block-customblocks-intro {}
+    .wp-block-custom-intro,
+    .page-intro,
+    .entry-intro {}
 }
-
 
 
 /* Content Footer Block */

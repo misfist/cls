@@ -16,6 +16,8 @@
 		</header><!-- .entry-header -->
 	<?php endif; ?>
 
+	<?php get_template_part( 'template-parts/content/content-intro' ); ?>
+
 	<div class="entry-content">
 		<?php
 			the_content();
