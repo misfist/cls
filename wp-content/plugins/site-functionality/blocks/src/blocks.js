@@ -11,4 +11,4 @@
 
 import './group';
 import './intro';
-import './footer-content';
+import './content-footer';

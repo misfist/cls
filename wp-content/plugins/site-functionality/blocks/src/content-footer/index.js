@@ -29,7 +29,7 @@ const {
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'customblocks/content-footer', {
+registerBlockType( 'custom/content-footer', {
 	title: __( 'Content Footer Section', 'site-functionality' ), 
 	icon: 'format-aside',
 	category: 'layout',

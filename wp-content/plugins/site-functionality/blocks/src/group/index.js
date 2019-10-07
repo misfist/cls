@@ -42,7 +42,7 @@ const blockAttributes = {
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'customblocks/group', {
+registerBlockType( 'custom/group', {
 	title: __( 'Group', 'site-functionality' ), 
 	icon: 'screenoptions',
 	category: 'layout',

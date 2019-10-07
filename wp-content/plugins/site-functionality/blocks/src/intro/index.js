@@ -14,7 +14,13 @@ const { registerBlockType } = wp.blocks;
 
 const {
 	InnerBlocks,
+	InspectorControls,
+	withColors, 
+	PanelColorSettings, 
+	getColorClassName
 } = wp.editor;
+
+const { ColorPalette } = wp.components;
 
 const blockAttributes = {
 	backgroundColor: {
@@ -35,13 +41,13 @@ const blockAttributes = {
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'customblocks/intro', {
+registerBlockType( 'custom/intro', {
 	title: __( 'Intro Section', 'site-functionality' ), 
 	icon: 'editor-aligncenter',
 	category: 'layout',
 	keywords: [
 		__( 'intro', 'site-functionality' ),
-		__( 'section', 'site-functionality' ),
+		__( 'div', 'site-functionality' ),
 	],
 	anchor: true,
 	customClassName: true,
@@ -59,13 +65,13 @@ registerBlockType( 'customblocks/intro', {
 		const { attributes: {}, className, getAttributes, setAttributes } = props;
 
 		return (
-			<section 
+			<div 
 				className={className}
 			>
 				<div className="wp-block-functionality-intro__inner-container inner-container">
 					<InnerBlocks />
 				</div>
-			</section>
+			</div>
 		);
 	},
 
@@ -81,11 +87,11 @@ registerBlockType( 'customblocks/intro', {
 		const { attributes: {}, className } = props;
 
 		return (
-			<section>
+			<div>
 				<div className="wp-block-functionality-intro__inner-container inner-container">
 					<InnerBlocks.Content />
 				</div>
-		  </section>
+		  </div>
 		);
 	  },
 } );

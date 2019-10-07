@@ -12,6 +12,6 @@ function addListBlockAnchor( settings, name ) {
  
 wp.hooks.addFilter(
     'blocks.registerBlockType',
-    'coreblocks/list-block',
+    'custom/list',
     addListBlockAnchor
 );
