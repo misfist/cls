@@ -27,24 +27,19 @@ const timelineTabs = new Foundation.Tabs($('#timeline-controls'), {
     panelClass: 'timeline-tabs-panel'
 });
 
-/* Modal on Small Screens Only */
-// const $timelineControl = $('#timeline-controller-container');
-// if (Foundation.MediaQuery.is('small only')) {
-//     $timelineControl.attr('data-reveal', '');
-//     $timelineControl.addClass( 'small reveal' );
-//     // var timelineModal = new Foundation.Reveal($timelineControl, {});
+/**
+ * Timeline Modal
+ */
+// const modalContent = `#timeline-controls`;
+// const modalDiv = `#timeline-modal`;
+
+// function createTimelineModalContent(selector, destination, callback) {
+//     const content = document.querySelector(`${selector}`);
+//     const clone = content.cloneNode(true);
+//     document.querySelector(`${destination}`).insertAdjacentElement( 'afterbegin', clone );
+//     callback();
 // }
 
-// $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
-// // newSize is the name of the now-current breakpoint, oldSize is the previous breakpoint
-//     if( 'small' === newSize ) {
-//         $timelineControl.attr('data-reveal', '');
-//         $timelineControl.addClass( 'small reveal' );
-//         console.log( `I'm small` );
-//     } else if( 'small' === oldSize ) {
-//         // timelineModal = null;
-//         $timelineControl.removeAttr('data-reveal');
-//         $timelineControl.removeClass( 'reveal' ).removeClass('small');
-//         console.log( `I'm not so small anymore.` );
-//     }
+// createTimelineModalContent(modalContent, modalDiv, function() {
+//     const timelineModal = new Foundation.Reveal($(`${modalDiv}`), {});
 // });

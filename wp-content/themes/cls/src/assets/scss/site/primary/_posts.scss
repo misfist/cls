@@ -1,0 +1,55 @@
+/* Secondary Page Title */
+.entry-content {
+    &> h2 {
+        color: get-color( accent );
+        font-size: rem-calc(24);
+    }
+}
+
+.content-section {
+    .history {
+
+        /* Layout */
+        @include xy-grid;
+
+        .entry-media,
+        .entry-header,
+        .entry-content,
+        .entry-footer {
+            @include xy-cell();
+        }
+
+        .entry-media {
+            order: 3;
+        }
+        .entry-header {
+            order: 1;
+        }
+        .entry-content {
+            order: 2;
+        }
+        .entry-footer {
+            order: 4;
+        }
+
+        @include breakpoint(medium) {}
+
+        /* Content Style */
+        .entry-title {
+            color: get-color( accent );
+        }
+
+        .entry-content {
+            font-size: $small-font-size;
+
+            p {
+                font-size: $small-font-size;
+            }
+        }
+
+        @include breakpoint(medium) {
+            .entry-content {}
+        }
+    }
+}
+

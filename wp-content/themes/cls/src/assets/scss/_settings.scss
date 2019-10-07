@@ -103,8 +103,9 @@ $foundation-palette: (
 $light-gray:  #EFEFEF;
 $medium-gray: #CECECE;
 $dark-gray: #333333;
-$black: #0a0a0a;
+$black: #000;
 $white: #fefefe;
+$black-4: #666;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Raleway', sans-serif;
@@ -184,7 +185,7 @@ $header-styles: (
   ),
 );
 $header-text-rendering: optimizeLegibility;
-$small-font-size: 80%;
+$small-font-size: 87.5%;
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
