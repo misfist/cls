@@ -262,7 +262,9 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
         }
     }
 
-    /* Medium+ screens */
+    /**
+     * Medium+ screens 
+     */
     @include breakpoint(medium) {
         @include xy-grid;
         align-items: flex-start;
@@ -278,12 +280,21 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
 
         /* Controller */
         .timeline-controls {
-            width: rem-calc(85);
+            // width: rem-calc(85);
 
             font-size: rem-calc(14.4); //[sic]
             text-align: center;
 
+            .timeline-wrapper {
+                width: rem-calc(85);
+                border-radius: rem-calc(50);
+                margin: 0;
+                padding: rem-calc(20) 0;
+            }
+
             ul {
+                // padding: rem-calc(20) 0;
+                
                 a {
                     margin-left: rem-calc(10);
                     padding: rem-calc(5) rem-calc(20) rem-calc(5) rem-calc(10);
