@@ -1,10 +1,15 @@
-/* Secondary Page Title */
-.entry-content {
-    &> h2 {
-        color: get-color( accent );
-        font-size: rem-calc(24);
-    }
+/* Page Header */
+.page {
+    .page-content-header {}
 }
+
+/* Secondary Page Title */
+// .entry-content {
+//     &> h2 {
+//         color: get-color( accent );
+//         font-size: rem-calc(24);
+//     }
+// }
 
 .content-section {
     .history {
@@ -39,6 +44,16 @@
             color: get-color( accent );
         }
 
+        .entry-media {
+            @include clipped-corner(bottom-right);
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
         .entry-content {
             font-size: $small-font-size;
 
@@ -48,7 +63,10 @@
         }
 
         @include breakpoint(medium) {
-            .entry-content {}
+            .entry-media {
+                @include clipped-corner(bottom-right, 104px, 96px);
+            }
+    
         }
     }
 }

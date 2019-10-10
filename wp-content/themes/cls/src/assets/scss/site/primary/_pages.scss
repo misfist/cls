@@ -1,0 +1,46 @@
+/* Page Header */
+body:not(.home) {
+    .site-main {
+        &> article > .entry-header {
+            display: flex;
+            flex-wrap: wrap;
+            height: rem-calc(118);
+            background-color: get-color(accent);
+            color: white;
+
+            .entry-title {
+                margin-bottom: 0;
+                flex-basis: 55%;
+                align-self: center;
+            }
+
+            .shape-separator {
+                height: rem-calc(50);
+                flex-basis: 45%;
+                align-self: flex-end;                
+                @include skew($deg: -40deg, $left: -20px, $width: 40px);
+            }
+
+            @include breakpoint(medium) {
+                .entry-title {
+                    flex-basis: 75%;
+                }
+                
+                .shape-separator {
+                    flex-basis: 25%;
+                    height: rem-calc(83); //sic
+                    @include skew($deg: -40deg, $left: -34px, $width: 70px);
+                }
+            }
+        }
+    }
+}
+
+@each $color, $code in $foundation-palette {
+	.has-#{$color}-page-color {
+        .shape-separator {
+            background-color: $code;
+            // border-bottom: 1px solid $code;
+		}
+	}
+}

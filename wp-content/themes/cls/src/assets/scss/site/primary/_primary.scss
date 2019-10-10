@@ -1,16 +1,7 @@
+/* Pages */
+
+@import "pages";
+
 /* Posts */
 
 @import "posts";
-
-body:not(.home) {
-    .site-main {
-        > article > .entry-header {
-            background-color: get-color(accent);
-            color: white;
-
-            .entry-title {
-                margin-bottom: 0;
-            }
-        }
-    }
-}
