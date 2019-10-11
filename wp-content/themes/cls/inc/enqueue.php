@@ -20,7 +20,7 @@ function gutenberg_starter_theme_fonts_url() {
 
 	if ( 'off' !== $raleway ) {
 		$font_families = array();
-		$font_families[] = 'Raleway:500,600,800,900';
+		$font_families[] = 'Raleway:400,700,900';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),

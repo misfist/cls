@@ -17,8 +17,7 @@ body:not(.home) {
             .shape-separator {
                 height: rem-calc(50);
                 flex-basis: 45%;
-                align-self: flex-end;                
-                @include skew($deg: -40deg, $left: -20px, $width: 40px);
+                align-self: flex-end;            
             }
 
             @include breakpoint(medium) {
@@ -29,18 +28,10 @@ body:not(.home) {
                 .shape-separator {
                     flex-basis: 25%;
                     height: rem-calc(83); //sic
-                    @include skew($deg: -40deg, $left: -34px, $width: 70px);
                 }
             }
         }
     }
 }
 
-@each $color, $code in $foundation-palette {
-	.has-#{$color}-page-color {
-        .shape-separator {
-            background-color: $code;
-            // border-bottom: 1px solid $code;
-		}
-	}
-}
+

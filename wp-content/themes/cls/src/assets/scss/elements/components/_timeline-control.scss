@@ -19,9 +19,9 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
 
         .timeline-wrapper {
             position: relative;
-            padding: rem-calc(33); //[sic]
+            padding: rem-calc(33) rem-calc(33) rem-calc(50) rem-calc(33); //[sic]
             background-color: get-color( accent-light );
-            border-radius: rem-calc(20);
+            border-radius: rem-calc(26.734); //sic
             margin: rem-calc(33); //[sic]
         }
 
@@ -33,6 +33,7 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
                 position: relative;
                 display: block;
                 color: white;
+                font-weight: bold;
     
                 &:hover,
                 &:focus,
@@ -61,7 +62,6 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
          */
         @include breakpoint( small only ) {
             display: none;
-            // border-radius: rem-calc(20);
             
 
             ul {
@@ -99,10 +99,25 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
                 top: 0;
                 left: 0;
                 z-index: 2;
-                background-color: rgba($black,0.95);
+                // background-color: rgba($black,0.67); //sic
+                background-color: rgba($black,0.9);
                 border-radius: 0;
 
                 ul {}
+            }
+
+            .close-button {
+                height: rem-calc(55);
+                width: rem-calc(71); //sic
+                position: absolute;
+                top: auto;
+                bottom: 0;
+                left: 0;
+                background-color: get-color( accent );
+                background-image: url('../images/icon-chevron-left.svg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                border-radius: rem-calc(26.734); //sic
             }
 
             .previous,
@@ -117,29 +132,36 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
      * Only displays on small screens
      */
     .timeline-thermometer {
-
-        .line {
-            transform-origin: 0 100%;
-            height: 2px;
-            background: get-color(accent-light);
+        margin-top: rem-calc(60);
+        
+        .thermometer-wrapper {
+            max-width: 100%;
+            padding: rem-calc(11) rem-calc(13); //[sic]
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: get-color( accent-light );
+            border-radius: rem-calc(50);
         }
 
         ul {
             position: relative;
             list-style: none;
             margin-left: 0;
+            margin-bottom: 0;
             display: flex;
+            flex-basis: auto;
             flex-direction: row-reverse;
             justify-content: space-between;
-            padding: rem-calc(13); //[sic]
-            background-color: get-color( accent-light );
-            border-radius: rem-calc(50);
-            
+            align-items: center;
+            width: 80%;
+
+            /* Horizontal Rule */
             &:after {
                 content: '';
                 border-bottom: 2px solid get-color(blue-light);
-                width: 75%;
                 position: absolute;
+                width: 100%;
                 top: 50%; 
                 left: 50%;
                 transform: translate(-50%,-50%);
@@ -147,69 +169,92 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
         }
 
         li {
-            &:not(.is-end) {
+            position: relative;
+            height: rem-calc(12);
 
-                label {
-                    height: 0;
-                    overflow: hidden;
-                }
+            &.date-tick {
+                width: rem-calc(12);
             }
 
             &.is-active {
-                position: relative;
-
                 /* Dot */
-                &:before {
-                    content: '';
-                    background-image: url("data:image/svg+xml,%0A%3Csvg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Template-%233---Our-Story' transform='translate(-252.000000, -1113.000000)' fill='%23F58B6F'%3E%3Ccircle id='Oval' cx='258' cy='1119' r='6'%3E%3C/circle%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-                    background-position: center center;
-                    background-size: rem-calc(12);
-                    z-index: 2;
-                    
+                background-image: url("data:image/svg+xml,%0A%3Csvg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Template-%233---Our-Story' transform='translate(-252.000000, -1113.000000)' fill='%23F58B6F'%3E%3Ccircle id='Oval' cx='258' cy='1119' r='6'%3E%3C/circle%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: center center;
+                z-index: 1;
+
+                /* Year in Pill */
+                span {
                     position: absolute;
-                    bottom: rem-calc(6);
-                    left: rem-calc(12);
-                    height: rem-calc(12);
-                    width: rem-calc(12);
-                    color: $primary-color;
-                }
-                
-                &:after {
-                    content: attr(data-year);
-                    position: absolute;
-                    bottom: 200%;
-                    left: 0;
-                    // transform: translate-x(-100%);
-                    margin-left: -75%;
+                    display: block;
+                    bottom: rem-calc(36);
+                    width: rem-calc(100);
+                    left: 50%;
+                    transform: translate(-50%, 0);
                     z-index: 1;
 
-                    padding: rem-calc(4) rem-calc(20);
+                    line-height: 1;
+                    padding: rem-calc(9) rem-calc(18) rem-calc(11) rem-calc(18);
                     background-color: $primary-color;
                     border-radius: $button-radius;
                     font-size: rem-calc(22.2);
-                    font-weight: bold;
+                    font-weight: $font-weight-black;
+                    text-align: center;
                     color: $white;
+
+                   &:after {
+                        content: '';
+                        background-image: linear-gradient($primary-color,$primary-color);
+                        background-size: 2px 30px;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        height: 30px;
+                        width: 2px;
+                        position: absolute;
+                        bottom: -30px;
+                        left: 0;
+                        right: 0;
+                        margin-right: auto;
+                        margin-left: auto;
+                   }
                 }
 
             }
 
+            span {
+                display: none;
+            }
+
+            &.is-active {}
+
         }
 
-        label {
+        .date-label {
+            width: rem-calc(50);
             color: $white;
-            font-size: rem-calc(13.4);
-            font-weight: bold;
+            font-size: rem-calc(13.4); //sic
+            font-weight: $font-weight-black;
+            text-align: center;
+        }
+
+        .line {
+            transform-origin: 0 100%;
+            height: 2px;
+            background: get-color(accent-light);
         }
     }
 
     .component-footer {
+        margin-top: rem-calc(12);
         margin-bottom: rem-calc(32);
         text-align: center;
     }
+
     .text-button {
         display: inline-block;
         color: rgba($black,0.4);
         font-size: rem-calc(14);
+        font-weight: bold;
         letter-spacing: 0.8px;
         text-align: center;
         line-height: 18px;

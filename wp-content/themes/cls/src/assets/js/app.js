@@ -7,7 +7,7 @@ function themeReady() {
      * Timeline UI Functions
      */
 
-    /* History Thermometer Component */
+    /* History Timeline Component */
     const timelineControl = document.querySelector( '#timeline-controls' );
     if( timelineControl ) {
 
@@ -54,11 +54,16 @@ function themeReady() {
             timelineOpenButton.addEventListener( 'click', openModal );
         }
 
-        /* Listen to Timeline Links */
+        const timelineCloseButton = document.querySelector(`#timeline-controller-module .close-button`);
+        if(timelineCloseButton) {
+            timelineCloseButton.addEventListener( 'click', closeModal );
+        }
 
+        /* Listen to Timeline Links */
 
     }
 
+    if (Foundation.MediaQuery.is('small only')) {}
 
 }
 document.addEventListener( "DOMContentLoaded", themeReady );
