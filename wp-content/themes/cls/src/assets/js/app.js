@@ -1,4 +1,5 @@
 import './vendor/foundation.js';
+import './vendor/navigation.js';
 
 function themeReady() {
     console.log( 'loaded app.js' );
@@ -63,7 +64,36 @@ function themeReady() {
 
     }
 
-    if (Foundation.MediaQuery.is('small only')) {}
+    /**
+     * Sticky Nav
+     */
+    const headerEl = document.querySelector('#masthead');
+    const headerElTop = headerEl.offsetTop;
+
+    function stickyNavigation() {
+        /** Only on medium or larger */
+        if(Foundation.MediaQuery.is('medium')) {
+            const shrinkOn = 200;
+
+            /** Stick Header */
+            if (window.scrollY >= headerElTop) {
+                document.body.classList.add('is-fixed');
+            } else {
+                document.body.style.paddingTop = 0;
+                document.body.classList.remove('is-fixed');
+            }
+
+            /** Shrink Header */
+            if (window.scrollY > shrinkOn) {
+                document.body.classList.add("is-minimized");
+            } else {
+                document.body.classList.remove("is-minimized");
+            }
+        }
+    }
+    if(headerEl) {
+        window.addEventListener('scroll', stickyNavigation, false);
+    }
 
 }
 document.addEventListener( "DOMContentLoaded", themeReady );

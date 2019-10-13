@@ -7,6 +7,8 @@
 ( function() {
 	var container, button, menu, links, i, len;
 
+	console.log('navigation.js');
+
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
 		return;
@@ -82,6 +84,11 @@
 
 		if ( 'ontouchstart' in window ) {
 			touchStartFn = function( e ) {
+				/**
+				 * Our Parent menu items aren't links
+				 * Add `e.preventDefault()`
+				 */
+				e.preventDefault();
 				var menuItem = this.parentNode, i;
 
 				if ( ! menuItem.classList.contains( 'focus' ) ) {

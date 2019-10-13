@@ -29,11 +29,14 @@ ins {}
 
 big {}
 
+
 a {
-	text-decoration: none;
+	text-decoration: $anchor-text-decoration;
+	color: $anchor-color;
 
 	&:hover {
-		text-decoration: none;
+		text-decoration: $anchor-text-decoration-hover;
+		color: $anchor-color-hover;
 	}
 
 	&:focus {

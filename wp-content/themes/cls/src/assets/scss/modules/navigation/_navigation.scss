@@ -6,10 +6,316 @@
   }
 }
 
+
+/*--------------------------------------------------------------
+## Main Navigation
+--------------------------------------------------------------*/
 .main-navigation {
-  .sub-menu {
-    z-index: 2;
+  clear: both;
+  display: block;
+
+  .menu-item-has-children {
+    font-weight: $font-weight-black;
   }
+
+  a {
+    display: block;
+  }
+
+  ul {
+    ul {
+      margin-left: 0;
+      font-weight: normal;
+
+      a {
+        color: $black;
+      }
+    }
+    
+  }
+
+  .muted {
+    a {
+      font-size: rem-calc(13); //sic
+      color: $anchor-color;
+      text-transform: uppercase;
+    }
+  }
+
+  .highlighted {
+    a {
+      padding: rem-calc(30) rem-calc(47); //sic
+      font-size: rem-calc(17); //sic
+      font-weight: $font-weight-black;
+      text-transform: uppercase;
+      color: $white;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    &:nth-last-of-type(2),
+    &.donate {
+      a {
+        background-color: $primary-color;
+
+        &:hover {
+          background-color: darken($primary-color,10%);
+        }
+        
+      }
+  
+    }
+
+    &:last-of-type,
+    &.help {
+      
+      a {
+        background-color: $secondary-color;
+
+        &:hover {
+          background-color: darken($secondary-color,10%);
+        }
+      }
+
+    }
+  }
+
+}
+
+/* Toggle Button */
+.menu-toggle {
+	padding: 1em;
+}
+
+/* Small Screens Only */
+@include breakpoint(small only) {
+
+  /* Toggle Button */
+	.menu-toggle {
+		display: block;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 3;
+    top: 22px;
+    right: 22px;
+    height: rem-calc(27);
+    width: rem-calc(27);
+
+    border-radius: 0;
+    color: get-color(accent);
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='31px' height='29px' viewBox='0 0 31 29' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Eicon-menu%3C/title%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='square'%3E%3Cg id='Mobile---Header' transform='translate(-324.000000, -21.000000)' stroke='%231B3E70' stroke-width='3'%3E%3Cg id='icon-menu' transform='translate(326.000000, 22.000000)'%3E%3Cpath d='M0.465517241,0.5 L26.5344828,0.5' id='Line-1'%3E%3C/path%3E%3Cpath d='M0.465517241,13.5 L26.5344828,13.5' id='Line-2'%3E%3C/path%3E%3Cpath d='M0.465517241,26.5 L26.5344828,26.5' id='Line-3'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-position: top right;
+    background-size: 27px 27px;
+    background-repeat: no-repeat;
+    transition: all .2s ease-in-out;
+
+    /* Opened */
+    &[aria-expanded="true"] {
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='28px' height='28px' viewBox='0 0 28 28' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Eicon-close%3C/title%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='square'%3E%3Cg id='close-menu' transform='translate(-323.000000, -19.000000)' stroke='%231B3E70' stroke-width='3'%3E%3Cg id='icon-close' transform='translate(326.000000, 22.000000)'%3E%3Cpath d='M0,0 L22.4099995,22.4099995' id='Line-1'%3E%3C/path%3E%3Cpath d='M0,22.4099995 L22.4099995,0' id='Line-2'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  }
+  
+  .main-navigation {
+    .main-menu {
+      display: none;
+      background-color: $white;
+    }
+
+    &.toggled {
+      height: 100%;
+      margin-top: $mobile-header-height;
+      background-color: rgba($black,0.8);
+
+      /* Layout */
+      .main-menu {
+        height: 100%;
+        padding-top: rem-calc(40);
+        display: grid;
+        grid-gap: 0;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 0.4fr 0.5fr 0.5fr;
+        grid-template-areas: "about what-we-do" "about espanol" "get-involved donate" "get-involved help";      
+        &> li {
+          &.about,
+          &:first-child { 
+            grid-area: about;
+            padding-left: rem-calc(37); //sic
+          }
+    
+          &.what-we-do,
+          &:nth-child(2) { grid-area: what-we-do; }
+          
+          &.get-involved,
+          &:nth-child(3) { 
+            grid-area: get-involved;
+            padding-left: rem-calc(37); //sic
+          }
+            
+          &.espanol,
+          &:nth-child(4) { grid-area: espanol; }
+          
+          &.donate,
+          &:nth-last-child(2) { grid-area: donate; }
+    
+          &.help,
+          &:last-child { grid-area: help; }
+    
+          &.highlighted {
+            text-align: center;
+          }
+        }
+        
+      }
+    }
+    
+    a {
+      padding-left: 0;
+    }
+  }
+
+}
+
+/* Medium+ Screens */
+@include breakpoint(medium) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation {
+    text-align: center;
+
+    .main-menu {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      
+
+      &> li {
+        display: flex;
+        align-items: center;
+
+        /* Separators */
+        &:not(.highlighted):not(.muted) {
+          &> a {
+            padding-right: 0;
+            padding-left: rem-calc(7);
+
+            &:after {
+              content: '';
+              display: inline-block;
+              background-image: url("data:image/svg+xml,%3Csvg width='15px' height='22px' viewBox='0 0 15 22' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Enav-separator%3C/title%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='square'%3E%3Cg id='Header-(Expanded,-default)' transform='translate(-672.000000, -46.000000)' stroke='%231B3E70'%3E%3Cg id='Group' transform='translate(567.000000, 46.000000)'%3E%3Cpath d='M118.9639,0.5 L105.9639,21.5' id='nav-separator'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+              background-size: rem-calc(15) rem-calc(22);
+              background-repeat: no-repeat;
+              background-position: right bottom;
+              width: rem-calc(15);
+              height: rem-calc(15);
+              margin-left: rem-calc(11);
+            }
+          }
+        }
+        
+        &.focus,
+        &.current-menu-parent,
+        .current-menu-item {
+          &> a {
+            color: $primary-color;
+          }
+        }
+
+      }
+
+      ul {
+        box-shadow: 0 3px 3px $black;
+        float: left;
+        position: absolute;
+        top: 100%;
+        left: -999em;
+        z-index: 99999;
+        text-align: left;
+        background-color: $white;
+        
+        ul {
+          left: -999em;
+          top: 0;
+        }
+
+        li {
+          &:hover > ul {
+            left: 100%;
+          }
+          &.focus > ul {
+            left: 100%;
+          }
+        }
+
+        a {
+          width: 200px;
+        }
+
+      }
+
+      li {
+        position: relative;
+
+        &:hover > ul {
+          display: block;
+          left: auto;
+        }
+        &.focus > ul {
+          display: block;
+          left: auto;
+        }
+      }
+
+    }
+
+    a {
+      padding: 0 .5em;
+      display: block;
+      text-decoration: none;
+      font-size: rem-calc(18);
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    ul ul {
+      a {
+        font-size: rem-calc(15); //sic
+        font-weight: $font-weight-bold;
+      }
+
+      &:not(.current-menu-item) {
+          a {
+            color: $black-3;
+          }
+      }
+
+      li {
+        padding: rem-calc(8) rem-calc(10);
+      }
+    }
+
+    .muted {
+      padding-right: rem-calc(60);
+      a {
+        font-size: rem-calc(11); //sic
+      }
+    }
+
+    .sub-menu {
+      z-index: 3;
+    }
+
+  }
+
 }
 
 // Navigation breakpoints

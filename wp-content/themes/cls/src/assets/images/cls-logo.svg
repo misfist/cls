@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="127px" height="167px" viewBox="0 0 127 167" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
     <title>cls-logo</title>
-    <desc>Created with Sketch.</desc>
     <defs>
         <polygon id="path-1" points="0 0.346 126.493 0.346 126.493 166.94 0 166.94"></polygon>
     </defs>
     <g id="cls-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="CLS_LOGO_STACK">
-            <mask id="mask-2" fill="white">
+        <g id="cls-logo-small">
+            <!-- <mask id="mask-2" fill="white">
                 <use xlink:href="#path-1"></use>
-            </mask>
+            </mask> -->
             <g id="Clip-2"></g>
             <path d="M51.885,69.529 C42.331,69.529 34.586,61.784 34.586,52.23 C34.586,42.677 42.331,34.932 51.885,34.932 L72.94,34.932 L72.94,0.346 L51.885,0.346 C23.229,0.346 0,23.576 0,52.23 C0,80.885 23.229,104.115 51.885,104.115 L72.94,104.115 L72.94,69.529 L51.885,69.529" id="Fill-1" fill="#22355B" mask="url(#mask-2)"></path>
             <polyline id="Fill-3" fill="#79619B" mask="url(#mask-2)" points="124.825 52.23 124.825 52.23 72.94 0.346 124.825 0.346 124.825 52.23"></polyline>
