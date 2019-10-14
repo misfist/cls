@@ -14,7 +14,12 @@
 		return;
 	}
 
-	button = container.getElementsByTagName( 'button' )[0];
+	// button = container.getElementsByTagName( 'button' )[0];
+	// if ( 'undefined' === typeof button ) {
+	// 	return;
+	// }
+
+	button = document.querySelector('.js-menu-toggle');
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
@@ -33,12 +38,12 @@
 	}
 
 	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
+		if ( -1 !== container.className.indexOf( 'is-open' ) ) {
+			container.className = container.className.replace( ' is-open', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
-			container.className += ' toggled';
+			container.className += ' is-open';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}

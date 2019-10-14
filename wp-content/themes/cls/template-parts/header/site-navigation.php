@@ -5,10 +5,6 @@
 ?>
 <?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'cls' ); ?>">
-    <div class="mobile-menu-toggle" data-hide-for="medium">
-        <button class="menu-toggle" type="button"></button>
-        <div class="title-bar-title screen-reader-text"><?php esc_html_e( 'Menu', 'cls' ); ?></div>
-    </div>
     <?php
     wp_nav_menu(
         array(

@@ -34,4 +34,23 @@ body:not(.home) {
     }
 }
 
+/* Home */
+.home {
+    .entry-content {
+        .wp-block-cover__inner-container {
+            @include xy-grid-container;
+        }
 
+        .ugb-content-wrapper {
+            @include xy-grid-container;
+        }
+
+        .wp-block-columns {
+            @include xy-grid-container;
+        }
+
+        .ctf-tweets {
+            @include xy-grid-container;
+        }
+    }
+}

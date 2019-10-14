@@ -1,0 +1,27 @@
+/* Footer */
+.site-footer {
+    /* Layout */
+    .widget-area {
+        @include xy-grid-container;
+        @include xy-grid;
+    }
+
+    .widget-column {
+        
+        @include breakpoint(medium) {
+            @include xy-cell(50%);
+        }
+
+        @include breakpoint(large) {
+            @include xy-cell(3);
+        }
+    }
+
+    /* Styling */
+    background-color: $dark-gray;
+    color: $white;
+
+    a {
+        color: $white;
+    }
+}
