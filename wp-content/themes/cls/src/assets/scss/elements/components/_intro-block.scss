@@ -1,11 +1,14 @@
 /* Intro Block */
 .wp-block-custom-intro,
 .page-intro,
-.entry-intro,
 .entry-intro {
     padding: rem-calc(20);
     background-color: $primary-color;
     color: $white;
+
+    .inner-container {
+        @include xy-grid-container;
+    }
 }
 
 @each $color, $code in $foundation-palette {

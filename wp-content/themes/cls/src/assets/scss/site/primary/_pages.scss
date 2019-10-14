@@ -1,38 +1,46 @@
 /* Page Header */
 body:not(.home) {
     .site-main {
-        &> article > .entry-header {
-            display: flex;
-            flex-wrap: wrap;
-            height: rem-calc(118);
-            background-color: get-color(accent);
-            color: white;
-
-            .entry-title {
-                margin-bottom: 0;
-                flex-basis: 55%;
-                align-self: center;
+        &> article {
+            &> .entry-header {
+                display: flex;
+                flex-wrap: wrap;
+                height: rem-calc(118);
+                background-color: get-color(accent);
+                color: white;
             }
 
-            .shape-separator {
-                height: rem-calc(50);
-                flex-basis: 45%;
-                align-self: flex-end;            
-            }
+            .page-content-header {
+                display: flex;
 
-            @include breakpoint(medium) {
                 .entry-title {
-                    flex-basis: 75%;
+                    margin-bottom: 0;
+                    flex-basis: 55%;
+                    align-self: center;
                 }
-                
+    
                 .shape-separator {
-                    flex-basis: 25%;
-                    height: rem-calc(83); //sic
+                    height: rem-calc(50);
+                    flex-basis: 45%;
+                    align-self: flex-end;            
                 }
+
+                @include breakpoint(medium) {
+                    .entry-title {}
+                    
+                    .shape-separator {
+                        height: rem-calc(83); //sic
+                    }
+                }
+            }
+
+            &> .entry-content {
+                @include xy-grid-container;
             }
         }
     }
 }
+
 
 /* Home */
 .home {
@@ -50,6 +58,16 @@ body:not(.home) {
         }
 
         .ctf-tweets {
+            @include xy-grid-container;
+        }
+    }
+}
+/* History */
+.page-template-history-timeline {
+    .timeline-component {}
+
+    @include breakpoint(medium) {
+        .timeline-component {
             @include xy-grid-container;
         }
     }
