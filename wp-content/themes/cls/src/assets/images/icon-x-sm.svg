@@ -1,26 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>icon-x-sm</title>
-    <defs>
-        <polygon id="path-1" points="7.20000011 0 7.20000011 7.50000011 0 7.50000011 0 12.5000002 7.20000011 12.5000002 7.20000011 20.0000003 12.0000002 20.0000003 12.0000002 12.5000002 19.2000003 12.5000002 19.2000003 7.50000011 12.0000002 7.50000011 12.0000002 0"></polygon>
-    </defs>
-    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Template-#5---Locations-(active-pin)" transform="translate(-509.000000, -454.000000)">
-            <g id="Group-14" transform="translate(0.000000, 438.000000)">
-                <g id="Group-11" transform="translate(493.000000, 0.000000)">
-                    <g id="icon-x-sm" transform="translate(25.000000, 25.000000) rotate(-45.000000) translate(-25.000000, -25.000000) translate(15.000000, 15.000000)">
-                        <mask id="mask-2" fill="white">
-                            <use xlink:href="#path-1"></use>
-                        </mask>
-                        <use id="Mask" fill="#8873BA" fill-rule="nonzero" xlink:href="#path-1"></use>
-                        <g id="Color" mask="url(#mask-2)" fill="#878787">
-                            <g transform="translate(-1.600000, -1.600000)" id="color/main">
-                                <rect x="0" y="0" width="21.6000003" height="22.4000003" rx="3.20000005"></rect>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18">
+  <defs>
+    <path id="a" d="M7.2 0v7.5H0v5h7.2V20H12v-7.5h7.2v-5H12V0z"/>
+  </defs>
+  <g transform="rotate(-45 8.293 10.707)" fill="none" fill-rule="evenodd">
+    <mask id="b" fill="#fff">
+      <use xlink:href="#a"/>
+    </mask>
+    <use fill="#8873BA" fill-rule="nonzero" xlink:href="#a"/>
+    <g mask="url(#b)" fill="#878787">
+      <rect width="21.6" height="22.4" rx="3.2" transform="translate(-1.6 -1.6)"/>
     </g>
+  </g>
 </svg>

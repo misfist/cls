@@ -1,21 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="51px" height="43px" viewBox="0 0 51 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
-    <title>Group 2</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Header-(Expanded,-default)" transform="translate(-130.000000, -23.000000)">
-            <g id="CLS_Logo_Tagline" transform="translate(130.000000, 22.000000)">
-                <g id="Group-51">
-                    <g id="Group-50" transform="translate(0.000000, 0.378643)">
-                        <g id="Group-2" transform="translate(0.000510, 1.442363)">
-                            <path d="M20.8125855,27.7508795 C16.9802325,27.7508795 13.8725055,24.645704 13.8725055,20.813351 C13.8725055,16.980998 16.9802325,13.873271 20.8125855,13.873271 L29.260602,13.873271 L29.260602,0.00076545 L20.8125855,0.00076545 C9.318078,0.00076545 1.05515596e-12,9.31884345 1.05515596e-12,20.813351 C1.05515596e-12,32.3078585 9.318078,41.623385 20.8125855,41.623385 L29.260602,41.623385 L29.260602,27.7508795 L20.8125855,27.7508795 Z" id="Fill-23" fill="#173C6F"></path>
-                            <polygon id="Fill-24" fill="#8269B4" points="50.0701257 20.8125855 50.0701257 20.8125855 29.2600917 -7.99360578e-14 50.0701257 -7.99360578e-14"></polygon>
-                            <polygon id="Fill-25" fill="#FF8C6E" points="29.2595814 41.6246607 29.2595814 41.6246607 50.0696154 20.8120752 50.0696154 41.6246607"></polygon>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51 43">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M20.813 28.572a6.939 6.939 0 110-13.878h8.448V.822h-8.448C9.32.822.001 10.14.001 21.634c0 11.495 9.318 20.81 20.812 20.81h8.448V28.572h-8.448z" fill="#173C6F"/>
+    <path fill="#8269B4" d="M50.07 21.634L29.26.82h20.81z"/>
+    <path fill="#FF8C6E" d="M29.26 42.446l20.81-20.813v20.813z"/>
+  </g>
 </svg>

@@ -1,11 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="60px" height="30px" viewBox="0 0 60 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
-    <title>blurb-arrow-down</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Staff-(3-tabs)" transform="translate(-1224.000000, -82.000000)" fill="#7E6BAC">
-            <polygon id="blurb-arrow-down" transform="translate(1254.150001, 82.150001) rotate(-315.000000) translate(-1254.150001, -82.150001) " points="1275.3 61 1233 103.300002 1275.3 103.300002"></polygon>
-        </g>
-    </g>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+  <path d="M60.06.15H.24l29.91 29.91z" fill="#7E6BAC" fill-rule="evenodd"/>
 </svg>

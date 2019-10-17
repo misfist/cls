@@ -1,11 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="10px" height="16px" viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Path 6</title>
-    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.4" stroke-linecap="round">
-        <g id="Template-#3---Our-Story" transform="translate(-248.000000, -1167.000000)" stroke="#666666" stroke-width="2">
-            <g id="Group-3" transform="translate(13.000000, 1166.000000)">
-                <polyline id="Path-6" points="236.5 15.8847656 243 9.38476562 236.5 2.88476562"></polyline>
-            </g>
-        </g>
-    </g>
+<svg width="10" height="16" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.5 14.885l6.5-6.5-6.5-6.5" stroke="#666" stroke-width="2" fill="none" fill-rule="evenodd" opacity=".4" stroke-linecap="round"/>
 </svg>

@@ -47,3 +47,17 @@
                 transform: skew($deg);
     }
 }
+
+@mixin container($max-width: $grid-container) {
+    $gutter: map-get($grid-margin-gutters, medium);
+    width: 100%;
+    max-width: $max-width;
+    padding-right: calc(#{$gutter}/2);
+    padding-left: calc(#{$gutter}/2);
+
+    @include breakpoint(medium) {
+        $gutter: map-get($grid-margin-gutters, medium);
+        padding-right: calc(#{$gutter}/2);
+        padding-left: calc(#{$gutter}/2);
+    }
+}

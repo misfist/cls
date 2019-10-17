@@ -1,11 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="15px" height="22px" viewBox="0 0 15 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>nav-separator</title>
-    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-        <g id="Header-(Expanded,-default)" transform="translate(-672.000000, -46.000000)" stroke="#1B3E70">
-            <g id="Group" transform="translate(567.000000, 46.000000)">
-                <path d="M118.9639,0.5 L105.9639,21.5" id="nav-separator"></path>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 22">
+  <path d="M13.964.5l-13 21" stroke="#1B3E70" fill="none" fill-rule="evenodd" stroke-linecap="square"/>
 </svg>

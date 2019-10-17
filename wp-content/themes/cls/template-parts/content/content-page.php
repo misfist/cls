@@ -11,15 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if( !is_home() && !is_front_page() ) : ?>
-		<header class="entry-header page-content-header">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<div class="shape-separator">
-				<div class="split-left"></div>
-				<div class="split-right">
-					<div class="shape"></div>
-				</div>
-			</div>
-		</header><!-- .entry-header -->
+		<?php get_template_part( 'template-parts/content/content-page-header' ); ?>
 	<?php endif; ?>
 
 	<?php get_template_part( 'template-parts/content/content-intro' ); ?>
