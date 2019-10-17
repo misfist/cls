@@ -70,7 +70,6 @@ $minimized-height: rem-calc(87); //sic
         margin-left: auto;
 
         align-self: center;
-        // background-color: $white;
 
         img {
             height: rem-calc(69);
@@ -117,6 +116,11 @@ $minimized-height: rem-calc(87); //sic
         }
 
         .site-main {}
+    }
+
+    .main-navigation {
+        display: flex;
+        flex-wrap: nowrap;
     }
 
 }

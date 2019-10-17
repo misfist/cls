@@ -1,11 +1,16 @@
 @each $color, $code in $foundation-palette {
 	.has-#{$color}-page-color {
-        .site-main {
-            &> article > .entry-header {
+            .page-content-header {
 
                 .shape-separator {
                     background-color: $code;
                     @include skew($deg: -40deg, $left: -20px, $width: 40px, $bg: #{$code});
+                }
+
+                .side-spacing {
+                    &:last-of-type {
+                        background-color: $code;
+                    }
                 }
 
                 @include breakpoint(medium) {
@@ -17,5 +22,4 @@
 
             }
         }
-    }
 }

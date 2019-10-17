@@ -3,35 +3,11 @@ body:not(.home) {
     .site-main {
         &> article {
             &> .entry-header {
-                display: flex;
-                flex-wrap: wrap;
-                height: rem-calc(118);
+                // display: flex;
+                // flex-wrap: wrap;
+                // height: rem-calc(118);
                 background-color: get-color(accent);
                 color: white;
-            }
-
-            .page-content-header {
-                display: flex;
-
-                .entry-title {
-                    margin-bottom: 0;
-                    flex-basis: 55%;
-                    align-self: center;
-                }
-    
-                .shape-separator {
-                    height: rem-calc(50);
-                    flex-basis: 45%;
-                    align-self: flex-end;            
-                }
-
-                @include breakpoint(medium) {
-                    .entry-title {}
-                    
-                    .shape-separator {
-                        height: rem-calc(83); //sic
-                    }
-                }
             }
 
             &> .entry-content {
@@ -39,8 +15,66 @@ body:not(.home) {
             }
         }
     }
-}
 
+    .page-content-header {
+        $gutter: map-get( $grid-margin-gutters, small );
+        display: grid;
+        grid-template-columns: 1fr minmax(auto, #{$grid-container}) 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "side-spacing-left container side-spacing-right";
+        height: rem-calc(118);
+        border-top: rem-calc(48) solid get-color(accent);
+        
+        .side-spacing {
+            &:first-of-type {
+                grid-area: side-spacing-left;
+                background-color: get-color(accent);
+            }
+
+            &:last-of-type {
+                grid-area: side-spacing-right;
+            }
+        }
+        
+        .container {
+            grid-area: container;
+            display: flex;
+            background-color: get-color(accent);
+        }
+
+        .entry-title {
+            flex: 1 1 auto;
+            line-height: 1;
+            padding-right: calc(#{$gutter}/2);
+            padding-left: calc(#{$gutter}/2);
+            background-color: get-color(accent);
+        }
+
+        .shape-separator {
+            height: rem-calc(50);
+            flex-basis: rem-calc(171); //sic   
+            align-self: flex-end;   
+        }
+
+        @include breakpoint(medium) {
+            $gutter: map-get( $grid-margin-gutters, medium );
+            border-top: rem-calc(53) solid get-color(accent); //sic
+            height: rem-calc(136);
+
+            .entry-title {
+                flex: 1 1 auto;
+                padding-right: calc(#{$gutter}/2);
+                padding-left: calc(#{$gutter}/2);
+                margin-bottom: 0;
+            }
+            
+            .shape-separator {
+                height: rem-calc(83); //sic
+                flex-basis: rem-calc(228);
+            }
+        }
+    }
+}
 
 /* Home */
 .home {
@@ -62,6 +96,7 @@ body:not(.home) {
         }
     }
 }
+
 /* History */
 .page-template-history-timeline {
     .timeline-component {}
