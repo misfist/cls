@@ -8,7 +8,11 @@
     background-color: $white;
 }
 
-@include breakpoint( small only ) {
+/**
+ * Medium and Smaller
+ * @see https://foundation.zurb.com/sites/docs/media-queries.html
+ */
+@include breakpoint( medium down ) {
     $header-height: rem-calc(70);
 
     .site-header {}
@@ -43,7 +47,7 @@
 $header-height: rem-calc(112);
 $minimized-height: rem-calc(87); //sic
 
-@include breakpoint(medium) {
+@include breakpoint(large) {
 
     .site-header {
         
@@ -125,7 +129,7 @@ $minimized-height: rem-calc(87); //sic
 
 }
 
-@include breakpoint(xlarge) {
+@include breakpoint(large) {
     .site-header {
         // @include xy-grid-container;
     }

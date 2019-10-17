@@ -135,16 +135,16 @@ $dark-nav-color: $secondary-color;
 
 $breakpoints: (
   small: 0,
-  // medium: 640px,
-  tablet: 640px,
-  medium: 934px,  
+  medium: 640px,
+  // tablet: 640px,
+  // medium: 934px,  
   // large: 1024px,
   large: 1128px,
   xlarge: 1200px,
   xxlarge: 1440px,
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small tablet medium large xlarge);
+$breakpoint-classes: (small medium large);
 
 // 3. The Grid
 // -----------
@@ -433,8 +433,9 @@ $dropdownmenu-background: null;
 $dropdownmenu-submenu-background: $white;
 $dropdownmenu-padding: $global-menu-padding;
 $dropdownmenu-nested-margin: 0;
-$dropdownmenu-submenu-padding: $dropdownmenu-padding;
-$dropdownmenu-border: 1px solid $medium-gray;
+// $dropdownmenu-submenu-padding: $dropdownmenu-padding;
+$dropdownmenu-submenu-padding: rem-calc(31);
+$dropdownmenu-border: none;
 $dropdown-menu-item-color-active: get-color(primary);
 $dropdown-menu-item-background-active: transparent;
 

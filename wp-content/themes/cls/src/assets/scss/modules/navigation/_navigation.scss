@@ -34,6 +34,7 @@
     
   }
 
+  /* Menu item with class muted - used for En Espanol */
   .muted {
     a {
       font-size: rem-calc(13); //sic
@@ -42,6 +43,7 @@
     }
   }
 
+  /* Menu item with class highlighted - used for Donate and Get Help "buttons" */
   .highlighted {
     a {
       padding: rem-calc(30) rem-calc(47); //sic
@@ -88,8 +90,11 @@
 
 }
 
-/* Small Screens Only */
-@include breakpoint(small only) {
+/**
+ * Medium and Smaller
+ * @see https://foundation.zurb.com/sites/docs/media-queries.html
+ */
+@include breakpoint(medium down) {
 
   /* Toggle Button */
 	.menu-toggle {
@@ -120,6 +125,7 @@
       background-color: $white;
     }
 
+    /* Class added when mobile nav clicked */
     &.is-open {
       position: fixed;
       height: 100vh;
@@ -180,8 +186,9 @@
 
 }
 
-/* Medium+ Screens */
-@include breakpoint(medium) {
+/**
+ * Large+ Screens */
+@include breakpoint(large) {
   .menu-toggle {
     display: none;
   }
@@ -190,6 +197,8 @@
     text-align: center;
     flex-shrink: 0;
 
+    /**
+     * Structure */
     .main-menu {
       display: flex;
       justify-content: center;
@@ -201,79 +210,99 @@
         align-items: center;
 
         /* Separators */
-        &:not(.highlighted):not(.muted) {
-          &> a {
-            padding-right: 0;
-            padding-left: rem-calc(7);
+        // &:not(.highlighted):not(.muted) {
+        //   &> a {
+        //     padding-right: 0;
+        //     padding-left: rem-calc(7);
 
-            &:after {
-              content: '';
-              display: inline-block;
-              background-image: url("data:image/svg+xml,%3Csvg width='15px' height='22px' viewBox='0 0 15 22' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Enav-separator%3C/title%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='square'%3E%3Cg id='Header-(Expanded,-default)' transform='translate(-672.000000, -46.000000)' stroke='%231B3E70'%3E%3Cg id='Group' transform='translate(567.000000, 46.000000)'%3E%3Cpath d='M118.9639,0.5 L105.9639,21.5' id='nav-separator'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-              background-size: rem-calc(15) rem-calc(22);
-              background-repeat: no-repeat;
-              background-position: right bottom;
-              width: rem-calc(15);
-              height: rem-calc(15);
-              margin-left: rem-calc(11);
-            }
-          }
-        }
+        //     &:after {
+        //       content: '';
+        //       display: inline-block;
+        //       background-image: url("data:image/svg+xml,%3Csvg width='15px' height='22px' viewBox='0 0 15 22' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Enav-separator%3C/title%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='square'%3E%3Cg id='Header-(Expanded,-default)' transform='translate(-672.000000, -46.000000)' stroke='%231B3E70'%3E%3Cg id='Group' transform='translate(567.000000, 46.000000)'%3E%3Cpath d='M118.9639,0.5 L105.9639,21.5' id='nav-separator'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        //       background-size: rem-calc(15) rem-calc(22);
+        //       background-repeat: no-repeat;
+        //       background-position: right bottom;
+        //       width: rem-calc(15);
+        //       height: rem-calc(15);
+        //       margin-left: rem-calc(11);
+        //     }
+        //   }
+        // }
         
-        &.focus,
-        &.current-menu-parent,
-        .current-menu-item {
-          &> a {
-            color: $primary-color;
-          }
-        }
+        // &.focus,
+        // &.current-menu-parent,
+        // .current-menu-item {
+        //   &> a {
+        //     color: $primary-color;
+        //   }
+        // }
 
       }
 
-      ul {
-        box-shadow: 0 3px 3px $black;
-        float: left;
-        position: absolute;
-        top: 100%;
-        left: -999em;
-        z-index: 99999;
-        text-align: left;
-        background-color: $white;
-        
-        ul {
-          left: -999em;
-          top: 0;
-        }
-
-        li {
-          &:hover > ul {
-            left: 100%;
-          }
-          &.focus > ul {
-            left: 100%;
-          }
-        }
-
-        a {
-          width: 200px;
-        }
-
-      }
-
+      /* Sub-menus */
       li {
         position: relative;
-
-        &:hover > ul {
-          display: block;
-          left: auto;
+        
+        ul {
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          transition: all 0.5s ease;
+          left: - $dropdownmenu-submenu-padding;
+          // left: - rem-calc(12);
+          top: 100%;
+          z-index: 99999;
+          // width: rem-calc(187); //sic
+          min-width: $dropdownmenu-min-width;
+          display: none;
         }
+
+        &:hover > ul,
+        ul:hover,
         &.focus > ul {
+          visibility: visible;
+          opacity: 1;
           display: block;
-          left: auto;
         }
       }
 
     }
+
+    /* 
+     * Styling */
+     .main-menu > li {
+
+      /* Separators */
+      &:not(.highlighted):not(.muted) {
+       &> a {
+         padding-right: 0;
+         
+
+         &:after {
+           content: '';
+           display: inline-block;
+           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 22'%3E%3Cpath d='M13.964.5l-13 21' stroke='%231B3E70' fill='none' fill-rule='evenodd' stroke-linecap='square'/%3E%3C/svg%3E");
+           background-size: rem-calc(15) rem-calc(22);
+           background-repeat: no-repeat;
+           background-position: 2px center;
+           width: rem-calc(15);
+           height: rem-calc(21);
+           margin-left: rem-calc(12);
+         }
+       }
+      //  &:not(:first-child) {
+      //   padding-left: rem-calc(7);
+      //  }
+     }
+     
+     &.focus,
+     &.current-menu-parent,
+     .current-menu-item {
+       &> a {
+         color: $primary-color;
+       }
+     }
+   }
 
     a {
       padding: 0 .5em;
@@ -286,8 +315,25 @@
       }
     }
 
-    ul ul {
+    /* Sub-menus */
+    .sub-menu {
+      text-align: left;
+      background-color: $white;
+      box-shadow: 1px 5px 5px 0px rgba($black,.21);
+      padding: rem-calc(6) $dropdownmenu-submenu-padding rem-calc(15) $dropdownmenu-submenu-padding; //sic
+
+      li {
+        padding: rem-calc(8) 0 rem-calc(8) rem-calc(7);
+
+        &:hover {
+          a {
+            color: $dropdown-menu-item-color-active;
+          }
+        }
+      }
+
       a {
+        padding: 0;
         font-size: rem-calc(15); //sic
         font-weight: $font-weight-bold;
       }
@@ -297,21 +343,13 @@
             color: $black-3;
           }
       }
-
-      li {
-        padding: rem-calc(8) rem-calc(10);
-      }
     }
 
     .muted {
-      padding-right: rem-calc(60);
+      padding-right: rem-calc(42);
       a {
         font-size: rem-calc(11); //sic
       }
-    }
-
-    .sub-menu {
-      z-index: 3;
     }
 
   }
