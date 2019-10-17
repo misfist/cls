@@ -188,6 +188,7 @@
 
   .main-navigation {
     text-align: center;
+    flex-shrink: 0;
 
     .main-menu {
       display: flex;
