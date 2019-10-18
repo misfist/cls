@@ -77,12 +77,12 @@ function themeReady() {
             const shrinkOn = 200;
 
             /** Stick Header */
-            if (window.scrollY >= headerElTop) {
-                document.body.classList.add('is-fixed');
-            } else {
-                document.body.style.paddingTop = 0;
-                document.body.classList.remove('is-fixed');
-            }
+            // if (window.scrollY >= headerElTop) {
+            //     document.body.classList.add('is-fixed');
+            // } else {
+            //     document.body.style.paddingTop = 0;
+            //     document.body.classList.remove('is-fixed');
+            // }
 
             /** Shrink Header */
             if (window.scrollY > shrinkOn) {

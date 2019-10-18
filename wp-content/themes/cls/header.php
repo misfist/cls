@@ -19,7 +19,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( 'is-fixed' ); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cls' ); ?></a>
 		<header id="masthead" class="site-header">
