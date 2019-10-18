@@ -1,5 +1,6 @@
 import './vendor/foundation.js';
 import './vendor/navigation.js';
+import { CountUp } from './vendor/countUp.min.js';
 
 function themeReady() {
     console.log( 'loaded app.js' );
@@ -93,6 +94,24 @@ function themeReady() {
     }
     if(headerEl) {
         window.addEventListener('scroll', stickyNavigation, false);
+    }
+
+    /**
+     * Number Counter
+     */
+    const counterEls = document.querySelectorAll('.wp-block-number-counter');
+    if(counterEls) {
+        const counters = Array.from(counterEls);
+        counters.forEach( function(counter, index) {
+            let counterEl = counter.querySelector('.block-number');
+            if(counterEl) {
+                const count = [];
+                let number = counterEl.getAttribute('data-number');
+                const options = {};
+                count[index] = new CountUp( counterEl, number , options );
+                count[index].start();
+            }
+        } );
     }
 
 }

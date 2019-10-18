@@ -3,7 +3,7 @@
  * Block: Curated Posts
  */
 ?>
-<section class="curated-posts posts">
+<section class="wp-block-curated-posts posts">
     <div class="curated-posts__inner-container">
         <header><h2 class="section-title"><?php block_field( 'block-title' ); ?></h2></header>
         <?php if ( block_rows( 'posts' ) ) :

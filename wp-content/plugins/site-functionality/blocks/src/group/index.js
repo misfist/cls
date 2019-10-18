@@ -50,9 +50,6 @@ registerBlockType( 'custom/group', {
 		__( 'group', 'site-functionality' ),
 		__( 'section', 'site-functionality' ),
 	],
-	keywords: [
-		__( 'group section content', 'core-blocks' ),
-	],
 	attributes: blockAttributes,
 	supports: {
 		align: [ 'full', 'wide' ],
@@ -79,7 +76,7 @@ registerBlockType( 'custom/group', {
 		} );
 
 		return (
-			<section 
+			<div 
 				className={classNames}
 			>
 				<InspectorControls> 
@@ -99,7 +96,7 @@ registerBlockType( 'custom/group', {
 				<div className="wp-block-functionality-group__inner-container inner-container">
 					<InnerBlocks />
 				</div>
-			</section>
+			</div>
 		);
 	},
 
@@ -120,13 +117,13 @@ registerBlockType( 'custom/group', {
 		} );
 
 		return (
-			<section 
+			<div 
 				className={classNames}
 			>
 				<div className="wp-block-functionality-group__inner-container inner-container">
 					<InnerBlocks.Content />
 				</div>
-		  </section>
+		  </div>
 		);
 	  },
 } );

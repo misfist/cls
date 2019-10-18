@@ -1,0 +1,94 @@
+.wp-block-number-counter {
+
+    /**
+     * Structure
+     */
+
+    .inner-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .block-heading {
+        display: none;
+        flex-basis: 100%;
+    }
+
+    .block-number {
+        flex-basis: 73%;
+    }
+
+    .block-image {
+        flex-basis: 27%;
+        text-align: right;
+    }
+
+    .block-content {
+        flex-basis: 73%;
+    }
+
+   /**
+    * Style
+    */
+    color: $white;
+
+    .block-heading {}
+
+    .block-number {
+        font-size: rem-calc(63.18); //sic (yes, this is really what the design file had)
+        font-weight: $font-weight-bold;
+    }
+
+    .block-image {}
+
+    .block-content {
+        font-size: rem-calc(18);
+        font-weight: $font-weight-bold;
+
+        p {
+            line-height: 21px; 
+        }
+    }
+
+    @include breakpoint(medium) {
+       /**
+        * Structure
+        */
+        .block-heading {}
+
+        .block-number {
+            flex-basis: auto;
+            padding-right: rem-calc(26);
+
+            &:nth-child(2) {
+                padding-right: rem-calc(10);
+            }
+        }
+    
+        .block-image {
+            flex-basis: auto;
+        }
+    
+        .block-content {
+            flex-basis: 100%;
+        }
+
+       /**
+        * Style
+        */
+        .block-heading {}
+
+        .block-number {
+            font-size: rem-calc(54);
+        }
+    
+        .block-image {}
+    
+        .block-content {
+            font-size: rem-calc(22);
+        }
+
+    }
+}

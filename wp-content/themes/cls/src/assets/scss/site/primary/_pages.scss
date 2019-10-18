@@ -79,11 +79,20 @@ body:not(.home) {
 /* Home */
 .home {
     .entry-content {
+
+        /**
+         * Structure
+         */
+        .wp-block-cover {
+            margin-bottom: 0;
+        }
+
         .wp-block-cover__inner-container {
             @include xy-grid-container;
         }
 
-        .ugb-content-wrapper {
+        .ugb-content-wrapper,
+        .wp-block-custom-group .inner-container {
             @include xy-grid-container;
         }
 
@@ -93,6 +102,65 @@ body:not(.home) {
 
         .ctf-tweets {
             @include xy-grid-container;
+        }
+
+        @include breakpoint(medium) {
+            .wp-block-cover__inner-container {}
+    
+            .ugb-content-wrapper {}
+    
+            .wp-block-columns {}
+    
+            .ctf-tweets {}
+        }
+
+        @include breakpoint(xlarge) {
+            
+        }
+
+        /**
+         * Style
+         */
+        .wp-block-custom-group {
+            &.has-background {
+                background-color: $secondary-color;
+            }
+            .wp-block-column {
+                &:not(:last-of-type) {
+                    border-bottom: 6px solid rgba($white,0.25);
+                }
+            }
+        }
+
+        @include breakpoint(medium) {
+            .wp-block-cover__inner-container {}
+    
+            .wp-block-custom-group,
+            .ugb-content-wrapper {}
+    
+            .wp-block-columns {
+                padding: rem-calc(38) 0;
+
+                .wp-block-column {
+                    padding: 0 rem-calc(62);
+                    margin-bottom: 0;
+
+                    &:not(:last-of-type) {
+                        border-right: 6px solid rgba($white,0.25);
+                        border-bottom: none;
+                    }
+
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+
+                    &:last-of-type {
+                        padding-right: 0;
+                    }
+                }
+            }
+    
+            .ctf-tweets {}
         }
     }
 }

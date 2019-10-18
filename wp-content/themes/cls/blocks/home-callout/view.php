@@ -3,7 +3,7 @@
  * Block: Home Callout
  */
 ?>
-<aside class="home-callout">
+<aside class="wp-block-home-callout">
     <div class="home-callout__inner-container">
         <header><?php block_field( 'heading' ); ?></header>
         <div><?php block_field( 'content' ); ?></div>

@@ -98,6 +98,12 @@ body {
 	list-style: none;
 }
 
+.wp-block-custom-group {
+	&.has-background {
+		background-color: #dedede;
+	}
+}
+
 .acf-fields ul.acf-swatch-list {
 	.swatch-toggle {
 		background-image: none;
