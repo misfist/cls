@@ -84,6 +84,7 @@ body:not(.home) {
          * Structure
          */
         .wp-block-cover {
+            height: rem-calc(540);
             margin-bottom: 0;
         }
 
@@ -98,6 +99,8 @@ body:not(.home) {
 
         .wp-block-columns {
             @include xy-grid-container;
+
+            .wp-block-column {}
         }
 
         .ctf-tweets {
@@ -115,7 +118,9 @@ body:not(.home) {
         }
 
         @include breakpoint(xlarge) {
-            
+            .wp-block-cover {
+                height: rem-calc(470);
+            }
         }
 
         /**
@@ -125,13 +130,11 @@ body:not(.home) {
             &.has-background {
                 background-color: $secondary-color;
             }
-            .wp-block-column {
-                &:not(:last-of-type) {
-                    border-bottom: 6px solid rgba($white,0.25);
-                }
-            }
         }
 
+        /**
+         * Medium+
+         */
         @include breakpoint(medium) {
             .wp-block-cover__inner-container {}
     
