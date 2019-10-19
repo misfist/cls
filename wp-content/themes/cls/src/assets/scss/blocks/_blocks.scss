@@ -427,5 +427,11 @@ Frontend styles for gutenberg blocks
 .wp-block-file .wp-block-file__button{
 @include button();
 }
-  
+
+/* Number Counter */
+
 @import "./counter";
+
+/* Home Callout */
+
+@import "./home-callout";

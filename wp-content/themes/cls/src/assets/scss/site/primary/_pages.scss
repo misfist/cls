@@ -83,10 +83,7 @@ body:not(.home) {
         /**
          * Structure
          */
-        .wp-block-cover {
-            height: rem-calc(540);
-            margin-bottom: 0;
-        }
+        .wp-block-cover {}
 
         .wp-block-cover__inner-container {
             @include xy-grid-container;
@@ -113,15 +110,10 @@ body:not(.home) {
             .ugb-content-wrapper {}
     
             .wp-block-columns {}
-    
-            .ctf-tweets {}
+
         }
 
-        @include breakpoint(xlarge) {
-            .wp-block-cover {
-                height: rem-calc(470);
-            }
-        }
+        @include breakpoint(xlarge) {}
 
         /**
          * Style
@@ -130,6 +122,11 @@ body:not(.home) {
             &.has-background {
                 background-color: $secondary-color;
             }
+        }
+
+        .ctf-type-usertimeline {
+            background-color: get-color(accent);
+            color: $white;
         }
 
         /**

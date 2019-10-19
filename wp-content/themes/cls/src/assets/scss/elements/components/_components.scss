@@ -1,5 +1,4 @@
 /* Intro Block */
-
 @import './intro-block';
 
 /* Content Footer Block */
@@ -14,8 +13,12 @@
 /* Tabs */
 
 /* Twitter Feeds */
+@import './twitter-timeline';
 
 /* Number Counter */
 
 /* Divider Shapes */
 @import './divider-shapes';
+
+/* Hero */
+@import './hero';

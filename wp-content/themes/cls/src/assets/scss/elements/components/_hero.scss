@@ -1,0 +1,10 @@
+.wp-block-cover {
+    height: rem-calc(540);
+    margin-bottom: 0;
+}
+
+@include breakpoint(xlarge) {
+    .wp-block-cover {
+        height: rem-calc(470);
+    }
+}

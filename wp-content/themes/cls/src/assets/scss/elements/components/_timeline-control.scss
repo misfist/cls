@@ -1,6 +1,6 @@
 /* Timeline Control */
 
-$arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 0 32 33' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Template-%233---Our-Story' transform='translate(-199.000000, -891.000000)' fill='%23F58B6F'%3E%3Cg id='Group' transform='translate(143.000000, 890.000000)'%3E%3Cpath d='M60.3772168,5 L67.7981968,12.590552 L60.5252523,19.806661 C58.4483314,21.8659635 58.4988864,25.2547155 60.6378282,27.3760452 C62.7762489,29.4968581 66.1931355,29.5469967 68.2700564,27.4876942 L75.4452056,20.3716253 L83,28.0193973 L82.7844129,5.33043523 L60.3772168,5 Z' id='Fill-1-Copy-3' transform='translate(71.000000, 17.000000) rotate(-315.000000) translate(-71.000000, -17.000000) '%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E";
+$arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 33'%3E%3Cpath d='M15.974.003l-.12 10.615-10.245-.04C2.684 10.565.323 12.998.336 16.01c.012 3.012 2.393 5.463 5.318 5.476l10.105.041-.066 10.75 15.891-16.196L15.974.003z' fill='%23F58B6F' fill-rule='evenodd'/%3E%3C/svg%3E";
 
 .timeline-component {
     font-size: rem-calc(20);
@@ -178,7 +178,7 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
 
             &.is-active {
                 /* Dot */
-                background-image: url("data:image/svg+xml,%0A%3Csvg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Template-%233---Our-Story' transform='translate(-252.000000, -1113.000000)' fill='%23F58B6F'%3E%3Ccircle id='Oval' cx='258' cy='1119' r='6'%3E%3C/circle%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Ccircle cx='258' cy='1119' r='6' transform='translate(-252 -1113)' fill='%23F58B6F' fill-rule='evenodd'/%3E%3C/svg%3E");
                 background-repeat: no-repeat;
                 background-position: center center;
                 z-index: 1;
@@ -264,7 +264,7 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
             content: '';
             display: inline-block;
             margin-left: 1rem;
-            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='10px' height='16px' viewBox='0 0 10 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EPath 6%3C/title%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' opacity='0.4' stroke-linecap='round'%3E%3Cg id='Template-%233---Our-Story' transform='translate(-248.000000, -1167.000000)' stroke='%23666666' stroke-width='2'%3E%3Cg id='Group-3' transform='translate(13.000000, 1166.000000)'%3E%3Cpolyline id='Path-6' points='236.5 15.8847656 243 9.38476562 236.5 2.88476562'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 14.885l6.5-6.5-6.5-6.5' stroke='%23666' stroke-width='2' fill='none' fill-rule='evenodd' opacity='.4' stroke-linecap='round'/%3E%3C/svg%3E");
             height: rem-calc(13);
             width: rem-calc(6.5);
             background-position: 1px right;
@@ -324,9 +324,7 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
                 padding: rem-calc(20) 0;
             }
 
-            ul {
-                // padding: rem-calc(20) 0;
-                
+            ul {                
                 a {
                     margin-left: rem-calc(10);
                     padding: rem-calc(5) rem-calc(20) rem-calc(5) rem-calc(10);
@@ -342,7 +340,7 @@ $arrow_svg: "data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 
                         content: '';
                         position: absolute;
                         display: inline-block;
-                        background-image: url("data:image/svg+xml,%0A%3Csvg width='32px' height='33px' viewBox='0 0 32 33' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Design' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Template-%233---Our-Story' transform='translate(-199.000000, -891.000000)' fill='%23F58B6F'%3E%3Cg id='Group' transform='translate(143.000000, 890.000000)'%3E%3Cpath d='M60.3772168,5 L67.7981968,12.590552 L60.5252523,19.806661 C58.4483314,21.8659635 58.4988864,25.2547155 60.6378282,27.3760452 C62.7762489,29.4968581 66.1931355,29.5469967 68.2700564,27.4876942 L75.4452056,20.3716253 L83,28.0193973 L82.7844129,5.33043523 L60.3772168,5 Z' id='Fill-1-Copy-3' transform='translate(71.000000, 17.000000) rotate(-315.000000) translate(-71.000000, -17.000000) '%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 33'%3E%3Cpath d='M15.974.003l-.12 10.615-10.245-.04C2.684 10.565.323 12.998.336 16.01c.012 3.012 2.393 5.463 5.318 5.476l10.105.041-.066 10.75 15.891-16.196L15.974.003z' fill='%23F58B6F' fill-rule='evenodd'/%3E%3C/svg%3E");
                         background-size: rem-calc(33); //[sic]
                         background-position: center center;
                         height: rem-calc(33); //[sic]

@@ -1,0 +1,40 @@
+.ctf-type-usertimeline {
+
+   /**
+    * Structure
+    */
+    .ctf-tweets {
+        @include xy-grid;
+    }
+
+    .ctf-item {}
+
+   /**
+    * Style
+    */
+    .ctf-tweets {}
+
+    .ctf-item {}
+    
+    @include breakpoint(medium) {
+
+       /**
+        * Structure
+        */
+        .ctf-tweets {}
+
+        .ctf-item {
+            @include xy-cell(4);
+        }
+
+       /**
+        * Style
+        */
+        .ctf-tweets {}
+
+        .ctf-item {}
+
+
+    }
+
+}

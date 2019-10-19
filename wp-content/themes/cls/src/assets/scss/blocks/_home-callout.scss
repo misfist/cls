@@ -1,0 +1,118 @@
+.wp-block-home-callout {
+
+    /**
+     * Structure
+     */
+     .inner-container {
+        width: 88%;
+        max-width: rem-calc(500);
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: rem-calc(30);
+    }
+
+    .block-header {
+        width: 92%;
+        margin-left: -8px;
+        // margin-top: rem-calc(46);
+    }
+
+    .block-content {
+        margin-top: rem-calc(38);
+        width: 108%;
+        margin-left: -4%;
+        margin-right: -4%;
+    }
+
+    .block-footer {
+        margin-top: rem-calc(32);
+        padding-bottom: rem-calc(32);
+
+        a {
+            display: inline-block;
+            margin-left: -8px;
+        }
+    }
+
+     /**
+      * Style
+      */
+    .inner-container {
+        background-image: url('../images/home-graphic-bg-mobile.svg');
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        color: $white;
+    }
+
+    .block-header {
+        padding: rem-calc(30) rem-calc(50);
+        font-size: rem-calc(22.23); //sic
+        font-weight: $font-weight-xbold;
+        line-height: rem-calc(26.91); //sic
+        background-color: $primary-color;
+        border-radius: 60px;
+    }
+
+    .block-content {
+        padding: rem-calc(38) rem-calc(32) rem-calc(24) rem-calc(38);
+        background-color: get-color(secondary-dark);
+        border-radius: 30px;
+
+        p {
+            font-size: rem-calc(16.38); //sic
+            line-height: 19.89px;
+        }
+
+        strong {
+            font-size: rem-calc(18.72); //sic
+            font-weight: $font-weight-xbold;
+            line-height: 22.23px;
+        }
+    }
+
+    .block-footer {
+        font-size: rem-calc(14.98);
+
+        a {
+            padding: rem-calc(8) rem-calc(20);
+            background-color: $primary-color;
+            border-radius: 28px;
+            color: $white;
+            font-weight: $font-weight-black;
+
+            &:hover {
+                background-color: scale-color($primary-color, $lightness: -14%);
+            }
+
+            .icon {
+                margin-left: rem-calc(12);
+                vertical-align: middle;
+                display: inline-block;
+                background-image: url('../images/icon-link-arrow.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 15px 15px;
+                width: rem-calc(15);
+                height: rem-calc(15);
+                line-height: 22.47px;
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+
+        /**
+        * Structure
+        */
+
+        /**
+        * Style
+        */
+        .inner-container {}
+
+    }
+    
+
+}

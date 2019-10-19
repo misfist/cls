@@ -99,7 +99,7 @@ function themeReady() {
     /**
      * Number Counter
      */
-    const counterEls = document.querySelectorAll('.wp-block-number-counter');
+    const counterEls = document.querySelectorAll('.wp-block-number-counter .number-counter');
     if(counterEls) {
         const counters = Array.from(counterEls);
         counters.forEach( function(counter, index) {
