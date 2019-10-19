@@ -53,7 +53,7 @@ function gutenberg_starter_theme_scripts() {
 
 	// wp_enqueue_script( 'cls-base-scripts', get_template_directory_uri() . '/dist/assets/js/foundation.js', array( 'jquery' ), '20151215', true );
 
-	wp_enqueue_script( 'cls-scripts', get_template_directory_uri() . '/dist/assets/js/app.js', null, '20151215', true );
+	wp_enqueue_script( 'cls-scripts', get_template_directory_uri() . '/dist/assets/js/app.js', array( 'jquery' ), '20151215', true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
