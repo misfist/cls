@@ -104,6 +104,18 @@ body {
 	}
 }
 
+/** === Shortcode === */
+.wp-block-shortcode {
+	padding: .25rem;
+	background-color: get-color(accent);
+	color: $white;
+
+	textarea {
+		color: get-color(accent);
+	}
+}
+
+/** === Page Color Swatches === */
 .acf-fields ul.acf-swatch-list {
 	.swatch-toggle {
 		background-image: none;
@@ -113,4 +125,26 @@ body {
 		border-radius: 50% !important;
 	}
 	label {}
+}
+
+/** === Cover Image === */
+.wp-block-cover {
+	background-color: rgba($secondary-color,0.1);
+	color: get-color(accent);
+
+	.wp-block-heading .editor-rich-text {
+		font-size: rem-calc(40);
+		text-align: initial;
+	}
+
+	.wp-block-heading,
+	.editor-rich-text,
+	.block-editor-rich-text {
+		color: get-color(accent);
+	}
+
+	.wp-block-paragraph {
+		font-size: rem-calc(18);
+		font-weight: $font-weight-bold;
+	}
 }

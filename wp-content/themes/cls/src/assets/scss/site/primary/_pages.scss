@@ -94,18 +94,14 @@ body:not(.home) {
             .wp-block-column {}
         }
 
-        .ctf-tweets {
-            @include xy-grid-container;
-        }
+        .wp-block-titter-timeline {}
 
         @include breakpoint(medium) {
             .wp-block-cover__inner-container {}
     
             .ugb-content-wrapper {}
     
-            .wp-block-columns {
-                @include clearfix;
-            }
+            .wp-block-columns {}
 
         }
 
@@ -120,7 +116,7 @@ body:not(.home) {
             }
         }
 
-        .ctf-type-usertimeline {}
+        .wp-block-titter-timeline {}
 
         /**
          * Medium+
@@ -132,7 +128,7 @@ body:not(.home) {
             .ugb-content-wrapper {}
     
             .wp-block-columns {
-                padding: rem-calc(38) 0;
+                padding: rem-calc(38) 0 0 0;
 
                 .wp-block-column {
                     padding: 0 rem-calc(62);
@@ -153,8 +149,9 @@ body:not(.home) {
                 }
             }
     
-            .ctf-tweets {}
+            .wp-block-titter-timeline {}
         }
+
     }
 }
 

@@ -3,9 +3,9 @@
  * Block: Curated Posts
  */
 ?>
-<section class="wp-block-curated-posts events">
+<div class="wp-block-curated-posts events">
     <div class="curated-posts__inner-container">
-        <header><h2 class="section-title"><?php block_field( 'block-title' ); ?></h2></header>
+        <header><h2 class="block-title"><?php block_field( 'block-title' ); ?></h2></header>
         <?php if ( block_rows( 'events' ) ) :
             while ( block_rows( 'events' ) ) : 
                 block_row( 'events' ); 
@@ -39,4 +39,4 @@
             wp_reset_postdata();
         endif; ?>
     </div>
-</section>
+</div>
