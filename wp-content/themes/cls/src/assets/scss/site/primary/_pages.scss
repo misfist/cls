@@ -103,7 +103,9 @@ body:not(.home) {
     
             .ugb-content-wrapper {}
     
-            .wp-block-columns {}
+            .wp-block-columns {
+                @include clearfix;
+            }
 
         }
 
@@ -118,10 +120,7 @@ body:not(.home) {
             }
         }
 
-        .ctf-type-usertimeline {
-            background-color: get-color(accent);
-            color: $white;
-        }
+        .ctf-type-usertimeline {}
 
         /**
          * Medium+

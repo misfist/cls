@@ -39,6 +39,7 @@ function gutenberg_starter_theme_fonts_url() {
  */
 function gutenberg_starter_theme_scripts() {
 
+	/** Don't load Custom Twitter Feeds styling */
 	wp_dequeue_style( 'ctf_styles' );
 
 	wp_enqueue_style( 'cls-base-style', get_stylesheet_uri() );
