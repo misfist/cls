@@ -68,7 +68,7 @@ if ( ! function_exists('site_functions_custom_post_type_event') ) {
 		register_post_type( 'event', $args );
 	
 	}
-	add_action( 'init', 'site_functions_custom_post_type_event', 0 );
+	// add_action( 'init', 'site_functions_custom_post_type_event', 0 );
 	
 }
 

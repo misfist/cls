@@ -91,7 +91,16 @@ body:not(.home) {
         .wp-block-columns {
             @include xy-grid-container;
 
-            .wp-block-column {}
+            .wp-block-column {
+                &:not(:last-of-type) {}
+
+                &:first-of-type {}
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                    align-self: flex-end;
+                }
+            }
         }
 
         .wp-block-titter-timeline {}

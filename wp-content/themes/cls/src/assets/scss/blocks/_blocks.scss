@@ -381,24 +381,28 @@ Frontend styles for gutenberg blocks
 	.has-#{$color}-color {
 		color: $code;
 	}
-  }
+}
   
 /** === Button === */
 .wp-block-button {
 
 	// add general foundation button styling
 	.wp-block-button__link {
-	@extend .button;
-	@each $color, $code in $foundation-palette {
+		@extend .button;
+		@each $color, $code in $foundation-palette {
 
-	&.has-#{$color}-background-color {
-		background-color: $code;
-	}
+			&.has-#{$color}-background-color {
+				background-color: $code;
+			}
 
-	&.has-#{$color}-color {
-		color: $code;
-	}
-	}
+			&.has-#{$color}-color {
+				color: $code;
+			}
+		}
+
+		text-transform: uppercase;
+		font-weight: $font-weight-black;
+		letter-spacing: 0.4px;
 	}
 
 	// add special styling for squared buttons
@@ -417,15 +421,18 @@ Frontend styles for gutenberg blocks
 	&.is-style-outline:focus,
 	&.is-style-outline:active {
 	// background: transparent;
-	.wp-block-button__link{
-	// background: transparent;
-	}
+		.wp-block-button__link{
+		// background: transparent;
+		}
 	}
 }
 
 /** === File === */
 .wp-block-file .wp-block-file__button{
-@include button();
+	@include button();
+	text-transform: uppercase;
+    font-weight: $font-weight-black;
+    letter-spacing: 0.4px;
 }
 
 /* Number Counter */

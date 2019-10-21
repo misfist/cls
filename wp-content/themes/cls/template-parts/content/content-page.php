@@ -18,8 +18,11 @@
 
 	<div class="entry-content">
 		<?php
-			cls_the_content();
-			// the_content();
+			if( !has_block( 'custom/intro' ) ) {
+				the_content();
+			} else {
+				cls_the_content();
+			}
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cls' ),

@@ -32,10 +32,14 @@
     /**
      * Style
      */
-     background-size: 600% !important;
-     background-repeat: no-repeat !important;
-     background-position: right 15% top !important;
      background-color: rgba($secondary-color,0.1);
+
+     /**
+      * Serve different background image to mobile
+      */
+     @include breakpoint(small only) {
+        background-image: url('../images/hero-bg-mobile.jpg') !important;
+     }
 
      .wp-block-cover__inner-container {
         padding: rem-calc(46) rem-calc(40) rem-calc(46) rem-calc(20);

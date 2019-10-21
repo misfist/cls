@@ -43,6 +43,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
+ * Custom fields that relate to presentation
+ */
+require get_template_directory() . '/inc/custom-fields.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
