@@ -163,11 +163,11 @@ body:not(.home) {
                 .wp-block-column {
 
                     &:first-of-type {
-                        @include xy-cell(7 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: right);
+                        @include xy-cell(6 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: right);
                         // padding-right: map-get($grid-margin-gutters, medium);
                     }
                     &:last-of-type {
-                        @include xy-cell(5 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: left);
+                        @include xy-cell(6 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: left);
                         // padding-left: map-get($grid-margin-gutters, medium);
                     }
                 }
