@@ -72,25 +72,19 @@
     }
 
     /**
-     * Small Only
+     * Medium & down - for breakpoint less than content max-width
      */
-    @include breakpoint(small only) {
+    @include breakpoint(large down) {
        /**
         * Structure
         */
-        .inner-container {
-            padding-right: 0 !important;
-            padding-left: 0 !important;
+        .inner-container {}
+
+        .number-counter {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
         }
-
-        // .wp-block-columns {    
-        //     padding-top: rem-calc(30);
-
-        //     .wp-block-column {
-        //         padding-top: rem-calc(14);
-        //         padding-bottom: rem-calc(20);
-        //     }
-        // }
 
        /**
         * Style
@@ -212,20 +206,3 @@
 
     }
 }
-
-// .wp-block-custom-group .wp-block-column {
-//     &:first-of-type {
-//         .block-image img {}
-//     }
-//     &:nth-child(2) {
-//         .block-image img {}
-
-//         .block-number {
-//             padding-right: rem-calc(5);
-            
-//         }
-//     }
-//     &:last-child {
-//         .block-image img {}
-//     }
-// }

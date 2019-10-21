@@ -3,9 +3,11 @@
  * Block: Curated Posts
  */
 ?>
-<section class="wp-block-curated-posts posts">
+<div class="wp-block-curated-posts posts">
     <div class="curated-posts__inner-container">
-        <header><h2 class="section-title"><?php block_field( 'block-title' ); ?></h2></header>
+        <?php if( $block_title = block_value( 'block-title' ) ) : ?>
+            <header class="block-header"><h2 class="block-title"><?php echo $block_title; ?></h2></header>
+        <?php endif; ?>
         <?php if ( block_rows( 'posts' ) ) :
             while ( block_rows( 'posts' ) ) : 
                 block_row( 'posts' ); 
@@ -18,6 +20,7 @@
             <?php
             endwhile;
             wp_reset_postdata();
+            reset_block_rows( 'posts' );
         endif; ?>
     </div>
-</section>
+</div>

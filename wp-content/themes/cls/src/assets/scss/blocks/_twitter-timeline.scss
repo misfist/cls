@@ -1,8 +1,6 @@
 .wp-block-titter-timeline {
     display: block;
-    position: relative;        
-    padding-right: map-get($grid-margin-gutters, small);
-    padding-left: map-get($grid-margin-gutters, small);
+    position: relative;
 
     .inner-container {}
 
@@ -109,7 +107,20 @@
     .ctf-screename-sep {
         display: none;
     }
+
+    /**
+     * Medium & down
+     */
+    @include breakpoint(large down) {
+        .ctf-tweets {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
     
+    /**
+     * Medium & up
+     */
     @include breakpoint(medium) {
 
        /**
@@ -130,7 +141,10 @@
 
     }
 
-    @include breakpoint(large) {
+    /**
+     * Large & up
+     */
+     @include breakpoint(large) {
         margin-top: - rem-calc(70);
         padding: 0;
         background-color: transparent;
@@ -230,6 +244,6 @@
             text-overflow: ellipsis;
         }
 
-     }
+    }
 
 }

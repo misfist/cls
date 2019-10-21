@@ -1,42 +1,26 @@
 <?php
 /**
- * Block: Curated Posts
+ * Block: Curated Event Posts
  */
 ?>
 <div class="wp-block-curated-posts events">
     <div class="curated-posts__inner-container">
-        <header><h2 class="block-title"><?php block_field( 'block-title' ); ?></h2></header>
-        <?php if ( block_rows( 'events' ) ) :
-            while ( block_rows( 'events' ) ) : 
-                block_row( 'events' ); 
-                $post = block_sub_value( 'event' );  ?>
-
-                <article id="post-<?php echo $post->ID; ?>" class="event hentry">
-                    <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
-                        <div class="entry-media">
-                            <?php the_post_thumbnail( $post->ID ); ?>
-                        </div>
-                    <?php endif; ?>
-                    <header class="entry-header">
-                        <h3 class="entry-title"><a href="<?php echo get_permalink( $post->ID ); ?>" rel="bookmark"><?php echo apply_filters( 'the_title', $post->post_title ); ?></a></h3>
-                    </header><!-- .entry-header -->
-
-                    <div class="entry-content">
-                        <?php if( $excerpt = block_sub_value( 'excerpt' ) ) : ?>
-                            <?php echo apply_filters( 'the_content', $excerpt ); ?>
-                        <?php else : ?>
-                            <?php echo apply_filters( 'the_content', $post->excerpt ); ?>
-                        <?php endif; ?>
-                    </div><!-- .entry-content -->
-
-                    <footer class="entry-footer">
-                        <a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" class="read-more" rel="bookmark"><?php esc_html_e( 'Read More', 'cls' ); ?></a>
-                    </footer><!-- .entry-footer -->
-                </article><!-- #post-<?php echo $post->ID; ?> -->
+        <?php if( $block_title = block_value( 'block-title' ) ) : ?>
+            <header class="block-header"><h2 class="block-title"><?php echo $block_title; ?></h2></header>
+        <?php endif; ?>
+        <?php if ( block_rows( 'posts' ) ) :
+            while ( block_rows( 'posts' ) ) : 
+                block_row( 'posts' ); 
+                global $post;
+                $post = block_sub_value( 'post' ); 
+                setup_postdata( $post );
+                ?>
+                    <?php get_template_part( 'template-parts/content/content', 'home-featured' ); ?>
 
             <?php
             endwhile;
             wp_reset_postdata();
+            reset_block_rows( 'posts' );
         endif; ?>
     </div>
 </div>

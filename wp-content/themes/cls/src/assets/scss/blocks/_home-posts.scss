@@ -1,0 +1,35 @@
+.wp-block-curated-posts {
+
+    /**
+     * Structure
+     */
+    .inner-container {}
+
+    .block-header {}
+
+    /**
+     * Style
+     */
+     .inner-container {}
+
+     .block-title {
+        font-weight: $font-weight-black;
+        font-size: rem-calc(24);
+        color: get-color(accent);
+        letter-spacing: 0.23px;
+     }
+ 
+    @include breakpoint(medium) {
+
+        /**
+        * Structure
+        */
+
+        /**
+        * Style
+        */
+        .inner-container {}
+
+    }
+    
+}

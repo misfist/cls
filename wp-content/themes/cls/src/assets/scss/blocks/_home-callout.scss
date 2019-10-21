@@ -14,7 +14,6 @@
     .block-header {
         width: 92%;
         margin-left: -8px;
-        // margin-top: rem-calc(46);
     }
 
     .block-content {
@@ -41,7 +40,8 @@
         background-image: url('../images/home-graphic-bg-mobile.svg');
         background-position: center top;
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: auto 100%;
+        border-radius: 30px;
 
         color: $white;
     }
@@ -100,6 +100,20 @@
             }
         }
     }
+
+    /**
+     * Medium & down - for breakpoint less than content max-width
+     */
+     @include breakpoint(large down) {
+        .inner-container {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+     }
+
+    /**
+     * Medium and Up
+     */
 
     @include breakpoint(medium) {
 

@@ -24,3 +24,21 @@ function site_functions_page_links_to_post_types( $post_types ) {
 	return $post_types;
 }
 add_filter( 'page-links-to-post-types', 'site_functions_page_links_to_post_types' );
+
+/**
+ * Add REST API support to an already registered post type.
+ */
+add_filter( 'register_post_type_args', 'site_functions_post_type_args', 10, 2 );
+ 
+function site_functions_post_type_args( $args, $post_type ) {
+ 
+    if ( 'event' === $post_type ) {
+        $args['show_in_rest'] = true;
+ 
+        // Optionally customize the rest_base or rest_controller_class
+        // $args['rest_base']             = 'books';
+        // $args['rest_controller_class'] = 'WP_REST_Posts_Controller';
+    }
+ 
+    return $args;
+}
