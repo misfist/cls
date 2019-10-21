@@ -5,7 +5,7 @@
 ?>
 <?php if ( block_rows( 'counter' ) ): ?>
     <?php $columns = count( block_value( 'counter' )['rows'] ); ?>
-    <div class="wp-block-number-counter has-<?php echo $columns; ?>-columns">
+    <div class="wp-block-number-counter has-<?php echo $columns; ?>-columns has-background-color">
         <div class="number-counter__inner-container inner-container">
         <?php while( block_rows( 'counter' ) ) : 
             block_row( 'counter' ); ?>

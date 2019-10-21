@@ -23,11 +23,10 @@ function cls_filter_custom_twitter_fields( $output, $tag ) {
     $options = get_option( 'ctf_options', false );
     
     return sprintf( '
-    <div class="wp-block-titter-timeline">
+    <div class="wp-block-titter-timeline has-background-color">
         <div class="titter-timeline__inner-container inner-container">
             <header class="block-header">
                 <h2 class="block-title"><a href="https://twitter.com/%1$s" rel="me" target="_blank">@%1$s</a></h2>
-                <div class="block-title-spacer"></div>
             </header>
             %2$s
         </div>

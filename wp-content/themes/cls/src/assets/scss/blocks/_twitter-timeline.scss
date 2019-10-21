@@ -1,5 +1,4 @@
 .wp-block-titter-timeline {
-    display: block;
     position: relative;
 
     .inner-container {}
@@ -14,6 +13,9 @@
     */
     .ctf-tweets {
         @include xy-grid-container;
+        padding-right: map-get($container-padding, small);
+        padding-left: map-get($container-padding, small);
+        width: 100%;
         @include xy-grid;
     }
 
@@ -113,8 +115,8 @@
      */
     @include breakpoint(large down) {
         .ctf-tweets {
-            padding-right: 0;
-            padding-left: 0;
+            // padding-right: 0;
+            // padding-left: 0;
         }
     }
     
@@ -155,6 +157,7 @@
          .block-header {
             @include xy-grid;
             height: rem-calc(50);
+            width: rem-calc(300);
          }
 
          .block-title {

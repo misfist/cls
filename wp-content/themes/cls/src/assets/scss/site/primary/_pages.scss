@@ -91,8 +91,14 @@ body:not(.home) {
 
         .wp-block-columns {
             @include xy-grid-container;
+            position: relative;
+            margin-top: rem-calc(40);
 
             .wp-block-column {
+                @include xy-cell;
+                margin-right: 0;
+                margin-left: 0;
+
                 &:not(:last-of-type) {}
 
                 &:first-of-type {}
@@ -102,9 +108,15 @@ body:not(.home) {
                     align-self: flex-end;
                 }
             }
+
+
         }
 
-        .wp-block-titter-timeline {}
+        div.wp-block-titter-timeline {
+            .inner-container {
+                max-width: 100%;
+            }
+        }
 
         /**
          * Medium & down - for breakpoint less than content max-width
@@ -121,9 +133,18 @@ body:not(.home) {
                 }
             }
 
+            div.wp-block-titter-timeline {
+                .inner-container {
+                    padding-right: 0;
+                    padding-left: 0;
+                }
+            }
+
             .wp-block-columns {
+                flex-wrap: wrap;
                 padding-right: map-get($container-padding, small);
                 padding-left: map-get($container-padding, small);
+                width: 100%;
             }
             
         }
@@ -131,12 +152,26 @@ body:not(.home) {
         /**
          * Medium and up
          */
-        @include breakpoint(medium) {
+        @include breakpoint(large) {
             .wp-block-cover__inner-container {}
     
             .ugb-content-wrapper {}
     
-            .wp-block-columns {}
+            .wp-block-columns {
+                margin-top: rem-calc(50);
+
+                .wp-block-column {
+
+                    &:first-of-type {
+                        @include xy-cell(7 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: right);
+                        // padding-right: map-get($grid-margin-gutters, medium);
+                    }
+                    &:last-of-type {
+                        @include xy-cell(5 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: left);
+                        // padding-left: map-get($grid-margin-gutters, medium);
+                    }
+                }
+            }
 
         }
 

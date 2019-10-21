@@ -15,17 +15,19 @@
 			<?php the_post_thumbnail(); ?>
 		</div>
 	<?php endif; ?>
-	<header class="entry-header">
-		<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
-	</header><!-- .entry-header -->
-	<div class="entry-content">
-		<?php if( $excerpt = block_sub_value( 'excerpt' ) ) : ?>
-			<?php echo apply_filters( 'the_content', $excerpt ); ?>
-		<?php else : ?>
-			<?php the_excerpt(); ?>
-		<?php endif; ?>
-	</div><!-- .entry-content -->
-	<footer class="entry-footer">
-		<a href="<?php echo esc_url( get_permalink() ); ?>" class="read-more" rel="bookmark"><?php esc_html_e( 'Read More', 'cls' ); ?></a>
-	</footer><!-- .entry-footer -->
+	<div class="entry-body">
+		<header class="entry-header">
+			<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
+		</header><!-- .entry-header -->
+		<div class="entry-content">
+			<?php if( $excerpt = block_sub_value( 'excerpt' ) ) : ?>
+				<?php echo apply_filters( 'the_content', $excerpt ); ?>
+			<?php else : ?>
+				<?php the_excerpt(); ?>
+			<?php endif; ?>
+		</div><!-- .entry-content -->
+		<footer class="entry-footer">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="read-more" rel="bookmark"><?php esc_html_e( 'Read More', 'cls' ); ?></a>
+		</footer><!-- .entry-footer -->
+	</div>
 </article><!-- #post-<?php echo $post->ID; ?> -->
