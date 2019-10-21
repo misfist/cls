@@ -41,7 +41,8 @@
         background-position: center top;
         background-repeat: no-repeat;
         background-size: auto 100%;
-        border-radius: 30px;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
 
         color: $white;
     }
@@ -102,6 +103,13 @@
     }
 
     /**
+     * Small Only :/
+     */
+    @include breakpoint(small only) {
+        margin-top: rem-calc(50);
+    }
+
+    /**
      * Medium & down - for breakpoint less than content max-width
      */
      @include breakpoint(large down) {
@@ -114,7 +122,6 @@
     /**
      * Medium and Up
      */
-
     @include breakpoint(medium) {
 
         max-width: 495px;
