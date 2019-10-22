@@ -90,27 +90,28 @@ body:not(.home) {
                  @include xy-grid-container;
              }
          }
+         .wp-block-titter-timeline {
+            .inner-container {
+                max-width: 100%;
+            }
+        }
  
-         .wp-block-columns {
+        .wp-block-columns {
              position: relative;
              @include xy-grid-container;
+             @include xy-grid;
 
              margin-top: rem-calc(40);
 
              .wp-block-column {
                  @include xy-cell(12, $gutters: 0);
-                 flex-basis: 100% !important;
+                 flex-basis: 100%;
                  margin-bottom: 0;
+
+                 &:last-of-type {
+                    align-self: flex-end;
+                }
              }
-        }
-
-        /* Explicitly style for less than 1200px */
-        @include breakpoint(large down) {}
-
-        div.wp-block-titter-timeline {
-            .inner-container {
-                max-width: 100%;
-            }
         }
 
         /**
@@ -125,14 +126,14 @@ body:not(.home) {
                 margin-top: rem-calc(50);
 
                 .wp-block-column {
+                    flex-basis: 50%;
 
                     &:first-of-type {
-                        @include xy-cell(6 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: right);
+                        @include xy-cell(6, $gutters: 40, $gutter-type: padding, $gutter-position: right);
                         align-self: flex-start;
                     }
                     &:last-of-type {
-                        @include xy-cell(6 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: left);
-                        align-self: flex-end;
+                        @include xy-cell(6, $gutters: 40, $gutter-type: padding, $gutter-position: left);
                     }
                 }
             }
