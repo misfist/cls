@@ -1,10 +1,10 @@
 <?php
 /**
- * Block: Curated Posts
+ * Block: Curated Posts - Adhoc
  */
 ?>
 <div class="wp-block-curated-posts adhoc-posts">
-    <div class="curated-posts__inner-container">
+    <div class="curated-posts__inner-container inner-container">
         <?php if( $block_title = block_value( 'block-title' ) ) : ?>
             <header class="block-header"><h2 class="block-title"><?php echo $block_title; ?></h2></header>
         <?php endif; ?>
