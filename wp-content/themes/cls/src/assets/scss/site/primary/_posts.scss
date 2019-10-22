@@ -14,6 +14,10 @@
 .content-section {
     .history {
 
+        &:not(:last-child) {
+            margin-bottom: rem-calc(48);
+        }
+
         /* Layout */
         @include xy-grid;
 
@@ -21,7 +25,7 @@
         .entry-header,
         .entry-content,
         .entry-footer {
-            @include xy-cell();
+            @include xy-cell(12, $gutters: 0);
         }
 
         .entry-media {
@@ -38,8 +42,16 @@
         }
 
         @include breakpoint(medium) {
+            &:not(:last-child) {
+                margin-bottom: rem-calc(90);
+            }
+
+            .entry-media {
+                margin-bottom: 0;
+            }
+
             .entry-body {
-                @include xy-cell(9);
+                @include xy-cell(9, $gutters: 0);
 
                 .entry-header,
                 .entry-content {
@@ -50,29 +62,43 @@
 
             &.has-post-thumbnail {
                 .entry-media {
-                    @include xy-cell(4);
-                    @include xy-gutters($gutter-position: bottom);
+                    @include xy-cell(4, $gutters: 0);
+                    // @include xy-gutters(50, $gutter-type: padding, $gutter-position: left);
+                    // @include xy-gutters($gutter-position: bottom);
                 }
                 .entry-body {
-                    @include xy-cell(8);
-                    @include xy-gutters($gutter-position: bottom);
+                    @include xy-cell(8, $gutters: 0);
+                    // @include xy-gutters($gutter-position: bottom);
+                    // @include xy-gutters(50, $gutter-type: padding, $gutter-position: right);
                 }
             }
 
             .entry-footer {
-                @include xy-cell;
+                @include xy-cell($gutters: 0);
             }
 
             &:nth-child(odd) {
                 .entry-media {
                     order: 1;
+                    @include xy-gutters(50, $gutter-type: padding, $gutter-position: right);
                 }
                 .entry-body {
                     order: 2;
+                    @include xy-gutters(50, $gutter-type: padding, $gutter-position: left);
                 }
                 .entry-footer {
                     order: 3;
                 }
+            }
+
+            &:nth-child(even) {
+                .entry-media {
+                    @include xy-gutters(50, $gutter-type: padding, $gutter-position: left);
+                }
+                .entry-body {
+                    @include xy-gutters(50, $gutter-type: padding, $gutter-position: right);
+                }
+                .entry-footer {}
             }
 
             &.has-post-thumbnail {}
@@ -80,7 +106,11 @@
 
         /* Content Style */
         .entry-title {
+            margin-bottom: rem-calc(14);
+
             color: get-color( accent );
+            font-size: rem-calc(20);
+            line-height: 26px;
         }
 
         .entry-media {
@@ -94,10 +124,14 @@
         }
 
         .entry-content {
+            margin-bottom: rem-calc(48);
+
             font-size: $small-font-size;
+            // line-height: 18px; //sic
 
             p {
                 font-size: $small-font-size;
+                line-height: 18px; //sic - this doesn't look good
             }
         }
 

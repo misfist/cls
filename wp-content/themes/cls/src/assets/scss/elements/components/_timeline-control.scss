@@ -4,6 +4,7 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
 
 .timeline-component {
     font-size: rem-calc(20);
+    @include xy-grid-container;
     // font-weight: bold;
 
     /* Hide Temporarily */
@@ -98,10 +99,10 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                 position: fixed;
                 top: 0;
                 left: 0;
-                z-index: 2;
-                // background-color: rgba($black,0.67); //sic
+                z-index: 1031;
                 background-color: rgba($black,0.9);
                 border-radius: 0;
+                overflow: auto;
 
                 ul {}
             }
@@ -114,10 +115,12 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                 bottom: 0;
                 left: 0;
                 background-color: get-color( accent );
+                border-radius: rem-calc(26.734); //sic
+
                 background-image: url('../images/icon-chevron-left.svg');
                 background-repeat: no-repeat;
                 background-position: center center;
-                border-radius: rem-calc(26.734); //sic
+                background-size: 11px 22px;
             }
 
             .previous,
@@ -279,9 +282,11 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
     .term-title {
         display: inline-block;
         padding: rem-calc(10) rem-calc(36);
+        margin-bottom: rem-calc(42);
         background-color: $primary-color;
         color: white;
         border-radius: $button-radius;
+        font-weight: $font-weight-black;
 
         @include breakpoint( small only ) {
             display: none;
@@ -353,6 +358,16 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
         }
 
         /* Content */
+    }
 
+    @include breakpoint(large) {
+        /* Layout */
+        .timeline-controls {
+            @include xy-cell(2, $gutters: 0);
+        }
+
+        .content-section {
+            @include xy-cell(10, $gutters: 0);
+        }
     }
 }

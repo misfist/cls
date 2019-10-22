@@ -10,7 +10,8 @@ body:not(.home) {
                 color: white;
             }
 
-            &> .entry-content {
+            &> .entry-content,
+            &> .entry-footer {
                 @include xy-grid-container;
             }
         }
@@ -83,34 +84,28 @@ body:not(.home) {
         /**
          * Structure
          */
-         div[class^="wp-block-"] {
-            .inner-container {
-                @include xy-grid-container;
-            }
+         .wp-block-cover,
+         .wp-block-number-counter {
+             .inner-container {
+                 @include xy-grid-container;
+             }
+         }
+ 
+         .wp-block-columns {
+             position: relative;
+             @include xy-grid-container;
+
+             margin-top: rem-calc(40);
+
+             .wp-block-column {
+                 @include xy-cell(12, $gutters: 0);
+                 flex-basis: 100% !important;
+                 margin-bottom: 0;
+             }
         }
 
-        .wp-block-columns {
-            @include xy-grid-container;
-            position: relative;
-            margin-top: rem-calc(40);
-
-            .wp-block-column {
-                @include xy-cell;
-                margin-right: 0;
-                margin-left: 0;
-
-                &:not(:last-of-type) {}
-
-                &:first-of-type {}
-
-                &:last-of-type {
-                    margin-bottom: 0;
-                    align-self: flex-end;
-                }
-            }
-
-
-        }
+        /* Explicitly style for less than 1200px */
+        @include breakpoint(large down) {}
 
         div.wp-block-titter-timeline {
             .inner-container {
@@ -119,38 +114,7 @@ body:not(.home) {
         }
 
         /**
-         * Medium & down - for breakpoint less than content max-width
-         */
-        @include breakpoint(large down) {
-
-            /**
-            * Structure
-            */
-            div[class^="wp-block-"] {
-                .inner-container {
-                    padding-right: map-get($container-padding, small);
-                    padding-left: map-get($container-padding, small);
-                }
-            }
-
-            div.wp-block-titter-timeline {
-                .inner-container {
-                    padding-right: 0;
-                    padding-left: 0;
-                }
-            }
-
-            .wp-block-columns {
-                flex-wrap: wrap;
-                padding-right: map-get($container-padding, small);
-                padding-left: map-get($container-padding, small);
-                width: 100%;
-            }
-            
-        }
-
-        /**
-         * Medium and up
+         * Large and up
          */
         @include breakpoint(large) {
             .wp-block-cover__inner-container {}
@@ -164,18 +128,17 @@ body:not(.home) {
 
                     &:first-of-type {
                         @include xy-cell(6 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: right);
-                        // padding-right: map-get($grid-margin-gutters, medium);
+                        align-self: flex-start;
                     }
                     &:last-of-type {
                         @include xy-cell(6 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: left);
-                        // padding-left: map-get($grid-margin-gutters, medium);
+                        align-self: flex-end;
                     }
                 }
             }
 
         }
 
-        @include breakpoint(xlarge) {}
 
         /**
          * Style
@@ -191,44 +154,87 @@ body:not(.home) {
         /**
          * Medium+
          */
-        @include breakpoint(medium) {
-            .wp-block-cover__inner-container {}
+        // @include breakpoint(medium) {
+        //     .wp-block-cover__inner-container {}
     
-            .wp-block-custom-group {}
+        //     .wp-block-custom-group {}
     
-            .wp-block-columns {
-                .wp-block-column {
-                    padding: 0 rem-calc(62);
-                    margin-bottom: 0;
+        //     .wp-block-columns {
+        //         .wp-block-column {
+        //             padding: 0 rem-calc(62);
+        //             margin-bottom: 0;
 
-                    &:not(:last-of-type) {
-                        border-right: 6px solid rgba($white,0.25);
-                        border-bottom: none;
-                    }
+        //             &:not(:last-of-type) {
+        //                 border-right: 6px solid rgba($white,0.25);
+        //                 border-bottom: none;
+        //             }
 
-                    &:first-of-type {
-                        padding-left: 0;
-                    }
+        //             &:first-of-type {
+        //                 padding-left: 0;
+        //             }
 
-                    &:last-of-type {
-                        padding-right: 0;
-                    }
-                }
-            }
+        //             &:last-of-type {
+        //                 padding-right: 0;
+        //             }
+        //         }
+        //     }
     
-            .wp-block-titter-timeline {}
-        }
+        //     .wp-block-titter-timeline {}
+        // }
 
     }
 }
 
 /* History */
 .page-template-history-timeline {
+    .page > .entry-content {
+
+        &> .entry-title {
+            padding-right: 10%;
+            
+            font-weight: $font-weight-black;
+            font-size: rem-calc(24);
+            color: get-color(accent);
+            line-height: 31px;
+        }
+    }
+
     .timeline-component {}
 
     @include breakpoint(medium) {
         .timeline-component {
             @include xy-grid-container;
         }
+    }
+}
+
+.page-donate {
+    div[class^="wp-block-"] {
+        border: 1px solid pink;
+    }
+
+    .entry-content {
+        border: 1px dotted green;
+    }
+      
+    .pea-block-columns {
+        @include xy-grid-container;
+        
+        .pea-block-column {
+            @include xy-cell;
+            border: 1px solid orange;
+        }
+    }
+
+    @include breakpoint(medium) {
+
+        .pea-block-columns {
+            @include xy-grid;
+
+            .pea-block-column {
+                @include xy-cell(6);
+            }
+        }
+
     }
 }

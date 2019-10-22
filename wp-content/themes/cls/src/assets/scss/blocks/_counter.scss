@@ -10,7 +10,7 @@
     }
 
     .number-counter {
-        @include xy-cell;
+        @include xy-cell(12, $gutters: 0);
         @include xy-grid;
         align-items: flex-start;
     }
@@ -115,18 +115,22 @@
             margin-left: 0;
             padding-right: 0;
             padding-left: 0;
+            
             align-items: flex-start;
 
             &:first-of-type {
-                flex-basis: calc(100% * .285); //sic
+                // flex-basis: calc(100% * .285); //sic
+                @include xy-cell(28.5%, $gutters: 0); //sic
             }
 
             &:nth-child(2) {
-                flex-basis: calc(100% * .383333333333333); //sic
+                // flex-basis: calc(100% * .383333333333333);
+                @include xy-cell(38.3333333333333%, $gutters: 0); //sic
             }
 
             &:last-of-type {
-                flex-basis: calc(100% * .313333333333333); //sic
+                // flex-basis: calc(100% * .313333333333333); //sic
+                @include xy-cell(31.3333333333333%, $gutters: 0); //sic
             }
 
         }

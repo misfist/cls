@@ -92,15 +92,17 @@
         article {
             display: flex;
             flex-wrap: wrap;
+            align-self: flex-start;
         }
 
         .entry-media {
-            @include xy-cell(2 of 6, $gutters: 40, $gutter-type: padding, $gutter-position: right);
+            @include xy-cell(2 of 6, $gutters: 56, $gutter-type: padding, $gutter-position: right);
             margin-bottom: 0;
+            height: auto;
         }
 
         .entry-body {
-            @include xy-cell(4 of 6, $gutters: 40, $gutter-type: padding, $gutter-position: left);
+            @include xy-cell(4 of 6, $gutters: 0);
         }
 
         /**

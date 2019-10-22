@@ -40,6 +40,9 @@ function themeReady() {
             let target = document.querySelector(`${this.getAttribute('href')}`);
             target.classList.add('is-open');
             target.setAttribute( 'aria-hidden', false );
+
+            /** Add class to body so we can stop the page from scrolling */
+            document.querySelector('body').classList.add('modal-open');
         }
 
         /* Close Modal */
@@ -48,6 +51,9 @@ function themeReady() {
             let target = event.target.closest('nav');
             target.classList.remove('is-open');
             target.setAttribute( 'aria-hidden', true );
+
+            /** Remove class */
+            document.querySelector('body').classList.remove('modal-open');
         }
 
         /* Listen to Open Button */
@@ -60,6 +66,19 @@ function themeReady() {
         if(timelineCloseButton) {
             timelineCloseButton.addEventListener( 'click', closeModal );
         }
+
+        /** Watching for Breakpoint Changes */
+        $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+            if('small' !== newSize) {
+                console.log(newSize);
+                
+                /** Remove class from body */
+                document.querySelector('body').classList.remove('modal-open');
+
+                /** Remove class from modal */
+                document.querySelector(`#timeline-controller-module`).classList.remove('is-open');
+            }
+        });
 
         /* Listen to Timeline Links */
 

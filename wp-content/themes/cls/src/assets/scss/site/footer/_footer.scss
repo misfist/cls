@@ -7,13 +7,14 @@
     }
 
     .widget-column {
+        @include xy-cell($gutters: 0);
         
         @include breakpoint(medium) {
             @include xy-cell(50%);
         }
 
         @include breakpoint(large) {
-            @include xy-cell(3);
+            @include xy-cell(3, $gutters: 0);
         }
     }
 
