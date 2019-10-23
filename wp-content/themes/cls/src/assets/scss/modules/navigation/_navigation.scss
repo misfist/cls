@@ -147,8 +147,10 @@
         display: grid;
         grid-gap: 0;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 0.4fr 0.5fr 0.5fr;
-        grid-template-areas: "about what-we-do" "about espanol" "get-involved donate" "get-involved help";      
+        grid-template-rows: 1.4fr 90px 1fr 1fr;
+        grid-template-areas: "about what-we-do" "about espanol" "get-involved donate" "get-involved get-help";
+        // grid-template-rows: 1fr 0.3fr 0.2fr 0.5fr;
+        // grid-template-areas: "about what-we-do" "about espanol" "get-involved donate" "get-involved help";
         &> li {
 
           &.about,
@@ -156,24 +158,33 @@
             grid-area: about;
             padding-left: rem-calc(37); //sic
           }
-    
+
+          &.espanol,
+          &:nth-child(4) { 
+            grid-area: espanol; 
+            align-self: center;
+          }
+
           &.what-we-do,
-          &:nth-child(2) { grid-area: what-we-do; }
-          
+          &:nth-child(2) { 
+            grid-area: what-we-do; 
+          }
+
+          &.donate,
+          &:nth-last-child(2) { 
+            grid-area: donate; 
+          }
+
+          &.get-help,
+          &:last-child { 
+            grid-area: get-help; 
+          }
+
           &.get-involved,
           &:nth-child(3) { 
             grid-area: get-involved;
             padding-left: rem-calc(37); //sic
           }
-            
-          &.espanol,
-          &:nth-child(4) { grid-area: espanol; }
-          
-          &.donate,
-          &:nth-last-child(2) { grid-area: donate; }
-    
-          &.help,
-          &:last-child { grid-area: help; }
     
           &.highlighted {
             text-align: center;
@@ -193,12 +204,21 @@
          .sub-menu {
            li {
             a {
+              padding-top: rem-calc(8);
+              padding-bottom: rem-calc(8);
               font-weight: $font-weight-bold;
               color: $black-3;
               // line-height: 35px; // in Sketch, but won't work if falls on 2 rows
              }
            }
 
+         }
+
+         .highlighted {
+           a {
+             padding-right: rem-calc(20);
+             padding-left: rem-calc(20);
+           }
          }
         
       }
