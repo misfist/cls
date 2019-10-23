@@ -110,27 +110,39 @@
         }
 
         .number-counter {
-            // @include xy-cell(4);
             margin-right: 0;
             margin-left: 0;
             padding-right: 0;
             padding-left: 0;
             
             align-items: flex-start;
+            align-self: flex-start;
 
             &:first-of-type {
                 // flex-basis: calc(100% * .285); //sic
                 @include xy-cell(28.5%, $gutters: 0); //sic
+
+                .block-number {
+                    width: rem-calc(170);
+                }
             }
 
             &:nth-child(2) {
                 // flex-basis: calc(100% * .383333333333333);
                 @include xy-cell(38.3333333333333%, $gutters: 0); //sic
+
+                .block-number {
+                    width: rem-calc(200);
+                }
             }
 
             &:last-of-type {
                 // flex-basis: calc(100% * .313333333333333); //sic
                 @include xy-cell(31.3333333333333%, $gutters: 0); //sic
+
+                .block-number {
+                    width: rem-calc(124);
+                }
             }
 
         }
@@ -206,6 +218,11 @@
     
         .block-content {
             font-size: rem-calc(22);
+
+            p {
+                font-size: rem-calc(22);
+                line-height: 26px;
+            }
         }
 
     }
