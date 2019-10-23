@@ -1,0 +1,7 @@
+body {
+    &.modal-open,
+    &.mobile-menu-open {
+        height: 100vh;
+        overflow-y: hidden;
+    }
+}

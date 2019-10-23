@@ -128,18 +128,21 @@
     /* Class added when mobile nav clicked */
     &.is-open {
       position: fixed;
-      height: 100vh;
-      width: 100%;
+      // height: 100%;
+      // width: 100%;
       margin-top: $mobile-header-height;
       top: 0;
+      right: 0;
+      bottom: 0;
       left: 0;
+      overflow-y: scroll;
+
       z-index: 2;
 
       background-color: rgba($black,0.8);
 
       /* Layout */
       .main-menu {
-        // height: 100%;
         padding-top: rem-calc(40);
         display: grid;
         grid-gap: 0;
@@ -147,6 +150,7 @@
         grid-template-rows: 1fr 0.4fr 0.5fr 0.5fr;
         grid-template-areas: "about what-we-do" "about espanol" "get-involved donate" "get-involved help";      
         &> li {
+
           &.about,
           &:first-child { 
             grid-area: about;
@@ -175,6 +179,27 @@
             text-align: center;
           }
         }
+
+        /**
+         * Style
+         */
+
+         &> li:not(.highlighted):not(.muted) {
+          &> a {
+            font-size: rem-calc(18);
+          }
+         }
+
+         .sub-menu {
+           li {
+            a {
+              font-weight: $font-weight-bold;
+              color: $black-3;
+              // line-height: 35px; // in Sketch, but won't work if falls on 2 rows
+             }
+           }
+
+         }
         
       }
     }

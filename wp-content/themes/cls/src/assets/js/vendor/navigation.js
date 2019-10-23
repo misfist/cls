@@ -42,10 +42,12 @@
 			container.className = container.className.replace( ' is-open', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
+			document.querySelector('body').classList.remove( 'mobile-menu-open' );
 		} else {
 			container.className += ' is-open';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
+			document.querySelector('body').classList.add( 'mobile-menu-open' );
 		}
 	};
 
