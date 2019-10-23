@@ -48,7 +48,7 @@ add_filter( 'register_post_type_args', 'site_functions_post_type_args', 10, 2 );
  * @return void
  */
 function site_functions_modify_taxonomy() {
-    $args = get_taxonomy( 'event' );
+    $args = get_taxonomy( 'event-category' );
     $args->show_in_rest = true;
 
     register_taxonomy( 'event-category', 'event', (array) $args );
