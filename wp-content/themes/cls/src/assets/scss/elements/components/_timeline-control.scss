@@ -267,7 +267,7 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
             content: '';
             display: inline-block;
             margin-left: 1rem;
-            background-image: url("data:image/svg+xml,%3Csvg width='10' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 14.885l6.5-6.5-6.5-6.5' stroke='%23666' stroke-width='2' fill='none' fill-rule='evenodd' opacity='.4' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-image: url('../images/icon-chevron.svg');
             height: rem-calc(13);
             width: rem-calc(6.5);
             background-position: 1px right;
@@ -345,7 +345,7 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                         content: '';
                         position: absolute;
                         display: inline-block;
-                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 33'%3E%3Cpath d='M15.974.003l-.12 10.615-10.245-.04C2.684 10.565.323 12.998.336 16.01c.012 3.012 2.393 5.463 5.318 5.476l10.105.041-.066 10.75 15.891-16.196L15.974.003z' fill='%23F58B6F' fill-rule='evenodd'/%3E%3C/svg%3E");
+                        background-image: url('../images/icon-timeline-arrow.svg');
                         background-size: rem-calc(33); //[sic]
                         background-position: center center;
                         height: rem-calc(33); //[sic]
