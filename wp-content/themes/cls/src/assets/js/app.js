@@ -126,7 +126,9 @@ function themeReady() {
             if(counterEl) {
                 const count = [];
                 let number = counterEl.getAttribute('data-number');
-                const options = {};
+                const options = {
+                    duration: 5
+                };
                 count[index] = new CountUp( counterEl, number , options );
                 count[index].start();
             }
