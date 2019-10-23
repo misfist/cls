@@ -291,7 +291,7 @@
       box-shadow: 1px 5px 5px 0px rgba($black,.21);
       padding: rem-calc(4) $dropdownmenu-submenu-padding rem-calc(25) $dropdownmenu-submenu-padding; //sic
 
-      @include clipped-corner($corner: bottom-right, $height: 15px, $width: 15px)
+      @include clipped-corner($corner: bottom-right, $height: 15px, $width: 15px);
 
       li {
         padding: rem-calc(6) 0 rem-calc(6) rem-calc(7);
