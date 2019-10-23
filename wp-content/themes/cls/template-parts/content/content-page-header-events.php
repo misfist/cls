@@ -8,7 +8,7 @@
  */
 
 ?>
-<header class="entry-header page-content-header">
+<header class="entry-header page-content-header<?php echo ( has_block( 'block-lab/featured-event' ) ) ? ' has-featured-event' : ''; ?>">
 	<div class="container">
 		<div class="header-content">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
