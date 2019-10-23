@@ -101,6 +101,6 @@ if ( ! function_exists( 'site_functions_custom_taxonomy_event_type' ) ) {
 		// register_taxonomy( 'event_type', array( 'event' ), $args );
 	
 	}
-	add_action( 'init', 'site_functions_custom_taxonomy_event_type', 0 );
+	// add_action( 'init', 'site_functions_custom_taxonomy_event_type', 0 );
 	
 }
