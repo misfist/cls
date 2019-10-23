@@ -89,9 +89,6 @@
         font-size: rem-calc(14);
         line-height: 19px;
 
-        // br {
-        //     display: none;
-        // }
 
         br + br {
             display: none;
@@ -105,13 +102,15 @@
 
         a {
             @include dont-break-out;
+            text-decoration: underline;
         }
     }
 
     .ctf-twitterlink {
         width: 100%;
         display: block;
-        line-height: 19px !important; 
+        line-height: 19px !important;
+        text-decoration: underline;
     }
 
     .ctf-tweet-actions {
@@ -273,16 +272,11 @@
             line-height: 14px;
             font-size: rem-calc(12);
             text-overflow: ellipsis;
-
-            a {
-                border-bottom: 1px solid $white;
-            }
         }
 
         a.ctf-twitterlink {
             width: auto;
             display: inline-block;
-            border-bottom: 1px solid $white;
             font-size: rem-calc(12);
             line-height: 14px !important;
         }
