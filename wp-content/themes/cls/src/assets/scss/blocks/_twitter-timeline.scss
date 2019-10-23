@@ -89,6 +89,20 @@
         font-size: rem-calc(14);
         line-height: 19px;
 
+        // br {
+        //     display: none;
+        // }
+
+        br + br {
+            display: none;
+            
+            &:before {
+                content: '';
+                display: block;
+                height: 1rem;
+            }
+        }
+
         a {
             @include dont-break-out;
         }
@@ -256,9 +270,21 @@
          }
 
         .ctf-tweet-text {
-            line-height: 18px;
-            // height: rem-calc(100);
+            line-height: 14px;
+            font-size: rem-calc(12);
             text-overflow: ellipsis;
+
+            a {
+                border-bottom: 1px solid $white;
+            }
+        }
+
+        a.ctf-twitterlink {
+            width: auto;
+            display: inline-block;
+            border-bottom: 1px solid $white;
+            font-size: rem-calc(12);
+            line-height: 14px !important;
         }
 
     }
