@@ -1,12 +1,11 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying featured posts
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package cls
  */
-
 ?>
 
 <article id="post-<?php echo $post->ID; ?>" <?php post_class(); ?>>

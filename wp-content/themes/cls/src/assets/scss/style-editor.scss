@@ -23,7 +23,7 @@
 
 /* Blocks */
 
-@import "./blocks/blocks";
+// @import "./blocks/blocks";
 @import "./elements/components/intro-block";
 
 
@@ -146,5 +146,26 @@ body {
 	.wp-block-paragraph {
 		font-size: rem-calc(18);
 		font-weight: $font-weight-bold;
+	}
+}
+
+.wp-block-featured-event {
+	article {
+		@include xy-grid;
+	}
+
+	.entry-media {
+		@include xy-cell(4);
+		order: 2;
+	}
+
+	.entry-body {
+		@include xy-cell(8);
+		order: 1;
+	}
+
+	.read-more {
+		@include button;
+		background-color: $secondary-color;
 	}
 }
