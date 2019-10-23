@@ -122,13 +122,50 @@ function cls_render_page_intro() {
  *
  * @return void
  */
-function cls_the_content() {
+function cls_the_content_no_intro() {
 	global $post;
 	$blocks = parse_blocks( $post->post_content );
 	if( $blocks ) {
 		$content = '';
 		foreach( $blocks as $block ) {
 			if( 'custom/intro' === $block['blockName'] ) {
+				continue;
+			} else {
+				$content .= render_block( $block );
+			}
+		}
+		echo apply_filters( 'the_content', $content );
+	}
+}
+
+/**
+ * Render Featured Event Content
+ *
+ * @return void
+ */
+function cls_render_featured_event() {
+	global $post;
+	$blocks = parse_blocks( $post->post_content );
+	foreach( $blocks as $block ) {
+		if( 'block-lab/featured-event' === $block['blockName'] ) {
+			echo render_block( $block );
+			break;
+		}
+	}
+}
+
+/**
+ * Render Content without Intro
+ *
+ * @return void
+ */
+function cls_the_content_no_featured_event() {
+	global $post;
+	$blocks = parse_blocks( $post->post_content );
+	if( $blocks ) {
+		$content = '';
+		foreach( $blocks as $block ) {
+			if( 'block-lab/featured-event' === $block['blockName'] ) {
 				continue;
 			} else {
 				$content .= render_block( $block );

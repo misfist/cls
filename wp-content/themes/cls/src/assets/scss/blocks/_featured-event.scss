@@ -1,0 +1,135 @@
+.wp-block-featured-event {
+    
+    /**
+     * Structure
+     */
+    article {
+        @include xy-grid-container;
+        @include xy-grid;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+
+        .entry-media {
+            @include xy-cell(12, $gutter-type: padding);
+        }
+
+        .entry-body {
+            @include xy-cell(12, $gutter-type: padding);
+        }
+    }
+
+    /**
+     * Style
+     */
+
+    a {
+        color: $white;
+    }
+
+    article {}
+
+    .entry-title {
+        margin-bottom: 1rem;
+        font-weight: $font-weight-black;
+    }
+
+    .entry-media {
+        text-align: center;
+
+        img {
+            box-shadow: 2px 4px 10px 7px rgba(175,175,175,0.50);
+        }
+    }
+
+    .entry-body {}
+
+    .entry-content {
+        p {
+            line-height: 20px;
+        }
+    }
+
+    .entry-footer {
+        margin-top: rem-calc(25);
+    }
+
+    .read-more {
+        @include button;
+        background-color: $secondary-color;
+        font-weight: $font-weight-black;
+        font-size: rem-calc(17); //sic
+
+        &:hover {
+            background-color: darken($secondary-color,10%);
+        }
+    }
+
+    /**
+     * Small & Medium
+     */
+     @include breakpoint(medium down) {
+
+        article {
+            background-color: $secondary-color;
+            align-items: top;
+        }
+
+        .entry-media {
+            padding-top: rem-calc(10);
+            padding-bottom: rem-calc(46);
+
+            img {
+                max-width: 50%;
+            }
+        }
+
+        .entry-body {
+            padding-top: rem-calc(38);
+            padding-bottom: rem-calc(50);
+            background-color: $accent-color;
+        }
+
+        .entry-title {
+            margin-top: 0;
+            font-size: rem-calc(24);
+            line-height: 31px;
+        }
+
+     }
+
+    /**
+     * Large & up
+     */
+    @include breakpoint(large) {
+        /**
+        * Structure
+        */
+        article {
+            .entry-media {
+                @include xy-cell(6, $gutters: 40, $gutter-type: padding, $gutter-position: left); 
+                order: 2;
+                margin-top: - rem-calc(80);
+            }
+
+            .entry-body {
+                @include xy-cell(6, $gutters: 320, $gutter-type: padding, $gutter-position: right);
+                order: 1;
+            }
+
+            .entry-title {
+                margin-top: rem-calc(20);
+            }
+        
+        }
+
+        /**
+        * Style
+        */
+        .entry-body {
+            background-color: transparent;
+        }
+
+    }
+
+
+}

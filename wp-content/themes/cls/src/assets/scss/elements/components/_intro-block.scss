@@ -2,14 +2,45 @@
 .wp-block-custom-intro,
 .page-intro,
 .entry-intro {
-    padding: rem-calc(20);
+    // padding: rem-calc(20);
     background-color: $primary-color;
     color: $white;
 
     .inner-container {
         @include xy-grid-container;
+        padding-top: rem-calc(42);
+        padding-bottom: rem-calc(50);
     }
 }
+
+/* About Us Variation */
+.page-template-history-timeline {
+    $height: calc( 100% - 46px );
+
+    $start: 75%;
+    $width: calc( #{$start} + 44px );
+
+    .wp-block-custom-intro {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, $width 100%, $start $height, 0 $height);
+    }
+
+    @include breakpoint(medium) {
+        $start: 50%;
+        $width: calc( #{$start} + 44px );
+
+        .wp-block-custom-intro {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, $width 100%, $start $height, 0 $height);
+
+            .inner-container {
+                columns: 2;
+                column-gap: rem-calc(70);
+            }
+        }
+    
+    }
+
+}
+
 
 @each $color, $code in $foundation-palette {
   
@@ -54,18 +85,3 @@
     .page-intro,
     .entry-intro {}
 }
-
-
-/* Content Footer Block */
-
-/* Page CTA */
-
-/* Speech Bubble */
-
-/* Year Slider */
-
-/* Tabs */
-
-/* Twitter Feeds */
-
-/* Number Counter */

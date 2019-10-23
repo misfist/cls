@@ -166,13 +166,13 @@
          .block-title {
             width: rem-calc(300);
             padding-top: rem-calc(46);
-            padding-bottom: rem-calc(60);
+            padding-bottom: rem-calc(56);
          }
 
          .block-title-spacer {}
 
          .ctf-tweets {
-             padding-top: rem-calc(50);
+             padding-top: rem-calc(24);
          }
  
          .ctf-item {
@@ -249,7 +249,7 @@
             &:not(:last-of-type) {
                 border-bottom: none;
                 border-right: 1px solid $white;
-                padding-right: map-get($grid-margin-gutters, medium);
+                padding-right: rem-calc(20);
                 padding-bottom: 0;
                 margin-bottom: 0;
             }

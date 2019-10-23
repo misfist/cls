@@ -22,7 +22,10 @@ function gutenberg_starter_theme_body_classes( $classes ) {
 
 			if( function_exists( 'get_field' ) ) {
 				if( $page_color = get_field( 'page-color' ) ) {
+					$page_color = ( 'transparent' === $page_color ) ? 'white' : $page_color;
 					$classes[] = sprintf( 'has-%s-page-color', sanitize_title( $page_color ) );
+				} else {
+					$classes[] = sprintf( 'has-%s-page-color', esc_attr( 'white' ) );
 				}
 			}
 		}

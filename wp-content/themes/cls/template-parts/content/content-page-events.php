@@ -10,20 +10,22 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if( !is_home() && !is_front_page() ) : ?>
-		<?php get_template_part( 'template-parts/content/content-page-header' ); ?>
-	<?php endif; ?>
 
-	<?php get_template_part( 'template-parts/content/content-intro' ); ?>
+	<?php get_template_part( 'template-parts/content/content-page-header-events' ); ?>
 
 	<div class="entry-content">
-		<?php 
-			if( has_block( 'custom/intro' ) ) {
-				cls_the_content_no_intro();
+	<?php 
+			if( has_block( 'block-lab/featured-event' ) ) {
+				cls_the_content_no_featured_event();
 			}
 			else {
 				the_content();
 			}
+
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cls' ),
+				'after'  => '</div>',
+			) );
 		?>
 	</div><!-- .entry-content -->
 

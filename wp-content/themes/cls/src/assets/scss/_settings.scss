@@ -104,6 +104,7 @@ $foundation-palette: (
 $light-gray:  #EFEFEF;
 $medium-gray: #CECECE;
 $dark-gray: #333333;
+$accent-color: get-color(accent);
 $black: #000;
 $white: #fefefe;
 $black-4: #666;
@@ -142,9 +143,10 @@ $breakpoints: (
   // tablet: 640px,
   // medium: 934px,  
   // large: 1024px,
-  large: 1128px,
-  xlarge: 1200px,
-  xxlarge: 1440px,
+  // large: 1128px,
+  large: 1202px,
+  xlarge: 1440px,
+  xxlarge: 1600px,
 );
 $print-breakpoint: large;
 $breakpoint-classes: (small medium large);
@@ -326,7 +328,7 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // ----------
 
 $button-font-family: inherit;
-$button-padding: 0.85em 1em;
+$button-padding: 0.85em rem-calc(30);
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;

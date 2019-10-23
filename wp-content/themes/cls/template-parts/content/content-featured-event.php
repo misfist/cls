@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page intro
+ * Template part for displaying featured event
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -8,4 +8,4 @@
  */
 ?>
 
-<?php cls_render_page_intro(); ?>
+<?php cls_render_featured_event(); ?>
