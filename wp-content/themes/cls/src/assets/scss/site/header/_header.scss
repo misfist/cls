@@ -50,37 +50,65 @@ $minimized-height: rem-calc(87); //sic
 @include breakpoint(large) {
 
     .site-header {
-        
-        margin-left: auto;
-        margin-right: auto;
-
-        padding-right: 0;
-        display: flex;
-        align-items: stretch;
+        @include xy-grid;
+        padding-left: rem-calc(20);
         justify-content: space-between;
         height:  $header-height;
-        box-sizing: border-box;
-        width: 100%;
-        background-color: $white;
-        transition: height 0.1s;
+        transition: all 0.3s ease;
     }
 
     .site-branding {
-        $margin: map-get($grid-margin-gutters, medium);
-        width: 100%;
-        max-width: $grid-container;
-        padding-left: calc( #{$margin} / 2 );
-        margin-right: auto;
-        margin-left: auto;
-
+        @include xy-cell($gutter-type: padding);
+        width: rem-calc(237);
         align-self: center;
-
-        img {
-            height: rem-calc(69);
-            width: rem-calc(237);
-            min-width: rem-calc(237);
-        }
     }
+
+    .main-navigation {
+        @include xy-cell(auto, $gutters: 0);
+    }
+
+    // .site-header {
+        
+    //     margin-left: auto;
+    //     margin-right: auto;
+
+    //     padding-right: 0;
+    //     display: flex;
+    //     align-items: stretch;
+    //     justify-content: space-between;
+    //     height:  $header-height;
+    //     box-sizing: border-box;
+    //     width: 100%;
+    //     background-color: $white;
+    //     transition: height 0.1s;
+    // }
+
+    // .site-branding {
+    //     $margin: map-get($grid-margin-gutters, medium);
+    //     // max-width: $grid-container;
+    //     // padding-left: calc( #{$margin} / 2 );
+    //     padding-left: rem-calc(130);
+    //     margin-right: auto;
+    //     margin-left: auto;
+
+    //     align-self: center;
+
+    //     img {
+    //         height: rem-calc(69);
+    //         width: rem-calc(237);
+    //         min-width: rem-calc(237);
+    //     }
+    // }
+
+    // .main-navigation {
+    //     position: fixed;
+    //     right: 0;
+    //     top: 0;
+    //     left: auto;
+    //     bottom: auto;
+    //     height: $header-height;
+    //     transition: none;
+    // }
 
     /* Fixed Header */
     .is-fixed {
@@ -129,20 +157,11 @@ $minimized-height: rem-calc(87); //sic
 
 }
 
-@include breakpoint(large) {
+@include breakpoint(xlarge) {
     .site-header {
-        // @include xy-grid-container;
+        padding-left: rem-calc(130);
     }
 
     .site-branding {}
 
-    .main-navigation {
-        position: fixed;
-        right: 0;
-        top: 0;
-        left: auto;
-        bottom: auto;
-        height: $header-height;
-        transition: none;
-    }
 }
