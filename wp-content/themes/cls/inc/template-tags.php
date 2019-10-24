@@ -174,3 +174,42 @@ function cls_the_content_no_featured_event() {
 		echo apply_filters( 'the_content', $content );
 	}
 }
+
+/**
+ * Render content without specific block
+ *
+ * @param string $block_name
+ * @return void
+ */
+function cls_the_content_no_block( $block_name ) {
+	global $post;
+	$blocks = parse_blocks( $post->post_content );
+	if( $blocks ) {
+		$content = '';
+		foreach( $blocks as $block ) {
+			if( $block_name === $block['blockName'] ) {
+				continue;
+			} else {
+				$content .= render_block( $block );
+			}
+		}
+		echo apply_filters( 'the_content', $content );
+	}
+}
+
+/**
+ * Render specific block
+ *
+ * @param string $block_name
+ * @return void
+ */
+function cls_render_block( $block_name ) {
+	global $post;
+	$blocks = parse_blocks( $post->post_content );
+	foreach( $blocks as $block ) {
+		if( $block_name === $block['blockName'] ) {
+			echo render_block( $block );
+			break;
+		}
+	}
+}

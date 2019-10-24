@@ -8,4 +8,4 @@
  */
 ?>
 
-<?php cls_render_block( 'custom/intro' ); ?>
+<?php cls_render_block( 'custom/content-footer' ); ?>
