@@ -48,13 +48,14 @@
      p {
         font-weight: $font-weight-xbold;
         font-size: rem-calc(18);
-        color: get-color(accent);
+        color: $accent-color !important;
         line-height: 24px;
      }
  
      h2,
      .has-large-font-size {
         padding: 0;
+        color: $accent-color !important;
      }
  
      .wp-block-button {
