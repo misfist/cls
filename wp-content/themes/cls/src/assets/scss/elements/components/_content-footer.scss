@@ -1,0 +1,109 @@
+.wp-block-custom-content-footer {
+
+    /**
+     * Structure
+     */
+    .inner-container {
+        @include xy-grid-container;
+        @include xy-grid;
+    }
+
+    .wp-block-columns {
+        @include xy-grid;
+    }
+
+    .wp-block-column {
+        @include xy-cell(12, $gutters: 0);
+        // flex-basis: 100%;
+    }
+
+    /**
+     * Style
+     */
+     background-color: $accent-color;
+     color: $white;
+
+    .wp-block-quote {
+        position: relative;
+        padding: rem-calc(47) rem-calc(31); //sic
+        border-radius: $button-radius;
+        background-color: get-color(secondary-dark);
+        border: none;
+
+        * {
+            color: $white; 
+        }
+
+        cite {
+            text-align: right;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            transform: rotate(180deg) scaleX(-1);
+            top: -22px;
+            left: 92px;
+            width: 48px;
+            height: 38px;
+
+            /* Mask image method */
+            mask-image: url('../images/blurb-arrow-bottom-left.svg');
+            background-color: get-color(secondary-dark);
+            mask-repeat: no-repeat;
+            mask-size: 48px 38px;
+        }
+    }
+
+    /**
+     * Medium & up
+     */
+    @include breakpoint(medium) {
+        /**
+        * Structure
+        */
+        .inner-container {}
+
+        .wp-block-column {
+            @include xy-cell(6, $gutter-type: padding);
+            
+        }
+    
+        /**
+        * Style
+        */
+        .wp-block-quote {
+            margin-top: 1rem;
+            padding: rem-calc(40) rem-calc(71); //sic
+            border-radius: rem-calc(120);
+
+            &:after {
+                transform: rotateY(180deg) scaleX(-1);
+                top: auto;
+                bottom: -22px;
+                left: 92px;
+                width: 53px;
+                height: 42px;
+    
+                mask-size: 53px 42px;
+            }
+        }
+    
+ 
+    }
+
+    /**
+     * Large & up
+     */
+    @include breakpoint(large) {
+        /**
+        * Structure
+        */
+        .inner-container {}
+
+        /**
+        * Style
+        */
+
+    }
+}

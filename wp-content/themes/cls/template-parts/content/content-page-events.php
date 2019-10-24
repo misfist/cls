@@ -15,12 +15,7 @@
 
 	<div class="entry-content">
 	<?php 
-			if( has_block( 'block-lab/featured-event' ) ) {
-				cls_the_content_no_featured_event();
-			}
-			else {
-				the_content();
-			}
+			cls_the_content_no_block( 'block-lab/featured-event' );
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cls' ),

@@ -8,4 +8,4 @@
  */
 ?>
 
-<?php cls_render_featured_event(); ?>
+<?php cls_render_block( 'block-lab/featured-event' ); ?>

@@ -56,7 +56,7 @@ registerBlockType( 'custom/content-footer', {
 			<section 
 				className={className}
 			>
-				<div className="wp-block-functionality-intro__inner-container inner-container">
+				<div className="wp-block-custom-content-footer__inner-container inner-container">
 					<InnerBlocks />
 				</div>
 			</section>
@@ -76,7 +76,7 @@ registerBlockType( 'custom/content-footer', {
 
 		return (
 			<section>
-				<div className="wp-block-functionality-intro__inner-container inner-container">
+				<div className="wp-block-custom-content-footer__inner-container inner-container">
 					<InnerBlocks.Content />
 				</div>
 		  </section>

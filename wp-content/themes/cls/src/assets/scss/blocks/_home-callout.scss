@@ -53,14 +53,10 @@
     .inner-container {
         background: rgb(255,199,189);
         background: linear-gradient(56deg, rgba(255,199,189,1) 0%, rgba(255,199,189,1) 30%, rgba(255,214,206,1) 30%, rgba(255,214,206,1) 100%);
-        // background-image: url('../images/home-graphic-bg-mobile.svg');
-        // background-position: center top;
-        // background-repeat: no-repeat;
-        // background-size: auto 100%;
+
         border-top-right-radius: 30px;
         border-top-left-radius: 30px;
         
-
         color: $white;
     }
 
