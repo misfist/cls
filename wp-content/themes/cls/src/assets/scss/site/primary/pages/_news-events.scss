@@ -127,7 +127,7 @@
     }
 
     .read-more {
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-xbold;
         font-size: rem-calc(16);
         color: $secondary-color;
         line-height: 28.91px; //sic
@@ -145,9 +145,7 @@
         .section-posts {
 
             .posts-list {
-                // grid-template-columns: 1fr 1fr;
-                // grid-template-columns: 1auto 1auto 1auto 1auto;
-                grid-auto-columns: fit-content(33.3%);
+                grid-template-columns: 1fr 1fr;
             }
 
             article {
@@ -194,6 +192,24 @@
         /**
         * Style
         */
+        .section-subtitle {
+            font-size: rem-calc(20);
+            line-height: 24px;
+        }
+
+        .section-posts {
+            .section-subtitle {
+                font-size: rem-calc(20);
+                line-height: 24px;
+            }
+        }
+
+        .section-events {
+            .section-subtitle {
+                font-size: rem-calc(17);
+                line-height: 22px;
+            }
+        }
      }
 
      @include breakpoint(large) {

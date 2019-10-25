@@ -31,6 +31,8 @@
     .entry-title {
         margin-bottom: 1rem;
         font-weight: $font-weight-black;
+        font-size: rem-calc(24);
+        line-height: 31px;
     }
 
     .entry-media {
@@ -55,12 +57,13 @@
 
     .read-more {
         @include button;
-        background-color: $secondary-color;
+        padding: rem-calc(22) rem-calc(50);
+        background-color: $secondary-alternate-color;
         font-weight: $font-weight-black;
         font-size: rem-calc(17); //sic
 
         &:hover {
-            background-color: darken($secondary-color,10%);
+            background-color: darken($secondary-alternate-color,10%);
         }
     }
 
@@ -70,7 +73,7 @@
      @include breakpoint(medium down) {
 
         article {
-            background-color: $secondary-color;
+            background-color: $secondary-alternate-color;
             align-items: top;
         }
 
