@@ -1,5 +1,5 @@
 /**
- * BLOCK: content footer
+ * BLOCK: animated CTA
  *
  * Registering a basic block with Gutenberg.
  * Simple block, renders and saves the same content without any interactivity.
@@ -11,10 +11,23 @@ import './style.scss';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-
+const { URLInputButton, URLInput, InnerBlocks } = wp.editor;
 const {
-	InnerBlocks,
-} = wp.editor;
+	TextControl,
+	CheckboxControl
+} = wp.components;
+
+const blockAttributes = {
+	url: {
+		type: 'string',
+	},
+	text: {
+		type: 'string',
+	},
+	target: {
+		type: 'boolean'
+	}
+}
 
 /**
  * Register: aa Gutenberg Block.
@@ -29,17 +42,18 @@ const {
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'custom/content-footer', {
-	title: __( 'Content Footer Section', 'site-functionality' ), 
+registerBlockType( 'custom/cta', {
+	title: __( 'Animated CTA', 'site-functionality' ), 
 	icon: 'format-aside',
 	category: 'cls-custom',
 	keywords: [
 		__( 'footer', 'site-functionality' ),
-		__( 'section', 'site-functionality' ),
+		__( 'cta', 'site-functionality' ),
 	],
 	anchor: true,
 	customClassName: true,
-	className: 'content-footer',
+	className: false,
+	attributes: blockAttributes,
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -50,14 +64,28 @@ registerBlockType( 'custom/content-footer', {
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
 	edit: props => {
-		const { attributes: {}, className, getAttributes, setAttributes } = props;
+		const { attributes: {url, text, target}, className, getAttributes, setAttributes } = props;
 
 		return (
 			<section 
-				className={className}
+				className="wp-block-animated-cta"
 			>
-				<div className="wp-block-custom-content-footer__inner-container inner-container">
-					<InnerBlocks />
+				<div className="wp-block-animated-cta__inner-container inner-container">
+					<TextControl
+						label={ __( "CTA Text", "site-functionality" ) }
+						help={ __( "Add link text", "site-functionality" ) }
+						value={ text }
+						onChange={ text => setAttributes( { text } ) }
+					/>
+					<URLInput
+						value={ url }
+						onChange={ url => setAttributes( { url } ) }
+					/>
+					<CheckboxControl
+						label={ __( "Open link in a new tab", "site-functionality" ) }
+						checked={ target }
+						onChange={ target => setAttributes( { target } ) }
+					/>
 				</div>
 			</section>
 		);
@@ -72,12 +100,16 @@ registerBlockType( 'custom/content-footer', {
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
 	save: props => {
-		const { attributes: {}, className } = props;
+		const { attributes: {text, url, target}, className } = props;
 
 		return (
-			<section>
-				<div className="wp-block-custom-content-footer__inner-container inner-container">
-					<InnerBlocks.Content />
+			<section className="wp-block-animated-cta">
+				<div className="wp-block-animated-cta__inner-container inner-container">
+					{target ? (
+						<a href={ url } className="cta-link" target="_blank" rel="noopener noreferrer">{ text }</a>
+					) : (
+						<a href={ url } className="cta-link">{ text }</a>
+					) }
 				</div>
 		  </section>
 		);

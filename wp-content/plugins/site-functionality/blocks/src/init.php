@@ -100,3 +100,33 @@ function blocks_cgb_block_assets() { // phpcs:ignore
 // Hook: Block assets.
 add_action( 'init', 'blocks_cgb_block_assets' );
 
+/**
+ * Add Block Category
+ *
+ * @param array $categories
+ * @return array $categories
+ */
+/**
+ * Add a block category for "Get With Gutenberg" if it doesn't exist already.
+ *
+ * @param array $categories Array of block categories.
+ *
+ * @return array
+ */
+function cls_block_categories( $categories, $post ) {
+	if ( 'page' !== $post->post_type && 'post' !== $post->post_type && 'event' !== $post->post_type ) {
+        return $categories;
+	}
+	
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'cls-custom',
+                'title' => __( 'Custom', 'site-functionality' ),
+                'icon'  => 'star-filled',
+            ),
+        )
+    );
+}
+add_filter( 'block_categories', 'cls_block_categories', 10, 2 );

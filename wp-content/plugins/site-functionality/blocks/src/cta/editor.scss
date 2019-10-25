@@ -1,0 +1,25 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-custom-cta,
+.wp-block-animated-cta {
+    padding: .5rem;
+    // background: $orange;
+    // background: linear-gradient(90deg, rgba($orange,1.0) 0%, rgba($orange,1.0) 50%, rgba($blue,1.0) 50%, rgba($blue,1.0) 100%);
+    background-color: $blue;
+
+    input[type="text"] {
+        border: 1px solid #8d96a0;
+        border-radius: 0;
+        transition: box-shadow 0.1s linear;
+    }
+
+    label,
+    .components-base-control__help {
+        color: $white;
+        font-weight: bold;
+    }
+}

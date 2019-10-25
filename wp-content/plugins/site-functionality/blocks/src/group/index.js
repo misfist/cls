@@ -45,7 +45,7 @@ const blockAttributes = {
 registerBlockType( 'custom/group', {
 	title: __( 'Group', 'site-functionality' ), 
 	icon: 'screenoptions',
-	category: 'layout',
+	category: 'cls-custom',
 	keywords: [
 		__( 'group', 'site-functionality' ),
 		__( 'section', 'site-functionality' ),
