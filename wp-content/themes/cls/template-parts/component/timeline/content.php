@@ -17,7 +17,7 @@
 		$post_type = 'history';
 		$tax_query = array(
 			array(
-				'taxonomy'         => 'year',
+				'taxonomy'         => 'history-year',
 				'terms'            => $term->term_id,
 				'field'            => 'term_id',
 			),

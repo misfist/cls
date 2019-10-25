@@ -10,7 +10,7 @@
 
 <?php
 $args = array( 
-	'taxonomy'               => 'year',
+	'taxonomy'               => 'history-year',
 	'orderby'                => 'name',
 	'order'					 => 'DESC',
     'hide_empty'             => true,
