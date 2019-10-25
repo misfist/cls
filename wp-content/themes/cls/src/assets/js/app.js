@@ -135,5 +135,26 @@ function themeReady() {
         } );
     }
 
+    /**
+     * Event Hover
+     * 
+     */
+    const eventHoverEls = document.querySelectorAll('.entry-media-wrapper a');
+    if(eventHoverEls) {
+        const items = Array.from(eventHoverEls);
+
+        function toggleHover(event) {
+            event.preventDefault();
+            let parent = event.target.closest('.entry-media-wrapper');
+            parent.classList.toggle('is-open');
+        }
+
+        items.forEach(function(item, index) {
+            // item.addEventListener('mouseover', toggleHover);
+            // item.addEventListener('mouseout', toggleHover);
+            item.addEventListener('click', toggleHover);
+        });
+    }
+
 }
 document.addEventListener( "DOMContentLoaded", themeReady );

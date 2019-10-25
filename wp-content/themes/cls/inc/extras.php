@@ -36,3 +36,39 @@ function cls_filter_custom_twitter_fields( $output, $tag ) {
     );
 }
 add_filter( 'do_shortcode_tag', 'cls_filter_custom_twitter_fields', 10, 2 );
+
+/**
+ * Filter occurences to only return future occurrences
+ * 
+ * @see http://codex.wp-event-organiser.com/hook-eventorganiser_get_the_occurrences_of.html
+ *
+ * @param array $occurrences
+ * @param int $post_id
+ * @return array $occurrences - filtered to exclude past events and limited in number
+ */
+function cls_eventorganiser_get_the_occurrences_of( $occurrences, $post_id ) {
+    $limit = 6;
+    $occurrences = array_filter( $occurrences, function( $occurrence ) {
+        return eo_format_datetime( $occurrence['start'], 'Y-m-d H:i:s' ) > date( 'Y-m-d H:i:s' );
+    } );
+	return array_slice( $occurrences, 0, $limit, true );
+};
+add_filter( 'eventorganiser_get_the_occurrences_of', 'cls_eventorganiser_get_the_occurrences_of', 10, 2 );
+
+/**
+ * Image Size Options
+ * 
+ * @see https://developer.wordpress.org/reference/hooks/image_size_names_choose/
+ *
+ * @param array $sizes
+ * @return array $sizes
+ */
+function cls_image_size_names_choose( $sizes ) {
+    return array_merge( $sizes, array(
+        'editorial-thumb'   => __( 'Editorial Image', 'cls' ),
+        'staff-thumb'       => __( 'Staff Photo', 'cls' ),
+        'event-flyer'       => __( 'Event Flyer (portrait)', 'cls' ),
+        'banner'            => __( 'Banner', 'cls' ),
+    ) );
+}
+add_filter( 'image_size_names_choose', 'cls_image_size_names_choose' );

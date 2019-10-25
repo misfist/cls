@@ -78,12 +78,29 @@ if ( ! function_exists( 'gutenberg_starter_theme_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 148,
+			'width'       => 56,
 			'flex-width'  => true,
 			'flex-height' => true,
-        ) );
-        
+		) );
+
+		/**
+		 * Image Sizes
+		 */
+		update_option( 'thumbnail_size_w', 190 );
+		update_option( 'thumbnail_size_h', 142 );
+		update_option( 'thumbnail_crop', 1 );
+		update_option( 'medium_size_w', 600 );
+		update_option( 'medium_size_h', 360 );
+		update_option( 'large_size_w', 1200 );
+		update_option( 'large_size_h', 900 );
+
+		add_image_size( 'staff-thumb', 166, 208, true );
+		add_image_size( 'event-flyer', 300, 450, true );
+		add_image_size( 'editorial-thumb', 334, 252, true );
+		add_image_size( 'banner', 1600,600, true );
+
+
         // Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
 

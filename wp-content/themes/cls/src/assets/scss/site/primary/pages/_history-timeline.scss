@@ -1,0 +1,21 @@
+.page-template-history-timeline {
+    .page > .entry-content {
+
+        &> .entry-title {
+            padding-right: 10%;
+            
+            font-weight: $font-weight-black;
+            font-size: rem-calc(24);
+            color: get-color(accent);
+            line-height: 31px;
+        }
+    }
+
+    .timeline-component {}
+
+    @include breakpoint(medium) {
+        .timeline-component {
+            @include xy-grid-container;
+        }
+    }
+}

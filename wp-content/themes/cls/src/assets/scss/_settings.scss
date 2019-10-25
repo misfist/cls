@@ -89,6 +89,7 @@ $foundation-palette: (
   primary-dark: #EF7558,
   secondary: #8169B1,
   secondary-light: #B7A9D3,
+  secondary-alternate: #9E84CC,
   secondary-dark: #8269AE,
   accent: #1B3E70,
   accent-light: #1E4F92,
@@ -101,10 +102,11 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray:  #EFEFEF;
-$medium-gray: #CECECE;
-$dark-gray: #333333;
+$light-gray:  get-color(gray-light);
+$medium-gray: get-color(gray-medium);
+$dark-gray: get-color(gray-dark);
 $accent-color: get-color(accent);
+$secondary-dark-color: get-color(secondary-dark);
 $black: #000;
 $white: #fefefe;
 $black-4: #666;
@@ -516,6 +518,15 @@ $label-radius: $global-radius;
 $mediaobject-margin-bottom: $global-margin;
 $mediaobject-section-padding: $global-padding;
 $mediaobject-image-width-stacked: 100%;
+
+// Hover Overlay
+// -------------
+$media-hover-wrapper-transition-delay: 0.25s;
+$media-hover-wrapper-transition: .5s ease;
+$media-hover-wrapper-banner-width: 75%;
+$media-hover-wrapper-banner-topspace: 25%;
+$media-hover-wrapper-banner-bg: rgba($primary-color ,0.8);
+$media-hover-wrapper-icon-size: 24px;
 
 // 23. Menu
 // --------

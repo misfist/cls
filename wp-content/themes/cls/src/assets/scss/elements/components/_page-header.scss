@@ -178,20 +178,14 @@
                 }
             }
     
-            // .shape-separator {
-            //     background-color: transparent;
-    
-            //     &:before {
-            //         display: none;
-            //     }
-            // }
-    
             /**
             * Small & Medium
             */
             @include breakpoint(medium down) {
+                margin-bottom: rem-calc(42);
+                
                 background-color: transparent;
-    
+                
                 .container {
                     background-color: $secondary-color;
                 }
