@@ -1,0 +1,180 @@
+.wp-block-custom-cta,
+.wp-block-animated-cta {
+    $size: rem-calc(100);
+
+    height: $size;
+    
+    &:hover {
+        cursor: pointer;
+    }
+
+
+    /**
+     * Structure
+     */
+    .inner-container {
+        height: $size;
+        position: relative;
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .wrapper-l {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .wrapper-r {
+        flex-basis: auto;
+        display: flex;
+        align-items: center;
+
+        background-image: url('../images/bg-color.svg');
+
+        background: 
+            linear-gradient(90deg, 
+            rgba(245,139,111,1) 0%, 
+            rgba(245,139,111,1) 0%, 
+            rgba(245,139,111,0) 0%, 
+            rgba(245,139,111,0) 100%);
+        // background-image: linear-gradient(rgba($primary-color,1), rgba($primary-color,1));
+        // background: $primary-color;
+        // background: linear-gradient(90deg, rgba($primary-color,1) 0%, rgba($primary-color,1) 100%);
+        // background-image: rgba($primary-color, 1);
+        // background: linear-gradient(90deg, rgba($accent-color,1) 0%, rgba($accent-color,1) 100%);
+        // background-size: 100% 10px;
+        // background-position: left top;
+
+        -webkit-animation: color-right 2s ease-in-out;
+        -moz-animation: color-right 2s ease-in-out;
+        animation: color-right 2s ease-in-out;
+
+        // @-webkit-keyframes slide-right {
+        //     0%{background-position: 0% 0%}
+        //     50%{background-position:0% 50%}
+        //     100%{background-position: 0% 100%}
+        // }
+        // @-moz-keyframes slide-right {
+        //     0%{background-position: 0% 0%}
+        //     50%{background-position:0% 50%}
+        //     100%{background-position: 0% 100%}
+        // }
+
+        @keyframes color-right {
+            0% { background: 
+                    linear-gradient(90deg, 
+                    rgba(245,139,111,1) 0%, 
+                    rgba(245,139,111,1) 0%, 
+                    rgba(245,139,111,0) 0%, 
+                    rgba(245,139,111,0) 100%)
+            }
+            50% {
+                background: 
+                    linear-gradient(90deg, 
+                    rgba(245,139,111,1) 0%, 
+                    rgba(245,139,111,1) 50%, 
+                    rgba(245,139,111,0) 50%, 
+                    rgba(245,139,111,0) 100%)
+            }
+            100% {
+                background: 
+                    linear-gradient(90deg, 
+                    rgba(245,139,111,1) 0%, 
+                    rgba(245,139,111,1) calc(100% - 100px), 
+                    rgba(245,139,111,0) calc(100% - 100px), 
+                    rgba(245,139,111,0) 100%)
+            }
+        }
+
+        // background: linear-gradient(90deg, rgba($primary-color,1) 0%, rgba($primary-color,1) 100%);
+    }
+
+    .cta-image {
+        margin-right: -50px;
+        mask-image: url('../images/icon-timeline-arrow.svg');
+        mask-repeat: no-repeat;
+        mask-position: top right;
+        mask-size: $size;
+        background-color: $white;
+        min-width: $size;
+        height: $size;
+    }
+
+    .cta-link {
+        flex-basis: auto;
+    }
+
+    &.is-active {
+        .cta-image {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin-right: 50px;
+        }
+
+        .wrapper-r {
+            background: 
+                linear-gradient(90deg, 
+                rgba(245,139,111,1) 0%, 
+                rgba(245,139,111,1) calc(100% - 100px), 
+                rgba(245,139,111,0) calc(100% - 100px), 
+                rgba(245,139,111,0) 100%);
+        }
+    }
+
+    /**
+     * Style
+     */
+    // background-color: $primary-color;
+
+    // background: $accent-color;
+    // background: linear-gradient(90deg, rgba($primary-color, 1.0) 0%, rgba($primary-color, 1.0) 50%, rgba($accent-color, 1.0) 50%, rgba($accent-color, 1.0) 100%);
+    // transition: all 5s ease-in-out;
+
+    // &.is-active {
+    //     background: linear-gradient(90deg, rgba($primary-color, 1.0) 0%, rgba($primary-color, 1.0) calc(100% - 94px), rgba($accent-color, 1.0) calc(100% - 94px), rgba($accent-color, 1.0) 100%);
+    // }
+
+    .inner-container {
+        background-color: $accent-color;
+    }
+
+    .wrapper-l {
+        flex-basis: auto;
+        background-color: $primary-color;
+    }
+
+    .wrapper-r {
+        flex-basis: auto;
+    }
+
+    .cta-link {
+        color: $white;
+        font-weight: $font-weight-black;
+        font-size: rem-calc(19);
+        line-height: 23px;
+    }
+
+    &.is-active {}
+
+    @include breakpoint(medium) {
+
+    }
+
+    @include breakpoint(large) {
+        
+
+        .cta-link {
+            padding-left: rem-calc(75);
+            padding-right: rem-calc(172);
+        }
+        
+    }
+
+
+}

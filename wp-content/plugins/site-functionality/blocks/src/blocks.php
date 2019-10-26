@@ -122,7 +122,7 @@ function cls_block_categories( $categories, $post ) {
         $categories,
         array(
             array(
-                'slug' => 'cls-custom',
+                'slug' => 'custom',
                 'title' => __( 'Custom', 'site-functionality' ),
                 'icon'  => 'star-filled',
             ),
@@ -130,3 +130,32 @@ function cls_block_categories( $categories, $post ) {
     );
 }
 add_filter( 'block_categories', 'cls_block_categories', 10, 2 );
+
+
+function cls_register_post_meta() {
+	$post_types = array(
+		'post',
+		'page',
+		'event'
+	);
+
+	foreach( $post_types as $post_type ) {
+		register_post_meta( $post_type, 'cta-text', array(
+			'show_in_rest' 	=> true,
+			'single' 		=> true,
+			'type' 			=> 'string',
+		) );
+		register_post_meta( $post_type, 'cta-url', array(
+			'show_in_rest' 	=> true,
+			'single' 		=> true,
+			'type' 			=> 'string',
+		) );
+		register_post_meta( $post_type, 'cta-target', array(
+			'show_in_rest' 	=> true,
+			'single' 		=> true,
+			'type' 			=> 'boolean',
+		) );
+	}
+
+}
+add_action( 'init', 'cls_register_post_meta' );

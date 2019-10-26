@@ -156,5 +156,11 @@ function themeReady() {
         });
     }
 
+    $('.wp-block-animated-cta').hover(function() {
+        $(this).addClass('is-active');
+    }, function() {
+        $(this).removeClass('is-active');
+    });
+
 }
 document.addEventListener( "DOMContentLoaded", themeReady );

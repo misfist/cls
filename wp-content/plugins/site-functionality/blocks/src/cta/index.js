@@ -45,7 +45,7 @@ const blockAttributes = {
 registerBlockType( 'custom/cta', {
 	title: __( 'Animated CTA', 'site-functionality' ), 
 	icon: 'format-aside',
-	category: 'cls-custom',
+	category: 'custom',
 	keywords: [
 		__( 'footer', 'site-functionality' ),
 		__( 'cta', 'site-functionality' ),
@@ -105,11 +105,16 @@ registerBlockType( 'custom/cta', {
 		return (
 			<section className="wp-block-animated-cta">
 				<div className="wp-block-animated-cta__inner-container inner-container">
+					<div class="wrapper-l">
+						<div class="cta-image"></div>
+					</div>
+					<div class="wrapper-r">
 					{target ? (
 						<a href={ url } className="cta-link" target="_blank" rel="noopener noreferrer">{ text }</a>
 					) : (
 						<a href={ url } className="cta-link">{ text }</a>
 					) }
+					</div>
 				</div>
 		  </section>
 		);

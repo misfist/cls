@@ -32,7 +32,7 @@ const {
 registerBlockType( 'custom/content-footer', {
 	title: __( 'Content Footer Section', 'site-functionality' ), 
 	icon: 'format-aside',
-	category: 'cls-custom',
+	category: 'custom',
 	keywords: [
 		__( 'footer', 'site-functionality' ),
 		__( 'section', 'site-functionality' ),

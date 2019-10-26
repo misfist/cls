@@ -35,4 +35,4 @@ include_once( SITE_CORE_DIR . '/includes/filters.php' );
 /**
  * Block Initializer.
  */
-include_once( SITE_CORE_DIR . '/blocks/src/init.php' );
+include_once( SITE_CORE_DIR . '/blocks/src/blocks.php' );

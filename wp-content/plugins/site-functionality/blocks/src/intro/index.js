@@ -44,7 +44,7 @@ const blockAttributes = {
 registerBlockType( 'custom/intro', {
 	title: __( 'Intro Section', 'site-functionality' ), 
 	icon: 'editor-aligncenter',
-	category: 'cls-custom',
+	category: 'custom',
 	keywords: [
 		__( 'intro', 'site-functionality' ),
 		__( 'div', 'site-functionality' ),
