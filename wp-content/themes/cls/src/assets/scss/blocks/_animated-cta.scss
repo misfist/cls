@@ -9,26 +9,29 @@
     .inner-container {
         height: $size;
         position: relative;
-        width: 100%;
-
+    
         @include xy-grid-container;
+        @include xy-grid;
+        flex-wrap: nowrap;
 
-        display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
     }
 
     .wrapper-l {
-        flex: 0 1 rem-calc(150);
-        display: flex;
-        align-items: center;
+        flex-basis: rem-calc(150);
         justify-content: flex-end;
+        align-items: center;
         order: 2;
         position: relative;
+        // border: 1px dotted yellow;
     }
 
     .wrapper-r {
-        flex: 1 1 auto;
         order: 1;
+        align-items: center;
+        padding-right: rem-calc(78);
+        padding-left: rem-calc(22);
+        // border: 1px dotted pink;
     }
 
     .cta-image {
@@ -48,20 +51,25 @@
         height: 100%;
         display: flex;
         align-items: center;
-        align-self: center;
-        padding-right: rem-calc(78);
-        padding-left: rem-calc(22);
         
-        a {}
+        a {
+            align-self: center;
+        }
        
     }
 
     /**
      * Style
      */
-     background: linear-gradient(90deg, rgba($primary-color,1) 0%, rgba($primary-color,1) 50%, rgba($accent-color,1) 50%, rgba($accent-color,1) 100%);
+     background: linear-gradient(
+        90deg, 
+        rgba($primary-color,1) 0%, 
+        rgba($primary-color,1) 50%, 
+        rgba($accent-color,1) 50%, 
+        rgba($accent-color,1) 100%
+    );
 
-    .inner-container {}
+    // .inner-container {}
 
     .wrapper-l {
         background-color: $accent-color;
@@ -69,17 +77,25 @@
 
     .wrapper-r {
         background-color: $primary-color;
-    }
-    
-    .cta-text {
+
         a {
             color: $white;
             font-weight: $font-weight-black;
             font-size: rem-calc(19);
             line-height: rem-calc(23);
         }
-        
     }
+    
+    .cta-text {}
+
+    /**
+     * Small only
+     */
+     @include breakpoint(small only) {
+        .wrapper-r {
+            flex: 1 1 auto;
+        }
+     }
 
     /**
      * Medium & up
@@ -94,24 +110,20 @@
          .inner-container {
             padding: 0;
             height: $lg-size;
-            justify-content: space-between;
+            justify-content: flex-end;
          }
     
         .wrapper-l {
-            flex: 1 0 auto;
-            // @include xy-cell(auto, $gutters: 0);
             order: 1;
-            display: flex;
-            border: 1px dotted red;
             justify-content: flex-end;
             position: initial;
         }
 
         .wrapper-r {
-            flex: 1 1 auto;
             order: 2;
+            padding-left: rem-calc(75);
+            padding-right: rem-calc(172);
             justify-content: flex-end;
-            border: 1px dotted yellow;
         }
 
         .cta-image {
@@ -125,15 +137,11 @@
             
         }
 
-        .cta-text {
-            justify-content: flex-end;
-            width: 100%;
-            padding-left: rem-calc(75);
-            padding-right: rem-calc(172);
+        .cta-text {}
 
-            a {
-                display: block;
-            }
+        a {
+            display: block;
+            text-align: right;
         }
     
         /**
@@ -197,20 +205,13 @@
         &.is-active {
             .wrapper-r {
                 background-size: calc(100% - 100px) 100%;
-                // 
-                // background: 
-                //     linear-gradient(90deg, 
-                //     rgba(245,139,111,1) 0%, 
-                //     rgba(245,139,111,1) calc(100% - 100px), 
-                //     rgba(245,139,111,0) calc(100% - 100px), 
-                //     rgba(245,139,111,0) 100%);
             }
         }
     
         .cta-text {
             a {
-                padding-top: rem-calc(31);
-                padding-bottom: rem-calc(36);
+                // padding-top: rem-calc(31);
+                // padding-bottom: rem-calc(36);
                 font-size: rem-calc(24);
                 line-height: rem-calc(35);
             }
