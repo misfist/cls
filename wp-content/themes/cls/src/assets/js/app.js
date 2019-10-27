@@ -156,11 +156,20 @@ function themeReady() {
         });
     }
 
-    $('.wp-block-animated-cta').hover(function() {
-        $(this).addClass('is-active');
-    }, function() {
-        $(this).removeClass('is-active');
-    });
+    /**
+     * CTA Animation
+     */
+    const cta = document.querySelector( '.wp-block-animated-cta' );
+    if(cta) {
+        function makeActive(event) {
+            this.classList.add('is-active');
+        }
+        function removeActive(event) {
+           this.classList.remove('is-active');
+        }
+        cta.addEventListener('mouseover', makeActive);
+        cta.addEventListener('mouseout',removeActive);
+    }
 
 }
 document.addEventListener( "DOMContentLoaded", themeReady );

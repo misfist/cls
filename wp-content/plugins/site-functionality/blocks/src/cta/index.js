@@ -20,12 +20,18 @@ const {
 const blockAttributes = {
 	url: {
 		type: 'string',
+		source: 'meta',
+		meta: 'cta-url'
 	},
 	text: {
 		type: 'string',
+		source: 'meta',
+		meta: 'cta-text'
 	},
 	target: {
-		type: 'boolean'
+		type: 'boolean',
+		source: 'meta',
+		meta: 'cta-target'
 	}
 }
 
@@ -99,24 +105,7 @@ registerBlockType( 'custom/cta', {
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
-	save: props => {
-		const { attributes: {text, url, target}, className } = props;
-
-		return (
-			<section className="wp-block-animated-cta">
-				<div className="wp-block-animated-cta__inner-container inner-container">
-					<div class="wrapper-l">
-						<div class="cta-image"></div>
-					</div>
-					<div class="wrapper-r">
-					{target ? (
-						<a href={ url } className="cta-link" target="_blank" rel="noopener noreferrer">{ text }</a>
-					) : (
-						<a href={ url } className="cta-link">{ text }</a>
-					) }
-					</div>
-				</div>
-		  </section>
-		);
-	  },
+	save() {
+        return null;
+    }
 } );

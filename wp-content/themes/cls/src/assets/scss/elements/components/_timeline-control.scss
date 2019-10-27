@@ -292,12 +292,23 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
             display: none;
         }
     }
-
+      
     .timeline-tabs-panel {
         display: none;
+        
+        article {
+            opacity: 0;
+            visibility: hidden;
+        }
 
         &.is-active {
             display: block;
+            
+            article {
+                opacity: 1;
+                visibility: visible;
+            }
+
         }
     }
 
