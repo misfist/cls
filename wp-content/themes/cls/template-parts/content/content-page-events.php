@@ -11,7 +11,7 @@
 
 <article id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php get_template_part( 'template-parts/content/content-page-header-events' ); ?>
+	<?php get_template_part( 'template-parts/content/page-header/page-header-events' ); ?>
 
 	<?php get_template_part( 'template-parts/content/section/section', 'news' ); ?>
 

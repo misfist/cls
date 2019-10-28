@@ -13,7 +13,7 @@
 		<div class="header-content">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-			<?php get_template_part( 'template-parts/content/content', 'featured-event' ); ?>
+			<?php get_template_part( 'template-parts/component/featured-event' ); ?>
 		</div>
 		<div class="shape-separator">
 			<div class="shape"></div>
