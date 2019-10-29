@@ -1,5 +1,6 @@
 .wp-block-custom-cta,
 .wp-block-animated-cta {
+    clear: both;
     $size: rem-calc(75);
     height: $size;
 
@@ -54,6 +55,7 @@
         
         a {
             align-self: center;
+            z-index: 5;
         }
        
     }

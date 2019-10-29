@@ -1,0 +1,52 @@
+.wpgmza_map {
+    &:before,
+    &:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    /**
+     * Structure
+     */
+    .wpgmza_modern_infowindow {}
+
+    /**
+     * Style
+     */
+
+    .wpgmza_iw_title {}
+    .wpgmza_iw_address {}
+    .wpgmza_iw_description {}
+    .wpgmza_iw_buttons {
+        .wpgmza_button {
+            @include button($background: $accent-color);
+        }
+    }
+
+    @include breakpoint(medium) {
+    /**
+     * Structure
+     */
+    .wpgmza_modern_infowindow {
+        margin: 0;
+        right: auto;
+        left: 0;
+    }
+
+    /**
+     * Style
+     */
+
+    .wpgmza_iw_title {}
+    .wpgmza_iw_address {}
+    .wpgmza_iw_description {}
+    .wpgmza_iw_buttons {}
+
+    }
+
+    @include breakpoint(large) {}
+}

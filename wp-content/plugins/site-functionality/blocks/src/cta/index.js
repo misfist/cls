@@ -11,7 +11,7 @@ import './style.scss';
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
-const { URLInputButton, URLInput, InnerBlocks } = wp.editor;
+const { URLInput } = wp.editor;
 const {
 	TextControl,
 	CheckboxControl
@@ -50,7 +50,7 @@ const blockAttributes = {
  */
 registerBlockType( 'custom/cta', {
 	title: __( 'Animated CTA', 'site-functionality' ), 
-	icon: 'format-aside',
+	icon: 'megaphone',
 	category: 'custom',
 	keywords: [
 		__( 'footer', 'site-functionality' ),
@@ -74,9 +74,9 @@ registerBlockType( 'custom/cta', {
 
 		return (
 			<section 
-				className="wp-block-animated-cta"
+				className="custom-block"
 			>
-				<div className="wp-block-animated-cta__inner-container inner-container">
+				<div className="inner-container">
 					<TextControl
 						label={ __( "CTA Text", "site-functionality" ) }
 						help={ __( "Add link text", "site-functionality" ) }

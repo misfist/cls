@@ -1,16 +1,76 @@
 /* Intro Block */
-.wp-block-custom-intro,
-.page-intro,
-.entry-intro {
+.wp-block-custom-intro {
     // padding: rem-calc(20);
     background-color: $primary-color;
     color: $white;
 
     .inner-container {
         @include xy-grid-container;
-        padding-top: rem-calc(42);
-        padding-bottom: rem-calc(50);
+        padding-top: rem-calc(46);
+        padding-bottom: rem-calc(44);
     }
+
+    /**
+     * Structure
+     */
+
+    .intro-button {
+        display: none;
+    }
+
+    /**
+     * Style
+     */
+     p {
+        line-height: rem-calc(25);
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+     }
+
+    @include breakpoint(medium) {
+        /**
+        * Structure
+        */
+        &.has-button {            
+            .inner-container {
+                @include xy-grid;
+                align-items: center;
+                padding-top: rem-calc(44);
+                padding-bottom: rem-calc(46);
+            }
+
+            .intro-content {
+                @include xy-cell(7 of 12, $gutters: 81, $gutter-type: padding, $gutter-position: right);
+            }
+
+            .intro-button {
+                display: block;
+                @include xy-cell(5 of 12, $gutters: 81, $gutter-type: padding, $gutter-position: left);
+            }
+        }
+
+        /**
+        * Style
+        */
+        p {
+            line-height: rem-calc(27);
+        }
+    
+    }
+
+    @include breakpoint(large) {
+        /**
+        * Structure
+        */
+
+        /**
+        * Style
+        */
+
+    }
+
 }
 
 /* About Us Variation */

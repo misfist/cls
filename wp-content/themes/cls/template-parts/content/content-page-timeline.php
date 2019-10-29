@@ -10,11 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if( !is_home() && !is_front_page() ) : ?>
-		<?php get_template_part( 'template-parts/content/content-page-header' ); ?>
-	<?php endif; ?>
-
-	<?php get_template_part( 'template-parts/content/content-intro' ); ?>
+	<?php get_template_part( 'template-parts/content/page-header/page-header' ); ?>
 
 	<div class="entry-content">
 		<?php 

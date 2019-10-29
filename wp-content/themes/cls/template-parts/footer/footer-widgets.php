@@ -41,7 +41,8 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 							'container'		 => false,
 							'menu_class'     => 'social-menu menu',
 							'depth'          => 1,
-							'link_before'	 => '<i class="icon"></i>',
+							'link_before'	 => '<i class="icon"></i><span class="screen-reader-text">',
+							'link_after'	 => '</span>',
 						)
 					);
 					?>

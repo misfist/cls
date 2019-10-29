@@ -39,7 +39,7 @@ registerBlockType( 'custom/content-footer', {
 	],
 	anchor: true,
 	customClassName: true,
-	className: 'content-footer',
+	className: false,
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -54,7 +54,7 @@ registerBlockType( 'custom/content-footer', {
 
 		return (
 			<section 
-				className={className}
+				className="custom-block"
 			>
 				<div className="wp-block-custom-content-footer__inner-container inner-container">
 					<InnerBlocks />

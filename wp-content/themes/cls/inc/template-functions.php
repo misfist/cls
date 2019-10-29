@@ -43,3 +43,23 @@ function gutenberg_starter_theme_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'gutenberg_starter_theme_pingback_header' );
+
+/**
+ * Register post type templates
+ * 
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-templates/
+ *
+ * @return void
+ */
+function cls_register_post_type_args_page( $args, $post_type ) {
+	if( 'page' === $post_type ) {
+		$args['template'] = array(
+			array( 'custom/intro', array() ),
+			array( 'core/paragraph', array() ),
+			array( 'custom/content-footer', array() ),
+			array( 'custom/cta', array() ),
+		);
+	}
+	return $args;
+}
+add_filter( 'register_post_type_args', 'cls_register_post_type_args_page', 10, 2 );

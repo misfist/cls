@@ -86,13 +86,13 @@ $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #F58B6F,
-  primary-dark: #EF7558,
+  primary-dark: #EF7558, //Hover
   secondary: #8169B1,
   secondary-light: #B7A9D3,
-  secondary-alternate: #9E84CC,
+  secondary-alternate: #9E84CC, // Hover
   secondary-dark: #8269AE,
   accent: #1B3E70,
-  accent-light: #1E4F92,
+  accent-light: #1E4F92, // Hover
   blue-light: #5991DE,
   gray-dark: #333333,
   gray-medium: #cecece,
@@ -102,6 +102,7 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
+
 $light-gray:  get-color(gray-light);
 $medium-gray: get-color(gray-medium);
 $dark-gray: get-color(gray-dark);
@@ -134,6 +135,14 @@ $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
+
+$button-palette: map-merge($foundation-palette, (
+    accent: $accent-color, //1B3E70
+    orange: $primary-color, //F58B6F
+    purple: $secondary-dark-color //8269AE
+));
+
+//9E84CC
 
 $dark-nav-color: $secondary-color;
 
@@ -175,8 +184,9 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-//400,700,900
+//400,600, 700,900
 $font-weight-normal: $global-weight-normal;
+$font-weight-semi-bold: 600;
 $font-weight-bold: $global-weight-bold;
 $font-weight-xbold: 800;
 $font-weight-black: $global-weight-black;
@@ -335,7 +345,7 @@ $button-padding: 0.85em rem-calc(30);
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-background-hover: get-color(primary-dark);
 $button-color: $white;
 $button-color-alt: $black;
 // $button-radius: $global-radius;

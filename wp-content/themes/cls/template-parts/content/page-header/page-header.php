@@ -8,15 +8,15 @@
  */
 
 ?>
-<header class="entry-header page-content-header">
+<header class="entry-header page-content-header has-intro">
 	<div class="container">
 		<div class="header-content">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-			<?php get_template_part( 'template-parts/content/content', 'featured-event' ); ?>
 		</div>
 		<div class="shape-separator">
 			<div class="shape"></div>
 		</div>
 	</div>
 </header><!-- .entry-header -->
+
+<?php get_template_part( 'template-parts/component/intro' ); ?>

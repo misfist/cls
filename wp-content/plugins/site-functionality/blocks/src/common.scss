@@ -12,3 +12,24 @@ $gray: #dedede;
 $orange: #F58B6F;
 $blue: #1B3E70;
 $purple: #9E84CC;
+
+.custom-block {
+    background-color: #dedede;
+    border-radius: 4px;
+
+    .inner-container {
+        padding: .25rem;
+    }
+
+    input[type="text"],
+    .editor-url-input input {
+        border: 1px solid $black !important;
+        border-radius: 2px;
+    }
+}
+
+.components-panel__row {
+    .components-base-control {
+        width: 100%;
+    }
+}

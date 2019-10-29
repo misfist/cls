@@ -45,7 +45,7 @@ const blockAttributes = {
 registerBlockType( 'custom/group', {
 	title: __( 'Group', 'site-functionality' ), 
 	icon: 'screenoptions',
-	category: 'cls-custom',
+	category: 'custom',
 	keywords: [
 		__( 'group', 'site-functionality' ),
 		__( 'section', 'site-functionality' ),
@@ -57,7 +57,7 @@ registerBlockType( 'custom/group', {
 	alignWide: true,
 	anchor: true,
 	customClassName: true,
-	className: 'group',
+	className: false,
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.

@@ -27,10 +27,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
-function blocks_cgb_block_assets() { // phpcs:ignore
+function site_functionality_block_assets() { // phpcs:ignore
 	// Register block styles for both frontend + backend.
 	wp_register_style(
-		'blocks-cgb-style-css', // Handle.
+		'site-functionality-block-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
 		array( 'wp-editor' ), // Dependency to include the CSS after it.
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
@@ -38,7 +38,7 @@ function blocks_cgb_block_assets() { // phpcs:ignore
 
 	// Register block editor script for backend.
 	wp_register_script(
-		'blocks-cgb-block-js', // Handle.
+		'site-functionality-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
 		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
@@ -47,7 +47,7 @@ function blocks_cgb_block_assets() { // phpcs:ignore
 
 	// Register block editor styles for backend.
 	wp_register_style(
-		'blocks-cgb-block-editor-css', // Handle.
+		'site-functionality-block-editor-css', // Handle.
 		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
 		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
@@ -55,7 +55,7 @@ function blocks_cgb_block_assets() { // phpcs:ignore
 
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
 	wp_localize_script(
-		'blocks-cgb-block-js',
+		'site-functionality-block-js',
 		'cgbGlobal', // Array containing dynamic data for a JS Global.
 		[
 			'pluginDirPath' => plugin_dir_path( __DIR__ ),
@@ -75,30 +75,39 @@ function blocks_cgb_block_assets() { // phpcs:ignore
 	 * @since 1.16.0
 	 */
 	register_block_type(
-		'core-functionality/footnotes', array(
+		'custom/intro', array(
 			// Enqueue blocks.style.build.css on both frontend & backend.
-			'style'         => 'blocks-cgb-style-css',
+			'style'         => 'site-functionality-block-css',
 			// Enqueue blocks.build.js in the editor only.
-			'editor_script' => 'blocks-cgb-block-js',
+			'editor_script' => 'site-functionality-block-js',
 			// Enqueue blocks.editor.build.css in the editor only.
-			'editor_style'  => 'blocks-cgb-block-editor-css',
+			'editor_style'  => 'site-functionality-block-editor-css',
 		)
 	);
 
 	register_block_type(
-		'core-functionality/group', array(
+		'custom/content-footer', array(
 			// Enqueue blocks.style.build.css on both frontend & backend.
-			'style'         => 'blocks-cgb-style-css',
+			'style'         => 'site-functionality-block-css',
 			// Enqueue blocks.build.js in the editor only.
-			'editor_script' => 'blocks-cgb-block-js',
+			'editor_script' => 'site-functionality-block-js',
 			// Enqueue blocks.editor.build.css in the editor only.
-			'editor_style'  => 'blocks-cgb-block-editor-css',
+			'editor_style'  => 'site-functionality-block-editor-css',
+		)
+	);
+
+	register_block_type(
+		'custom/group', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'site-functionality-block-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'site-functionality-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'site-functionality-block-editor-css',
 		)
 	);
 }
-
-// Hook: Block assets.
-add_action( 'init', 'blocks_cgb_block_assets' );
+add_action( 'init', 'site_functionality_block_assets' );
 
 /**
  * Add Block Category
@@ -113,7 +122,7 @@ add_action( 'init', 'blocks_cgb_block_assets' );
  *
  * @return array
  */
-function cls_block_categories( $categories, $post ) {
+function site_functionality_block_categories( $categories, $post ) {
 	if ( 'page' !== $post->post_type && 'post' !== $post->post_type && 'event' !== $post->post_type ) {
         return $categories;
 	}
@@ -129,16 +138,23 @@ function cls_block_categories( $categories, $post ) {
         )
     );
 }
-add_filter( 'block_categories', 'cls_block_categories', 10, 2 );
+add_filter( 'block_categories', 'site_functionality_block_categories', 10, 2 );
 
-
-function cls_register_post_meta() {
+/**
+ * Register Post Meta for Blocks
+ *
+ * @return void
+ */
+function site_functionality_register_post_meta() {
 	$post_types = array(
 		'post',
 		'page',
 		'event'
 	);
 
+	/**
+	 * CTA Fields
+	 */
 	foreach( $post_types as $post_type ) {
 		register_post_meta( $post_type, 'cta-text', array(
 			'show_in_rest' 	=> true,
@@ -157,5 +173,95 @@ function cls_register_post_meta() {
 		) );
 	}
 
+	/**
+	 * Intro Fields
+	 */
+	register_post_meta( 'page', 'intro-data', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'string',
+	) );
+
+	register_post_meta( 'page', 'intro-title', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'string',
+	) );
+
+	register_post_meta( 'page', 'intro-content', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'string',
+	) );
+
+	register_post_meta( 'page', 'intro-button-url', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'string',
+	) );
+
+	register_post_meta( 'page', 'intro-button-text', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'string',
+	) );
+
+	register_post_meta( 'page', 'intro-button-target', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'boolean',
+	) );
+
+	register_post_meta( 'page', 'intro-button-color', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'string',
+	) );
+
+	/**
+	 * Featured Event Fields
+	 */
+	register_post_meta( 'page', 'featured-event-type', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'boolean',
+	) );
+
+	register_post_meta( 'page', 'featured-event', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'integer',
+	) );
+
+	register_post_meta( 'page', 'featured-event-title', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'string',
+	) );
+
+	register_post_meta( 'page', 'featured-event-content', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'string',
+	) );
+
+	register_post_meta( 'page', 'featured-event-url', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'string',
+	) );
+
+	register_post_meta( 'page', 'featured-event-link-text', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'string',
+	) );
+
+	register_post_meta( 'page', 'featured-event-target', array(
+		'show_in_rest' 	=> true,
+		'single' 		=> true,
+		'type' 			=> 'boolean',
+	) );
+
 }
-add_action( 'init', 'cls_register_post_meta' );
+add_action( 'init', 'site_functionality_register_post_meta' );

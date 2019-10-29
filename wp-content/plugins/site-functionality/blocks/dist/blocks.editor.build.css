@@ -4,6 +4,19 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.custom-block {
+  background-color: #dedede;
+  border-radius: 4px; }
+  .custom-block .inner-container {
+    padding: .25rem; }
+  .custom-block input[type="text"],
+  .custom-block .editor-url-input input {
+    border: 1px solid #292929 !important;
+    border-radius: 2px; }
+
+.components-panel__row .components-base-control {
+  width: 100%; }
+
 /**
  * #.# Editor Styles
  *
@@ -16,6 +29,49 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.custom-block {
+  background-color: #dedede;
+  border-radius: 4px; }
+  .custom-block .inner-container {
+    padding: .25rem; }
+  .custom-block input[type="text"],
+  .custom-block .editor-url-input input {
+    border: 1px solid #292929 !important;
+    border-radius: 2px; }
+
+.components-panel__row .components-base-control {
+  width: 100%; }
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-custom-intro {
+  background-color: transparent;
+  color: #292929;
+  border: 2px solid #1B3E70;
+  border-radius: 10px; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.custom-block {
+  background-color: #dedede;
+  border-radius: 4px; }
+  .custom-block .inner-container {
+    padding: .25rem; }
+  .custom-block input[type="text"],
+  .custom-block .editor-url-input input {
+    border: 1px solid #292929 !important;
+    border-radius: 2px; }
+
+.components-panel__row .components-base-control {
+  width: 100%; }
+
 /**
  * #.# Editor Styles
  *
@@ -28,18 +84,19 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
-/**
- * #.# Editor Styles
- *
- * CSS for just Backend enqueued after style.scss
- * which makes it higher in priority.
- */
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
+.custom-block {
+  background-color: #dedede;
+  border-radius: 4px; }
+  .custom-block .inner-container {
+    padding: .25rem; }
+  .custom-block input[type="text"],
+  .custom-block .editor-url-input input {
+    border: 1px solid #292929 !important;
+    border-radius: 2px; }
+
+.components-panel__row .components-base-control {
+  width: 100%; }
+
 /**
  * #.# Editor Styles
  *

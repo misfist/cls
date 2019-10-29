@@ -11,20 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if( !is_home() && !is_front_page() ) : ?>
-		<?php get_template_part( 'template-parts/content/content-page-header' ); ?>
+		<?php get_template_part( 'template-parts/content/page-header/page-header' ); ?>
 	<?php endif; ?>
 
-	<?php get_template_part( 'template-parts/content/content-intro' ); ?>
-
 	<div class="entry-content">
-		<?php 
-			if( has_block( 'custom/intro' ) ) {
-				cls_the_content_no_intro();
-			}
-			else {
-				the_content();
-			}
-		?>
+		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
