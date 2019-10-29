@@ -49,10 +49,22 @@
 
             .textwidget {
                 @include xy-grid;
+                flex-wrap: nowrap;
                 align-items: top;
-
-                p {}
             }
+
+            p {
+                &:first-of-type {
+                    width: rem-calc(128);
+                    flex: 0 0 rem-calc(128);
+                }
+
+                &:last-of-type {
+                    flex: 1 1 auto;
+                    padding-left: rem-calc(21);
+                }
+            }
+
         }
     }
 
@@ -186,21 +198,7 @@
             }
         }
 
-        .footer-widget-4 {
-            .supporters {
-                .textwidget {
-                    p {
-                        &:first-of-type {
-                            @include xy-cell(1 of 2, $gutters: 20, $gutter-type: padding, $gutter-position: right);
-                        }
-    
-                        &:last-of-type {
-                            @include xy-cell(1 of 2, $gutters: 0);
-                        }
-                    }
-                }
-            }
-        }
+        .footer-widget-4 {}
     }
 
     @include breakpoint(medium) {
@@ -215,8 +213,23 @@
 
         .widget-column {}
 
+        $gutters: rem-calc(34) * 2;
+        $widths: (
+            col1: 430px, // Was 418, normalized to 430
+            col2: 170px, // Was 168, normalized to 170
+            col3: 280px, // Was 279, normalized to 280
+            col4: 320px // Was 293, normalized to 320
+          );
+        
+        $percents: (
+            col1: (map-get($widths,col1) / $breakpoint-large) * 100%,
+            col2: (map-get($widths,col2) / $breakpoint-large) * 100%,
+            col3: (map-get($widths,col3) / $breakpoint-large) * 100%,
+            col4: (map-get($widths,col4) / $breakpoint-large) * 100%,
+        );
+
         .footer-widget-1 {
-            @include xy-cell(4 of 12, $gutters: 72, $gutter-type: padding, $gutter-position: right);
+            @include xy-cell(map-get($percents,col1), $gutters: $gutters, $gutter-type: padding, $gutter-position: right);
 
             @include xy-grid;
             flex-wrap: nowrap;
@@ -238,8 +251,7 @@
         }
 
         .footer-widget-2 {
-            @include xy-cell(2 of 12, $gutters: 72, $gutter-type: padding, $gutter-position: right left );
-
+            @include xy-cell(map-get($percents,col2), $gutters: $gutters, $gutter-type: padding, $gutter-position: right left );
 
             nav {
                 @include xy-cell($gutters: 0);
@@ -257,11 +269,33 @@
         }
 
         .footer-widget-3 {
-            @include xy-cell(3 of 12, $gutters: 72, $gutter-type: padding, $gutter-position: right left );
+            @include xy-cell(map-get($percents,col3), $gutters: $gutters, $gutter-type: padding, $gutter-position: right left );
         }
 
         .footer-widget-4 {
-            @include xy-cell(3 of 12, $gutters: 72, $gutter-type: padding, $gutter-position: left);
+            @include xy-cell(map-get($percents,col4), $gutters: $gutters, $gutter-type: padding, $gutter-position: left);
+        }
+
+        .footer-widget-4 {
+            .supporters {
+    
+                .textwidget {
+                    @include xy-grid;
+                    flex-wrap: nowrap;
+                }
+    
+                p {
+                    &:first-of-type {
+                        width: rem-calc(69);
+                        flex-basis: rem-calc(69);
+                    }
+    
+                    &:last-of-type {
+                        padding-left: rem-calc(21);
+                    }
+                }
+    
+            }
         }
 
        /**
@@ -289,27 +323,13 @@
         .footer-widget-4 {
             .supporters {
                 img {
-                    width: 78px;
+                    width: rem-calc(69);
                     height: auto
-                }
-
-                .textwidget {
-                    flex-wrap: nowrap;
                 }
 
                 p {
                     font-size: rem-calc(11);
                     line-height: rem-calc(16);
-
-                    &:first-of-type {
-                        min-width: 78px;
-                        flex-basis: 0 0 78px;
-                    }
-
-                    &:last-of-type {
-                        padding-left: rem-calc(18);
-                        flex-basis: 1 1 auto;
-                    }
                 }
 
             }
