@@ -166,7 +166,16 @@
 
     .footer-widget-2 {}
 
-    .footer-widget-3 {}
+    .footer-widget-3 {
+        .widget_text {
+            p {
+                margin-bottom: 0;
+            }
+            .button {
+                margin-bottom: rem-calc(15);
+            }
+        }
+    }
 
     .footer-widget-4 {
         .newsletter {
@@ -208,7 +217,7 @@
         .widget-area {
             padding-top: rem-calc(70);
             padding-bottom: rem-calc(96);
-            
+            align-items: stretch;
         }
 
         .widget-column {}
@@ -220,7 +229,6 @@
             col3: 280px, // Was 279, normalized to 280
             col4: 320px // Was 293, normalized to 320
           );
-        
         $percents: (
             col1: (map-get($widths,col1) / $breakpoint-large) * 100%,
             col2: (map-get($widths,col2) / $breakpoint-large) * 100%,
@@ -248,42 +256,101 @@
                 flex-basis: auto;
                 padding-left: rem-calc(33); //sic
             }
+
+            .textwidget {
+                align-self: stretch;
+            }
         }
 
         .footer-widget-2 {
             @include xy-cell(map-get($percents,col2), $gutters: $gutters, $gutter-type: padding, $gutter-position: right left );
+            padding-left: rem-calc(33); // sic - design has inconsistent padding
+            padding-right: rem-calc(30); // sic - design has inconsistent padding
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+
+            & > div {
+                width: 100%;
+            }
 
             nav {
                 @include xy-cell($gutters: 0);
                 padding-right: 0;
             }
 
-            .social-menu {
-                justify-content: flex-start;
+            .footer-menu {
+                a {
+                    line-height: rem-calc(16);
+                }
+
+                li + li {
+                    margin-top: 1rem;
+                }
+            }
+
+            .social-navigation {
+                align-self: flex-end;
+                text-align: left;
 
                 li {
                     margin-left: 0;
                     margin-right: rem-calc(10);
                 }
             }
+
+            .social-menu {
+                justify-content: flex-start;
+            }
         }
 
         .footer-widget-3 {
             @include xy-cell(map-get($percents,col3), $gutters: $gutters, $gutter-type: padding, $gutter-position: right left );
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+
+            & > div {
+                width: 100%;
+            }
+
+            .widget_text {
+                align-self: stretch;
+            }
+
+            .widget_search {
+                align-self: flex-end;
+            }
         }
 
         .footer-widget-4 {
             @include xy-cell(map-get($percents,col4), $gutters: $gutters, $gutter-type: padding, $gutter-position: left);
-        }
 
-        .footer-widget-4 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+
+            & > div {
+                width: 100%;
+            }
+
+            .newsletter {
+                .widget-title {
+                    width: 60%;
+                }
+            }
+
             .supporters {
+                align-self: flex-end;
+                margin-top: 0;
     
                 .textwidget {
                     @include xy-grid;
                     flex-wrap: nowrap;
                 }
     
+                /* Supporters logo and text */
                 p {
                     &:first-of-type {
                         width: rem-calc(69);
@@ -298,6 +365,11 @@
             }
         }
 
+        .social-navigation,
+        .social-navigation * {
+            height: rem-calc(30);
+        }
+
        /**
         * Style
         */
@@ -305,8 +377,18 @@
 
         .button,
         p .button {
+            padding: rem-calc(14) rem-calc(38) !important;
             font-size: rem-calc(12) !important;
             letter-spacing: 0.4px !important;
+            margin-bottom: 0 !important;
+        }
+
+        .textwidget {
+            p {
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
         }
 
         .search-field {
@@ -318,6 +400,10 @@
             &:not(:last-of-type) {
                 border-right: 1px solid get-color(gray-medium);
             }
+        }
+
+        .footer-widget-3 {
+            .widget_text {}
         }
 
         .footer-widget-4 {
