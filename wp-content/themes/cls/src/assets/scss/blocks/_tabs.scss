@@ -1,0 +1,158 @@
+.wp-block-kadence-tabs {
+
+    /**
+     * Structure
+     */
+    .kt-tabs-title-list,
+    .kt-tabs-content-wrap {
+        @include xy-grid-container;
+    }
+
+    .kt-tabs-title-list {
+        flex-wrap: nowrap;
+
+        li {
+            margin: 0;
+        }
+    }
+
+    .kt-tabs-has-2-tabs {
+        li {
+            @include xy-cell(1 of 2, $gutters: 0);
+        }
+    }
+
+    .kt-tabs-has-3-tabs {
+        li {
+            @include xy-cell(1 of 3, $gutters: 0);
+        }
+    }
+
+    .kt-tabs-has-4-tabs {
+        li {
+            @include xy-cell(1 of 4, $gutters: 0);
+        }
+    }
+
+    /**
+     * Style
+     */
+    background-color: $light-gray;
+
+    .kt-tabs-title-list {
+        li {
+            font-weight: $font-weight-black;
+            font-size: rem-calc(15);
+            
+            letter-spacing: 0.53px;  //sic
+            text-align: center;
+            line-height: rem-calc(18.55); //sic
+        }
+
+        li + li {
+            border-left: 10px solid $white;
+        }
+
+        a {
+            padding-top: rem-calc(37) !important;
+            padding-bottom: rem-calc(37) !important;
+            background-color: $medium-gray;
+            border: none !important;
+            border-radius: 0 !important;
+            color: $white !important;
+            border-image-width: 0 !important;
+            text-transform: uppercase;
+        }
+
+        .kt-tab-title-active {
+            a {
+                background-color:  $secondary-dark-color !important;
+            }
+
+            &:after {
+                content: '';
+                background-image: url('../images/blurb-arrow-down.svg');
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                background-size: rem-calc(42) rem-calc(21);
+                position: absolute;
+                bottom: - rem-calc(20);
+                width: rem-calc(42);
+                height: rem-calc(21);
+                @include horizontal-center;
+            }
+            
+        }
+
+        .kt-title-text {
+            width: 100%;
+        }
+    }
+
+    .wp-block-kadence-tab {
+        border: none;
+    }
+
+    @include breakpoint(medium) {
+        /**
+        * Structure
+        */
+
+        /**
+        * Style
+        */
+
+        // background: linear-gradient(
+        //     180deg, 
+        //     rgba(206,206,206,1) 0%, 
+        //     rgba(206,206,206,1) 90px, 
+        //     rgba(206,206,206,0) 90px, 
+        //     rgba(206,206,206,0) 100%);
+        // background-size: 50% auto;
+        // background-position: top right;
+        // background-color: $light-gray;
+
+        .kt-tabs-title-list {
+            li {
+                font-size: rem-calc(19.8); //sic
+                letter-spacing: 0.69px;
+                line-height: rem-calc(44.55);
+
+                a {
+                    padding-top: rem-calc(23) !important;
+                    padding-bottom: rem-calc(23) !important;
+                }
+
+                &:first-of-type {
+                    margin-left: rem-calc(190);
+
+                    a {
+                        background-image: url('../images/shape-tab-corner.svg');
+                        background-position: top left -2px;
+                        background-repeat: no-repeat;
+                        background-size: rem-calc(65) 100%;
+                     }
+                }
+            }
+
+        }
+
+    }
+
+    @include breakpoint(large) {
+        /**
+        * Structure
+        */
+        @include fullwidth;
+
+        // .kt-tabs-wrap {
+        //     @include xy-grid-container;
+        // }
+
+        /**
+        * Style
+        */
+
+    }
+
+}

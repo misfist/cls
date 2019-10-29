@@ -63,3 +63,20 @@ function gutenberg_starter_theme_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'gutenberg_starter_theme_scripts' );
+
+/**
+ * Function to turn off inline tabs block css.
+ * 
+ * @see https://wordpress.org/support/topic/unregister-styles/
+ *
+ * @param bool   $enable is on of off.
+ * @param string $type the name of the block.
+ * @param string $uniqueid the unique id of the block.
+ */
+function cls_unregister_tabs_inline_css( $enable, $type, $uniqueid ) {
+	if ( 'tabs' === $type ) {
+		$enable = false;
+	}
+	return $enable;
+}
+add_filter( 'kadence_blocks_render_inline_css', 'cls_unregister_tabs_inline_css', 10, 3 );

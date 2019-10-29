@@ -80,3 +80,10 @@
     -webkit-hyphens: auto;
     hyphens: auto;
 }
+
+@mixin fullwidth() {
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+	max-width: 100vw;
+	width: 100vw;
+}

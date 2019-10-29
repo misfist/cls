@@ -12,7 +12,11 @@
 
 	&.alignwide {}
 
-	&.alignfull {}
+	&.alignfull {
+		margin: 32px calc(50% - 50vw);
+		max-width: 100vw;
+		width: 100vw;
+	}
 
 	&.alignleft {}
 
@@ -458,3 +462,7 @@ Frontend styles for gutenberg blocks
 /* Animated CTA */
 
 @import "./animated-cta";
+
+/* Tabs */
+
+@import "./tabs";
