@@ -1,11 +1,15 @@
 .wp-block-kadence-tabs {
 
+    @include fullwidth;
+
     /**
      * Structure
      */
     .kt-tabs-title-list,
     .kt-tabs-content-wrap {
         @include xy-grid-container;
+        padding-right: 0;
+        padding-left: 0;
     }
 
     .kt-tabs-title-list {
@@ -20,6 +24,8 @@
         li {
             @include xy-cell(1 of 2, $gutters: 0);
         }
+
+        .kt-active-tab-2 {}
     }
 
     .kt-tabs-has-3-tabs {
@@ -54,6 +60,7 @@
         }
 
         a {
+            height: 100%;
             padding-top: rem-calc(37) !important;
             padding-bottom: rem-calc(37) !important;
             background-color: $medium-gray;
@@ -65,6 +72,8 @@
         }
 
         .kt-tab-title-active {
+            z-index: 1 !important;
+
             a {
                 background-color:  $secondary-dark-color !important;
             }
@@ -93,10 +102,49 @@
         border: none;
     }
 
+    .kt-tabs-wrap {
+    }
+
+    /* Make last tab look like it extends to edge */
+    .kt-tabs-wrap {
+        background: linear-gradient(225deg, $medium-gray, $medium-gray);
+        background-size: 50% 90px;
+        background-position: 100% 0%;
+        background-repeat: no-repeat;
+    }
+    /* Make last active tab look like it extends to edge */
+    .kt-tabs-has-2-tabs {
+        &.kt-active-tab-2 {
+            background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
+            background-size: 50% 90px;
+            background-position: 100% 0%;
+            background-repeat: no-repeat;
+        }
+    }
+    .kt-tabs-has-3-tabs {
+        &.kt-active-tab-3 {
+            background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
+            background-size: 50% 90px;
+            background-position: 100% 0%;
+            background-repeat: no-repeat;
+        }
+    }
+    .kt-tabs-has-4-tabs {
+        &.kt-active-tab-4 {
+            background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
+            background-size: 50% 90px;
+            background-position: 100% 0%;
+            background-repeat: no-repeat;
+        }
+    }
+
+
+
     @include breakpoint(medium) {
         /**
         * Structure
         */
+        
 
         /**
         * Style
@@ -113,6 +161,8 @@
         // background-color: $light-gray;
 
         .kt-tabs-title-list {
+            @include xy-grid-container;
+            
             li {
                 font-size: rem-calc(19.8); //sic
                 letter-spacing: 0.69px;
@@ -143,7 +193,7 @@
         /**
         * Structure
         */
-        @include fullwidth;
+        // @include fullwidth;
 
         // .kt-tabs-wrap {
         //     @include xy-grid-container;
