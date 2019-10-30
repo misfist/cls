@@ -36,3 +36,4 @@ include_once( SITE_CORE_DIR . '/includes/filters.php' );
  * Block Initializer.
  */
 include_once( SITE_CORE_DIR . '/blocks/src/blocks.php' );
+include_once( SITE_CORE_DIR . '/blocks/acf/register-blocks.php' );
