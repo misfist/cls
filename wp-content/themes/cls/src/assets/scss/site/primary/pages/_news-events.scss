@@ -59,6 +59,11 @@
         // padding-left: 20px;
     }
 
+    .section-footer {
+        margin-top: rem-calc(58);
+        text-align: center;
+    }
+
     /**
      * Style
      */
@@ -95,6 +100,10 @@
                 font-size: rem-calc(16);
                 line-height: 20px;
             }
+        }
+
+        button {
+            @include button($background: $secondary-color, $background-hover: get-color(secondary-alternate));
         }
     }
 

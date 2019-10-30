@@ -6,11 +6,13 @@
  *
  * @package cls
  */
-
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array(
 	'post_type'              => array( 'post' ),
-	'nopaging'               => false,
-	'posts_per_page'         => 4,
+    'posts_per_page'         => 4,
+    'paged'                  => $paged,
+    'ignore_sticky_posts'    => true,
+    'post_status'            => array( 'publish' ),
 );
 $query = new WP_Query( $args );
 
@@ -38,6 +40,9 @@ if ( $query->have_posts() ) : ?>
                 
             <?php
             endwhile; ?>
+            </div><!-- .posts-list -->
+            <div class="section-footer">
+                <button class="button js-load-more-posts" data-posts-per-page="<?php echo intval( $args['posts_per_page'] ); ?>" data-max-pages="<?php echo intval( $query->max_num_pages ); ?>"><?php esc_html_e( 'Load More', 'cls' ); ?></button>
             </div>
         </div>
     </div>

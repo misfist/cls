@@ -72,3 +72,16 @@ function cls_image_size_names_choose( $sizes ) {
     ) );
 }
 add_filter( 'image_size_names_choose', 'cls_image_size_names_choose' );
+
+/**
+ * Modify excerpt length
+ * 
+ * @see https://developer.wordpress.org/reference/hooks/excerpt_length/
+ *
+ * @param int $length
+ * @return int $length
+ */
+function cls_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'cls_excerpt_length', 999 );

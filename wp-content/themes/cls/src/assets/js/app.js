@@ -3,7 +3,6 @@ import './vendor/navigation.js';
 import { CountUp } from './vendor/countUp.min.js';
 
 function themeReady() {
-    console.log( 'loaded app.js' );
 
     /**
      * Timeline UI Functions

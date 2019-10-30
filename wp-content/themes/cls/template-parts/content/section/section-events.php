@@ -9,10 +9,12 @@
 
 $args = array(
 	'post_type'              => array( 'event' ),
-	'nopaging'               => false,
+    'nopaging'               => false,
+    'numberposts'            => 3,
     'posts_per_page'         => 3,
     'suppress_filters'       => false,
-    'group_events_by'        => 'series'
+    'group_events_by'        => 'series',
+    'post_status'            => array( 'publish' ),
 );
 $query = new WP_Query( $args );
 
@@ -39,6 +41,9 @@ if ( $query->have_posts() ) : ?>
 
             <?php
             endwhile; ?>
+            </div><!-- .posts-list -->
+            <div class="section-footer">
+                <button class="button js-load-more-events" data-page="2" data-max-pages="<?php echo intval( $query->max_num_pages ); ?>"><?php esc_html_e( 'Load More', 'cls' ); ?></button>
             </div>
         </div>
     </div>
