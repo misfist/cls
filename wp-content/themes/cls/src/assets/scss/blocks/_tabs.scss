@@ -271,6 +271,42 @@
             }
         }
 
+        /* Content */
+        .wp-block-kadence-tab {
+            h2 { // Same as small 
+            }
+            
+            h3 { //same as small 
+            }
+
+            .wp-block-columns {
+                @include xy-grid;
+            }
+
+            .wp-block-column {
+                
+                &:first-child {
+                    @include xy-cell(3 of 12, $gutters: 100, $gutter-type: padding, $gutter-position: right);
+                    flex-basis: calc(100% / 4);
+                }
+
+                &:last-child {
+                    @include xy-cell(9 of 12, $gutters: 100, $gutter-type: padding, $gutter-position: left);
+                    flex-basis: calc((100% / 4) * 3);
+                    margin-top: rem-calc(50); // 38px + for line-height
+                    margin-left: 0; //override build-in style
+
+                    border-left: 1px solid $medium-gray; // Design files have #D8D8D8, but normalized
+
+                    ul {
+                        column-count: 3;
+                        column-gap: rem-calc(60);
+                    }
+                }
+            }
+
+        }
+
     }
 
     @include breakpoint(large) {
