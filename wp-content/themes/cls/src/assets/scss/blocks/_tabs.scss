@@ -21,22 +21,26 @@
     }
 
     .kt-tabs-has-2-tabs {
-        li {
-            @include xy-cell(1 of 2, $gutters: 0);
+        .kt-tabs-title-list {
+            li {
+                @include xy-cell(1 of 2, $gutters: 0);
+            }
         }
-
-        .kt-active-tab-2 {}
     }
 
     .kt-tabs-has-3-tabs {
-        li {
-            @include xy-cell(1 of 3, $gutters: 0);
+        .kt-tabs-title-list {
+            li {
+                @include xy-cell(1 of 3, $gutters: 0);
+            }
         }
     }
 
     .kt-tabs-has-4-tabs {
-        li {
-            @include xy-cell(1 of 4, $gutters: 0);
+        .kt-tabs-title-list {
+            li {
+                @include xy-cell(1 of 4, $gutters: 0);
+            }
         }
     }
 
@@ -45,6 +49,7 @@
      */
     background-color: $light-gray;
 
+    /* Tabs */
     .kt-tabs-title-list {
         li {
             font-weight: $font-weight-black;
@@ -56,13 +61,13 @@
         }
 
         li + li {
-            border-left: 10px solid $white;
+            border-left: 2px solid $white;
         }
 
         a {
             height: 100%;
-            padding-top: rem-calc(37) !important;
-            padding-bottom: rem-calc(37) !important;
+            padding-top: rem-calc(28) !important;
+            padding-bottom: rem-calc(28) !important;
             background-color: $medium-gray;
             border: none !important;
             border-radius: 0 !important;
@@ -83,11 +88,11 @@
                 background-image: url('../images/blurb-arrow-down.svg');
                 background-repeat: no-repeat;
                 background-position: center bottom;
-                background-size: rem-calc(42) rem-calc(21);
+                background-size: rem-calc(24) rem-calc(13); //sic
                 position: absolute;
-                bottom: - rem-calc(20);
-                width: rem-calc(42);
-                height: rem-calc(21);
+                bottom: - rem-calc(12);
+                width: rem-calc(24);
+                height: rem-calc(13);
                 @include horizontal-center;
             }
             
@@ -98,47 +103,74 @@
         }
     }
 
+    /* Content */
     .wp-block-kadence-tab {
         border: none;
+        padding-top: rem-calc(27); // Add px active arrow
+        padding-bottom: rem-calc(57); // sic
+        color: $black-7;
+
+        h2 {
+            margin-bottom: rem-calc(14);
+            font-weight: $font-weight-black;
+            font-size: rem-calc(30);
+            color: $accent-color;
+            line-height: rem-calc(38);
+        }
+
+        h3 {
+            margin-bottom: rem-calc(24);
+            font-weight: $font-weight-black;
+            font-size: rem-calc(20);
+            color: $secondary-dark-color;
+            line-height: rem-calc(24);
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+
+        li {
+            font-size: rem-calc(14);
+            line-height: rem-calc(18);
+
+            strong {
+                font-weight: $font-weight-black;
+                font-size: rem-calc(15);
+                line-height: rem-calc(20);
+            }
+
+            em {
+                font-weight: $font-weight-semi-bold;
+                font-size: rem-calc(15);
+                line-height: rem-calc(23);
+                font-style: normal;
+            }
+        }
+
+        li + li {
+            margin-top: rem-calc(23); //sic
+        }
+
     }
 
-    .kt-tabs-wrap {
-    }
+    .kt-tabs-wrap {}
 
-    /* Make last tab look like it extends to edge */
-    .kt-tabs-wrap {
-        background: linear-gradient(225deg, $medium-gray, $medium-gray);
-        background-size: 50% 90px;
-        background-position: 100% 0%;
-        background-repeat: no-repeat;
-    }
-    /* Make last active tab look like it extends to edge */
-    .kt-tabs-has-2-tabs {
-        &.kt-active-tab-2 {
-            background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
-            background-size: 50% 90px;
-            background-position: 100% 0%;
-            background-repeat: no-repeat;
+    @include breakpoint(small only) {
+        
+        /* Content */
+        .wp-block-kadence-tab {
+
+            /* Horizontal rule before h3 heading when followed by list */
+            ul + h3 {
+                border-top: 1px solid $medium-gray; // Design files have #D8D8D8, but normalized
+                padding-top: rem-calc(38);
+                margin-top: rem-calc(34);
+            }
         }
     }
-    .kt-tabs-has-3-tabs {
-        &.kt-active-tab-3 {
-            background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
-            background-size: 50% 90px;
-            background-position: 100% 0%;
-            background-repeat: no-repeat;
-        }
-    }
-    .kt-tabs-has-4-tabs {
-        &.kt-active-tab-4 {
-            background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
-            background-size: 50% 90px;
-            background-position: 100% 0%;
-            background-repeat: no-repeat;
-        }
-    }
-
-
 
     @include breakpoint(medium) {
         /**
@@ -149,17 +181,6 @@
         /**
         * Style
         */
-
-        // background: linear-gradient(
-        //     180deg, 
-        //     rgba(206,206,206,1) 0%, 
-        //     rgba(206,206,206,1) 90px, 
-        //     rgba(206,206,206,0) 90px, 
-        //     rgba(206,206,206,0) 100%);
-        // background-size: 50% auto;
-        // background-position: top right;
-        // background-color: $light-gray;
-
         .kt-tabs-title-list {
             @include xy-grid-container;
             
@@ -185,6 +206,69 @@
                 }
             }
 
+            li + li {
+                border-left: 10px solid $white;
+            }
+
+            .kt-tab-title-active {
+                &:after {
+                    content: '';
+                    // background-image: url('../images/blurb-arrow-down.svg');
+                    // background-repeat: no-repeat;
+                    // background-position: center bottom;
+                    background-size: rem-calc(42) rem-calc(21);
+                    // position: absolute;
+                    bottom: - rem-calc(20);
+                    width: rem-calc(42);
+                    height: rem-calc(21);
+                    // @include horizontal-center;
+                }
+            }
+        }
+
+        /* Make last tab look like it extends to edge */
+        .kt-tabs-wrap {
+            background: linear-gradient(225deg, $medium-gray, $medium-gray);
+            background-size: 50% 90px;
+            background-position: 100% 0%;
+            background-repeat: no-repeat;
+        }
+        /* Make last active tab look like it extends to edge */
+        .kt-tabs-has-2-tabs {
+            &.kt-active-tab-2 {
+                background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
+                background-size: 50% 90px;
+                background-position: 100% 0%;
+                background-repeat: no-repeat;
+            }
+        }
+        .kt-tabs-has-3-tabs {
+            &.kt-active-tab-3 {
+                background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
+                background-size: 50% 90px;
+                background-position: 100% 0%;
+                background-repeat: no-repeat;
+            }
+
+            .kt-tabs-title-list {
+                li + li {
+                    border-left: 7px solid $white;
+                }
+            }
+        }
+        .kt-tabs-has-4-tabs {
+            &.kt-active-tab-4 {
+                background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
+                background-size: 50% 90px;
+                background-position: 100% 0%;
+                background-repeat: no-repeat;
+            }
+
+            .kt-tabs-title-list {
+                li + li {
+                    border-left: 7px solid $white;
+                }
+            }
         }
 
     }
