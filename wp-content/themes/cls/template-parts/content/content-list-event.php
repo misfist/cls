@@ -12,9 +12,9 @@ if( !function_exists( 'eo_get_the_occurrences_of' ) ) {
 	return;
 }
 
-$class = ( eo_recurs() ) ? 'has-occurances' : '' ;
+$class = ( eo_recurs() ) ? 'has-occurances fade-in' : 'fade-in' ;
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?> data-animation-in="fade-in">
 
 	<div class="entry-media-wrapper">
 		<div class="entry-media">

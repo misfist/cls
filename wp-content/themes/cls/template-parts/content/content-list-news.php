@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'fade-in' ); ?> data-animation-in="fade-in">
 	<header class="entry-header">
 		<?php the_date( get_option( 'date_format' ), '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
