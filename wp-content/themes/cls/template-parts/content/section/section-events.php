@@ -33,7 +33,7 @@ if ( $query->have_posts() ) : ?>
                 );
                 ?>
             </header>
-            <div class="posts-list">
+            <div class="posts-list fade-in">
             <?php
             while ( $query->have_posts() ) :
                 $query->the_post(); ?>
