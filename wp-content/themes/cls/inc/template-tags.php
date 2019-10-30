@@ -213,3 +213,22 @@ function cls_render_block( $block_name ) {
 		}
 	}
 }
+
+/**
+ * Get page ID by slug
+ * 
+ * @see https://developer.wordpress.org/reference/functions/get_page_by_path/
+ * 
+ * @usage `cls_get_page_id_by_path( 'about/news-events/' )`
+ *
+ * @param string $page_slug
+ * @return mixed int $page->ID or null
+ */
+function cls_get_page_id_by_path( $page_slug ) {
+	$page = get_page_by_path( $page_slug );
+	if ( $page ) {
+		return $page->ID;
+	} else {
+		return null;
+	}
+}

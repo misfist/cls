@@ -123,7 +123,7 @@ add_action( 'init', 'site_functionality_block_assets' );
  * @return array
  */
 function site_functionality_block_categories( $categories, $post ) {
-	if ( 'page' !== $post->post_type && 'post' !== $post->post_type && 'event' !== $post->post_type ) {
+	if ( 'page' !== $post->post_type ) {
         return $categories;
 	}
 	

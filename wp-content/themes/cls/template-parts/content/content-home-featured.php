@@ -7,7 +7,6 @@
  * @package cls
  */
 ?>
-
 <article id="post-<?php echo $post->ID; ?>" <?php post_class(); ?>>
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="entry-media">

@@ -29,6 +29,8 @@ get_header(); ?>
 	endwhile; // End of the loop.
 	?>
 
+		<?php get_template_part( 'template-parts/component/cta', get_post_type() ); ?>
+
 	</main><!-- #primary -->
 
 <?php

@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: News & Events (T2)
+ * Template Name: Single Column - Narrow
  * 
- * The template for displaying the News & Events page
+ * The template for displaying the Our Work, etc
  *
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
@@ -17,13 +17,13 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content/content', 'page-events' );
+			get_template_part( 'template-parts/content/content', 'page' );
 
 		endwhile; // End of the loop.
 		?>
 
-		<?php get_template_part( 'template-parts/component/cta', 'event' ); ?>
-
+		<?php get_template_part( 'template-parts/component/cta' ); ?>
+		
 	</main><!-- #primary -->
 
 <?php

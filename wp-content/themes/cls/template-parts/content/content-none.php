@@ -10,6 +10,7 @@
 ?>
 
 <section class="no-results not-found">
+	<?php get_template_part( 'template-parts/content/page-header/page-header', 'none' ); ?>
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'cls' ); ?></h1>
 	</header><!-- .page-header -->

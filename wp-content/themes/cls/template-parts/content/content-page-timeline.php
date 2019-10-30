@@ -20,7 +20,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php get_template_part( 'template-parts/content/content-footer' ); ?>
+	<?php get_template_part( 'template-parts/content/page-footer/page-footer' ); ?>
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">

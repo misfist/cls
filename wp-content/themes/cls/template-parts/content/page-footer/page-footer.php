@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page intro
+ * Template part for displaying page footer
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
