@@ -152,7 +152,7 @@
         }
 
         .button {
-            @include button($background: $secondary-color, $background-hover: get-color(secondary-alternate));
+            @include button($background: $secondary-color, $background-hover: $hover-secondary);
             margin-top: rem-calc(6);
             margin-bottom: 0;
         }
@@ -180,7 +180,7 @@
     .footer-widget-4 {
         .newsletter {
             .button {
-                @include button($background: $secondary-color, $background-hover: get-color(secondary-alternate));
+                @include button($background: $secondary-color, $background-hover: $hover-secondary);
             }
         }
 

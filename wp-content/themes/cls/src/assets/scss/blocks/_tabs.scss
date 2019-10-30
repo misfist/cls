@@ -74,6 +74,10 @@
             color: $white !important;
             border-image-width: 0 !important;
             text-transform: uppercase;
+
+            &:hover {
+                background-color: $hover-secondary;
+            }
         }
 
         .kt-tab-title-active {

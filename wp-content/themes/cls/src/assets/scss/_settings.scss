@@ -109,6 +109,9 @@ $dark-gray: get-color(gray-dark);
 $accent-color: get-color(accent);
 $secondary-dark-color: get-color(secondary-dark);
 $secondary-alternate-color: get-color(secondary-alternate);
+$hover-primary: get-color(primary-dark);
+$hover-secondary: get-color(secondary-alternate);
+$hover-accent: get-color(accent-light);
 $black: #000;
 $white: #fefefe;
 $black-7: #525252; // Used by text in leadership tabs
