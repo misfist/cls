@@ -315,6 +315,17 @@
          color: $primary-color;
        }
      }
+
+     &.focus,
+     &.current-menu-parent,
+     .current-menu-item {
+       &.highlighted {
+        &> a {
+          color: $white;
+        }
+       }
+     }
+
    }
 
     a {
