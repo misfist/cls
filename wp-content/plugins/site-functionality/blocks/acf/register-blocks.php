@@ -12,19 +12,42 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// add_action( 'acf/init', 'site_function_acf_register_blocks' );
+add_action( 'acf/init', 'site_function_acf_register_blocks' );
+/**
+ * Register ACF blocks
+ * 
+ * @see https://www.advancedcustomfields.com/resources/blocks/
+ *
+ * @return void
+ */
 function site_function_acf_register_blocks() {
 	
 	if( function_exists( 'acf_register_block' ) ) {
-		
-		acf_register_block(array(
+		acf_register_block( array(
 			'name'				=> 'featured-event',
-			'title'				=> __( 'Featured Event', 'site-functionality' ),
-			'description'		=> __( 'Featured event', 'site-functionality' ),
-			'render_callback'	=> 'site_functionality_featured_event_render_callback',
+			'title'				=> __( 'Event', 'site-functionality' ),
+			'description'		=> __( 'Display an event', 'site-functionality' ),
+            // 'render_callback'	=> 'site_functionality_featured_event_render_callback',
+            'render_template'   => 'templates/event.php',
 			'category'			=> 'custom',
 			'icon'				=> 'calendar-alt',
 			'keywords'			=> array( 'event' ),
+        ));
+        
+        acf_register_block( array(
+			'name'				=> 'featured-post',
+			'title'				=> __( 'Post', 'site-functionality' ),
+			'description'		=> __( 'Display a post', 'site-functionality' ),
+            // 'render_callback'	=> 'site_functionality_featured_post_render_callback',
+            'render_template'   => SITE_CORE_DIR . '/blocks/acf/templates/post.php',
+			'category'			=> 'custom',
+			'icon'				=> 'text-page',
+			'keywords'			=> array( 'post' ),
 		));
-	}
+    }
+    
+}
+
+function site_functionality_featured_event_render_callback() {
+
 }

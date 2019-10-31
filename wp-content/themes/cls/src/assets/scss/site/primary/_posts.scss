@@ -1,15 +1,22 @@
-/* Page Header */
-.page {
-    .page-content-header {}
-}
+.post-template-default {
+    /**
+     * Structure
+     */
+    .site-main {
+        .entry-meta,
+        .entry-content,
+        .entry-footer,
+        .post-navigation {
+            @include xy-grid-container;
+        }
+    }
 
-/* Secondary Page Title */
-// .entry-content {
-//     &> h2 {
-//         color: get-color( accent );
-//         font-size: rem-calc(24);
-//     }
-// }
+    .page-content-header {}
+
+    @include breakpoint(medium) {
+        .page-content-header {}
+    }
+}
 
 .content-section {
     .history {
@@ -63,13 +70,9 @@
             &.has-post-thumbnail {
                 .entry-media {
                     @include xy-cell(4, $gutters: 0);
-                    // @include xy-gutters(50, $gutter-type: padding, $gutter-position: left);
-                    // @include xy-gutters($gutter-position: bottom);
                 }
                 .entry-body {
                     @include xy-cell(8, $gutters: 0);
-                    // @include xy-gutters($gutter-position: bottom);
-                    // @include xy-gutters(50, $gutter-type: padding, $gutter-position: right);
                 }
             }
 
@@ -144,3 +147,136 @@
     }
 }
 
+/* Posts in Content Footer */
+.wp-block-custom-content-footer {
+    
+    /**
+     * Structure
+     */
+    article {
+        &.has-post-thumbnail {}
+
+        .entry-media {
+            $tab-height: rem-calc(46);
+            $tab-width: rem-calc(106);
+            $end: rem-calc(22);
+
+            clip-path: 
+                polygon(
+                    0% 0%, 
+                    100% 0, 
+                    100% 100%, 
+                    calc( #{$tab-width} + #{$end} ) 100%, 
+                    $tab-width calc( 100% - #{$tab-height} ), 
+                    0 calc( 100% - #{$tab-height} )
+                );
+
+            width: 100%;
+            height: rem-calc(250);
+            overflow: hidden;
+
+            img {
+                background-color: $light-gray;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    }
+
+    /**
+     * Style
+     */
+    .entry-meta {
+        margin-top: - rem-calc(22);
+        font-weight: $font-weight-bold;
+        font-size: rem-calc(14);
+        line-height: rem-calc(20);
+    }
+
+    .entry-title {
+        margin-top: rem-calc(36);
+        margin-bottom: rem-calc(20);
+        font-weight: $font-weight-black;
+        font-size: rem-calc(18);
+        line-height: rem-calc(20);
+
+        a {
+            color: $white;
+        }
+    }
+
+    .entry-content {
+        margin-bottom: rem-calc(25);
+
+        p {
+            font-size: rem-calc(14);
+            line-height: rem-calc(18);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .button {
+        @include button( $background: $secondary-color, $background-hover: $hover-secondary );
+    }
+
+    @include breakpoint(small only) {
+        .wp-block-column + .wp-block-column {
+            margin-top: rem-calc(57); //sic
+        }
+    }
+
+    @include breakpoint(medium) {
+        /**
+        * Structure
+        */
+        article {
+            &.has-post-thumbnail {}
+    
+            .entry-media {
+                $tab-height: rem-calc(42); //shorter than on mobile?
+                $tab-width: rem-calc(138);
+                $end: rem-calc(20);
+    
+                clip-path: 
+                    polygon(
+                        0% 0%, 
+                        100% 0, 
+                        100% 100%, 
+                        calc( #{$tab-width} + #{$end} ) 100%, 
+                        $tab-width calc( 100% - #{$tab-height} ), 
+                        0 calc( 100% - #{$tab-height} )
+                    );
+    
+                height: rem-calc(323);
+    
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        /**
+        * Style
+        */
+        .entry-meta {
+            font-size: rem-calc(16);
+            line-height: rem-calc(20);
+        }
+
+        .entry-title {
+            font-size: rem-calc(18);
+            line-height: rem-calc(20);
+        }
+
+        .entry-content {
+            p {}
+        }
+
+     }
+
+}

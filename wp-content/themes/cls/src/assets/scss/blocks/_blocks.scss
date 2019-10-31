@@ -407,6 +407,24 @@ Frontend styles for gutenberg blocks
 		text-transform: uppercase;
 		font-weight: $font-weight-black;
 		letter-spacing: 0.4px;
+
+		&.has-primary-background-color {
+			&:hover {
+				background-color: $hover-primary;
+			}
+		}
+
+		&.has-secondary-background-color {
+			&:hover {
+				background-color: $hover-secondary;
+			}
+		}
+
+		&.has-accent-background-color {
+			&:hover {
+				background-color: $hover-accent;
+			}
+		}
 	}
 
 	// add special styling for squared buttons

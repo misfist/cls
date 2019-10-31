@@ -101,6 +101,41 @@
 
 }
 
+/* Basic Pages */
+.page-template-default,
+.page-template-grid-content {
+    .wp-block-custom-intro {
+        .intro-content {
+            p {
+                font-size: rem-calc(20);
+                line-height: rem-calc(25);
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+
+        .wp-block-custom-intro {
+            .intro-content {
+                margin-right: 41.666666666666667%; //sic
+
+                p {
+                    line-height: rem-calc(27);
+                }
+            }
+        }
+        
+    }
+
+    &.has-gray-light-page-color {
+        .intro-content {
+            p {
+                color: $accent-color;
+            }
+        }
+    }
+}
+
 
 @each $color, $code in $foundation-palette {
   

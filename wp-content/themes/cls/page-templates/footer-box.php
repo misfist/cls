@@ -2,7 +2,7 @@
 /**
  * Template Name: Content Footer Bar (T4)
  * 
- * The template for displaying the Our Story, Our Impact & Our Clients pages
+ * The template for displaying the Our Clients, Our Impact, Get Help
  *
  *
  * @link https://codex.wordpress.org/Template_Hierarchy

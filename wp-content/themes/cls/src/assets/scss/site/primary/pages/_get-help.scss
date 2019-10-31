@@ -1,0 +1,95 @@
+.page-get-help {
+    /**
+     * Structure
+     */
+
+    /**
+     * Style
+     */
+
+    @include breakpoint(medium) {
+        /* Target only main content area */
+
+        .site-main {
+            &> article {
+                &> .entry-content {
+
+                    &> .has-2-columns {
+                        .wp-block-column {
+
+                            .wp-block-image {
+                                float: left;
+                                // clear: both;
+                
+                                width: 33.333333333333333%;
+                                text-align: right;
+                
+                                img {
+                                    height: auto;
+                                    max-width: 100%;
+                                    padding-right: rem-calc(30);
+                                }
+                                &:after { 
+                                    content: "";
+                                    display: block; 
+                                    clear: both;
+                                  }
+                            }
+                
+                            h3  {
+                                width: 66.66666666%;
+                                float: right;
+                            }
+                
+                            p {
+                                width: 66.66666666%;
+                                float: right;
+                            }
+                
+                            .wp-block-button {
+                                width: 66.66666666%;
+                                float: right;
+                
+                                &:after { 
+                                    content: "";
+                                    display: block; 
+                                    clear: both;
+                                }
+                            }
+                
+                            .wp-block-button + .wp-block-separator {
+                                padding-bottom: rem-calc(35)
+                            }
+                
+                            .wp-block-separator {
+                                @include clearfix;
+                                margin-bottom: rem-calc(65);
+                            }
+                
+                        }
+                    }
+                }
+            }
+        }
+
+       /**
+        * Structure
+        */
+        .wp-block-custom-content-footer {
+            .inner-container {
+                &> h2 {
+                    margin-right: 50%;
+                }
+                &> p {
+                    margin-right: 50%;
+                }
+            }
+        }
+
+       /**
+        * Style
+        */
+
+    }
+
+}

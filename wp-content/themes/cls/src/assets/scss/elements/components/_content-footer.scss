@@ -1,11 +1,21 @@
 .wp-block-custom-content-footer {
 
+    @include fullwidth;
+
+    $start: 75.466666666666667%; //sic
+    $tab-height: rem-calc(46);
+    $tab-width: rem-calc(46);
+
+    clip-path: polygon(0% 0%, $start 0, calc( #{$start} + #{$tab-width} ) $tab-height, 100% $tab-height, 100% 100%, 0% 100%);
+
     /**
      * Structure
      */
     .inner-container {
         @include xy-grid-container;
         @include xy-grid;
+        padding-top: rem-calc(50);
+        padding-bottom: rem-calc(50);
     }
 
     .wp-block-columns {
@@ -13,8 +23,13 @@
     }
 
     .wp-block-column {
-        @include xy-cell(12, $gutters: 0);
-        // flex-basis: 100%;
+        @include xy-cell($gutters: 0);
+
+        &:first-child {}
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     /**
@@ -22,6 +37,10 @@
      */
      background-color: $accent-color;
      color: $white;
+
+    p + .wp-block-columns {
+        margin-top: rem-calc(31); //Total 47px with p margin
+    }
 
     .wp-block-quote {
         position: relative;
@@ -55,18 +74,38 @@
         }
     }
 
+    h2 {
+        margin-bottom: rem-calc(30);
+        font-weight: $font-weight-black;
+        font-size: rem-calc(24);
+        line-height: rem-calc(31);
+    }
+
     /**
      * Medium & up
      */
     @include breakpoint(medium) {
+
+        $start: 50%;
+        $tab-height: rem-calc(46);
+        $tab-width: rem-calc(44);
+    
+        clip-path: polygon(0% 0%, $start 0, calc( #{$start} + #{$tab-width} ) $tab-height, 100% $tab-height, 100% 100%, 0% 100%);
+
         /**
         * Structure
         */
         .inner-container {}
 
         .wp-block-column {
-            @include xy-cell(6, $gutter-type: padding);
-            
+
+            &:first-child {
+                @include xy-cell(6, $gutters: 75, $gutter-type: padding, $gutter-position: right);
+            }
+
+            &:last-child {
+                @include xy-cell(6, $gutters: 75, $gutter-type: padding, $gutter-position: left);
+            }
         }
     
         /**
