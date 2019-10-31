@@ -112,7 +112,9 @@
         * Style
         */
         .wp-block-quote {
-            margin-top: 1rem;
+            margin-top: rem-calc(50);
+            
+            // margin-top: 1rem;
             padding: rem-calc(40) rem-calc(71); //sic
             border-radius: rem-calc(120);
 
