@@ -9,12 +9,96 @@
         .post-navigation {
             @include xy-grid-container;
         }
+
+        .entry-content {
+            padding-top: rem-calc(40);
+            padding-bottom: rem-calc(50);
+        }
+    }
+
+    /**
+     * Style
+     */
+    .entry-content {
+        font-size: rem-calc(16);
+        line-height: rem-calc(21);
+
+        * {
+            font-size: rem-calc(16);
+            line-height: rem-calc(21);
+        }
+
+        p {
+            line-height: rem-calc(21);
+        }
+
+        li {}
+
+        .wp-block-quote,
+        .wp-block-quote p {
+            font-size: rem-calc(20);
+            line-height: rem-calc(26);
+            color: $secondary-color;
+        }
+
+        .wp-block-quote {
+            border-left: none;
+            margin: rem-calc(40) 0;
+            padding: rem-calc(34) 0;
+            border-top: 2px solid $secondary-color;
+            border-bottom: 2px solid $secondary-color;
+
+            cite {
+                font-size: rem-calc(14);
+                line-height: rem-calc(20);
+                font-weight: $font-weight-semi-bold;
+                color: black;
+                text-align: right;
+            }
+        }
     }
 
     .page-content-header {}
 
+    .post-navigation {
+        margin-bottom: rem-calc(53); //sic
+    }
+
     @include breakpoint(medium) {
         .page-content-header {}
+
+        .site-main {
+            .entry-meta,
+            .entry-content,
+            .entry-footer,
+            .post-navigation {}
+    
+            .entry-content {
+                padding-top: rem-calc(50);
+                padding-bottom: rem-calc(70);
+            }
+        }
+
+        .entry-content {}
+
+        .wp-block-quote,
+        .wp-block-quote p {}
+
+        .wp-block-quote {
+            margin-top: rem-calc(53);
+            margin-bottom: rem-calc(50);
+
+            p {
+                padding-right: rem-calc(50);
+            }
+
+            cite {}
+
+        }
+
+        .post-navigation {
+            margin-bottom: rem-calc(70); //sic
+        }
     }
 }
 
@@ -221,6 +305,7 @@
 
     .button {
         @include button( $background: $secondary-color, $background-hover: $hover-secondary );
+        margin-bottom: 0;
     }
 
     @include breakpoint(small only) {

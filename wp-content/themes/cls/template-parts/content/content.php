@@ -10,25 +10,34 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
 		<?php
 		if ( is_singular() ) : ?>
-			<?php get_template_part( 'template-parts/content/page-header/page-header' ); ?>
-		<?php
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			if ( has_post_thumbnail() ) :
-				the_post_thumbnail();
-			endif;
-		endif;
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php gutenberg_starter_theme_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+			<?php get_template_part( 'template-parts/content/page-header/page-header' ); ?>
+
+		<?php else : ?>
+
+			<header class="entry-header">
+
+				<?php
+					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				?>
+				<?php
+				if ( has_post_thumbnail() ) :
+					the_post_thumbnail();
+				endif; ?>
+
+				<?php 
+				if ( 'post' === get_post_type() ) : ?>
+					<div class="entry-meta">
+						<?php gutenberg_starter_theme_posted_on(); ?>
+					</div><!-- .entry-meta -->
+				<?php
+				endif; ?>
+
+			</header><!-- .entry-header -->
+
+		<?php endif; ?>
 
 	<div class="entry-content">
 		<?php
@@ -52,7 +61,5 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php gutenberg_starter_theme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<footer class="entry-footer"></footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

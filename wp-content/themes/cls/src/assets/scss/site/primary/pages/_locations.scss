@@ -1,0 +1,42 @@
+.page-template-locations {
+    /**
+    * Structure
+    */
+    .site-main {
+        .entry-content {
+            padding: 0 !important;
+        }
+    }
+
+    /**
+    * Style
+    */
+
+    @include breakpoint(medium) {
+
+        /**
+        * Structure
+        */
+        .site-main {
+            .entry-content {
+                padding-top: 0;
+                padding-bottom: 0;
+
+                #wpgmza_map_1 {
+                    margin-right: calc(50% - 50vw) !important;
+                    margin-left: calc(50% - 50vw) !important; 
+                }
+
+                .wpgmza_map {
+                    @include fullwidth;
+                }
+            }
+        }
+
+        /**
+        * Style
+        */
+
+    }
+
+}

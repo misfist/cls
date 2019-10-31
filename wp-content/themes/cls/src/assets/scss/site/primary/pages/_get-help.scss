@@ -14,12 +14,13 @@
             &> article {
                 &> .entry-content {
 
+                    padding-bottom: rem-calc(43);
+
                     &> .has-2-columns {
                         .wp-block-column {
 
                             .wp-block-image {
                                 float: left;
-                                // clear: both;
                 
                                 width: 33.333333333333333%;
                                 text-align: right;

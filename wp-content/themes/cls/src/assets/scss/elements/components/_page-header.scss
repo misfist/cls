@@ -31,7 +31,10 @@
      */
     color: white;
 
-
+    h1 {
+        font-weight: $font-weight-black;
+    }
+    
     .container {
         background-color: $accent-color;
     }
@@ -250,3 +253,6 @@
 .single-post {}
 
 
+.page-content-header {
+    &:not(.has-intro):not(.has-featured-event) {}
+}

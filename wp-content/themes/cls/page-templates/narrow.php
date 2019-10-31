@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Single Column - Narrow
+ * Template Name: Narrow
  * 
- * The template for displaying the Our Story, Our Impact & Our Clients pages
+ * The template for displaying the Our Work
  *
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main<?php echo ( has_block( 'custom/intro' ) ) ? ' has-intro' : '' ; ?>">
 
 		<?php
 		while ( have_posts() ) : the_post();

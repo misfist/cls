@@ -1,18 +1,15 @@
 .button {
-    text-transform: uppercase;
     font-weight: $font-weight-black;
     letter-spacing: 0.4px;
 
     &.large {
         padding: rem-calc(20) rem-calc(42);
-        text-transform: none;
         font-size: rem-calc(17);
     }
 }
 
 %large-button {
     padding: rem-calc(20) rem-calc(42);
-    text-transform: none;
     font-size: rem-calc(17);
 }
 

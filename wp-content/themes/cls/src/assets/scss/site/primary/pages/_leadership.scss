@@ -1,11 +1,18 @@
 /* Leadership Page */
 .page-template-leadership {
     .site-main {
+
+        &> article {
+            &>.entry-content {
+                margin-bottom: 0;
+            }
+        }
+
         .content-body {
             /**
              * Structure
              */
-            margin-top: rem-calc(25);
+            // margin-top: rem-calc(25);
             margin-bottom: rem-calc(40);
 
             /**
@@ -36,9 +43,8 @@
         @include breakpoint(small only) {
             /**
             * Structure
-            */
+            */   
             
-
             /**
             * Style
             */
@@ -68,9 +74,14 @@
             /**
             * Structure
             */
+            &> article {
+                &>.entry-content {
+                    margin-bottom: 0;
+                }
+            }
+
             .content-body {
                 @include xy-grid;
-                margin-top: rem-calc(42);
                 margin-bottom: rem-calc(50);
 
                 .wp-block-column {

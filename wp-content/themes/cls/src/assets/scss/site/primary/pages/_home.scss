@@ -1,4 +1,15 @@
 .home {
+
+    /* Override general styls */
+    .site-main {
+        &> article {
+            &>.entry-content {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+
     .entry-content {
 
         /**
@@ -72,5 +83,17 @@
 
         .wp-block-titter-timeline {}
 
+    }
+
+    @include breakpoint(medium) {
+        /* Override general styls */
+        .site-main {
+            &> article {
+                &>.entry-content {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
+            }
+        }
     }
 }
