@@ -1,0 +1,289 @@
+.page-our-impact {
+    /**
+     * Structure
+     */
+     .site-main {
+        .entry-content {
+            padding-bottom: 0 !important;
+
+            .has-2-columns {
+                .wp-block-column {
+                    &:first-child {}
+                    
+                    &:last-child {}
+                }
+            }
+        }
+    }
+
+     /**
+     * Styles
+     */
+    .wp-block-custom-intro {
+        .intro-content {
+            h2 {
+                font-weight: $font-weight-normal;
+                font-size: rem-calc(20);
+                line-height: rem-calc(25);
+            }
+    
+            p {
+                font-size: rem-calc(16);
+                line-height: rem-calc(20);
+            }
+        }
+
+        .inner-container {
+            .intro-content {
+        
+                p {
+                    font-size: rem-calc(16);
+                    line-height: rem-calc(20);
+                }
+            }
+    
+        }
+    }
+
+    .site-main {
+        overflow: hidden;
+        
+        .entry-content {
+            h2 {
+               font-size: rem-calc(18);
+               line-height: rem-calc(22);
+            }
+
+            p {}
+
+            .primary-color {
+                // color: $primary-color;
+            }
+
+            .has-3-columns {}
+
+            .has-4-columns {
+
+                p {
+                    // font-size: rem-calc(18); //sic
+                    // line-height: rem-calc(23);
+                    // color: $black-8;
+
+                    &.h1 {
+                        // margin-bottom: rem-calc(21);
+                        // font-weight: $font-weight-black;
+                        // font-size: rem-calc(75.9); //sic
+                        // color: $primary-color;
+                        // letter-spacing: -1.26px;
+                        // line-height: rem-calc(46);
+                    }
+                }
+                
+
+                
+            }
+
+            .wp-block-image {
+                &.alignfull {
+                    @include fullwidth;
+                    margin-bottom: -46px;
+                    height: rem-calc(283);
+
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .wp-block-cover {
+                @include fullwidth;
+                background-repeat: no-repeat;
+                margin-bottom: -46px;
+                height: rem-calc(283);
+            }
+        }
+
+        .wp-block-custom-content-footer {
+
+            .wp-block-columns {
+                .wp-block-column {
+                    &:first-child {
+                        p {
+                            // font-size: rem-calc(14);
+                            // line-height: rem-calc(18);
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    @include breakpoint(small only) {
+        .site-main {
+            .entry-content {
+                .has-2-columns {
+
+                    .wp-block-column {
+                        &:first-child {
+                            order: 2;
+                        }
+                        
+                        &:last-child {
+                            order: 1;
+                        }
+                    }
+
+                }
+
+                .has-3-columns {
+                    .wp-block-image {
+                        padding-right: rem-calc(22);
+                        padding-left: rem-calc(22);
+                    }
+                }
+
+                .has-4-columns {
+                    .wp-block-column {
+                        // margin-bottom: 0;
+                    }
+
+                    .wp-block-column + .wp-block-column {
+                        // margin-top: rem-calc(34);
+                        // padding-top: rem-calc(39); //sic
+                        // border-top: 1px solid $gray-border;
+                    }
+                }
+            }
+        }
+
+        .wp-block-custom-content-footer {
+            h3 {
+                // margin-bottom: rem-calc(15);
+                // width: 90%;
+                // font-size: rem-calc(24); //sic
+                // line-height: rem-calc(31);
+            }
+
+            .wp-block-column {
+                &:first-child {
+                    // margin-bottom: rem-calc(43);
+                }
+
+                &:last-child {
+                    // margin-top: 0;
+                }
+            }
+
+            p + .wp-block-image {
+                // margin-top: rem-calc(44);
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        /**
+        * Structure
+        */
+        .site-main {
+            .entry-content {
+
+                $overhang: rem-calc(48);
+
+                .has-2-columns {
+                    // margin-bottom: rem-calc(60);
+
+                    .wp-block-column {
+                        // margin-bottom: 0;
+
+                        &:first-child {
+                            @include xy-cell(1 of 2, $gutters: 100, $gutter-type: padding, $gutter-position: right);
+                        }
+                        
+                        &:last-child {
+                            @include xy-cell(1 of 2, $gutters: 100, $gutter-type: padding, $gutter-position: left);
+                            
+                            .wp-block-image {
+                                max-width: calc(100% + #{$overhang});
+                                width: calc(100% + #{$overhang});
+                                margin-right: - #{$overhang};
+                            }
+                        }
+
+                    }
+                }
+
+                .has-3-columns {
+                    .wp-block-column {
+                        $gutters: rem-calc(60);
+                        margin-bottom: 0;
+                        
+                        &:first-child {
+                            @include xy-cell(3 of 12, $gutters: 90, $gutter-type: margin, $gutter-position: right);
+                            flex: 0 0 25%;
+
+                            .wp-block-image {
+                                max-width: calc(100% + #{$overhang});
+                                width: calc(100% + #{$overhang});
+                                margin-left: - #{$overhang};
+                                margin-bottom: 0;
+
+                                img {
+                                    width: 351px;
+                                    height: auto;
+                                    object-fit: cover;
+                                    max-width: unset;
+                                }
+                            }
+                        }
+
+                        &:nth-child(2){
+                            @include xy-cell(4.5 of 12, $gutters: 45, $gutter-type: padding, $gutter-position: right left);
+                            margin-left: 0;
+                            margin-top: rem-calc(108); //sic
+                        }
+
+                        &:last-child {
+                            @include xy-cell(4.5 of 12, $gutters: 90, $gutter-type: padding, $gutter-position: left);
+                            margin-left: 0;
+                            margin-top: rem-calc(150); //sic
+                        }
+                        
+                    }
+                }
+
+                .wp-block-cover {
+                    margin-top: rem-calc(60);
+                }
+
+            }
+        }
+
+        .wp-block-custom-content-footer {
+
+            .wp-block-columns {
+                .wp-block-column {
+                    &:first-child {
+                        p {
+                            // font-size: rem-calc(14); //sic
+                            // line-height: rem-calc(18);
+                        }
+                    }
+                }
+            }
+
+            p + .wp-block-image {
+                // margin-top: rem-calc(38);
+            }
+        }
+
+        /**
+        * Styles
+        */
+        .intro-heading {
+            line-height: rem-calc(28);   
+        }
+
+     }
+}
