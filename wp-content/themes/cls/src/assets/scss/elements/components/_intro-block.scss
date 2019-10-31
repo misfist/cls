@@ -82,6 +82,10 @@
 
     .wp-block-custom-intro {
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, $width 100%, $start $height, 0 $height);
+
+        .inner-container {
+            padding-bottom: rem-calc(46) + rem-calc(38);
+        }
     }
 
     @include breakpoint(medium) {

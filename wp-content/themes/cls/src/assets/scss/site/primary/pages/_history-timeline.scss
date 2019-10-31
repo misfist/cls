@@ -1,13 +1,58 @@
 .page-template-history-timeline {
-    .page > .entry-content {
 
-        &> .entry-title {
-            padding-right: 10%;
-            
-            font-weight: $font-weight-black;
-            font-size: rem-calc(24);
-            color: get-color(accent);
-            line-height: 31px;
+    /**
+     * Structure
+     */
+
+    .wp-block-custom-intro {}
+
+
+    /**
+     *  Style
+     */
+     .site-main {
+         &> article {
+            &> .entry-content {
+
+                padding-top: 0;
+
+                &> .entry-title {
+                    padding-right: 10%;
+                    
+                    font-weight: $font-weight-black;
+                    font-size: rem-calc(24);
+                    color: get-color(accent);
+                    line-height: rem-calc(31);
+                }
+            }
+         }
+     }
+
+    @include breakpoint(small only) {
+        /**
+        *  Structure
+        */
+        .site-main {
+            &> article {
+                &> .entry-content {
+
+                    
+
+                    &> .entry-title {}
+                }
+            }
+        }
+
+        /**
+        *  Style
+        */
+        .site-main {
+            &> article {
+                &> .entry-content {
+
+                    &> .entry-title {}
+                }
+            }
         }
     }
 
@@ -17,5 +62,30 @@
         .timeline-component {
             @include xy-grid-container;
         }
+
+
+            /**
+        *  Style
+        */
+        .site-main {
+            &> article {
+                &> .entry-content {
+
+                    &> .entry-title {
+                        margin-bottom: rem-calc(42);
+                        line-height: rem-calc(47);
+                        // padding-right: 10%;
+                        
+                        // font-weight: $font-weight-black;
+                        // font-size: rem-calc(24);
+                        // color: get-color(accent);
+                        // line-height: rem-calc(31);
+                    }
+
+                }
+            }
+        }
+
+        
     }
 }

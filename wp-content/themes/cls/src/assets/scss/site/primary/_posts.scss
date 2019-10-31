@@ -102,6 +102,9 @@
     }
 }
 
+/**
+ * Our Story History Posts
+ */
 .content-section {
     .history {
 
@@ -134,7 +137,7 @@
 
         @include breakpoint(medium) {
             &:not(:last-child) {
-                margin-bottom: rem-calc(90);
+                margin-bottom: rem-calc(50);
             }
 
             .entry-media {
@@ -167,11 +170,11 @@
             &:nth-child(odd) {
                 .entry-media {
                     order: 1;
-                    @include xy-gutters(50, $gutter-type: padding, $gutter-position: right);
+                    @include xy-cell(4 of 12, $gutters: 50, $gutter-position: right);
                 }
                 .entry-body {
                     order: 2;
-                    @include xy-gutters(50, $gutter-type: padding, $gutter-position: left);
+                    @include xy-cell(8 of 12, $gutters: 50, $gutter-position: left);
                 }
                 .entry-footer {
                     order: 3;
@@ -180,10 +183,10 @@
 
             &:nth-child(even) {
                 .entry-media {
-                    @include xy-gutters(50, $gutter-type: padding, $gutter-position: left);
+                    @include xy-cell(4 of 12, $gutters: 50, $gutter-position: left);
                 }
                 .entry-body {
-                    @include xy-gutters(50, $gutter-type: padding, $gutter-position: right);
+                    @include xy-cell(8 of 12, $gutters: 50, $gutter-position: right);
                 }
                 .entry-footer {}
             }
@@ -196,22 +199,24 @@
             margin-bottom: rem-calc(14);
 
             color: get-color( accent );
+            font-weight: $font-weight-bold;
             font-size: rem-calc(20);
             line-height: 26px;
         }
 
         .entry-media {
-            @include clipped-corner(bottom-right);
+            // @include clipped-corner(bottom-right);
 
             img {
                 width: 100%;
                 height: auto;
                 object-fit: cover;
+                @include clipped-corner(bottom-right, 30px, 40px);
             }
         }
 
         .entry-content {
-            margin-bottom: rem-calc(48);
+            margin-bottom: rem-calc(42);
 
             font-size: $small-font-size;
             // line-height: 18px; //sic
@@ -219,12 +224,23 @@
             p {
                 font-size: $small-font-size;
                 line-height: 18px; //sic - this doesn't look good
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
 
         @include breakpoint(medium) {
-            .entry-media {
-                @include clipped-corner(bottom-right, 104px, 96px);
+            .entry-media {}
+
+            .entry-content {
+                font-size: rem-calc(14);
+
+                p {
+                    font-size: rem-calc(14);
+                }
+
             }
     
         }
