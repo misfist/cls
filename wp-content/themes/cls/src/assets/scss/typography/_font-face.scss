@@ -53,8 +53,10 @@
  */
 @font-face {
     font-family: 'Raleway';
-    src: url('../fonts/raleway-extrabold-webfont.woff2') format('woff2'),
-         url('../fonts/raleway-extrabold-webfont.woff') format('woff');
+    src: url('../fonts/raleway-extrabold.eot');
+    src: url('../fonts/raleway-extrabold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/raleway-extrabold.woff2') format('woff2'),
+        url('../fonts/raleway-extrabold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
 }
