@@ -8,7 +8,7 @@
  */
 ?>
 
-<div class="content-section" data-tabs-content="timeline-controls">
+<div class="content-section fade-in" data-animate="fade-in fade-out" data-tabs-content="timeline-controls">
 	<?php
 	$index = 0;
 	foreach( $terms as $term ) : ?>

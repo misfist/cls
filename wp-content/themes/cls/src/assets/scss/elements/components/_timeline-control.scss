@@ -5,8 +5,6 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
 .timeline-component {
     font-size: rem-calc(20);
     @include xy-grid-container;
-    padding-right: 0;
-    padding-left: 0;
 
     /* Hide Temporarily */
     .timeline-pagination {
@@ -187,13 +185,11 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                 background-position: center center;
                 z-index: 1;
 
-                $length: rem-calc(34);
-
                 /* Year in Pill */
                 span {
                     position: absolute;
                     display: block;
-                    bottom: rem-calc(40);
+                    bottom: rem-calc(36);
                     width: rem-calc(100);
                     left: 50%;
                     transform: translate(-50%, 0);
@@ -211,13 +207,13 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                    &:after {
                         content: '';
                         background-image: linear-gradient($primary-color,$primary-color);
-                        background-size: 2px $length;
+                        background-size: 2px 30px;
                         background-repeat: no-repeat;
                         background-position: center center;
-                        height: $length;
+                        height: 30px;
                         width: 2px;
                         position: absolute;
-                        bottom: - $length;
+                        bottom: -30px;
                         left: 0;
                         right: 0;
                         margin-right: auto;

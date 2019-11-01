@@ -8,13 +8,15 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'fade-in' ); ?>>
+<?php if ( has_post_thumbnail() ) : ?>
 	<div class="entry-media">
-		<?php
-		if ( has_post_thumbnail() ) :
-			the_post_thumbnail();
-		endif; ?>
+		
+		
+			<?php the_post_thumbnail(); ?>
+			
 	</div><!-- .entry-media -->
+	<?php endif; ?>
 	<div class="entry-body">
 		<header class="entry-header">
 			<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
