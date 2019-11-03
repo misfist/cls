@@ -5,37 +5,196 @@
         display: table; /* 2 */
     }
 
+    $height: rem-calc(281);
+
     &:after {
         clear: both;
+    }
+
+    iframe {
+        height: $height !important;
+    }
+
+    iframe + div {
+        z-index: 0 !important;
+    }
+
+    .gm-style-cc,
+    .gmnoprint {
+        z-index: 0 !important;
     }
 
     /**
      * Structure
      */
-    .wpgmza_modern_infowindow {}
+    .wpgmza_modern_infowindow {
+        width: 100%;
+        top: $height !important;
+        background-color: $white;
+        // position: initial !important;
+        // float: none !important;
+        // clear: both;
+        // display: block;
+        margin: 0;
+    }
+    
+    .wpgmza_modern_infowindow_close {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .wpgmza_iw_description {
+        max-height: none !important;
+
+        .phone-info {
+
+        }
+
+        .parking-information {
+            h3 {}
+        }
+    }
 
     /**
      * Style
      */
 
-    .wpgmza_iw_title {}
-    .wpgmza_iw_address {}
-    .wpgmza_iw_description {}
-    .wpgmza_iw_buttons {
-        .wpgmza_button {
-            @include button($background: $accent-color);
+    .wpgmza_modern_infowindow {
+        @include clipped-corner(bottom-right, $height: 44px, $width: 40px);
+        font-family: $body-font-family;
+    }
+
+    .wpgmza_modern_infowindow_close {
+        height: 50px;
+        width: 50px;
+        background-color: $gray-border;
+        background-image: url('../images/icon-x-sm.svg');
+        background-size: 15px 15px;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: transparent
+    }
+
+    .wpgmza_iw_title {
+        padding: 0;
+        margin-left: rem-calc(37);
+        margin-bottom: rem-calc(10);
+        background-color: transparent;
+        font-weight: $font-weight-black;
+        font-size: rem-calc(24);
+        color: $accent-color;
+        line-height: rem-calc(34);
+
+        &:before {
+            content: '';
+            background-image: url('../images/icon-map-marker.svg');
+            background-size: rem-calc(27) rem-calc(34);
+            height: rem-calc(34);
+            width: rem-calc(27);
+            position: absolute;
+            left: - rem-calc(37);
         }
     }
 
-    @include breakpoint(medium) {
-    /**
-     * Structure
-     */
-    .wpgmza_modern_infowindow {
-        margin: 0;
-        right: auto;
-        left: 0;
+    .wpgmza_iw_address {
+        margin-bottom: rem-calc(32);
+
+        p {
+            font-weight: $font-weight-bold;
+            font-size: rem-calc(18);
+            color: $black-8;
+            line-height: rem-calc(24);
+            font-style: normal;
+        }
     }
+
+    .wpgmza_iw_description {
+        max-height: auto;
+        font-weight: $font-weight-bold;
+        font-size: rem-calc(16);
+        color: $black-8;
+        line-height: rem-calc(20);
+        font-style: normal;
+
+        .phone-info {
+            margin-bottom: rem-calc(26);
+            padding-top: rem-calc(26);
+            padding-bottom: rem-calc(26);
+            border-top: 2px solid $gray-border;
+            border-bottom: 2px solid $gray-border;
+
+            display: flex;
+
+            .label {
+                margin-bottom: rem-calc(10);
+                padding: 0;
+                display: block;
+                background-color: transparent;
+                font-weight: $font-weight-bold;
+                font-size: rem-calc(16);
+                color: $black-8;
+                line-height: rem-calc(20);
+                font-style: normal;
+            }
+
+            div {
+                flex-basis: 50%;
+
+                &:first-child {
+                    padding-right: rem-calc(36);
+                    border-right: 2px solid $gray-border;
+                }
+
+                &:last-child {
+                    padding-left: rem-calc(36);
+                }
+            }
+        }
+
+        .parking-information {
+            font-size: rem-calc(14);
+            line-height: rem-calc(18);
+
+            h3 {
+                margin-bottom: rem-calc(10);
+                font-weight: $font-weight-bold;
+                font-size: rem-calc(16);
+                line-height: rem-calc(20);
+            }
+        }
+    }
+
+    .wpgmza_iw_buttons {
+        .wpgmza_button {
+            @include button($background: $accent-color, $background-hover: $hover-accent);
+        }
+    }
+
+    .wpgmza-shadow {
+        box-shadow: none;
+    }
+
+    @include breakpoint(medium) {
+        /**
+        * Structure
+        */
+        #wpgmza_iw_holder_1 {
+            top: 0 !important;
+        }
+
+        iframe {
+            height: 568px !important;
+        }
+
+        .wpgmza_modern_infowindow {
+            position: absolute;
+            padding: rem-calc(66) rem-calc(59) rem-calc(66) rem-calc(129);
+            margin: 0;
+            right: auto;
+            left: 0;
+            width: rem-calc(543);
+        }
 
     /**
      * Style
