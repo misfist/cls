@@ -12,9 +12,72 @@
      */
     .site-main {
         .entry-content {
+            .event-meta {
+                font-weight: $font-weight-bold;
+                font-size: rem-calc(16);
+                line-height: rem-calc(20);
+            }
+            
+            .event-date {}
+
+            .event-date,
+            .event-time,
+            .event-location {            
+                margin-bottom: rem-calc(24);
+                padding-bottom: rem-calc(20);
+                border-bottom: 1px solid $gray-border;
+            }
+
+            .button {
+                margin-bottom: 0;
+            }
+
+            .event-time {}
+
+            .event-location {
+                font-size: rem-calc(14);
+                line-height: rem-calc(18);
+            }
+
+            h3 {
+                font-weight: $font-weight-black;
+                font-size: rem-calc(14);
+                color: $accent-color;
+                line-height: rem-calc(20);
+            }
+
+            // .time-title,
+            // .location-title {
+            //     margin-top: rem-calc(24);
+            //     padding-top: rem-calc(20);
+            //     border-top: 1px solid $gray-border;
+            // }
+
+            .entry-body {
+                margin-top: rem-calc(40);
+                font-weight: $font-weight-bold;
+                font-size: rem-calc(16);
+                line-height: rem-calc(21);
+                color: $black-8;
+            }
+
+            h2 {
+                margin-bottom: rem-calc(16);
+                font-weight: $font-weight-black;
+                font-size: rem-calc(24);
+                color: $accent-color;
+                line-height: rem-calc(31);
+            }
+
+            p + .wp-block-image {
+                margin-top: rem-calc(40);
+            }
+
             .wp-block-image {
                 width: 100%;
                 height: rem-calc(214);
+                // margin-top: rem-calc(40);
+                margin-bottom: rem-calc(44);
                 padding: rem-calc(14);
                 background-color: $secondary-color;
                 text-align: center;
@@ -45,7 +108,7 @@
                     color: $secondary-color;
                     font-size: rem-calc(20);
                     line-height: rem-calc(26);
-                    font-weight: $font-weight-semi-bold;
+                    font-weight: $font-weight-bold;
 
                     &:last-child {
                         margin-bottom: 0;
@@ -56,6 +119,39 @@
             }
 
         }
+    }
+
+    @include breakpoint(small only) {
+       /**
+        * Structure
+        */
+        .site-main {
+            .entry-content {
+                padding: 0 0 rem-calc(62) 0;
+
+                .event-date,
+                .event-time,
+                .event-location {
+                    @include xy-grid;
+
+                    h3 {
+                        @include xy-cell(23.2%, $gutters: 40, $gutter-type: padding, $gutter-position: right);
+                    }
+
+                    .date-details,
+                    .time-details,
+                    .event-address {}
+                }
+            }
+        }
+
+       /**
+        * Style
+        */
+        .site-main {
+            .entry-content {}
+        }
+
     }
 
     @include breakpoint(medium) {
@@ -86,44 +182,44 @@
             .entry-content {
                 padding: rem-calc(58) 0 rem-calc(84) 0;
 
-                .event-meta {
-                    font-weight: $font-weight-bold;
-                    font-size: rem-calc(16);
-                    line-height: rem-calc(20);
-                }
+                // .event-meta {
+                //     font-weight: $font-weight-bold;
+                //     font-size: rem-calc(16);
+                //     line-height: rem-calc(20);
+                // }
 
-                .event-location {
-                    font-size: rem-calc(14);
-                    line-height: rem-calc(18);
-                }
+                // .event-location {
+                //     font-size: rem-calc(14);
+                //     line-height: rem-calc(18);
+                // }
 
-                h3 {
-                    font-weight: $font-weight-black;
-                    font-size: rem-calc(14);
-                    color: $accent-color;
-                    line-height: rem-calc(20);
-                }
+                // h3 {
+                //     font-weight: $font-weight-black;
+                //     font-size: rem-calc(14);
+                //     color: $accent-color;
+                //     line-height: rem-calc(20);
+                // }
 
-                .time-title,
-                .location-title {
-                    margin-top: rem-calc(24);
-                    padding-top: rem-calc(20);
-                    border-top: 1px solid $gray-border;
-                }
+                // .time-title,
+                // .location-title {
+                //     margin-top: rem-calc(24);
+                //     padding-top: rem-calc(20);
+                //     border-top: 1px solid $gray-border;
+                // }
 
-                .entry-body {
-                    font-weight: $font-weight-bold;
-                    font-size: rem-calc(16);
-                    line-height: rem-calc(21);
-                    color: $black-8;
-                }
+                // .entry-body {
+                //     font-weight: $font-weight-bold;
+                //     font-size: rem-calc(16);
+                //     line-height: rem-calc(21);
+                //     color: $black-8;
+                // }
 
-                h2 {
-                    font-weight: $font-weight-black;
-                    font-size: rem-calc(24);
-                    color: $accent-color;
-                    line-height: rem-calc(31);
-                }
+                // h2 {
+                //     font-weight: $font-weight-black;
+                //     font-size: rem-calc(24);
+                //     color: $accent-color;
+                //     line-height: rem-calc(31);
+                // }
 
                 .wp-block-image {
                     height: rem-calc(383);

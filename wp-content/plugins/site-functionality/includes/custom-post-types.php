@@ -75,3 +75,22 @@ if ( ! function_exists('site_functions_custom_post_type_history') ) {
 	add_action( 'init', 'site_functions_custom_post_type_history', 0 );
 	
 }
+
+/**
+ * Block template for events
+ * 
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-templates/
+ * 
+ * @return void
+ *
+ */
+function site_functionality_post_block_template() {
+
+	$post_type_object = get_post_type_object( 'event' );
+	$post_type_object->template = array(
+	  array( 'core/paragraph' ),
+	  array( 'custom/back-link' ),
+	  array( 'custom/cta' ),
+	);
+}
+add_action( 'init', 'site_functionality_post_block_template' );
