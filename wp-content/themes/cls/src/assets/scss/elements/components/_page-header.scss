@@ -252,11 +252,20 @@
     /**
      * Structure
      */
+    .shape-separator {
+        display: none;
+    }
+    
+    .page-content-header {
+        height: rem-calc(163);
+    } 
 
     /**
      * Style
      */
-    .page-content-header {}
+    .page-content-header {
+        background-color: $accent-color;
+    }
 
     @include breakpoint(medium) {
         /**
