@@ -22,6 +22,12 @@
             border-bottom: 1px solid $gray-border;
         }
 
+        .search-field {
+            background-color: $light-gray;
+            border-color: transparent;
+            background-image: url('../images/icon-magnifying-glass-accent.svg');
+        }
+
         .entry-body {}
 
         .has-post-thumbnail {
@@ -89,15 +95,19 @@
             padding-top: 0;
 
             article {
+                .entry-body {
+                    @include xy-cell(7 of 12, $gutters: 0);
+                }
+
                 &.has-post-thumbnail {
                     .entry-media {
-                        @include xy-cell(4 of 12, $gutters: 40, $gutter-type: margin, $gutter-position: right);
+                        @include xy-cell(3 of 12, $gutters: 40, $gutter-type: margin, $gutter-position: right);
 
                         margin-bottom: 0;
                     }
 
                     .entry-body {
-                        @include xy-cell(8 of 12, $gutters: 40, $gutter-type: margin, $gutter-position: left);
+                        @include xy-cell(6 of 12, $gutters: 40, $gutter-type: margin, $gutter-position: left);
                     }
                 }
             }
@@ -118,6 +128,17 @@
         * Styles
         */
 
+    }
+
+}
+
+.search {
+    .page-content {
+        .search-field {
+            background-color: $light-gray;
+            border-color: transparent;
+            background-image: url('../images/icon-magnifying-glass-accent.svg');
+        }
     }
 
 }
