@@ -68,7 +68,7 @@ registerBlockType( 'custom/back-link', {
 
 		return (
 			<div 
-				className="custom-block-back-link"
+				className="custom-block"
 			>
 				<div className="inner-container">
 					<TextControl
