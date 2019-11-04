@@ -106,6 +106,17 @@ function site_functionality_block_assets() { // phpcs:ignore
 			'editor_style'  => 'site-functionality-block-editor-css',
 		)
 	);
+
+	register_block_type(
+		'custom/link-back', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'site-functionality-block-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'site-functionality-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'site-functionality-block-editor-css',
+		)
+	);
 }
 add_action( 'init', 'site_functionality_block_assets' );
 
@@ -123,7 +134,7 @@ add_action( 'init', 'site_functionality_block_assets' );
  * @return array
  */
 function site_functionality_block_categories( $categories, $post ) {
-	if ( 'page' !== $post->post_type ) {
+	if ( 'page' !== $post->post_type && 'event' !== $post->post_type ) {
         return $categories;
 	}
 	
@@ -139,6 +150,31 @@ function site_functionality_block_categories( $categories, $post ) {
     );
 }
 add_filter( 'block_categories', 'site_functionality_block_categories', 10, 2 );
+
+/**
+ * Add a block category for "Get With Gutenberg" if it doesn't exist already.
+ *
+ * @param array $categories Array of block categories.
+ *
+ * @return array
+ */
+function site_functionality_block_categories_cta( $categories, $post ) {
+	if ( 'page' !== $post->post_type && 'event' !== $post->post_type && 'post' !== $post->post_type ) {
+        return $categories;
+	}
+	
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'custom-cta',
+                'title' => __( 'CTAs', 'site-functionality' ),
+                'icon'  => 'megaphone',
+            ),
+        )
+    );
+}
+add_filter( 'block_categories', 'site_functionality_block_categories_cta', 10, 2 );
 
 /**
  * Register Post Meta for Blocks

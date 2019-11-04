@@ -13,3 +13,4 @@ import './group';
 import './intro';
 import './content-footer';
 import './cta';
+import './back-link';

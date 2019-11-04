@@ -20,18 +20,12 @@ const {
 const blockAttributes = {
 	url: {
 		type: 'string',
-		source: 'meta',
-		meta: 'cta-url'
 	},
 	text: {
 		type: 'string',
-		source: 'meta',
-		meta: 'cta-text'
 	},
 	target: {
 		type: 'boolean',
-		source: 'meta',
-		meta: 'cta-target'
 	}
 }
 
@@ -48,13 +42,13 @@ const blockAttributes = {
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'custom/cta', {
-	title: __( 'Animated CTA', 'site-functionality' ), 
-	icon: 'megaphone',
-	category: 'custom-cta',
+registerBlockType( 'custom/back-link', {
+	title: __( 'Back Link', 'site-functionality' ), 
+	icon: 'arrow-left-alt',
+	category: 'custom',
 	keywords: [
-		__( 'footer', 'site-functionality' ),
-		__( 'cta', 'site-functionality' ),
+		__( 'navigation', 'site-functionality' ),
+		__( 'back link', 'site-functionality' ),
 	],
 	anchor: true,
 	customClassName: true,
@@ -70,15 +64,15 @@ registerBlockType( 'custom/cta', {
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
 	edit: props => {
-		const { attributes: {url, text, target}, className, getAttributes, setAttributes } = props;
+		const { attributes: { url, text, target }, className, getAttributes, setAttributes } = props;
 
 		return (
-			<section 
-				className="custom-block"
+			<div 
+				className="custom-block-back-link"
 			>
 				<div className="inner-container">
 					<TextControl
-						label={ __( "CTA Text", "site-functionality" ) }
+						label={ __( "Link Text", "site-functionality" ) }
 						help={ __( "Add link text", "site-functionality" ) }
 						value={ text }
 						onChange={ text => setAttributes( { text } ) }
@@ -93,7 +87,7 @@ registerBlockType( 'custom/cta', {
 						onChange={ target => setAttributes( { target } ) }
 					/>
 				</div>
-			</section>
+			</div>
 		);
 	},
 
@@ -105,7 +99,19 @@ registerBlockType( 'custom/cta', {
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
-	save() {
-        return null;
-    }
+	save: props => {
+		const { attributes: { url, text, target }, className } = props;
+		const hasTarget = target;
+
+		return (
+			<div>
+				{hasTarget ? (
+					<a href={url} target="_blank" rel="nofollow noopener noreferrer">{text}</a>
+				) : (
+					<a href={url}>{text}</a>
+				)}
+
+			</div>
+		);
+	  },
 } );

@@ -248,7 +248,29 @@
     }
 }
 
-.single-event {}
+.single-event {
+    /**
+     * Structure
+     */
+
+    /**
+     * Style
+     */
+    .page-content-header {}
+
+    @include breakpoint(medium) {
+        /**
+        * Structure
+        */
+
+        /**
+        * Style
+        */
+        .page-content-header {}
+
+    }
+
+}
 
 .single-post {}
 

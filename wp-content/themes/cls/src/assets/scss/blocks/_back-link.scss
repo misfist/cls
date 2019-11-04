@@ -1,0 +1,25 @@
+.wp-block-custom-back-link {
+    a {
+        font-weight: $font-weight-bold;
+        font-size: rem-calc(14);
+        line-height: rem-calc(18.11);
+        color: $black-9;
+
+        &:before {
+            margin-right: rem-calc(8);
+            display: inline-block;
+            content: '';
+            background-image: url('../images/back-arrow.svg');
+            background-repeat: no-repeat;
+            background-size: rem-calc(21) rem-calc(13);
+            background-position: bottom left;
+            width: rem-calc(21);
+            height: rem-calc(16);
+            line-height: rem-calc(16);
+        }
+    }
+
+    @include breakpoint(medium) {
+
+    }
+}

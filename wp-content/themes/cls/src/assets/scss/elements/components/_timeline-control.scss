@@ -5,6 +5,8 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
 .timeline-component {
     font-size: rem-calc(20);
     @include xy-grid-container;
+    padding-right: 0;
+    padding-left: 0;
 
     /* Hide Temporarily */
     .timeline-pagination {

@@ -17,21 +17,14 @@
 		<?php
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			if ( has_post_thumbnail() ) :
-				the_post_thumbnail();
-			endif;
-		endif;
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php gutenberg_starter_theme_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
+		<?php eo_get_template_part( 'event-meta', 'event-single' ); ?>
+
+		<div class="entry-body">
+			<?php
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
@@ -50,6 +43,7 @@
 				'after'  => '</div>',
 			) );
 		?>
+		</div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

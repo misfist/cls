@@ -1,0 +1,121 @@
+<?php
+/**
+ * The template is used for displaying a single event details on the single event page.
+ *
+ * You can use this to edit how the details re displayed on your site. (see notice below).
+ *
+ * Or you can edit the entire single event template by creating a single-event.php template
+ * in your theme.
+ *
+ * For a list of available functions (outputting dates, venue details etc) see http://codex.wp-event-organiser.com
+ *
+ ***************** NOTICE: *****************
+ *  Do not make changes to this file. Any changes made to this file
+ * will be overwritten if the plug-in is updated.
+ *
+ * To overwrite this template with your own, make a copy of it (with the same name)
+ * in your theme directory. See http://docs.wp-event-organiser.com/theme-integration for more information
+ *
+ * WordPress will automatically prioritise the template in your theme directory.
+ ***************** NOTICE: *****************
+ *
+ * @package Event Organiser (plug-in)
+ * @since 1.7
+ */
+?>
+
+<div class="event-meta">
+
+	<!-- Is event recurring or a single event -->
+	<?php if ( eo_recurs() ) :?>
+
+		<!-- Event recurs - is there a next occurrence? -->
+		<?php $next = eo_get_next_occurrence( get_option( 'date_format' ) );?>
+
+		<?php if ( $next ) : ?>
+
+			<h3 class="date-title"><?php esc_html_e( 'Date', 'cls' ); ?></h3>
+
+			<?php echo $next; ?>
+
+			<h3 class="time-title"><?php esc_html_e( 'Time', 'cls' ); ?></h3>
+
+			<?php eo_the_start( 'g:i' ); ?><span class="separator">-</span><?php eo_the_end( get_option( 'time_format' ) ); ?>
+
+		<?php else : ?>
+			<!-- Otherwise the event has finished (no more occurrences) -->
+			<?php printf( '<p>' . __( 'This event finished on %s', 'cls' ) . '</p>', eo_get_schedule_last( 'd F Y', '' ) );?>
+		<?php endif; ?>
+
+		<?php
+		/**
+		 * Show upcoming events, if recurrence
+		 */
+		$upcoming = new WP_Query(array(
+			'post_type'         => 'event',
+			'event_start_after' => 'today',
+			'posts_per_page'    => -1,
+			'event_series'      => get_the_ID(),
+			'group_events_by'   => 'occurrence',
+		));
+
+		if ( $upcoming->have_posts() ) : ?>
+			<h4 class="upcoming-dates-title screen-reader-text"><?php esc_html_e( 'Upcoming Dates', 'cls' ); ?></h4>
+			<ul class="upcoming-events screen-reader-text">
+
+				<?php
+				while ( $upcoming->have_posts() ) :
+					$upcoming->the_post(); ?>
+					<li><?php echo eo_format_event_occurrence(); ?></li>
+				<?php 
+				endwhile;
+				wp_reset_postdata();
+				//With the ID 'eo-upcoming-dates', JS will hide all but the next 5 dates, with options to show more.
+				wp_enqueue_script( 'eo_front' );
+				?>
+			</ul>
+		<?php endif; ?>
+
+		<?php
+		/**
+		 * Show location
+		 */
+		if ( eo_get_venue() ) :
+			$tax = get_taxonomy( 'event-venue' ); ?>
+			<div class="event-location">
+				<h3 class="location-title"><?php esc_html_e( 'Location', 'cls' ); ?></h3>
+				<?php eo_venue_name(); ?>
+				<?php if( $address = eo_get_venue_address() ) : ?>
+
+					<div class="address-street"><?php echo $address['address']; ?></div>
+					<div class="city-state-zip">
+						<span class="address-city"><?php echo $address['city']; ?></span>
+						<span class="address-state"><?php echo $address['state']; ?></span>
+						<span class="address-zip"><?php echo $address['postcode']; ?></span>
+					</div>
+
+			<?php endif; ?>
+			</div>
+		<?php endif; ?>
+
+	<?php else : 
+		/**
+		 * Show event date, for single date
+		 */
+		?>
+
+		<h3 class="date-title"><?php esc_html_e( 'Date', 'cls' ); ?></h3>
+
+		<?php echo eo_format_event_occurrence( get_option( 'date_format' ) ); ?>
+
+		<h3 class="time-title"><?php esc_html_e( 'Time', 'cls' ); ?></h3>
+
+		<?php eo_the_start( 'g:i' ); ?><span class="separator">-</span><?php eo_the_end( get_option( 'time_format' ) ); ?>
+
+	<?php endif; ?>
+
+	<?php do_action( 'eventorganiser_additional_event_meta' ) ?>
+
+	<div class="clearfix"></div>
+
+</div><!-- .entry-meta -->
