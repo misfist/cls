@@ -74,7 +74,7 @@ function cls_query_filters( $query ) {
     if ( ! is_admin() && $query->is_main_query() ) {
         if ( $query->is_search ) {
 			$home_id = get_option( 'page_on_front' );
-            $query->set( 'post__not_in', $home_id );
+            $query->set( 'post__not_in', array( $home_id ) );
         }
     }
 }
