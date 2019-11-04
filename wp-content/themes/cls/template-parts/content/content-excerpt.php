@@ -16,15 +16,17 @@
 			the_post_thumbnail();
 		endif; ?>
 	</div>
-	<header class="entry-header">
-		<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-	</header><!-- .entry-header -->
+	<div class="entry-body">
+		<header class="entry-header">
+			<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+		</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php the_excerpt();?>
-	</div><!-- .entry-content -->
+		<div class="entry-content">
+			<?php the_excerpt();?>
+		</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<a href="<?php echo esc_url( get_permalink() ); ?>" class="read-more" rel="bookmark"><?php esc_html_e( 'Read More', 'cls' ); ?></a>
-	</footer><!-- .entry-footer -->
+		<footer class="entry-footer">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="read-more" rel="bookmark"><?php esc_html_e( 'Read More', 'cls' ); ?></a>
+		</footer><!-- .entry-footer -->
+	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -12,4 +12,26 @@
     padding: rem-calc(20) rem-calc(42);
     font-size: rem-calc(17);
 }
+input[type="search"] {
+    border-radius: $button-radius;
+}
+
+.search-submit {
+    @include element-invisible;
+    // clip: rect(1px, 1px, 1px, 1px);
+	// position: absolute !important;
+	// height: 1px;
+	// width: 1px;
+	// overflow: hidden;
+}
+
+.search-field {
+    margin-bottom: 0;
+    background-image: url('../images/icon-magnifying-glass.svg');
+    background-repeat: no-repeat;
+    background-size: rem-calc(17) rem-calc(18);
+    background-position: center right rem-calc(10);
+}
+
+
 

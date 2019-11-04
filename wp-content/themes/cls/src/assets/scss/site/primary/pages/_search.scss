@@ -1,1 +1,123 @@
-.search-results {}
+.search-results {
+    /**
+     * Structure
+     */
+     .page-content {
+        article {
+            @include xy-grid;
+        }
+
+        .entry-body {
+            @include xy-cell(full, $gutters: 0);
+        }
+     }
+
+    /**
+     * Styles
+     */
+    .page-content {
+        article {
+            padding-bottom: rem-calc(40);
+            margin-bottom: rem-calc(40);
+            border-bottom: 1px solid $gray-border;
+        }
+
+        .entry-body {}
+
+        .has-post-thumbnail {
+            .entry-media {
+                height: rem-calc(170);
+                margin-bottom: rem-calc(44);
+                padding-top: rem-calc(12);
+                padding-bottom: rem-calc(12);
+                background-color: $secondary-color;
+                text-align: center;
+
+                img {
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .pagination {
+        text-align: center;
+        font-weight: $font-weight-black;
+
+        a {
+            font-weight: $font-weight-normal;
+        }
+    }
+
+    .read-more {
+        font-weight: $font-weight-xbold;
+        line-height: rem-calc(8.91);
+        color: $secondary-color;
+    }
+
+    .search-phrase {
+        &:before {
+            content: '\201C';
+        }
+
+        &:after {
+            content: '\201D';
+        }
+    }
+
+    .search-meta {
+        margin-top: rem-calc(42);
+        margin-bottom: rem-calc(20);
+        font-weight: $font-weight-semi-bold;
+        font-size: rem-calc(13);
+        color: $accent-color;
+        line-height: rem-calc(21);
+        font-family: Raleway-SemiBold;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+        line-height: rem-calc(31);
+    }
+
+    @include breakpoint(medium) {
+       /**
+        * Structure
+        */
+        .page-content {
+            padding-top: 0;
+
+            article {
+                &.has-post-thumbnail {
+                    .entry-media {
+                        @include xy-cell(4 of 12, $gutters: 40, $gutter-type: margin, $gutter-position: right);
+
+                        margin-bottom: 0;
+                    }
+
+                    .entry-body {
+                        @include xy-cell(8 of 12, $gutters: 40, $gutter-type: margin, $gutter-position: left);
+                    }
+                }
+            }
+
+            .search-form {
+                width: 50%;
+            }
+    
+            .search-submit {
+                @include element-invisible;
+            }
+
+            
+        }
+
+
+       /**
+        * Styles
+        */
+
+    }
+
+}

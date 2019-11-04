@@ -102,6 +102,31 @@ if ( ! function_exists( 'gutenberg_starter_theme_entry_footer' ) ) :
 endif;
 
 /**
+ * Post Navigation
+ * 
+ * @see https://developer.wordpress.org/reference/functions/get_the_posts_pagination/
+ *
+ * @return void
+ */
+function cls_the_post_navigation() {
+	the_posts_pagination(
+		array(
+			'mid_size'  => 2,
+			'prev_text' => sprintf(
+				'%s <span class="nav-prev-text screen-reader-text">%s</span>',
+				'&lang;',
+				__( 'Newer posts', 'cls' )
+			),
+			'next_text' => sprintf(
+				'<span class="nav-next-text screen-reader-text">%s</span> %s',
+				__( 'Older posts', 'cls' ),
+				'&rang;'
+			),
+		)
+	);
+}
+
+/**
  * Render Intro Content
  *
  * @return void

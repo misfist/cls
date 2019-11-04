@@ -96,17 +96,6 @@
         text-transform: uppercase;
     }
 
-    input[type="search"] {
-        border-radius: $button-radius;
-    }
-
-    .search-field {
-        margin-bottom: 0;
-        background-image: url('../images/icon-magnifying-glass.svg');
-        background-repeat: no-repeat;
-        background-size: rem-calc(17) rem-calc(18);
-        background-position: center right rem-calc(10);
-    }
 
     .search-submit {
         display: none;

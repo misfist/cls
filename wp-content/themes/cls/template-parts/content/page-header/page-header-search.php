@@ -11,10 +11,7 @@
 <header class="entry-header page-content-header">
 	<div class="container">
 		<div class="header-content">
-			<?php printf( esc_html__( 'Search Results for: %s', 'cls' ), '<span>' . get_search_query() . '</span>' ); ?>
-		</div>
-		<div class="shape-separator">
-			<div class="shape"></div>
+			<h1 class="entry-title"><?php printf( esc_html__( 'Search Results for: %s', 'cls' ), '<span class="search-phrase">' . get_search_query() . '</span>' ); ?></h1>
 		</div>
 	</div>
 </header><!-- .entry-header -->

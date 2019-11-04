@@ -331,6 +331,89 @@
 
 }
 
+/**
+ * Search Results - Alternate Header
+ */
+.search-results,
+.error404 {
+    /**
+     * Structure
+     */
+    .shape-separator {
+        display: none;
+    }
+
+    /**
+     * Style
+     */
+    .page-content-header {
+        background-color: $accent-color;
+        height: rem-calc(163);
+
+        $height: rem-calc(50);
+        $width: rem-calc(40);
+        $origin: 73%;
+
+        /**
+        * Structure
+        */
+
+        /**
+        * Style
+        */
+
+        clip-path: polygon(
+            0% 0%, 
+            100% 0, 
+            100% 100%, 
+            calc( #{$origin} + #{$width} ) 100%, 
+            #{$origin} calc( 100% - #{$height} ), 
+            0 calc( 100% - #{$height} )
+        );
+
+        /**
+         * Height 182px
+         */
+        @include breakpoint(medium) {
+            $padding-calc: calc( (100% - 1200px) / 2 );
+            $height: rem-calc(46);
+            $width: rem-calc(40);
+            $origin: calc( 55% + #{$padding-calc} );
+
+            /**
+            * Structure
+            */
+            height: rem-calc(182);
+
+            /**
+            * Style
+            */
+            clip-path: polygon(
+                0% 0%, 
+                100% 0, 
+                100% 100%, 
+                calc( #{$origin} + #{$width} ) 100%, 
+                #{$origin} calc( 100% - #{$height} ), 
+                0 calc( 100% - #{$height} )
+            );
+
+        }
+    }
+
+    @include breakpoint(medium) {
+        /**
+        * Structure
+        */
+
+        /**
+        * Style
+        */
+        .page-content-header {}
+
+    }
+
+}
+
 .single-post {}
 
 

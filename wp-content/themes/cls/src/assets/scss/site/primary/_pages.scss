@@ -42,9 +42,37 @@ body:not(.home) {
     }
 }
 
+
+/**
+ * Search, 404
+ */
+.search-results ,
+.error404 {
+    /**
+    * Structure
+    */
+    .page-content {
+        @include xy-grid-container;
+        padding-top: rem-calc(40);
+        padding-bottom: rem-calc(50);
+    }
+
+    @include breakpoint(medium) {
+        /**
+        * Structure
+        */
+        .page-content {
+            padding-top: rem-calc(50);
+            padding-bottom: rem-calc(70);
+        }
+    }
+}
+
+
 /* Default - No Template Specified */
 .page-template-default,
-.page-template-narrow {
+.page-template-narrow,
+.search-results {
     /**
     * Structure
     */
@@ -192,7 +220,6 @@ body:not(.home) {
 
     }
 }
-
 
 /* Grid Content */
 .page-template-grid-content {

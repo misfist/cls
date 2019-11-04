@@ -12,9 +12,7 @@ get_header(); ?>
 	<main id="primary" class="site-main">
 
 		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'cls' ); ?></h1>
-			</header><!-- .page-header -->
+			<?php get_template_part( 'template-parts/content/page-header/page-header', '404' ); ?>
 
 			<div class="page-content">
 				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'cls' ); ?></p>
