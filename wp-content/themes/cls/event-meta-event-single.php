@@ -2,22 +2,6 @@
 /**
  * The template is used for displaying a single event details on the single event page.
  *
- * You can use this to edit how the details re displayed on your site. (see notice below).
- *
- * Or you can edit the entire single event template by creating a single-event.php template
- * in your theme.
- *
- * For a list of available functions (outputting dates, venue details etc) see http://codex.wp-event-organiser.com
- *
- ***************** NOTICE: *****************
- *  Do not make changes to this file. Any changes made to this file
- * will be overwritten if the plug-in is updated.
- *
- * To overwrite this template with your own, make a copy of it (with the same name)
- * in your theme directory. See http://docs.wp-event-organiser.com/theme-integration for more information
- *
- * WordPress will automatically prioritise the template in your theme directory.
- ***************** NOTICE: *****************
  *
  * @package Event Organiser (plug-in)
  * @since 1.7
@@ -37,7 +21,15 @@
 			<div class="event-date">
 				<h3 class="date-title"><?php esc_html_e( 'Date', 'cls' ); ?></h3>
 				<div class="date-details">
+				<?php if( $recurrence_description = get_post_meta( get_the_ID(), 'recurrence_description', true ) ) : ?>
+
+					<div class="event-date-description"><?php esc_html_e( $recurrence_description, 'cls' ); ?></div>
+
+				<?php else : ?>
+					
 					<time datetime="<?php echo eo_get_next_occurrence( 'Y-m-d' ); ?>"><?php echo $next; ?></time>
+					
+				<?php endif; ?>
 				</div>
 			</div>
 
