@@ -63,3 +63,19 @@ function cls_register_post_type_args_page( $args, $post_type ) {
 	return $args;
 }
 add_filter( 'register_post_type_args', 'cls_register_post_type_args_page', 10, 2 );
+
+/**
+ * Filter Query
+ *
+ * @param obj $query
+ * @return void
+ */
+function cls_query_filters( $query ) {
+    if ( ! is_admin() && $query->is_main_query() ) {
+        if ( $query->is_search ) {
+			$home_id = get_option( 'page_on_front' );
+            $query->set( 'post__not_in', $home_id );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'cls_query_filters' );
