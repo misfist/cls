@@ -61,5 +61,9 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer"></footer><!-- .entry-footer -->
+	<footer class="entry-footer">
+		<?php if( is_singular( array( 'post' ) ) ) : ?>
+			<?php get_template_part( 'template-parts/content/page-footer/back-link', 'events' ); ?>
+		<?php endif; ?>
+	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
