@@ -1,0 +1,13 @@
+a {
+    &.read-more {
+
+        font-size: rem-calc(16);
+        line-height: rem-calc(28.91);
+        color: $black-3;
+
+        &:hover {
+            color: $secondary-color;
+            font-weight: $font-weight-bold;
+        }
+     }
+}

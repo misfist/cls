@@ -135,16 +135,16 @@
         line-height: rem-calc(19);
     }
 
-    .read-more {
-        font-weight: $font-weight-xbold;
-        font-size: rem-calc(16);
-        color: $secondary-color;
-        line-height: 28.91px; //sic
+    // .read-more {
+    //     font-weight: $font-weight-xbold;
+    //     font-size: rem-calc(16);
+    //     color: $secondary-color;
+    //     line-height: 28.91px; //sic
 
-        &:hover {
-            color: $hover-secondary;
-        }
-    }
+    //     &:hover {
+    //         color: $hover-secondary;
+    //     }
+    // }
 
      @include breakpoint(medium) {
          
