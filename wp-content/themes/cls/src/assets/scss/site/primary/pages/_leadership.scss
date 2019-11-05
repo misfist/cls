@@ -97,6 +97,10 @@
                         margin-left: 0;
 
                         border-left: 1px solid $medium-gray;
+
+                        .wp-block-image {
+                            margin-bottom: rem-calc(8); // So text wraps as designed
+                        }
                     }
                 }
 
