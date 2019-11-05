@@ -392,35 +392,23 @@ Frontend styles for gutenberg blocks
 
 	// add general foundation button styling
 	.wp-block-button__link {
-		@extend .button;
-		@each $color, $code in $foundation-palette {
-
-			&.has-#{$color}-background-color {
-				background-color: $code;
-			}
-
-			&.has-#{$color}-color {
-				color: $code;
-			}
-		}
+		@include button($background: $primary-color, $background-hover: $hover-primary);
 
 		text-transform: uppercase;
 		font-weight: $font-weight-black;
 		letter-spacing: 0.4px;
 
-		&.has-primary-background-color {
-			&:hover {
-				background-color: $hover-primary;
-			}
-		}
-
 		&.has-secondary-background-color {
+			background-color: $secondary-alternate-color;
+
 			&:hover {
 				background-color: $hover-secondary;
 			}
 		}
 
 		&.has-accent-background-color {
+			background-color: $accent-color;
+			
 			&:hover {
 				background-color: $hover-accent;
 			}

@@ -320,7 +320,7 @@
     }
 
     .button {
-        @include button( $background: $secondary-color, $background-hover: $hover-secondary );
+        @include button( $background: $secondary-alternate-color, $background-hover: $hover-secondary );
         margin-bottom: 0;
     }
 

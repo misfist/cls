@@ -103,7 +103,7 @@
         }
 
         button {
-            @include button($background: $secondary-color, $background-hover: get-color(secondary-alternate));
+            @include button($background: $secondary-alternate-color, $background-hover: $hover-secondary);
         }
     }
 

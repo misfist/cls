@@ -2,6 +2,11 @@
     font-weight: $font-weight-black;
     letter-spacing: 0.4px;
 
+    &.read-more:hover,
+    &:hover {
+        font-weight: $font-weight-black;
+    }
+
     &.large {
         padding: rem-calc(20) rem-calc(42);
         font-size: rem-calc(17);
@@ -12,6 +17,7 @@
     padding: rem-calc(20) rem-calc(42);
     font-size: rem-calc(17);
 }
+
 input[type="search"] {
     border-radius: $button-radius;
 }

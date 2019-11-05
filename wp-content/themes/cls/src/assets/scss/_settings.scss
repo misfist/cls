@@ -86,12 +86,12 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #F58B6F,
+  primary: #F58B6F, // button
   primary-dark: #EF7558, //Hover
   secondary: #8169B1,
   secondary-light: #B7A9D3,
-  secondary-alternate: #9E84CC, // Hover
-  secondary-dark: #8269AE,
+  secondary-alternate: #9E84CC, // button
+  secondary-dark: #8269AE, //hover
   accent: #1B3E70,
   accent-light: #1E4F92, // Hover
   blue-light: #5991DE,
@@ -109,9 +109,9 @@ $medium-gray: get-color(gray-medium);
 $dark-gray: get-color(gray-dark);
 $accent-color: get-color(accent);
 $secondary-dark-color: get-color(secondary-dark);
-$secondary-alternate-color: get-color(secondary-alternate);
+$secondary-alternate-color: get-color(secondary-alternate); // button
 $hover-primary: get-color(primary-dark);
-$hover-secondary: get-color(secondary-alternate);
+$hover-secondary: get-color(secondary-dark);
 $hover-accent: get-color(accent-light);
 $black: #000;
 $white: #fefefe;
@@ -145,6 +145,7 @@ $print-transparent-backgrounds: true;
 @include add-foundation-colors;
 
 $button-palette: map-merge($foundation-palette, (
+    secondary: get-color(secondary-alternate),
     accent: $accent-color, //1B3E70
     orange: $primary-color, //F58B6F
     purple: $secondary-dark-color //8269AE
