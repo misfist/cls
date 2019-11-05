@@ -119,6 +119,8 @@
             }
 
         }
+
+        .entry-footer {}
     }
 
     @include breakpoint(small only) {
@@ -127,7 +129,7 @@
         */
         .site-main {
             .entry-content {
-                padding: 0 0 rem-calc(62) 0;
+                padding: 0 0 rem-calc(50) 0;
 
                 .event-date,
                 .event-time,
@@ -142,6 +144,10 @@
                     .time-details,
                     .event-address {}
                 }
+            }
+
+            .entry-footer {
+                padding-bottom: rem-calc(62);
             }
         }
 
@@ -170,7 +176,15 @@
                     @include xy-cell(6 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: left);
                     @include xy-cell-offset(1, $gutters: 0);
                 }
+            }
+
+            .entry-footer {
+                @include xy-grid;
                 
+                .wp-block-custom-back-link {
+                    @include xy-cell(6 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: left);
+                    @include xy-cell-offset(4, $gutters: 0);
+                }
             }
         }
 
@@ -180,46 +194,8 @@
 
         .site-main {
             .entry-content {
-                padding: rem-calc(58) 0 rem-calc(84) 0;
+                padding: rem-calc(58) 0 rem-calc(50) 0;
 
-                // .event-meta {
-                //     font-weight: $font-weight-bold;
-                //     font-size: rem-calc(16);
-                //     line-height: rem-calc(20);
-                // }
-
-                // .event-location {
-                //     font-size: rem-calc(14);
-                //     line-height: rem-calc(18);
-                // }
-
-                // h3 {
-                //     font-weight: $font-weight-black;
-                //     font-size: rem-calc(14);
-                //     color: $accent-color;
-                //     line-height: rem-calc(20);
-                // }
-
-                // .time-title,
-                // .location-title {
-                //     margin-top: rem-calc(24);
-                //     padding-top: rem-calc(20);
-                //     border-top: 1px solid $gray-border;
-                // }
-
-                // .entry-body {
-                //     font-weight: $font-weight-bold;
-                //     font-size: rem-calc(16);
-                //     line-height: rem-calc(21);
-                //     color: $black-8;
-                // }
-
-                // h2 {
-                //     font-weight: $font-weight-black;
-                //     font-size: rem-calc(24);
-                //     color: $accent-color;
-                //     line-height: rem-calc(31);
-                // }
 
                 .wp-block-image {
                     height: rem-calc(383);
@@ -227,6 +203,10 @@
     
                     img {}
                 }
+            }
+
+            .entry-footer {
+                padding-bottom: rem-calc(84);
             }
         }
 
