@@ -46,19 +46,15 @@
                 line-height: rem-calc(20);
             }
 
-            // .time-title,
-            // .location-title {
-            //     margin-top: rem-calc(24);
-            //     padding-top: rem-calc(20);
-            //     border-top: 1px solid $gray-border;
-            // }
-
             .entry-body {
                 margin-top: rem-calc(40);
-                font-weight: $font-weight-bold;
                 font-size: rem-calc(16);
                 line-height: rem-calc(21);
                 color: $black-8;
+
+                a {
+                    font-weight: $font-weight-bold;
+                }
             }
 
             h2 {
