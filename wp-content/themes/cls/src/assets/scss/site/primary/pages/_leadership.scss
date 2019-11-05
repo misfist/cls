@@ -89,11 +89,11 @@
                 .wp-block-column {
 
                     &:first-child {
-                        @include xy-cell(1 of 2, $gutters: 100, $gutter-type: padding, $gutter-position: right);
+                        @include xy-cell(51.5%, $gutters: 100, $gutter-type: padding, $gutter-position: right);
                     }
 
                     &:last-child {
-                        @include xy-cell(1 of 2, $gutters: 100, $gutter-type: padding, $gutter-position: left);
+                        @include xy-cell(48.5%, $gutters: 100, $gutter-type: padding, $gutter-position: left);
                         margin-left: 0;
 
                         border-left: 1px solid $medium-gray;
