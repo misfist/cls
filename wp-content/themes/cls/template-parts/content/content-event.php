@@ -47,6 +47,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php gutenberg_starter_theme_entry_footer(); ?>
+		<?php get_template_part( 'template-parts/content/page-footer/back-link', 'events' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
