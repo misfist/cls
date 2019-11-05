@@ -156,6 +156,7 @@
         }
     
         .section-posts {
+            margin-top: - rem-calc(30); // height of angle - diff
 
             .posts-list {
                 grid-template-columns: 1fr 1fr;
