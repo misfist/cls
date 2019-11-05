@@ -256,6 +256,10 @@ body:not(.home) {
 
                         .wp-block-button__link {
                             @extend %large-button;
+
+                            &:hover {
+                                background-color: $primary-color;
+                            }
                         }
 
                         .wp-block-separator {
