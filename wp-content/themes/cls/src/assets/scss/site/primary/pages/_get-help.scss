@@ -60,12 +60,12 @@
                             }
                 
                             .wp-block-button + .wp-block-separator {
-                                padding-bottom: rem-calc(35)
+                                padding-bottom: rem-calc(60)
                             }
                 
                             .wp-block-separator {
                                 @include clearfix;
-                                margin-bottom: rem-calc(65);
+                                margin-bottom: rem-calc(60);
                             }
                 
                         }
