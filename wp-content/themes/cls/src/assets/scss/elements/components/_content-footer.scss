@@ -55,6 +55,10 @@
 
         cite {
             text-align: right;
+            font-weight: $font-weight-semi-bold;
+            font-size: rem-calc(14);
+            line-height: rem-calc(20);
+            text-align: right;
         }
 
         &:after {
