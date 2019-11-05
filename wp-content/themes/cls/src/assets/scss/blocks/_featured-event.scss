@@ -39,7 +39,7 @@
         text-align: center;
 
         img {
-            box-shadow: 2px 4px 10px 7px rgba(175,175,175,0.50);
+            box-shadow: 2px 4px 10px 7px rgba($black-7,0.50);
         }
     }
 
@@ -56,15 +56,10 @@
     }
 
     .read-more {
-        @include button;
+        @include button($background: $secondary-color, $background-hover: $hover-secondary);
         padding: rem-calc(22) rem-calc(50);
-        background-color: $secondary-alternate-color;
         font-weight: $font-weight-black;
         font-size: rem-calc(17); //sic
-
-        &:hover {
-            background-color: darken($secondary-alternate-color,10%);
-        }
     }
 
     /**
@@ -111,7 +106,7 @@
             .entry-media {
                 @include xy-cell(6, $gutters: 40, $gutter-type: padding, $gutter-position: left); 
                 order: 2;
-                margin-top: - rem-calc(80);
+                margin-top: - rem-calc(60);
             }
 
             .entry-body {
