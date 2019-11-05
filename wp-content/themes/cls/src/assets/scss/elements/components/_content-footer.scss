@@ -42,6 +42,21 @@
         margin-top: rem-calc(31); //Total 47px with p margin
     }
 
+    .wp-block-column {
+        &:first-child {
+            p {
+                font-size: rem-calc(14);
+                line-height: rem-calc(18);
+            }
+
+            li {
+                font-weight: $font-weight-bold;
+                font-size: rem-calc(14);
+                line-height: rem-calc(24);
+            }
+        }
+    }
+
     .wp-block-quote {
         position: relative;
         padding: rem-calc(47) rem-calc(31); //sic
@@ -118,7 +133,6 @@
         .wp-block-quote {
             margin-top: rem-calc(100);
             
-            // margin-top: 1rem;
             padding: rem-calc(40) rem-calc(71); //sic
             border-radius: rem-calc(120);
 
