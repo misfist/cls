@@ -58,7 +58,11 @@
                                     clear: both;
                                 }
                             }
-                
+
+                            p + .wp-block-button {
+                                margin-top: rem-calc(15); //16px + 15 = 32
+                            }
+
                             .wp-block-button + .wp-block-separator {
                                 padding-bottom: rem-calc(60)
                             }
