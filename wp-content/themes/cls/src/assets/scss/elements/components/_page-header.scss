@@ -214,10 +214,10 @@
             }
     
             @include breakpoint(large) {
-                $height: calc( 100% - 94px );
+                $height: calc( 100% - 90px );
     
                 $start: 50%;
-                $width: calc( #{$start} + 44px );
+                $width: calc( #{$start} + 90px );
             
                 clip-path: polygon(0% 0%, 100% 0%, 100% 100%, $width 100%, $start $height, 0 $height);
     
