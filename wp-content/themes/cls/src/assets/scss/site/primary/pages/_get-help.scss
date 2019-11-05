@@ -85,6 +85,7 @@
             .inner-container {
                 &> h2 {
                     margin-right: 50%;
+                    margin-bottom: rem-calc(25);
                 }
                 &> p {
                     margin-right: 50%;
@@ -95,7 +96,15 @@
        /**
         * Style
         */
-
+        .wp-block-custom-content-footer {
+            .inner-container {
+                &> h2 {}
+                &> p {
+                    font-size: rem-calc(14);
+                    line-height: rem-calc(18);
+                }
+            }
+        }
     }
 
 }
