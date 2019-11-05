@@ -98,6 +98,8 @@
         */
         .wp-block-custom-content-footer {
             .inner-container {
+                padding-bottom: rem-calc(70);
+
                 &> h2 {}
                 &> p {
                     font-size: rem-calc(14);

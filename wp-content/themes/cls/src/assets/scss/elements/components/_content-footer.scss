@@ -117,6 +117,7 @@
         .inner-container {}
 
         .wp-block-column {
+            margin-bottom: 0;
 
             &:first-child {
                 @include xy-cell(6, $gutters: 75, $gutter-type: padding, $gutter-position: right);
