@@ -217,23 +217,18 @@
             .kt-tab-title-active {
                 &:after {
                     content: '';
-                    // background-image: url('../images/blurb-arrow-down.svg');
-                    // background-repeat: no-repeat;
-                    // background-position: center bottom;
                     background-size: rem-calc(42) rem-calc(21);
-                    // position: absolute;
                     bottom: - rem-calc(20);
                     width: rem-calc(42);
                     height: rem-calc(21);
-                    // @include horizontal-center;
                 }
             }
         }
 
         /* Make last tab look like it extends to edge */
         .kt-tabs-wrap {
-            background: linear-gradient(225deg, $medium-gray, $medium-gray);
-            background-size: 50% 90px;
+            background: linear-gradient(225deg, $white, $white);
+            background-size: 50% 91px;
             background-position: 100% 0%;
             background-repeat: no-repeat;
         }
@@ -241,7 +236,7 @@
         .kt-tabs-has-2-tabs {
             &.kt-active-tab-2 {
                 background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
-                background-size: 50% 90px;
+                background-size: 50% 91px;
                 background-position: 100% 0%;
                 background-repeat: no-repeat;
             }
@@ -249,7 +244,7 @@
         .kt-tabs-has-3-tabs {
             &.kt-active-tab-3 {
                 background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
-                background-size: 50% 90px;
+                background-size: 50% 91px;
                 background-position: 100% 0%;
                 background-repeat: no-repeat;
             }
@@ -305,6 +300,15 @@
                     ul {
                         column-count: 3;
                         column-gap: rem-calc(60);
+                        // -webkit-column-break-inside: avoid; /* Chrome, Safari */
+                        // page-break-inside: avoid;           /* Theoretically FF 20+ */
+                        // break-inside: avoid-column; 
+
+                        li {
+                            page-break-inside: avoid;  
+                            // break-inside: avoid-column;
+                            // break-inside: avoid;
+                        }
                     }
                 }
             }
