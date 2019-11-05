@@ -94,6 +94,7 @@
         font-size: rem-calc(15);
         letter-spacing: 0.5px;
         text-transform: uppercase;
+        // line-height: rem-calc(14);
     }
 
 
@@ -215,9 +216,9 @@
         $gutters: rem-calc(34) * 2;
         $widths: (
             col1: 435px, // Was 418, normalized to 435
-            col2: 166px, // Was 168, normalized to 166
+            col2: 170px, // Was 168, normalized to 166 - changed to 170 to fit content
             col3: 280px, // Was 279, normalized to 280
-            col4: 316px // Was 293, normalized to 316
+            col4: 312px // Was 293, normalized to 316 - changed to 312 to fit col 2 content
           );
         $percents: (
             col1: (map-get($widths,col1) / $breakpoint-large) * 100%,
@@ -370,6 +371,7 @@
             padding: rem-calc(14) rem-calc(38) !important;
             font-size: rem-calc(12) !important;
             letter-spacing: 0.4px !important;
+            line-height: rem-calc(12);
             margin-bottom: 0 !important;
         }
 
