@@ -30,7 +30,7 @@
                         <footer class="entry-footer">
                             <a href="<?php echo esc_url( block_sub_value( 'link' ) ); ?>" class="read-more"<?php echo ( block_value('target') ) ? ' target="_blank"' : ''; ?>><?php esc_html_e( 'Read More', 'cls' ); ?></a>
                         </footer></div>
-                </article><!-- .post -->
+                </article>
             <?php
             endwhile;
             reset_block_rows( 'posts' );

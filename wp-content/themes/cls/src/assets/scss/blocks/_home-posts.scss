@@ -109,9 +109,11 @@
         * Style
         */
         article {
-            padding-bottom: rem-calc(42);
-            margin-bottom: rem-calc(42);
-            border-bottom: 1px solid get-color(gray-medium);
+            &:not(:last-child) {
+                padding-bottom: rem-calc(36);
+                margin-bottom: rem-calc(36);
+                border-bottom: 1px solid get-color(gray-medium);
+            }
         }
 
         .inner-container {}
