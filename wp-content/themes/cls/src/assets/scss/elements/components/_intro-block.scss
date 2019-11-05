@@ -1,13 +1,12 @@
 /* Intro Block */
 .wp-block-custom-intro {
-    // padding: rem-calc(20);
     background-color: $primary-color;
     color: $white;
 
     .inner-container {
         @include xy-grid-container;
         padding-top: rem-calc(46);
-        padding-bottom: rem-calc(44);
+        padding-bottom: rem-calc(46);
     }
 
     /**
@@ -37,8 +36,8 @@
             .inner-container {
                 @include xy-grid;
                 align-items: center;
-                padding-top: rem-calc(44);
-                padding-bottom: rem-calc(46);
+                // padding-top: rem-calc(46);
+                // padding-bottom: rem-calc(46);
             }
 
             .intro-content {
