@@ -9,5 +9,5 @@
 ?>
 
 <div class="wp-block-custom-back-link">
-    <a href="<?php echo esc_url( get_site_url( null, '/about/news-events/', null) ); ?>"><?php esc_html_e( 'Back to Events', 'cls'); ?></a>
+    <a href="<?php echo esc_url( get_site_url( null, '/about/news-events/', null ) ); ?>"><?php esc_html_e( 'Back to News & Events', 'cls'); ?></a>
 </div>
