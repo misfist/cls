@@ -28,8 +28,13 @@
         }
      }
 
+    .intro-heading {
+        // font-size: rem-calc(22);
+        // line-height: rem-calc(29);
+    }
+
     @include breakpoint(medium) {
-        /**
+       /**
         * Structure
         */
         &.has-button {            
@@ -89,6 +94,19 @@
         .inner-container {
             padding-bottom: rem-calc(46) + rem-calc(38);
         }
+    }
+
+    /**
+     * Style
+     */
+     p {
+        font-size: rem-calc(16);
+        line-height: rem-calc(21);
+     }
+
+    .intro-heading {
+        font-size: rem-calc(22);
+        line-height: rem-calc(29);
     }
 
     @include breakpoint(medium) {
