@@ -1,6 +1,7 @@
 import './vendor/foundation.js';
 import './vendor/navigation.js';
 import { CountUp } from './vendor/countUp.min.js';
+import AOS from 'aos';
 
 function themeReady() {
 
@@ -79,8 +80,6 @@ function themeReady() {
             }
         });
 
-        /* Listen to Timeline Links */
-
     }
 
     /**
@@ -116,6 +115,7 @@ function themeReady() {
 
     /**
      * Number Counter
+     * Use CountUp.js to count up numbers
      */
     const counterEls = document.querySelectorAll('.wp-block-number-counter .number-counter');
     if(counterEls) {
@@ -170,15 +170,13 @@ function themeReady() {
         cta.addEventListener('mouseout',removeActive);
     }
 
-    const animate = new Animate({
-        target: '[data-animate]',
-        animatedClass: 'is-inview',
-        offset: [0.25, 1],
-        callbackOnInView: function(el) {
-            console.log( 'inview' )
-        },
+    /**
+     * Home page animation
+     */
+    AOS.init({
+        once: true,
+        duration: 1000,
     });
-    animate.init();
 
 }
 document.addEventListener( "DOMContentLoaded", themeReady );

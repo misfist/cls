@@ -3,7 +3,7 @@
 
 @import 'settings';
 @import 'foundation';
-@import 'motion-ui';
+// @import 'motion-ui';
 
 @include foundation-global-styles;
 //@include foundation-grid;
@@ -23,12 +23,12 @@
 // @include foundation-card;
 @include foundation-close-button;
 @include foundation-menu;
-@include foundation-menu-icon;
+// @include foundation-menu-icon;
 // @include foundation-drilldown-menu;
 @include foundation-dropdown;
 @include foundation-dropdown-menu;
 @include foundation-responsive-embed;
-@include foundation-label;
+// @include foundation-label;
 @include foundation-media-object;
 @include foundation-off-canvas;
 // @include foundation-orbit;
@@ -50,8 +50,8 @@
 
 // @include foundation-prototype-classes;
 
-@include motion-ui-transitions;
-@include motion-ui-animations;
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
 
 // Theme Styles
 // ---------

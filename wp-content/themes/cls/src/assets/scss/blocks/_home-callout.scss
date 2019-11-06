@@ -72,9 +72,7 @@
     
     .block-header,
     .block-content,
-    .block-footer {
-        opacity: 0;
-    }
+    .block-footer {}
 
     &.animated,
     &.is-inview {
