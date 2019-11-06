@@ -42,7 +42,7 @@ function gutenberg_starter_theme_fonts_url() {
 function gutenberg_starter_theme_scripts() {
 
 	/** Don't load Custom Twitter Feeds styling */
-	wp_dequeue_style( 'ctf_styles' );
+	wp_dequeue_style( 'ctf_styles', 'wp-block-library' );
 
 	wp_enqueue_style( 'cls-base-style', get_stylesheet_uri() );
 
@@ -64,6 +64,7 @@ function gutenberg_starter_theme_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'gutenberg_starter_theme_scripts' );
+
 
 /**
  * Function to turn off inline tabs block css.

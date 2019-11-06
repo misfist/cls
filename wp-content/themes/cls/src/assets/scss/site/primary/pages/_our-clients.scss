@@ -5,10 +5,19 @@
      .site-main {
         .entry-content {
             .has-2-columns {
+                @include xy-grid;
+                flex-wrap: wrap;
+
                 .wp-block-column {
-                    &:first-child {}
+                    &:first-child {
+                        @include xy-cell($gutters: 0);
+                        order: 2;
+                    }
                     
-                    &:last-child {}
+                    &:last-child {
+                        @include xy-cell($gutters: 0);
+                        order: 1;
+                    }
                 }
             }
         }
@@ -31,6 +40,11 @@
             }
 
             .has-4-columns {
+                @include xy-grid;
+
+                .wp-block-column {
+                    @include xy-cell($gutters: 0);
+                }
 
                 p {
                     font-size: rem-calc(18); //sic
@@ -47,8 +61,11 @@
                     }
                 }
                 
+            }
 
-                
+            .wp-block-image {
+                margin-bottom: 0;
+                @include clipped-corner($corner: bottom-right, $height: 58px, $width: 52px);
             }
         }
 
@@ -74,13 +91,9 @@
                 .has-2-columns {
 
                     .wp-block-column {
-                        &:first-child {
-                            order: 2;
-                        }
+                        &:first-child {}
                         
-                        &:last-child {
-                            order: 1;
-                        }
+                        &:last-child {}
                     }
 
                 }
@@ -137,10 +150,12 @@
 
                         &:first-child {
                             @include xy-cell(1 of 2, $gutters: 100, $gutter-type: padding, $gutter-position: right);
+                            order: 1;
                         }
                         
                         &:last-child {
                             @include xy-cell(1 of 2, $gutters: 100, $gutter-type: padding, $gutter-position: left);
+                            order: 2;
                             
                         }
 
@@ -151,14 +166,24 @@
                     .wp-block-column {
                         margin-bottom: 0;
 
-                        p {
-                            &:last-child {
-                                margin-bottom: 0;
-                            }
+                        &:first-child,
+                        &:nth-child(2) {
+                            margin-bottom: rem-calc(40);
+                        }
+
+                        &:nth-child(odd) {
+                            @include xy-cell(1 of 2, $gutters: 80, $gutter-type: padding, $gutter-position: right);
+                            border-right: 1px solid $gray-border;
+                        }
+
+                        &:nth-child(even) {
+                            @include xy-cell(1 of 2, $gutters: 80, $gutter-type: padding, $gutter-position: left);
                         }
                     }
+
                 }
             }
+
         }
 
         .wp-block-custom-content-footer {
@@ -182,6 +207,55 @@
         /**
         * Styles
         */
+        .site-main {
+            .entry-content {
+                .wp-block-image {
+                    margin-bottom: 0;
+                    @include clipped-corner($corner: bottom-right, $height: 100px, $width: 94px);
+                }
+            }
+        }
 
-     }
+    }
+
+    @include breakpoint(large) {
+        /**
+        * Structure
+        */
+        .site-main {
+            .entry-content {
+
+                .has-4-columns {
+                    margin-bottom: 0;
+
+                    .wp-block-column {
+
+                        &:first-child,
+                        &:nth-child(2) {
+                            margin-bottom: 0;
+                        }
+
+                        &:first-child() {
+                            @include xy-cell(1 of 4, $gutters: 80, $gutter-type: padding, $gutter-position: right);
+                        }
+
+                        &:nth-child(2),
+                        &:nth-child(3) {
+                            @include xy-cell(1 of 4, $gutters: 80, $gutter-type: padding, $gutter-position: left right);
+                            border-right: 1px solid $gray-border;
+                        }
+
+                        &:last-child() {
+                            @include xy-cell(1 of 4, $gutters: 80, $gutter-type: padding, $gutter-position: left);
+                        }
+                    }
+                }
+            }
+        }
+
+        /**
+        * Styles
+        */
+
+    }
 }
