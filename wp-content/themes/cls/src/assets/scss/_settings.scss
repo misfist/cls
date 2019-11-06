@@ -93,7 +93,7 @@ $foundation-palette: (
   secondary-light: #B7A9D3,
   secondary-alternate: #9E84CC, // button
   secondary-dark: #8269AE, //hover
-  accent: #1B3E70,
+  accent: #1B3E70, // button
   accent-light: #1E4F92, // Hover
   blue-light: #5991DE,
   gray-dark: #333333,
@@ -105,15 +105,30 @@ $foundation-palette: (
   alert: #cc4b37,
 );
 
+$button-palette: (
+  primary: get-color(primary),
+  secondary: get-color(secondary-alternate),
+  accent: get-color(accent),
+);
+
+$hover-palette: (
+  primary: get-color(primary-dark),
+  secondary: get-color(secondary-dark),
+  accent: get-color(accent-light),
+);
+
 $light-gray:  get-color(gray-light);
 $medium-gray: get-color(gray-medium);
 $dark-gray: get-color(gray-dark);
 $accent-color: get-color(accent);
 $secondary-dark-color: get-color(secondary-dark);
 $secondary-alternate-color: get-color(secondary-alternate); // button
-$hover-primary: get-color(primary-dark);
-$hover-secondary: get-color(secondary-dark);
-$hover-accent: get-color(accent-light);
+$button-primary: map-get($button-palette, primary);
+$button-secondary: map-get($button-palette, secondary);
+$button-accent: map-get($button-palette, accent);
+$hover-primary: map-get($hover-palette, primary);
+$hover-secondary: map-get($hover-palette, secondary);
+$hover-accent: map-get($hover-palette, accent);
 $black: #000;
 $white: #fefefe;
 $black-8: #3d3d3d; // Used for lists in page content?
@@ -151,8 +166,6 @@ $button-palette: map-merge($foundation-palette, (
     orange: $primary-color, //F58B6F
     purple: $secondary-dark-color //8269AE
 ));
-
-//9E84CC
 
 $dark-nav-color: $secondary-color;
 

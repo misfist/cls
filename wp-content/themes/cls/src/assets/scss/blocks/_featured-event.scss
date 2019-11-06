@@ -56,10 +56,14 @@
     }
 
     .read-more {
-        @include button($background: $secondary-alternate-color, $background-hover: $hover-secondary);
+        @include button($background: $button-secondary, $background-hover: $hover-secondary);
         padding: rem-calc(22) rem-calc(50);
         font-weight: $font-weight-black;
         font-size: rem-calc(17); //sic
+
+        &:hover {
+            font-weight: $font-weight-black;
+        }
     }
 
     /**

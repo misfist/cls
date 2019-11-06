@@ -1,4 +1,5 @@
 .button {
+    @include button($background: map-get($button-palette, primary), $background-hover: map-get($hover-palette, primary));
     font-weight: $font-weight-black;
     letter-spacing: 0.4px;
 
@@ -10,6 +11,37 @@
     &.large {
         padding: rem-calc(20) rem-calc(42);
         font-size: rem-calc(17);
+
+        &:hover {
+            font-weight: $font-weight-black;
+        }
+    }
+
+    &.accent {
+       background-color: map-get($button-palette, accent);
+       
+       &:hover {
+            background-color: map-get($hover-palette, accent);
+            font-weight: $font-weight-black;
+       }
+    }
+
+    &.primary {
+        background-color: map-get($button-palette, primary);
+
+       &:hover {
+            background-color: map-get($hover-palette, primary);
+            font-weight: $font-weight-black;
+       }
+    }
+
+    &.secondary {
+        background-color: map-get($button-palette, secondary);
+
+       &:hover {
+            background-color: map-get($hover-palette, secondary);
+            font-weight: $font-weight-black;
+       } 
     }
 }
 

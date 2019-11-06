@@ -392,27 +392,39 @@ Frontend styles for gutenberg blocks
 
 	// add general foundation button styling
 	.wp-block-button__link {
-		@include button($background: $primary-color, $background-hover: $hover-primary);
+		@include button($background: $button-primary, $background-hover: $hover-primary);
 
-		text-transform: uppercase;
+		// text-transform: uppercase;
 		font-weight: $font-weight-black;
 		letter-spacing: 0.4px;
 
-		&.has-secondary-background-color {
-			background-color: $secondary-alternate-color;
+		@each $color, $code in $foundation-palette {
 
-			&:hover {
-				background-color: $hover-secondary;
+			&.has-#{$color}-background-color {
+				background-color: map-get($button-palette, $color);
+
+				&:hover {
+					background-color: map-get($hover-palette, $color);
+				}
 			}
+		
 		}
+		  
+		// &.has-secondary-background-color {
+		// 	background-color: $button-secondary;
 
-		&.has-accent-background-color {
-			background-color: $accent-color;
+		// 	&:hover {
+		// 		background-color: $hover-secondary;
+		// 	}
+		// }
+
+		// &.has-accent-background-color {
+		// 	background-color: $button-accent;
 			
-			&:hover {
-				background-color: $hover-accent;
-			}
-		}
+		// 	&:hover {
+		// 		background-color: $hover-accent;
+		// 	}
+		// }
 	}
 
 	// add special styling for squared buttons
@@ -439,8 +451,24 @@ Frontend styles for gutenberg blocks
 
 /** === File === */
 .wp-block-file .wp-block-file__button{
-	@include button();
+	@include button($background: $button-primary, $background-hover: $hover-primary);
+
 	text-transform: uppercase;
+	font-weight: $font-weight-black;
+	letter-spacing: 0.4px;
+
+	@each $color, $code in $foundation-palette {
+
+		&.has-#{$color}-background-color {
+			background-color: map-get($button-palette, $color);
+
+			&:hover {
+				background-color: map-get($hover-palette, $color);
+			}
+		}
+	
+	}
+	// text-transform: uppercase;
     font-weight: $font-weight-black;
     letter-spacing: 0.4px;
 }

@@ -143,7 +143,7 @@
         }
 
         .button {
-            @include button($background: $secondary-alternate-color, $background-hover: $hover-secondary);
+            @include button($background: $button-secondary, $background-hover: $hover-secondary);
             margin-top: rem-calc(6);
             margin-bottom: 0;
         }
@@ -171,7 +171,7 @@
     .footer-widget-4 {
         .newsletter {
             .button {
-                @include button($background: $secondary-alternate-color, $background-hover: $hover-secondary);
+                @include button($background: $button-secondary, $background-hover: $hover-secondary);
             }
         }
 

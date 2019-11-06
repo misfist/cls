@@ -163,7 +163,7 @@
 
     .wpgmza_iw_buttons {
         .wpgmza_button {
-            @include button($background: $accent-color, $background-hover: $hover-accent);
+            @include button($background: $button-accent, $background-hover: $hover-accent);
         }
     }
 

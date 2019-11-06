@@ -165,7 +165,7 @@ body {
 	}
 
 	.read-more {
-		@include button;
-		background-color: $secondary-color;
+		@include button($background: $button-secondary, $background-hover: $hover-secondary);
+		font-weight: $font-weight-black;
 	}
 }
