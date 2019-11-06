@@ -389,10 +389,47 @@
   @include clearfix;
 }
 
-.nav-previous {
-  float:left;
+.pagination {
+
+  /**
+   * Structure
+   */
+  .page-numbers {
+    padding-right: rem-calc(5);
+    padding-left: rem-calc(5);
+  }
+
+  .prev {
+    padding-right: rem-calc(10);
+  }
+
+  .next {
+    padding-left: rem-calc(10);
+  }
+
+  /**
+   * Style
+   */
+   text-align: center;
+   font-weight: $font-weight-black;
+ 
+   a {
+       font-weight: $font-weight-normal;
+       text-decoration: none;
+   }
+ 
+   .nav-links {
+     @include xy-grid;
+     justify-content: center;
+   }
+ 
 }
 
-.nav-next {
-  float:right;
-}
+
+// .nav-previous {
+//   float:left;
+// }
+
+// .nav-next {
+//   float:right;
+// }

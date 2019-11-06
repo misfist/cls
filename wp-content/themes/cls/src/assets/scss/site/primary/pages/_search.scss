@@ -47,18 +47,9 @@
         }
     }
 
-    .pagination {
-        text-align: center;
-        font-weight: $font-weight-black;
-
-        a {
-            font-weight: $font-weight-normal;
-        }
-    }
-
     .read-more {
         font-weight: $font-weight-xbold;
-        line-height: rem-calc(8.91);
+        line-height: rem-calc(8.91); //sic
         color: $secondary-color;
     }
 
@@ -79,7 +70,6 @@
         font-size: rem-calc(13);
         color: $accent-color;
         line-height: rem-calc(21);
-        font-family: Raleway-SemiBold;
     }
 
     h2 {
