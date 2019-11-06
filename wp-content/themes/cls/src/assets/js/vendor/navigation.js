@@ -7,7 +7,7 @@
 ( function() {
 	var container, button, menu, links, i, len;
 
-	console.log('navigation.js');
+	// console.log('navigation.js loaded');
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {

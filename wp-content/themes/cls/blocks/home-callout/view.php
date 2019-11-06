@@ -3,7 +3,7 @@
  * Block: Home Callout
  */
 ?>
-<aside class="wp-block-home-callout">
+<aside class="wp-block-home-callout" data-animate data-animation-classes="animated fadein">
     <div class="home-callout__inner-container inner-container">
         <header class="block-header"><?php block_field( 'heading' ); ?></header>
         <div class="block-content"><?php block_field( 'content' ); ?></div>

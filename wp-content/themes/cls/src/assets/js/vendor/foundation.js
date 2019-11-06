@@ -12,21 +12,7 @@ import Foundation from 'foundation-sites';
 $(document).foundation();
 
 
-console.log( 'foundation.js loaded' );
-
-/**
- * Drop-down Menus
- * Initialize for medium +
- */
-// if (Foundation.MediaQuery.is('medium')) {
-//     const mainNav = new Foundation.DropdownMenu($('#site-navigation'), {});
-// }
-
-// $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
-//     if( 'small' === oldSize ) {
-
-//     }
-// });
+// console.log( 'foundation.js loaded' );
 
 /**
  * Timeline Tabs

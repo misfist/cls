@@ -40,15 +40,25 @@
       * Style
       */
 
-    @keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
+    @keyframes fade-in {
+        0% { 
+            opacity: 0;
+            transform: scale(0);
+        }
+        75% {
+            opacity: .8;
+            transform: scale(1.1);
+        }
+        100%  { 
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 
-    @keyframes scaleup {
-        from { transform: scale(0); }
-        to { transform: scale(1); }
-    }
+    // @keyframes scaleup {
+    //     from { transform: scale(0); }
+    //     to { transform: scale(1); }
+    // }
 
     .inner-container {
         background: rgb(255,199,189);
@@ -59,6 +69,34 @@
         
         color: $white;
     }
+    
+    .block-header,
+    .block-content,
+    .block-footer {
+        opacity: 0;
+    }
+
+    &.animated,
+    &.is-inview {
+        .block-header,
+        .block-content,
+        .block-footer {
+            opacity: 1;
+            animation: fade-in 1s linear forwards;
+        }
+
+        .block-header {
+            animation-delay: 0s;
+        }
+
+        .block-content {
+            animation-delay: .25s;
+        }
+
+        .block-footer {
+            animation-delay: .5s;
+        }
+    }
 
     .block-header {
         padding: rem-calc(30) rem-calc(50);
@@ -66,8 +104,8 @@
         font-weight: $font-weight-xbold;
         line-height: rem-calc(26.91); //sic
         background-color: $primary-color;
-        border-radius: 60px;
-        animation: scaleup .25s ease-in;
+        border-radius: rem-calc(60);
+        
 
         &:after {
             content: '';
@@ -94,8 +132,7 @@
     .block-content {
         padding: rem-calc(38) rem-calc(32) rem-calc(24) rem-calc(38);
         background-color: get-color(secondary-dark);
-        border-radius: 30px;
-        animation: scaleup 1s ease-in;
+        border-radius: rem-calc(30);
 
         p {
             font-size: rem-calc(16.38); //sic
@@ -136,8 +173,7 @@
     }
 
     .block-footer {
-        font-size: rem-calc(14.98);
-        animation: scaleup .25s ease-in;
+        font-size: rem-calc(14.98); //sic
 
         a {
             padding: rem-calc(8) rem-calc(20);
@@ -145,11 +181,6 @@
             border-radius: 28px;
             color: $white;
             font-weight: $font-weight-black;
-            animation: fadein 1s;
-
-            &:hover {
-                background-color: scale-color($primary-color, $lightness: -14%);
-            }
 
             .icon {
                 margin-left: rem-calc(12);
@@ -183,6 +214,17 @@
             background-color: $primary-color;
             mask-repeat: no-repeat;
             mask-size: 21px 16px;
+        }
+
+        &:hover {
+
+            a {
+                background-color: $hover-primary;
+            }
+
+            &:after {
+                background-color: $hover-primary;
+            }
         }
     }
 

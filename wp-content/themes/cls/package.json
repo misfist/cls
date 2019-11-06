@@ -21,6 +21,7 @@
     "responsive"
   ],
   "dependencies": {
+    "animate.js": "^2.0.2",
     "countup.js": "^2.0.4",
     "foundation-sites": "^6.5.1",
     "jquery": "^3.4.1",

@@ -28,6 +28,7 @@ PATHS:
   entries:
     - "src/assets/js/app.js"
     - "src/assets/js/vendor/load-more.js"
+    - "src/assets/js/vendor/animate.min.js"
   # Paths for the package task to include/exclude in .zip archive
   package:
     - "**/*"

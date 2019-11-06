@@ -170,5 +170,15 @@ function themeReady() {
         cta.addEventListener('mouseout',removeActive);
     }
 
+    const animate = new Animate({
+        target: '[data-animate]',
+        animatedClass: 'is-inview',
+        offset: [0.25, 1],
+        callbackOnInView: function(el) {
+            console.log( 'inview' )
+        },
+    });
+    animate.init();
+
 }
 document.addEventListener( "DOMContentLoaded", themeReady );
