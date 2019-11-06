@@ -109,12 +109,18 @@ $button-palette: (
   primary: get-color(primary),
   secondary: get-color(secondary-alternate),
   accent: get-color(accent),
+  orange: get-color(primary),
+  purple: get-color(secondary-alternate),
+  blue: get-color(accent)
 );
 
 $hover-palette: (
   primary: get-color(primary-dark),
   secondary: get-color(secondary-dark),
   accent: get-color(accent-light),
+  orange: get-color(primary-dark),
+  purple: get-color(secondary-dark),
+  blue: get-color(accent-light)
 );
 
 $light-gray:  get-color(gray-light);
@@ -160,12 +166,7 @@ $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
 
-$button-palette: map-merge($foundation-palette, (
-    secondary: get-color(secondary-alternate),
-    accent: $accent-color, //1B3E70
-    orange: $primary-color, //F58B6F
-    purple: $secondary-dark-color //8269AE
-));
+
 
 $dark-nav-color: $secondary-color;
 

@@ -58,8 +58,11 @@
         /**
         * Style
         */
-        p {
+        .intro-content {
+           p {
+            font-size: rem-calc(20);
             line-height: rem-calc(27);
+           }
         }
 
         h2 {
@@ -128,27 +131,30 @@
 
 }
 
+/**
+ * Body copy size variations
+ */
+.page-news-events,
+.page-our-impact,
+.page-our-story {
+    .intro-content {
+        p {
+            font-size: rem-calc(16);
+            line-height: rem-calc(21);
+        }
+    }
+}
+
 /* Basic Pages */
 .page-template-default,
 .page-template-grid-content {
-    .wp-block-custom-intro {
-        .intro-content {
-            p {
-                font-size: rem-calc(20);
-                line-height: rem-calc(25);
-            }
-        }
-    }
+    .wp-block-custom-intro {}
 
     @include breakpoint(medium) {
 
         .wp-block-custom-intro {
             .intro-content {
                 margin-right: 41.666666666666667%; //sic
-
-                p {
-                    line-height: rem-calc(27);
-                }
             }
         }
         
@@ -163,6 +169,18 @@
     }
 }
 
+.wp-block-custom-intro,
+.page-intro,
+.entry-intro {
+    background-color: $light-gray;
+
+    .intro-content {
+        p {
+            color: $accent-color;
+        }
+    }
+}
+
 
 @each $color, $code in $foundation-palette {
   
@@ -170,8 +188,14 @@
         .wp-block-custom-intro,
         .page-intro,
         .entry-intro {
-                background-color: $code;
+            background-color: $code;
+        }
+
+        .intro-content {
+            p {
+                color: $white;
             }
+        }
 	}
 }
 
@@ -180,7 +204,7 @@
     .wp-block-custom-intro,
     .page-intro,
     .entry-intro {
-        color: $body-font-color;
+        color: $accent-color;
     }
 }
 
