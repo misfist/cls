@@ -36,6 +36,9 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                 display: block;
                 color: white;
                 font-weight: bold;
+                transition: background-color 0.25s ease; // Transition matches background image
+                border-top-left-radius: $button-radius;
+                border-bottom-left-radius: $button-radius;
     
                 &:hover,
                 &:focus,
@@ -78,6 +81,10 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                 text-align: center;
 
                 a {
+                    padding-top: rem-calc(10);
+                    padding-bottom: rem-calc(10);
+                    border-radius: $button-radius;
+
                     &:hover {
                         background-color: $white;
                         color: $primary-color;
@@ -295,15 +302,20 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
     }
       
     .timeline-tabs-panel {
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
         
         article {
             opacity: 0;
             visibility: hidden;
+            transition: opacity .5s ease-in-out;
         }
 
         &.is-active {
-            display: block;
+            height: auto;
+            opacity: 1;
+            visibility: visible;
             
             article {
                 opacity: 1;
@@ -352,6 +364,7 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                     /* No border radius on hover */
                     border-top-right-radius: 0;
                     border-bottom-right-radius: 0;
+                    transition: background-image 0.25s ease; //Transition matches background-color
 
                     &:after {
                         content: '';
@@ -362,7 +375,7 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                         background-position: center center;
                         height: rem-calc(33); //[sic]
                         width: rem-calc(33); //[sic]
-                        top: 1px;
+                        top: 0px;
                         right: -16px;
                     }
                 }

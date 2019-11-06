@@ -29,7 +29,7 @@
 		$post_query = new WP_Query( $post_args );
 		if( $post_query->have_posts() ) : ?>
 
-		<div id="year-<?php echo $term->slug; ?>" class="term-group timeline-tabs-panel<?php echo (0 === $index) ? ' is-active' : '' ;?>">
+		<div id="year-<?php echo $term->slug; ?>" data-toggler data-animate="fade-in fade-out" class="term-group timeline-tabs-panel<?php echo (0 === $index) ? ' is-active' : '' ;?>">
 			<header class="term-header">
 				<h2 class="term-title"><?php esc_html_e( $term->name ); ?></h2>
 			</header>

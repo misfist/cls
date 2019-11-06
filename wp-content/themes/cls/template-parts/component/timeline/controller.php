@@ -20,7 +20,7 @@
 		$index = 0;
 		foreach( $terms as $term ) : ?>
 
-			<li id="<?php echo $term->term_id; ?>" class="timeline-tab-title<?php echo ( 0 === $index ) ? ' is-active' : '' ;?>"><a href="#year-<?php echo $term->slug;?>"><?php echo $term->name;?></a></li>
+			<li id="<?php echo $term->term_id; ?>" class="timeline-tab-title<?php echo ( 0 === $index ) ? ' is-active' : '' ;?>"><a href="#year-<?php echo $term->slug;?>" data-toggle="#year-<?php echo $term->slug;?>"><?php echo $term->name;?></a></li>
 
 		<?php
 		$index++;
