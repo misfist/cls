@@ -84,35 +84,35 @@
                 }
             }
 
-            .wp-block-quote {
-                border-left: none;
-                margin: rem-calc(40) 0;
-                padding: rem-calc(34) 0;
-                color: $secondary-color;
-                border-top: 2px solid $secondary-color;
-                border-bottom: 2px solid $secondary-color;
+            // .wp-block-quote {
+            //     border-left: none;
+            //     margin: rem-calc(40) 0;
+            //     padding: rem-calc(34) 0;
+            //     color: $secondary-color;
+            //     border-top: 2px solid $secondary-color;
+            //     border-bottom: 2px solid $secondary-color;
     
-                cite {
-                    font-size: rem-calc(14);
-                    line-height: rem-calc(20);
-                    font-weight: $font-weight-semi-bold;
-                    color: black;
-                    text-align: right;
-                }
+            //     cite {
+            //         font-size: rem-calc(14);
+            //         line-height: rem-calc(20);
+            //         font-weight: $font-weight-semi-bold;
+            //         color: black;
+            //         text-align: right;
+            //     }
 
-                p {
-                    color: $secondary-color;
-                    font-size: rem-calc(20);
-                    line-height: rem-calc(26);
-                    font-weight: $font-weight-bold;
+            //     p {
+            //         color: $secondary-color;
+            //         font-size: rem-calc(20);
+            //         line-height: rem-calc(26);
+            //         font-weight: $font-weight-bold;
 
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
+            //         &:last-child {
+            //             margin-bottom: 0;
+            //         }
 
-                }
+            //     }
 
-            }
+            // }
 
         }
 

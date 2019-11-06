@@ -18,7 +18,7 @@
 			</div>
 			<?php if( $button_text ) : ?>
 				<div class="intro-button">
-					<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'intro-button-text', true ) ) ?>" class="button accent"<?php echo ( $button_target = get_post_meta( get_the_ID(), 'intro-button-target', true )  ) ? ' target="_blank"' : ''; ?>><?php esc_html_e( $button_text ); ?></a>
+					<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'intro-button-text', true ) ) ?>" class="button accent large"<?php echo ( $button_target = get_post_meta( get_the_ID(), 'intro-button-target', true )  ) ? ' target="_blank"' : ''; ?>><?php esc_html_e( $button_text ); ?></a>
 				</div>
 			<?php endif; ?>
 		</div>

@@ -29,15 +29,16 @@
  * - Prevents layout styles from cascading too deeply
  * - helps with plugin compatibility
  */
-.entry .entry-content,
-.entry .entry-summary {
+.hentry .entry-content,
+.hentry .entry-summary {
 
 	.entry-content,
 	.entry-summary,
 	.entry {}
 }
 
-.entry .entry-content {
+.hentry .entry-content,
+.hentry .entry-body {
 
 	//! Paragraphs
 	p.has-background {
@@ -203,36 +204,31 @@
 
 	//! Blockquote
 	.wp-block-quote {
-
-		&:not(.is-large),
-		&:not(.is-style-large) {}
-
-		p {}
+		border-left: none;
+		margin: rem-calc(40) 0;
+		padding: rem-calc(34) 0;
+		border-top: 2px solid $secondary-color;
+		border-bottom: 2px solid $secondary-color;
 
 		cite {
-			/*
-			 * This requires a rem-based font size calculation instead of our normal em-based one,
-			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
-			 */
+			font-size: rem-calc(14);
+			line-height: rem-calc(20);
+			font-weight: $font-weight-semi-bold;
+			color: black;
+			text-align: right;
 		}
 
-		&.is-large,
-		&.is-style-large {
+		p {
+			color: $secondary-color;
+			font-size: rem-calc(20);
+			line-height: rem-calc(26);
+			// font-weight: $font-weight-bold;
 
-			p {}
-
-			cite,
-			footer {
-				/*
-				 * This requires a rem-based font size calculation instead of our normal em-based one,
-				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
-				 */
-			}
-
-			@include breakpoint(medium) {
-				p {}
+			&:last-child {
+				margin-bottom: 0;
 			}
 		}
+
 	}
 
 	//! Image
