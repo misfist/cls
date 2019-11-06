@@ -169,6 +169,7 @@
                 }
 
                 .entry-body {
+                    margin-top: 0;
                     @include xy-cell(6 of 12, $gutters: 40, $gutter-type: padding, $gutter-position: left);
                     @include xy-cell-offset(1, $gutters: 0);
                 }
