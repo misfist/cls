@@ -1,25 +1,32 @@
 .wp-block-custom-back-link {
+
     a {
+        position: relative;
         font-weight: $font-weight-bold;
         font-size: rem-calc(14);
-        line-height: rem-calc(18.11);
         color: $black-9;
+        padding-left: rem-calc(25);
+
+        &:hover {
+            text-decoration: underline;
+        }
 
         &:before {
+            position: absolute;
+            display: block;
             margin-right: rem-calc(8);
-            display: inline-block;
             content: '';
             background-image: url('../images/back-arrow.svg');
             background-repeat: no-repeat;
             background-size: rem-calc(21) rem-calc(13);
-            background-position: bottom left;
+            background-position: center left;
             width: rem-calc(21);
-            height: rem-calc(16);
-            line-height: rem-calc(16);
+            height: rem-calc(13);
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 
-    @include breakpoint(medium) {
-
-    }
+    @include breakpoint(medium) {}
 }
