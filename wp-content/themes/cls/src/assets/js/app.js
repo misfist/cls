@@ -16,6 +16,184 @@ function themeReady() {
         const links = Array.from( timelineControl.querySelectorAll('a') );
         const thermometerTicks = Array.from( document.querySelectorAll('.thermometer li') );
 
+        const list = [...links];
+        const totalNumber = list.length;
+        let numberOfPages = 1;
+        const pageSize = 10;
+        let currentPage = 1;
+        let start = 0;
+        let stop = 9;
+
+        const downButton = document.querySelector('.timeline-pagination .js-down');
+        const upButton = document.querySelector('.timeline-pagination .js-up');
+        
+        /**
+         * Kick it off
+         */
+        function pagerInit() {
+            numberOfPages = getNumberOfPages();
+
+            updateUp();
+            updateDown();
+
+            addPageIndentifier();
+            showCurrentPageItems();
+        }
+
+        /**
+         * Add page number data to items
+         */
+        function addPageIndentifier() {
+
+            for( var i = 1; i <= numberOfPages; i++ ) {
+                const start = getStart( i );
+                const stop = getStop( i  );
+
+                let items = list.slice( start, stop );
+                items.map( item => {
+                    item.setAttribute( 'data-page', i );
+                } );
+
+            }
+
+        }
+
+        /**
+         * Maybe activate/deactivate up button
+         */
+        function updateUp() {
+            if( currentPage > 1 ) {
+                enableUp();
+            } else {
+                disableUp();
+            }
+        }
+
+        /**
+         * Maybe activate/deactivate down button
+         */
+        function updateDown() {
+            if( currentPage < numberOfPages ) {
+                enableDown();
+            } else {
+                disableDown();
+            }
+        }
+
+        /**
+         * Show the items
+         */
+        function showCurrentPageItems() {
+            const currentPageItems = getCurrentPageItems();
+            currentPageItems.map( item => {
+                item.closest('li').classList.remove( 'is-off-page' );
+                item.closest('li').classList.add( 'is-visible' );
+            } );
+
+            const inactivePageItems = getInactivePageItems();
+            inactivePageItems.map( item => {
+                item.closest('li').classList.remove( 'is-visible' );
+                item.closest('li').classList.add( 'is-off-page' );
+            } );
+        }
+
+        /**
+         * Disable down button
+         */
+        function disableDown() {
+            downButton.setAttribute('disabled', true);
+        }
+
+        /**
+         * Disable up button
+         */
+        function disableUp() {
+            upButton.setAttribute('disabled', true);
+        }
+
+        /**
+         * Enable up button
+         */
+        function enableUp() {
+            upButton.removeAttribute('disabled');
+        }
+
+        /**
+         * Enable down button
+         */
+        function enableDown() {
+            downButton.removeAttribute('disabled');
+        }
+
+        /**
+         * Get the items on currnt page
+         */
+        function getCurrentPageItems() {
+            const currentPageItems = list.filter( function( item, index ) {
+                return item.getAttribute( 'data-page' ) == currentPage;
+            } );
+            return currentPageItems;
+        }
+
+        /**
+         * Get the items that aren't on the current page
+         */
+        function getInactivePageItems() {
+            const inactivePageItems = list.filter( function( item, index ) {
+                return item.getAttribute( 'data-page' ) != currentPage;
+            } );
+            return inactivePageItems;
+        }
+
+        /**
+         * Helper to get start index
+         * @param {int} page 
+         */
+        function getStart( page ) {
+            return ( page > 1 ) ? ( pageSize * page ) - pageSize : 0;
+        }
+
+        /**
+         * Helper to get end index
+         * @param {int} page 
+         */
+        function getStop( page ) {
+            const start = getStart( page );
+            return start + ( pageSize );
+        }
+
+        /**
+         * Helper to calculate number of pages
+         */
+        function getNumberOfPages() {
+            return Math.ceil( totalNumber / pageSize );
+        }
+
+        /**
+         * Event listener for up button
+         */
+        downButton.addEventListener( 'click', event => {
+            currentPage++;
+            updateUp();
+            updateDown();
+            showCurrentPageItems();
+        } );
+
+        /**
+         * Event listenr for own button
+         */
+        upButton.addEventListener( 'click', event => {
+            currentPage--;
+            updateUp();
+            updateDown();
+            showCurrentPageItems();
+        } );
+
+        /**
+         * Kick it off
+         */
+        pagerInit();
+
         /* Listen to Timeline Links */
         links.map( link => {
             link.addEventListener('click', function(event) {
@@ -173,10 +351,13 @@ function themeReady() {
     /**
      * Home page animation
      */
-    AOS.init({
-        once: true,
-        duration: 1000,
-    });
+    const homeCta = document.querySelector('.wp-block-home-callout');
+    if(homeCta) {
+        AOS.init({
+            once: true,
+            duration: 1000,
+        });    
+    }
 
 }
 document.addEventListener( "DOMContentLoaded", themeReady );
