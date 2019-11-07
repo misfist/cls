@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 161 134">
-  <defs>
-    <path id="a" d="M0 .053h93.836V133.55H0z"/>
-  </defs>
-  <g fill="none" fill-rule="evenodd">
-    <mask id="b" fill="#fff">
-      <use xlink:href="#a"/>
-    </mask>
-    <path d="M66.748 89.055c-12.29 0-22.254-9.964-22.254-22.253 0-12.291 9.965-22.255 22.254-22.255h27.088V.053H66.748C29.884.053 0 29.937 0 66.802c0 36.864 29.884 66.748 66.748 66.748h27.088V89.055H66.748z" fill="#FFF" mask="url(#b)"/>
-    <path fill="#8069B2" d="M161 67L94 0h67z"/>
-    <path fill="#FF8A6E" d="M94 134l67-67v67z"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 161 134"><defs><path id="a" d="M0 .053h93.836V133.55H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path d="M66.748 89.055c-12.29 0-22.254-9.964-22.254-22.253 0-12.291 9.965-22.255 22.254-22.255h27.088V.053H66.748C29.884.053 0 29.937 0 66.802c0 36.864 29.884 66.748 66.748 66.748h27.088V89.055H66.748z" fill="#FFF" mask="url(#b)"/><path fill="#8069B2" d="M161 67L94 0h67z"/><path fill="#FF8A6E" d="M94 134l67-67v67z"/></g></svg>
