@@ -12,6 +12,10 @@
 
         .entry-content {
             padding-top: rem-calc(40);
+        }
+
+        .entry-footer {
+            padding-top: rem-calc(10);
             padding-bottom: rem-calc(50);
         }
     }
@@ -67,6 +71,9 @@
     @include breakpoint(medium) {
         .page-content-header {}
 
+        /**
+         * Structure
+         */
         .site-main {
             .entry-meta,
             .entry-content,
@@ -75,9 +82,19 @@
     
             .entry-content {
                 padding-top: rem-calc(50);
-                padding-bottom: rem-calc(70);
+                max-width: $grid-container-narrow !important;
+            }
+
+            .entry-footer {
+                max-width: $grid-container-narrow !important;
+                padding-top: rem-calc(14);
+                padding-bottom: rem-calc(77);
             }
         }
+
+        /**
+         * Style
+         */
 
         .entry-content {}
 
