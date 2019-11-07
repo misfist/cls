@@ -23,9 +23,11 @@
         }
 
         .search-field {
+            // padding-left: rem-calc(20);
             background-color: $light-gray;
-            border-color: transparent;
-            background-image: url('../images/icon-magnifying-glass-accent.svg');
+            // border-color: transparent;
+            // background-image: url('../images/icon-magnifying-glass-accent.svg');
+            // background-position: right $form-spacing center;
         }
 
         .entry-body {}
