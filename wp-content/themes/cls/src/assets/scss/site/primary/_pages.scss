@@ -13,8 +13,8 @@ body:not(.home) {
 }
 
 /* Gemeral */
-.page-template-default,
-.page-template {
+.page-template,
+.page-template-default {
     /**
     * Structure
     */
@@ -22,6 +22,8 @@ body:not(.home) {
         &> article {
             &> .entry-content {
                 padding-top: rem-calc(40);
+            }
+            &> .entry-footer {
                 padding-bottom: rem-calc(50);
             }
         }
@@ -35,13 +37,15 @@ body:not(.home) {
             &> article {
                 &> .entry-content {
                     padding-top: rem-calc(50);
+                    
+                }
+                &> .entry-footer {
                     padding-bottom: rem-calc(70);
                 }
             }
         }
     }
 }
-
 
 /**
  * Search, 404
@@ -130,40 +134,11 @@ body:not(.home) {
             li + li {
                 margin-top: rem-calc(28);
             }
-    
-            // .wp-block-quote,
-            // .wp-block-quote p {
-            //     font-size: rem-calc(20);
-            //     line-height: rem-calc(26);
-            //     color: $secondary-color;
-            // }
-    
-            // .wp-block-quote {
-            //     border-left: none;
-            //     margin: rem-calc(40) 0;
-            //     padding: rem-calc(34) 0;
-            //     border-top: 2px solid $secondary-color;
-            //     border-bottom: 2px solid $secondary-color;
-    
-            //     cite {
-            //         font-size: rem-calc(14);
-            //         line-height: rem-calc(20);
-            //         font-weight: $font-weight-semi-bold;
-            //         color: black;
-            //         text-align: right;
-            //     }
-
-            //     p {
-            //         &:last-child {
-            //             margin-bottom: 0;
-            //         }
-
-            //     }
-
-            // }
 
             .wp-block-image {
                 img {
+                    margin-right: auto;
+                    margin-left: auto;
                     width: 100%;
                     object-fit: cover;
                 }

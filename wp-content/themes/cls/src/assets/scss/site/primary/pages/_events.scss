@@ -83,13 +83,14 @@
             .wp-block-image {
                 width: 100%;
                 height: rem-calc(214);
-                // margin-top: rem-calc(40);
                 margin-bottom: rem-calc(44);
                 padding: rem-calc(14);
                 background-color: $secondary-color;
                 text-align: center;
 
                 img {
+                    margin-right: auto;
+                    margin-left: auto;
                     height: 100%;
                     object-fit: contain;
                 }
@@ -202,7 +203,7 @@
 
         .site-main {
             .entry-content {
-                padding: rem-calc(58) 0 rem-calc(50) 0;
+                padding-top: rem-calc(58);
 
 
                 .wp-block-image {
