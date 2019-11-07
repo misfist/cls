@@ -9,9 +9,7 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
     padding-left: 0;
 
     /* Hide Temporarily */
-    .timeline-pagination {
-        display: none;
-    }
+    .timeline-pagination {}
 
     /**
      * Controller 
@@ -59,7 +57,23 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                     border-radius: $button-radius;
                 }
             }
+
+            .is-visible {
+                opacity: 1;
+                visibility: visible;
+                height: auto;
+                // background-color: red;
+            }
+
+            .is-off-page {
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+                // background-color: gray;
+            }
+
         }
+
 
         /**
          * Modal on small screens 
@@ -337,6 +351,10 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
             @include xy-cell(2);
         }
 
+        ul {
+            margin-bottom: 0;
+        }
+
         .content-section {
             @include xy-cell(10);
         }
@@ -350,13 +368,60 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
                 width: rem-calc(85);
                 border-radius: rem-calc(50);
                 margin: 0;
-                padding: rem-calc(20) 0;
+                padding: rem-calc(56) 0;
             }
+
+            .timeline-pagination {
+                button {
+                    position: absolute;
+                    @include horizontal-center;
+                    
+                    .icon {
+                        display: inline-block;
+                        height: rem-calc(15);
+                        width: rem-calc(15);
+                        mask-image: url('../images/pager-arrow.svg');
+                        mask-size: rem-calc(15) rem-calc(15);
+                        mask-repeat: no-repeat;
+                        background-color: $white;
+                        mask-position: center center;
+                    }
+
+                    &:hover {
+                        .icon {
+                            background-color: $primary-color;
+                        }
+                    }
+
+                    &:disabled {
+                        .icon {
+                            opacity: 0;
+                        }
+                    }
+                }
+    
+                .page-up {
+                    top: rem-calc(18);
+
+                    .icon {transform: scaleY(-1);}
+                }
+    
+                .page-down {
+                    bottom:  rem-calc(18);
+                }
+            }
+    
 
             ul {                
                 a {
                     margin-left: rem-calc(10);
                     padding: rem-calc(5) rem-calc(20) rem-calc(5) rem-calc(10);
+                }
+
+                li {
+                    transition-property: opacity;
+                    transition-duration: .5s;
+                    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
                 }
 
                 .is-active a,

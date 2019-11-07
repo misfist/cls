@@ -11,8 +11,8 @@
 <nav id="timeline-controller-module" class="timeline-controls"  role="pagination">
 	<div class="timeline-wrapper wrapper">
 		<div class="timeline-pagination">
-			<a href="#" class="previous ">&lt;<span class="screen-reader-text"><?php esc_html_e( 'Previous', 'cls' ); ?></span></a>
-			<a href="#" class="next">&gt;<span class="screen-reader-text"><?php esc_html_e( 'Next', 'cls' ); ?></span></a>
+			<button type="button" class="pager page-up js-up" id="next"><i class="icon pager-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Page Up', 'cls' ); ?></span></button>
+			<button type="button" class="pager page-down js-down" id="previous"><i class="icon pager-down"></i><span class="screen-reader-text"><?php esc_html_e( 'Page Down', 'cls' ); ?></span></button>
 		</div>
 		
 		<ul id="timeline-controls" class="timeline-nav" data-rows="<?php echo $rows; ?>" style="grid-template-rows: repeat(<?php echo $rows; ?>, auto);" data-tabs>
