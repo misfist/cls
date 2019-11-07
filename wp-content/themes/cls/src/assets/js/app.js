@@ -2,7 +2,6 @@ import './vendor/foundation.js';
 import './vendor/navigation.js';
 import { CountUp } from './vendor/countUp.min.js';
 import AOS from 'aos';
-// import './vendor/paginate';
 
 function themeReady() {
 
@@ -82,26 +81,6 @@ function themeReady() {
         }
 
         /**
-         * Get the items on currnt page
-         */
-        function getCurrentPageItems() {
-            const currentPageItems = list.filter( function( item, index ) {
-                return item.getAttribute( 'data-page' ) == currentPage;
-            } );
-            return currentPageItems;
-        }
-
-        /**
-         * Get the items that aren't on the current page
-         */
-        function getInactivePageItems() {
-            const inactivePageItems = list.filter( function( item, index ) {
-                return item.getAttribute( 'data-page' ) != currentPage;
-            } );
-            return inactivePageItems;
-        }
-
-        /**
          * Show the items
          */
         function showCurrentPageItems() {
@@ -144,6 +123,26 @@ function themeReady() {
          */
         function enableDown() {
             downButton.removeAttribute('disabled');
+        }
+
+        /**
+         * Get the items on currnt page
+         */
+        function getCurrentPageItems() {
+            const currentPageItems = list.filter( function( item, index ) {
+                return item.getAttribute( 'data-page' ) == currentPage;
+            } );
+            return currentPageItems;
+        }
+
+        /**
+         * Get the items that aren't on the current page
+         */
+        function getInactivePageItems() {
+            const inactivePageItems = list.filter( function( item, index ) {
+                return item.getAttribute( 'data-page' ) != currentPage;
+            } );
+            return inactivePageItems;
         }
 
         /**
