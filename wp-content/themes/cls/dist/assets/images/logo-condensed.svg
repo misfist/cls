@@ -1,1 +1,28 @@
-<svg width="138" height="115" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 .9h80.202V115H0z"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(0 -.9)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path d="M57.05 76.97c-10.504 0-19.021-8.516-19.021-19.02 0-10.505 8.517-19.02 19.02-19.02h23.153V.9H57.05C25.542.9 0 26.442 0 57.95 0 89.458 25.542 115 57.05 115h23.152V76.97H57.05z" fill="#FFF" mask="url(#b)"/></g><path fill="#8069B2" d="M137.252 57.05L80.203 0h57.05z"/><path fill="#FF8A6E" d="M80.202 114.1l57.05-57.05v57.05z"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="138px" height="115px" viewBox="0 0 138 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>logo-condensed</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.9001 80.2019 0.9001 80.2019 115 0 115"></polygon>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Template-#3---Our-Impact" transform="translate(-133.000000, -2582.000000)">
+            <g id="Footer" transform="translate(-1.000000, 2513.000000)">
+                <g id="Group-17">
+                    <g id="logo-condensed" transform="translate(134.000000, 68.000000)">
+                        <g id="Group-3" transform="translate(0.000000, 0.100000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Clip-2"></g>
+                            <path d="M57.0499,76.9701 C46.5459,76.9701 38.0289,68.4541 38.0289,57.9501 C38.0289,47.4451 46.5459,38.9291 57.0499,38.9291 L80.2019,38.9291 L80.2019,0.9001 L57.0499,0.9001 C25.5419,0.9001 -0.0001,26.4421 -0.0001,57.9501 C-0.0001,89.4581 25.5419,115.0001 57.0499,115.0001 L80.2019,115.0001 L80.2019,76.9701 L57.0499,76.9701 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                        </g>
+                        <polygon id="Fill-4" fill="#8069B2" points="137.2525 58.05 137.2525 58.05 80.2025 1 137.2525 1"></polygon>
+                        <polygon id="Fill-6" fill="#FF8A6E" points="80.2022 115.0998 80.2022 115.0998 137.2522 58.0498 137.2522 115.0998"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

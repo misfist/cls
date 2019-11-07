@@ -1,1 +1,14 @@
-<svg width="650" height="383" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#DADADA" d="M0 0h650v383H0z"/><path stroke="#979797" stroke-linecap="square" d="M47.513 45.759l562.072 303.482"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="650px" height="383px" viewBox="0 0 650 383" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>dummy-image-lg</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Template-#6B---Our-Work-Interior-Page" transform="translate(-387.000000, -1078.000000)">
+            <g id="dummy-image-lg" transform="translate(387.000000, 1078.000000)">
+                <rect id="Rectangle-Copy-3" fill="#DADADA" x="0" y="0" width="650" height="383"></rect>
+                <line x1="47.5132605" y1="45.7587065" x2="609.585023" y2="349.241294" id="Line-15" stroke="#979797" stroke-linecap="square"></line>
+            </g>
+        </g>
+    </g>
+</svg>
