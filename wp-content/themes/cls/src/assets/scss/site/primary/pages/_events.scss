@@ -13,7 +13,7 @@
     .site-main {
         .entry-content {
             .event-meta {
-                font-weight: $font-weight-bold;
+                
                 font-size: rem-calc(16);
                 line-height: rem-calc(20);
             }
@@ -28,10 +28,6 @@
                 border-bottom: 1px solid $gray-border;
             }
 
-            .button {
-                margin-bottom: 0;
-            }
-
             .event-time {}
 
             .event-location {
@@ -39,13 +35,28 @@
                 line-height: rem-calc(18);
             }
 
+            .button {
+                margin-bottom: 0;
+            }
+
+            .date-details {
+                font-weight: $font-weight-bold;
+            }
+
             h3 {
                 font-weight: $font-weight-black;
                 font-size: rem-calc(14);
                 color: $accent-color;
                 line-height: rem-calc(20);
+
+                &.time-title {
+                    margin-bottom: rem-calc(4);
+                }
             }
 
+            /**
+             * Main Content
+             */
             .entry-body {
                 margin-top: rem-calc(40);
                 font-size: rem-calc(16);
