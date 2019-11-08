@@ -15,7 +15,6 @@
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php// the_content(); ?>
 		<?php cls_the_content_no_block( 'custom/content-footer' ); ?>
 	</div><!-- .entry-content -->
 

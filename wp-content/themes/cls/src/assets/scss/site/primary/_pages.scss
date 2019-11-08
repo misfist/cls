@@ -1,4 +1,7 @@
-/* Containers */
+/**
+ * Containers
+ */
+ /* General */
 .site-main {
     &> article {
         &> .entry-header {}
@@ -17,15 +20,25 @@
 
     }
 }
-
 .page-content {
     @include xy-grid-container;
 }
 
-/**
- * Default Template Override
- * Narrow content area
- */
+/* Home - 100% */
+.home {
+    .site-main {
+        &> article {    
+            &> .entry-content,
+            &> .entry-footer {
+                max-width: 100%;
+            }
+        }
+    
+        @include breakpoint(medium) {}
+    }
+}
+
+/* Default Template Override - Narrow content area */
 .page-template-default {
 
     @include breakpoint(medium) {
