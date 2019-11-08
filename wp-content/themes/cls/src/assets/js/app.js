@@ -40,6 +40,16 @@ function themeReady() {
             showCurrentPageItems();
         }
 
+        function pagerReset() {
+            currentPage = 1;
+            
+            links.map( item => {
+                item.closest('li').classList.remove( 'is-off-page' );
+                item.closest('li').classList.remove( 'is-visible' );
+                item.removeAttribute( 'data-page' );
+            } );
+        }
+
         /**
          * Add page number data to items
          */
@@ -191,8 +201,20 @@ function themeReady() {
 
         /**
          * Kick it off
+         * Only for medium & up
          */
-        pagerInit();
+        if (Foundation.MediaQuery.atLeast('medium')) {
+            pagerInit();
+        }
+        $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
+            if( 'small' === oldSize ) {
+                pagerInit();
+            }
+            if( 'small' === newSize ) {
+                pagerReset();
+            }
+        });
+        
 
         /* Listen to Timeline Links */
         links.map( link => {
