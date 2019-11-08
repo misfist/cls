@@ -28,15 +28,13 @@
         }
      }
 
-    .intro-heading {
-        // font-size: rem-calc(22);
-        // line-height: rem-calc(29);
-    }
+    .intro-heading {}
 
     @include breakpoint(medium) {
        /**
         * Structure
         */
+
         &.has-button {            
             .inner-container {
                 @include xy-grid;
@@ -46,6 +44,7 @@
             }
 
             .intro-content {
+                width: 100%; //Override default 7/12 width intro content
                 @include xy-cell(7 of 12, $gutters: 81, $gutter-type: padding, $gutter-position: right);
             }
 

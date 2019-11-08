@@ -59,12 +59,20 @@
     .timeline-component {}
 
     @include breakpoint(medium) {
+
+        /**
+         * Override default 7/12 intro content width
+         */
+        .intro-content {
+            width: 100%;
+        }
+
         .timeline-component {
             @include xy-grid-container;
         }
 
 
-            /**
+       /**
         *  Style
         */
         .site-main {
@@ -74,12 +82,6 @@
                     &> .entry-title {
                         margin-bottom: rem-calc(42);
                         line-height: rem-calc(47);
-                        // padding-right: 10%;
-                        
-                        // font-weight: $font-weight-black;
-                        // font-size: rem-calc(24);
-                        // color: get-color(accent);
-                        // line-height: rem-calc(31);
                     }
 
                 }

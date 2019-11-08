@@ -26,7 +26,9 @@
          height: rem-calc(206); //sic
          margin-bottom: rem-calc(27); //sic
          overflow: hidden;
-         @include clipped-corner($corner: bottom-right);
+        // @include clipped-corner;
+        @include clipped-photo( $size: small );
+         
 
          img {
             width: 100%;

@@ -1,0 +1,167 @@
+/* Grid Content */
+.page-template-grid-content {
+
+    /**
+     * Structure
+     */
+    .site-main {
+        &> article {
+            .entry-content {
+
+                .has-2-columns {
+                    @include xy-grid;
+
+                    .wp-block-column {
+                        @include xy-cell($gutters: 0);
+                    }
+
+                    .wp-block-column {
+                        .wp-block-image {}
+    
+                        .wp-block-button + .wp-block-image {}
+
+                        p + .wp-block-button {
+                            margin-top: rem-calc(9); //16px + 9 = 25
+                        }
+    
+                        h3 {
+                            color: $accent-color; 
+                            font-size: rem-calc(20);
+                            line-height: rem-calc(34);
+                        }
+
+                        .wp-block-button__link {
+                            @extend %large-button;
+
+                            &:hover {
+                                background-color: $primary-color;
+                            }
+                        }
+
+                        .wp-block-separator {
+                            margin-right: 0;
+                            margin-left: 0;
+                            max-width: 100%;
+                            border-bottom-color: $gray-border;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    /**
+     * Style
+     */
+    
+    /**
+     * Small only
+     */
+    @include breakpoint(small only) {
+
+        /**
+         * Structure
+         */
+        .site-main {
+            &> article {
+
+                &> .entry-content {
+                    padding-bottom: rem-calc(88);
+                }
+
+                .entry-content {
+
+                    .wp-block-columns {
+                        // padding-bottom: rem-calc(88);
+                        margin-bottom: 0;
+
+                        .wp-block-column {
+                            margin-bottom: 0;
+                
+                            .wp-block-button,
+                            .wp-block-button__link {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        .wp-block-separator {
+                            margin-top: rem-calc(50);
+                            margin-bottom: rem-calc(38);
+                        }
+                    }
+                }
+            }
+        }
+
+        /**
+         * Style
+         */
+
+    }
+
+    @include breakpoint(medium) {
+
+        /**
+         * Structure
+         */
+        .site-main {
+            &> article {
+
+                &> .entry-content {
+                    padding-bottom: rem-calc(80);
+                }
+
+                .entry-content {
+                    
+                    .has-2-columns {
+                        // padding-bottom: rem-calc(80);
+
+                        .wp-block-column {
+                            margin-bottom: 0;
+
+                            &:first-child {
+                                @include xy-cell(1 of 2, $gutters: 75, $gutter-type: padding, $gutter-position: right);
+
+                                .wp-block-separator {
+                                    &:last-child {
+                                        display: none;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                @include xy-cell(1 of 2, $gutters: 75, $gutter-type: padding, $gutter-position: left);
+
+                                /* Right column starts lower */
+                                margin-top: rem-calc(94);
+                            }
+
+                            .wp-block-button,
+                            .wp-block-button__link {
+                                margin-bottom: 0;
+                            }
+
+                            .wp-block-separator {
+                                margin-top: rem-calc(50);
+                                margin-bottom: rem-calc(48);
+                            }
+
+                            p + .wp-block-button {
+                                margin-top: rem-calc(32); //16px + 9 = 25
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+        /**
+         * Style
+         */
+ 
+    }
+    
+}

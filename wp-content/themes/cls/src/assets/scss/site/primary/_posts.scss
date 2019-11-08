@@ -213,7 +213,8 @@
                 width: 100%;
                 height: auto;
                 object-fit: cover;
-                @include clipped-corner(bottom-right, 30px, 40px);
+                // @include clipped-corner(bottom-right, 30px, 40px);
+                @include clipped-photo;
             }
         }
 

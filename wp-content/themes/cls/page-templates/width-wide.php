@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Narrow
+ * Template Name: Wide Width (T3)
  * 
- * The template for displaying the Our Work
+ * The template for displaying the Our Impact, Our Clients, etc
  *
  *
  * @link https://codex.wordpress.org/Template_Hierarchy

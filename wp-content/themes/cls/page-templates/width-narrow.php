@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Leadership Page (T1)
+ * Template Name: Narrow Width (6B)
  * 
- * The template for displaying the Leadership page
+ * The template for displaying the Our Work and othr general pages
  *
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
@@ -17,13 +17,13 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content/content-page', 'no-footer' );
+			get_template_part( 'template-parts/content/content', 'page' );
 
 		endwhile; // End of the loop.
 		?>
-		
-		<?php get_template_part( 'template-parts/component/cta' ); ?>
 
+		<?php get_template_part( 'template-parts/component/cta' ); ?>
+		
 	</main><!-- #primary -->
 
 <?php

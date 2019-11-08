@@ -8,7 +8,13 @@
     border-top: 38px solid transparent;
 }
 
-@mixin clipped-corner($corner: top-right, $height: 50px, $width: 60px) {
+
+
+@mixin clipped-corner($corner: bottom-right, $height: 58px, $width: 52px) {
+
+    // @include clipped-corner($corner: bottom-right, $height: 58px, $width: 52px);
+
+    // $height: 44px, $width: 40px
     @if $corner == top-left {
         clip-path: polygon(0 #{$height}, #{$width} 0, 100% 0, 100% 100%, 0 100%);
     } @else if $corner == top-right {
@@ -26,6 +32,32 @@
     } @else {
         clip-path: polygon(0 0, calc(100% - #{$width}) 0, 100% #{height}, 100% 100%, 0 100%);
     }
+
+}
+
+@mixin clipped-photo( $size: small ) {
+
+    $corner: bottom-right;
+
+    @if $size == small {
+        $height: 44px;
+        $width: 40px;
+
+        @include clipped-corner($corner, $height, $width);
+    }
+    @else if $size = medium {
+        $height: 58px;
+        $width: 52px;
+
+        @include clipped-corner($corner, $height, $width);
+    }
+    @else if $size = large {
+        $height: 102px;
+        $width: 94px;
+
+        @include clipped-corner($corner, $height, $width);
+    }
+
 
 }
 

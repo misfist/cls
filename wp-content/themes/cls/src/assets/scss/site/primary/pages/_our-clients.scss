@@ -65,7 +65,9 @@
 
             .wp-block-image {
                 margin-bottom: 0;
-                @include clipped-corner($corner: bottom-right, $height: 58px, $width: 52px);
+                // @include clipped-corner($corner: bottom-right, $height: 58px, $width: 52px);
+               @include clipped-photo($size: medium);
+                
             }
         }
 
@@ -211,7 +213,8 @@
             .entry-content {
                 .wp-block-image {
                     margin-bottom: 0;
-                    @include clipped-corner($corner: bottom-right, $height: 100px, $width: 94px);
+                    // @include clipped-corner($corner: bottom-right, $height: 100px, $width: 94px);
+                    @include clipped-photo($size: large);
                 }
             }
         }
