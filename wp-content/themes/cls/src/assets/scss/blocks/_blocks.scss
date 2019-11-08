@@ -356,11 +356,11 @@
 		}
 
 		@include breakpoint(medium) {
-			flex-wrap: nowrap;
+			// flex-wrap: nowrap;
 
-			.wp-block-column:not(:first-child) {
-				margin-left: rem-calc(32);
-			}
+			// .wp-block-column:not(:first-child) {
+			// 	margin-left: rem-calc(32);
+			// }
 		}
 	}
 	
