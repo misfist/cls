@@ -103,6 +103,16 @@
         margin-top: rem-calc(42);
     }
 }
+/* Our Impact Variant - Fullwidth image above contnt footer */
+.page-our-impact {
+    .wp-block-custom-content-footer {
+        margin-top: 0;
+    
+        @include breakpoint(medium) {
+            margin-top: 0;
+        }
+    }
+}
 
 
 /**
