@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Grid Content
+ * Template Name: Section Landing Page (4A, 4B)
  * 
  * The template for displaying the Join Our Team, Our Work, Get Help
  *
