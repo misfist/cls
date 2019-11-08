@@ -157,40 +157,44 @@
             }
 
             &.has-post-thumbnail {
-                .entry-media {
-                    @include xy-cell(4, $gutters: 0);
+                // justify-content: space-between;
+
+                .entry-footer {
+                    order: 3;
                 }
-                .entry-body {
-                    @include xy-cell(8, $gutters: 0);
+
+                &:nth-child(odd) {
+                    .entry-media {
+                        order: 1;
+                        @include xy-cell(4 of 12, $gutters: 50, $gutter-position: right);
+                    }
+                    .entry-body {
+                        order: 2;
+                        @include xy-cell(8 of 12, $gutters: 50, $gutter-position: left);
+                    }
+ 
                 }
+    
+                &:nth-child(even) {
+                    .entry-media {
+                        @include xy-cell(4 of 12, $gutters: 50, $gutter-position: left);
+                    }
+                    .entry-body {
+                        @include xy-cell(8 of 12, $gutters: 50, $gutter-position: right);
+                    }
+                    .entry-footer {}
+                }
+                
+                // .entry-media {
+                //     @include xy-cell(4 of 12, $gutters: 0);
+                // }
+                // .entry-body {
+                //     @include xy-cell(8 of 12, $gutters: 0);
+                // }
             }
 
             .entry-footer {
                 @include xy-cell($gutters: 0);
-            }
-
-            &:nth-child(odd) {
-                .entry-media {
-                    order: 1;
-                    @include xy-cell(4 of 12, $gutters: 50, $gutter-position: right);
-                }
-                .entry-body {
-                    order: 2;
-                    @include xy-cell(8 of 12, $gutters: 50, $gutter-position: left);
-                }
-                .entry-footer {
-                    order: 3;
-                }
-            }
-
-            &:nth-child(even) {
-                .entry-media {
-                    @include xy-cell(4 of 12, $gutters: 50, $gutter-position: left);
-                }
-                .entry-body {
-                    @include xy-cell(8 of 12, $gutters: 50, $gutter-position: right);
-                }
-                .entry-footer {}
             }
 
             &.has-post-thumbnail {}

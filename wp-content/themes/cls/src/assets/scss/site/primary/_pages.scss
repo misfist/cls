@@ -2,6 +2,7 @@
  * Containers
  */
  /* General */
+
 .site-main {
     &> article {
         &> .entry-header {}
@@ -86,7 +87,6 @@
 
     }
 }
-
 .page-content {
     padding-top: rem-calc(40);
     padding-bottom: rem-calc(50);
@@ -94,6 +94,13 @@
     @include breakpoint(medium) {
         padding-top: rem-calc(50);
         padding-bottom: rem-calc(70);
+    }
+}
+.wp-block-custom-content-footer {
+    margin-top: rem-calc(88);
+
+    @include breakpoint(medium) {
+        margin-top: rem-calc(42);
     }
 }
 
