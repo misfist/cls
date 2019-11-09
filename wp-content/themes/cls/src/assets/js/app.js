@@ -381,45 +381,5 @@ function themeReady() {
         });    
     }
 
-    const googleMap = document.querySelector('.wpgmza_map');
-    if(googleMap && google) {
-        const infoWindow = document.querySelectorAll('.wpgmza_modern_infowindow');
-        // console.log( infoWindow );
-
-        checkElement('.wpgmza_modern_infowindow') //use whichever selector you want
-        .then((element) => {
-            console.info(element, this);
-
-            const infoWindowArray = Array.from( document.querySelectorAll('.wpgmza_modern_infowindow' ) );
-            infoWindowArray.map(item => {
-                $(item).bind('style', function() {
-                    observer.observe(item, { attributes : true, attributeFilter : ['style'] });
-                });
-            });
-        });
-    }
-
-    //wpgmza_map
-
-    function rafAsync() {
-        return new Promise(resolve => {
-            requestAnimationFrame(resolve); //faster than set time out
-        });
-    }
-    
-    function checkElement(selector) {
-        if (document.querySelector(selector) === null) {
-            return rafAsync().then(() => checkElement(selector));
-        } else {
-            return Promise.resolve(true);
-        }
-    }
-
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutationRecord) {
-            console.log('style changed!');
-        });    
-    });
-
 }
 document.addEventListener( "DOMContentLoaded", themeReady );
