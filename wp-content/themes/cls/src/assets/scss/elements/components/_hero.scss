@@ -74,6 +74,7 @@
       */
      @include breakpoint(medium) {
         background-size: auto 150% !important;
+        height: rem-calc(460);
 
        /**
         * Structure
@@ -133,6 +134,7 @@
       */
       @include breakpoint(large) {
         background-size: cover !important;
+        // height: rem-calc(460);
 
        /**
         * Style
