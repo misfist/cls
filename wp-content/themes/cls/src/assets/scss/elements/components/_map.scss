@@ -55,7 +55,6 @@
     /**
      * Style
      */
-
     .wpgmza_modern_infowindow {
         @include clipped-corner(bottom-right, $height: 44px, $width: 40px);
         font-family: $body-font-family;
@@ -65,11 +64,16 @@
         height: 50px;
         width: 50px;
         background-color: $gray-border;
-        background-image: url('../images/icon-x-sm.svg');
+        background-image: url('../images/icon-map-close.svg');
         background-size: 15px 15px;
         background-position: center;
         background-repeat: no-repeat;
-        color: transparent
+        color: transparent;
+
+        &:hover {
+            background-color: $primary-color;
+            background-image: url('../images/icon-map-close-white.svg');
+        }
     }
 
     .wpgmza_iw_title {
@@ -107,7 +111,6 @@
 
     .wpgmza_iw_description {
         max-height: auto;
-        font-weight: $font-weight-bold;
         font-size: rem-calc(16);
         color: $black-8;
         line-height: rem-calc(20);
@@ -123,7 +126,7 @@
             display: flex;
 
             .label {
-                margin-bottom: rem-calc(10);
+                margin-bottom: rem-calc(4);
                 padding: 0;
                 display: block;
                 background-color: transparent;
@@ -162,7 +165,10 @@
     }
 
     .wpgmza_iw_buttons {
+       
+
         .wpgmza_button {
+            margin-top: rem-calc(10) !important;
             @include button($background: $button-accent, $background-hover: $hover-accent);
         }
     }
