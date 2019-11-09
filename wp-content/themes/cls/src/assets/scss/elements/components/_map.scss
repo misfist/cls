@@ -137,18 +137,32 @@
                 font-style: normal;
             }
 
-            div {
+            .phone-number,
+            .fax-number {
                 flex-basis: 50%;
-
-                &:first-child {
-                    padding-right: rem-calc(36);
-                    border-right: 2px solid $gray-border;
-                }
-
-                &:last-child {
-                    padding-left: rem-calc(36);
-                }
             }
+
+            .phone-number {
+                padding-right: rem-calc(36);
+                border-right: 2px solid $gray-border;
+            }
+
+            .fax-number {
+                padding-left: rem-calc(36);
+            }
+
+            // div {
+            //     flex-basis: 50%;
+
+            //     &:first-child {
+            //         padding-right: rem-calc(36);
+            //         border-right: 2px solid $gray-border;
+            //     }
+
+            //     &:last-child {
+            //         padding-left: rem-calc(36);
+            //     }
+            // }
         }
 
         .parking-information {
