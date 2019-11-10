@@ -16,6 +16,20 @@ const {
 	InnerBlocks,
 } = wp.editor;
 
+const TEMPLATE = [
+	['core/heading', { placeholder: 'Headline' }],
+	['core/columns', {},[
+		['core/column', {}, [
+			[ 'core/paragraph', {} ],
+			[ 'core/list', {} ],
+			[ 'core/image', {} ]
+		]],
+		['core/column', {},[
+			['core/quote', { placeholder: 'Quote' }],
+		]]
+	]]
+];
+
 /**
  * Register: aa Gutenberg Block.
  *
@@ -57,7 +71,9 @@ registerBlockType( 'custom/content-footer', {
 				className="custom-block"
 			>
 				<div className="wp-block-custom-content-footer__inner-container inner-container">
-					<InnerBlocks />
+					<InnerBlocks
+						template={ TEMPLATE }
+					/>
 				</div>
 			</section>
 		);

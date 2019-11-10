@@ -1,5 +1,120 @@
-.custom-block{background-color:#dedede;border-radius:4px}.custom-block .inner-container{padding:.25rem}.custom-block input[type="text"],.custom-block .editor-url-input input{border:1px solid #292929 !important;border-radius:2px}.components-panel__row .components-base-control{width:100%}
-.custom-block{background-color:#dedede;border-radius:4px}.custom-block .inner-container{padding:.25rem}.custom-block input[type="text"],.custom-block .editor-url-input input{border:1px solid #292929 !important;border-radius:2px}.components-panel__row .components-base-control{width:100%}
-.custom-block{background-color:#dedede;border-radius:4px}.custom-block .inner-container{padding:.25rem}.custom-block input[type="text"],.custom-block .editor-url-input input{border:1px solid #292929 !important;border-radius:2px}.components-panel__row .components-base-control{width:100%}
-.custom-block{background-color:#dedede;border-radius:4px}.custom-block .inner-container{padding:.25rem}.custom-block input[type="text"],.custom-block .editor-url-input input{border:1px solid #292929 !important;border-radius:2px}.components-panel__row .components-base-control{width:100%}
-.custom-block{background-color:#dedede;border-radius:4px}.custom-block .inner-container{padding:.25rem}.custom-block input[type="text"],.custom-block .editor-url-input input{border:1px solid #292929 !important;border-radius:2px}.components-panel__row .components-base-control{width:100%}
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.custom-block {
+  background-color: #dedede;
+  border-radius: 4px; }
+  .custom-block .inner-container {
+    padding: .25rem; }
+  .custom-block input[type="text"],
+  .custom-block .editor-url-input input {
+    border: 1px solid #292929 !important;
+    border-radius: 2px; }
+
+.components-panel__row .components-base-control {
+  width: 100%; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.custom-block {
+  background-color: #dedede;
+  border-radius: 4px; }
+  .custom-block .inner-container {
+    padding: .25rem; }
+  .custom-block input[type="text"],
+  .custom-block .editor-url-input input {
+    border: 1px solid #292929 !important;
+    border-radius: 2px; }
+
+.components-panel__row .components-base-control {
+  width: 100%; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.custom-block {
+  background-color: #dedede;
+  border-radius: 4px; }
+  .custom-block .inner-container {
+    padding: .25rem; }
+  .custom-block input[type="text"],
+  .custom-block .editor-url-input input {
+    border: 1px solid #292929 !important;
+    border-radius: 2px; }
+
+.components-panel__row .components-base-control {
+  width: 100%; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.custom-block {
+  background-color: #dedede;
+  border-radius: 4px; }
+  .custom-block .inner-container {
+    padding: .25rem; }
+  .custom-block input[type="text"],
+  .custom-block .editor-url-input input {
+    border: 1px solid #292929 !important;
+    border-radius: 2px; }
+
+.components-panel__row .components-base-control {
+  width: 100%; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.custom-block {
+  background-color: #dedede;
+  border-radius: 4px; }
+  .custom-block .inner-container {
+    padding: .25rem; }
+  .custom-block input[type="text"],
+  .custom-block .editor-url-input input {
+    border: 1px solid #292929 !important;
+    border-radius: 2px; }
+
+.components-panel__row .components-base-control {
+  width: 100%; }
+
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */

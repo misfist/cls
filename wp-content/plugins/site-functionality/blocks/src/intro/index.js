@@ -154,14 +154,14 @@ registerBlockType( 'custom/intro', {
 					<RichText
 						tagName="h2"
 						value={ title }
-						placeholder={ __( 'Enter heading...', 'site-functionality' ) }
+						placeholder={ __( 'Heading', 'site-functionality' ) }
 						keepPlaceholderOnFocus={ true }
 						onChange={ ( title ) => setAttributes( { title } ) }
 					/>
 					<RichText
 						multiline="p"
 						value={ content }
-						placeholder={ __( 'Enter text...', 'site-functionality' ) }
+						placeholder={ __( 'Content', 'site-functionality' ) }
 						keepPlaceholderOnFocus={ true }
 						onChange={ ( content ) => setAttributes( { content } ) }
 					/>
