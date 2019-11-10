@@ -45,17 +45,17 @@ function site_function_acf_register_blocks() {
 			'keywords'			=> array( 'post' ),
 		));
 
-		acf_register_block( array(
-			'name'				=> 'subsections',
-			'title'				=> __( 'Landing Page Sections', 'site-functionality' ),
-			'description'		=> __( 'Display page sub-sections', 'site-functionality' ),
-            // 'render_callback'	=> 'site_functionality_featured_post_render_callback',
-            'render_template'   => SITE_CORE_DIR . '/blocks/acf/templates/section.php',
-			'category'			=> 'custom',
-			'icon'				=> 'grid-view',
-			'keywords'			=> array( 'subpage, section' ),
-			'post_types' 		=> array( 'page' ),
-		));
+		// acf_register_block( array(
+		// 	'name'				=> 'subsections',
+		// 	'title'				=> __( 'Landing Page Sections', 'site-functionality' ),
+		// 	'description'		=> __( 'Display page sub-sections', 'site-functionality' ),
+        //     // 'render_callback'	=> 'site_functionality_featured_post_render_callback',
+        //     'render_template'   => SITE_CORE_DIR . '/blocks/acf/templates/section.php',
+		// 	'category'			=> 'custom',
+		// 	'icon'				=> 'grid-view',
+		// 	'keywords'			=> array( 'subpage, section' ),
+		// 	'post_types' 		=> array( 'page' ),
+		// ));
     }
     
 }

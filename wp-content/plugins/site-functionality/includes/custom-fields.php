@@ -72,11 +72,404 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 	));
 
 	/**
-	 * Landing Page Fields for Sections Block
+	 * Intro Section
 	 */
 	acf_add_local_field_group(array(
+		'key' => 'group_alternate_intro',
+		'title' => __( 'Intro Section', 'site-function' ),
+		'fields' => array(
+			array(
+				'key' => 'field_5dc76f92f5d62',
+				'label' => __( 'Headline', 'site-function' ),
+				'name' => 'intro-title',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+			array(
+				'key' => 'field_5dc76fa0f5d63',
+				'label' => __( 'Content', 'site-function' ),
+				'name' => 'intro-content',
+				'type' => 'wysiwyg',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'tabs' => 'all',
+				'toolbar' => 'basic',
+				'media_upload' => 0,
+				'delay' => 0,
+			),
+			array(
+				'key' => 'field_5dc76fb5f5d64',
+				'label' => __( 'Link', 'site-function' ),
+				'name' => 'intro-link',
+				'type' => 'link',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+			),
+			array(
+				'key' => 'field_5dc7760015098',
+				'label' => __( 'File Link', 'site-function' ),
+				'name' => 'intro-file',
+				'type' => 'file',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'library' => 'all',
+				'min_size' => '',
+				'max_size' => '',
+				'mime_types' => 'pdf',
+			),
+			array(
+				'key' => 'field_intro-file-text',
+				'label' => __( 'File Link Text', 'site-function' ),
+				'name' => 'intro-file-text',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'page_template',
+					'operator' => '=',
+					'value' => 'page-templates/locations.php',
+				),
+			),
+		),
+		'menu_order' => 1,
+		'position' => 'acf_after_title',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => array(
+			0 => 'discussion',
+			1 => 'comments',
+			2 => 'revisions',
+			3 => 'author',
+			4 => 'format',
+			5 => 'categories',
+			6 => 'tags',
+			7 => 'send-trackbacks',
+		),
+		'active' => true,
+		'description' => '',
+	));
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5dc76f87c06f9',
+		'title' => __( 'Intro Section', 'site-function' ),
+		'fields' => array(
+			array(
+				'key' => 'field_5dc76f92f5d62',
+				'label' => __( 'Headline', 'site-function' ),
+				'name' => 'intro-title',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+			array(
+				'key' => 'field_5dc76fa0f5d63',
+				'label' => __( 'Content', 'site-function' ),
+				'name' => 'intro-content',
+				'type' => 'wysiwyg',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'tabs' => 'all',
+				'toolbar' => 'basic',
+				'media_upload' => 0,
+				'delay' => 0,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'page_template',
+					'operator' => '!=',
+					'value' => 'page-templates/front-page.php',
+				),
+				array(
+					'param' => 'page_template',
+					'operator' => '!=',
+					'value' => 'page-templates/news-events.php',
+				),
+				array(
+					'param' => 'page_template',
+					'operator' => '!=',
+					'value' => 'page-templates/locations.php',
+				),
+			),
+		),
+		'menu_order' => 1,
+		'position' => 'acf_after_title',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => array(
+			0 => 'discussion',
+			1 => 'comments',
+			2 => 'revisions',
+			3 => 'author',
+			4 => 'format',
+			5 => 'categories',
+			6 => 'tags',
+			7 => 'send-trackbacks',
+		),
+		'active' => true,
+		'description' => '',
+	));
+
+	/**
+	 * Featured Event
+	 */
+	acf_add_local_field_group(array(
+		'key' => 'group_5dc77eb8e5e4a',
+		'title' => __( 'Featured Event', 'site-functions' ),
+		'fields' => array(
+			array(
+				'key' => 'field_5dc77eb91ff0a',
+				'label' => __( 'Type', 'site-functions' ),
+				'name' => 'type',
+				'type' => 'radio',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'dynamic' => 'Dynamic',
+					'manual' => 'Manual',
+				),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'default_value' => 'dynamic',
+				'layout' => 'horizontal',
+				'return_format' => 'value',
+				'save_other_choice' => 0,
+			),
+			array(
+				'key' => 'field_5dc77eb91ff67',
+				'label' => __( 'Manual Post', 'site-functions' ),
+				'name' => 'manual_post',
+				'type' => 'group',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5dc77eb91ff0a',
+							'operator' => '==',
+							'value' => 'manual',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'layout' => 'row',
+				'sub_fields' => array(
+					array(
+						'key' => 'field_5dc77eb92f969',
+						'label' => __( 'Title', 'site-functions' ),
+						'name' => 'title',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5dc77eb92f9e1',
+						'label' => __( 'Excerpt', 'site-functions' ),
+						'name' => 'content',
+						'type' => 'wysiwyg',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'tabs' => 'all',
+						'toolbar' => 'basic',
+						'media_upload' => 0,
+						'delay' => 0,
+					),
+					array(
+						'key' => 'field_5dc77eb92fa49',
+						'label' => __( 'Image', 'site-functions' ),
+						'name' => 'image',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'return_format' => 'array',
+						'preview_size' => 'medium',
+						'library' => 'all',
+						'min_width' => '',
+						'min_height' => '',
+						'min_size' => '',
+						'max_width' => '',
+						'max_height' => '',
+						'max_size' => '',
+						'mime_types' => '',
+					),
+					array(
+						'key' => 'field_5dc77eb92faac',
+						'label' => __( 'Link', 'site-functions' ),
+						'name' => 'link',
+						'type' => 'link',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'return_format' => 'array',
+					),
+				),
+			),
+			array(
+				'key' => 'field_5dc77eb93d4b3',
+				'label' => __( 'Event', 'site-functions' ),
+				'name' => 'post',
+				'type' => 'post_object',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5dc77eb91ff0a',
+							'operator' => '!=',
+							'value' => 'manual',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'post_type' => array(
+					0 => 'event',
+				),
+				'taxonomy' => '',
+				'allow_null' => 0,
+				'multiple' => 0,
+				'return_format' => 'object',
+				'ui' => 1,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/news-events.php',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => array(
+			0 => 'the_content',
+		),
+		'active' => true,
+		'description' => '',
+	));
+
+	/**
+	 * Landing Page Fields for Sections Block
+	 */
+	acf_add_local_field_group( array(
 		'key' => 'group_5dc70d75489e8',
-		'title' => __( 'Sections', 'site-functions' ),
+		'title' => __( 'Main Page Sections', 'site-functions' ),
 		'fields' => array(
 			array(
 				'key' => 'field_5dc70d98a3cbe',
@@ -180,9 +573,9 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 		'location' => array(
 			array(
 				array(
-					'param' => 'block',
+					'param' => 'page_template',
 					'operator' => '==',
-					'value' => 'acf/subsections',
+					'value' => 'page-templates/grid-content.php',
 				),
 			),
 		),
@@ -195,5 +588,132 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 		'active' => true,
 		'description' => '',
 	));
+	
+
+	/**
+	 * Landing Page Fields for Sections Block
+	 */
+	// acf_add_local_field_group(array(
+	// 	'key' => 'group_5dc70d75489e8',
+	// 	'title' => __( 'Sections', 'site-functions' ),
+	// 	'fields' => array(
+	// 		array(
+	// 			'key' => 'field_5dc70d98a3cbe',
+	// 			'label' => __( 'Sections', 'site-functions' ),
+	// 			'name' => 'sections',
+	// 			'type' => 'repeater',
+	// 			'instructions' => '',
+	// 			'required' => 0,
+	// 			'conditional_logic' => 0,
+	// 			'wrapper' => array(
+	// 				'width' => '',
+	// 				'class' => '',
+	// 				'id' => '',
+	// 			),
+	// 			'collapsed' => 'field_5dc70dbfa3cbf',
+	// 			'min' => 0,
+	// 			'max' => 0,
+	// 			'layout' => 'row',
+	// 			'button_label' => __( 'Add Section', 'site-functions' ),
+	// 			'sub_fields' => array(
+	// 				array(
+	// 					'key' => 'field_5dc70dbfa3cbf',
+	// 					'label' => __( 'Title', 'site-functions' ),
+	// 					'name' => 'title',
+	// 					'type' => 'text',
+	// 					'instructions' => '',
+	// 					'required' => 0,
+	// 					'conditional_logic' => 0,
+	// 					'wrapper' => array(
+	// 						'width' => '',
+	// 						'class' => '',
+	// 						'id' => '',
+	// 					),
+	// 					'default_value' => '',
+	// 					'placeholder' => '',
+	// 					'prepend' => '',
+	// 					'append' => '',
+	// 					'maxlength' => '',
+	// 				),
+	// 				array(
+	// 					'key' => 'field_5dc70dc6a3cc0',
+	// 					'label' => __( 'Content', 'site-functions' ),
+	// 					'name' => 'content',
+	// 					'type' => 'wysiwyg',
+	// 					'instructions' => '',
+	// 					'required' => 0,
+	// 					'conditional_logic' => 0,
+	// 					'wrapper' => array(
+	// 						'width' => '',
+	// 						'class' => '',
+	// 						'id' => '',
+	// 					),
+	// 					'default_value' => '',
+	// 					'tabs' => 'all',
+	// 					'toolbar' => 'basic',
+	// 					'media_upload' => 0,
+	// 					'delay' => 0,
+	// 				),
+	// 				array(
+	// 					'key' => 'field_5dc70dcda3cc1',
+	// 					'label' => __( 'Image', 'site-functions' ),
+	// 					'name' => 'image',
+	// 					'type' => 'image',
+	// 					'instructions' => '',
+	// 					'required' => 0,
+	// 					'conditional_logic' => 0,
+	// 					'wrapper' => array(
+	// 						'width' => '',
+	// 						'class' => '',
+	// 						'id' => '',
+	// 					),
+	// 					'return_format' => 'array',
+	// 					'preview_size' => 'medium',
+	// 					'library' => 'all',
+	// 					'min_width' => '',
+	// 					'min_height' => '',
+	// 					'min_size' => '',
+	// 					'max_width' => '',
+	// 					'max_height' => '',
+	// 					'max_size' => '',
+	// 					'mime_types' => '',
+	// 				),
+	// 				array(
+	// 					'key' => 'field_5dc70dd3a3cc2',
+	// 					'label' => 'Link',
+	// 					'name' => 'link',
+	// 					'type' => 'link',
+	// 					'instructions' => '',
+	// 					'required' => 0,
+	// 					'conditional_logic' => 0,
+	// 					'wrapper' => array(
+	// 						'width' => '',
+	// 						'class' => '',
+	// 						'id' => '',
+	// 					),
+	// 					'return_format' => 'array',
+	// 				),
+	// 			),
+	// 		),
+	// 	),
+	// 	'location' => array(
+	// 		array(
+	// 			array(
+	// 				'param' => 'block',
+	// 				'operator' => '==',
+	// 				'value' => 'acf/subsections',
+	// 			),
+	// 		),
+	// 	),
+	// 	'menu_order' => 0,
+	// 	'position' => 'normal',
+	// 	'style' => 'default',
+	// 	'label_placement' => 'top',
+	// 	'instruction_placement' => 'label',
+	// 	'hide_on_screen' => '',
+	// 	'active' => true,
+	// 	'description' => '',
+	// ));
+
 	
 }
