@@ -77,6 +77,8 @@
     }
 
     .wpgmza_iw_title {
+        position: relative !important;
+        float: none !important;
         padding: 0;
         margin-left: rem-calc(37);
         margin-bottom: rem-calc(10);
@@ -84,6 +86,7 @@
         font-weight: $font-weight-black;
         font-size: rem-calc(24);
         color: $accent-color;
+        opacity: 1;
         line-height: rem-calc(34);
 
         &:before {
@@ -151,18 +154,6 @@
                 padding-left: rem-calc(36);
             }
 
-            // div {
-            //     flex-basis: 50%;
-
-            //     &:first-child {
-            //         padding-right: rem-calc(36);
-            //         border-right: 2px solid $gray-border;
-            //     }
-
-            //     &:last-child {
-            //         padding-left: rem-calc(36);
-            //     }
-            // }
         }
 
         .parking-information {
@@ -177,12 +168,78 @@
             }
         }
     }
+    /* Custom Fields */
+
+    .wpgmza_iw_description {
+        margin-bottom: 0;
+        padding-top: rem-calc(26);
+        padding-bottom: rem-calc(26);
+        border-top: 2px solid $gray-border;
+        // border-bottom: 2px solid $gray-border;
+        overflow-y: auto;
+
+        display: flex !important;
+
+        @include xy-grid;
+    }
+
+    p[data-custom-field-name="Phone"],
+    p[data-custom-field-name="Fax"] { }
+
+    p[data-custom-field-name="Phone"] {
+        @include xy-cell(1 of 2, $gutters: 72, $gutter-type: padding, $gutter-position: right);
+        border-right: 2px solid $gray-border;
+    }
+
+    p[data-custom-field-name="Fax"] {
+        @include xy-cell(1 of 2, $gutters: 72, $gutter-type: padding, $gutter-position: left);
+    }
+
+    p[data-custom-field-name="Parking Information"] {
+        margin-top: rem-calc(26);
+        padding-top: rem-calc(26);
+        border-top: 2px solid $gray-border;
+    }
+
+    p[data-custom-field-name="Phone"],
+    p[data-custom-field-name="Fax"],
+    p[data-custom-field-name="Parking Information"] {
+        &:before {
+            content: attr(data-custom-field-name);
+            display: block;
+            margin-bottom: rem-calc(4);
+            font-size: rem-calc(16);
+            line-height: rem-calc(20);
+            font-weight: $font-weight-bold;
+        }
+        .wpgmza-custom-field {
+            display: none;
+        }
+
+        margin-bottom: 0;
+        display: block;
+        background-color: transparent;
+        color: $black-8;
+        font-style: normal;
+    }
+
+    p[data-custom-field-name="Phone"],
+    p[data-custom-field-name="Fax"] {
+        font-size: rem-calc(16);
+        line-height: rem-calc(20);
+    }
+
+    p[data-custom-field-name="Parking Information"] {
+        &:before {
+            margin-bottom: rem-calc(6);
+        }
+
+        font-size: rem-calc(14);
+        line-height: rem-calc(18);
+    }
 
     .wpgmza_iw_buttons {
-       
-
         .wpgmza_button {
-            margin-top: rem-calc(10) !important;
             @include button($background: $button-accent, $background-hover: $hover-accent);
         }
     }
