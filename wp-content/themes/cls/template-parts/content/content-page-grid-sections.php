@@ -15,7 +15,7 @@
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php cls_the_content_no_block( 'custom/content-footer' ); ?>
+		<?php get_template_part( 'template-parts/content/section/section', 'grid-sections' ); ?>
 	</div><!-- .entry-content -->
 
 	<?php get_template_part( 'template-parts/content/page-footer/page-footer' ); ?>

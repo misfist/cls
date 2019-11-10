@@ -406,21 +406,21 @@ Frontend styles for gutenberg blocks
 		
 		}
 		  
-		// &.has-secondary-background-color {
-		// 	background-color: $button-secondary;
+		&.has-secondary-background-color {
+			background-color: $button-secondary;
 
-		// 	&:hover {
-		// 		background-color: $hover-secondary;
-		// 	}
-		// }
+			&:hover {
+				background-color: $hover-secondary;
+			}
+		}
 
-		// &.has-accent-background-color {
-		// 	background-color: $button-accent;
+		&.has-accent-background-color {
+			background-color: $button-accent;
 			
-		// 	&:hover {
-		// 		background-color: $hover-accent;
-		// 	}
-		// }
+			&:hover {
+				background-color: $hover-accent;
+			}
+		}
 	}
 
 	// add special styling for squared buttons

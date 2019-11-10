@@ -3,6 +3,10 @@ p {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+p:empty {
+	display: none;
+ }
+
 dfn,
 cite,
 em,

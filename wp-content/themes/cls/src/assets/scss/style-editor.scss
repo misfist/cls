@@ -51,31 +51,47 @@ body {
   @extend h1;
 }
 
+
 /** === Button === */
 .wp-block-button {
 
-	// add general foundation button styling to button in editor
+	// add general foundation button styling
 	.wp-block-button__link {
-		@extend .button;
+		@include button($background: $button-primary, $background-hover: $hover-primary);
+
+		// text-transform: uppercase;
+		font-weight: $font-weight-black;
+		letter-spacing: 0.4px;
+
+		@each $color, $code in $foundation-palette {
+
+			&.has-#{$color}-background-color {
+				background-color: map-get($button-palette, $color);
+
+				&:hover {
+					background-color: map-get($hover-palette, $color);
+				}
+			}
+		
+		}
+		  
+		&.has-secondary-background-color {
+			background-color: $button-secondary;
+
+			&:hover {
+				background-color: $hover-secondary;
+			}
+		}
+
+		&.has-accent-background-color {
+			background-color: $button-accent;
+			
+			&:hover {
+				background-color: $hover-accent;
+			}
+		}
 	}
 
-	// add special styling for squared buttons
-	&.is-style-squared .wp-block-button__link {
-		border-radius: 0;
-	}
-
-	// add outline styles
-	&.is-style-outline .wp-block-button__link{
-		@extend .hollow;
-	}
-
-	// set transparent background to block for outline button
-	&.is-style-outline,
-	&.is-style-outline:hover,
-	&.is-style-outline:focus,
-	&.is-style-outline:active {
-		background: transparent;
-	}
 }
 
 /** === File === */
@@ -167,5 +183,42 @@ body {
 	.read-more {
 		@include button($background: $button-secondary, $background-hover: $hover-secondary);
 		font-weight: $font-weight-black;
+	}
+}
+
+/** === Custom Block === */
+.wp-block-custom-sections {
+	@include xy-grid;
+
+	.column {
+		&:first-of-type {
+			@include xy-cell(1 of 2, $gutters: 80, $gutter-type: margin, $gutter-position: right);
+		}
+
+		&:last-of-type {
+			@include xy-cell(1 of 2, $gutters: 80, $gutter-type: margin, $gutter-position: left);
+		}
+
+		.section {
+			&.has-post-thumbnail {
+				@include xy-grid;
+
+				.wp-block-image {
+					@include xy-cell(2 of 6, $gutters: 24, $gutter-type: margin, $gutter-position: right);
+				}
+
+				.section-body {
+					@include xy-cell(4 of 6, $gutters: 24, $gutter-type: margin, $gutter-position: left);
+				}
+			}
+
+			&:not(:last-of-type) {
+				padding-bottom: rem-calc(56);
+				margin-bottom: rem-calc(52);
+
+				border-bottom: 2px solid $gray-border;
+			}
+
+		}
 	}
 }
