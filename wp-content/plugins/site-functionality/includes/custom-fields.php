@@ -287,18 +287,46 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 	 * Featured Event
 	 * Appears only on News & Events
 	 */
+
 	acf_add_local_field_group(array(
 		'key' => 'group_5dc77eb8e5e4a',
-		'title' => __( 'Featured Event', 'site-functions' ),
+		'title' => __( 'Featured Event', 'site-functionality' ),
 		'fields' => array(
 			array(
+				'key' => 'field_5dc9c6fb0172e',
+				'label' => __( 'Display Featured Event', 'site-functionality' ),
+				'name' => 'has_featured_event',
+				'type' => 'true_false',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'message' => '',
+				'default_value' => 0,
+				'ui' => 1,
+				'ui_on_text' => 'Show',
+				'ui_off_text' => 'Hide',
+			),
+			array(
 				'key' => 'field_5dc77eb91ff0a',
-				'label' => __( 'Type', 'site-functions' ),
+				'label' => 'Type',
 				'name' => 'type',
 				'type' => 'radio',
 				'instructions' => '',
 				'required' => 0,
-				'conditional_logic' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_5dc9c6fb0172e',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
 				'wrapper' => array(
 					'width' => '',
 					'class' => '',
@@ -317,7 +345,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 			),
 			array(
 				'key' => 'field_5dc77eb91ff67',
-				'label' => __( 'Manual Post', 'site-functions' ),
+				'label' => 'Manual Post',
 				'name' => 'manual_post',
 				'type' => 'group',
 				'instructions' => '',
@@ -340,7 +368,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 				'sub_fields' => array(
 					array(
 						'key' => 'field_5dc77eb92f969',
-						'label' => __( 'Title', 'site-functions' ),
+						'label' => 'Title',
 						'name' => 'title',
 						'type' => 'text',
 						'instructions' => '',
@@ -359,7 +387,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 					),
 					array(
 						'key' => 'field_5dc77eb92f9e1',
-						'label' => __( 'Excerpt', 'site-functions' ),
+						'label' => 'Excerpt',
 						'name' => 'content',
 						'type' => 'wysiwyg',
 						'instructions' => '',
@@ -378,7 +406,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 					),
 					array(
 						'key' => 'field_5dc77eb92fa49',
-						'label' => __( 'Image', 'site-functions' ),
+						'label' => 'Image',
 						'name' => 'image',
 						'type' => 'image',
 						'instructions' => '',
@@ -402,7 +430,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 					),
 					array(
 						'key' => 'field_5dc77eb92faac',
-						'label' => __( 'Link', 'site-functions' ),
+						'label' => 'Link',
 						'name' => 'link',
 						'type' => 'link',
 						'instructions' => '',
@@ -419,7 +447,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 			),
 			array(
 				'key' => 'field_5dc77eb93d4b3',
-				'label' => __( 'Event', 'site-functions' ),
+				'label' => 'Event',
 				'name' => 'post',
 				'type' => 'post_object',
 				'instructions' => '',
@@ -430,6 +458,11 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 							'field' => 'field_5dc77eb91ff0a',
 							'operator' => '!=',
 							'value' => 'manual',
+						),
+						array(
+							'field' => 'field_5dc9c6fb0172e',
+							'operator' => '==',
+							'value' => '1',
 						),
 					),
 				),
@@ -458,7 +491,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 			),
 		),
 		'menu_order' => 0,
-		'position' => 'normal',
+		'position' => 'acf_after_title',
 		'style' => 'default',
 		'label_placement' => 'top',
 		'instruction_placement' => 'label',

@@ -116,6 +116,7 @@
             .entry-body {
                 @include xy-cell(6, $gutters: 320, $gutter-type: padding, $gutter-position: right);
                 order: 1;
+                padding-bottom: rem-calc(76);
             }
 
             .entry-title {

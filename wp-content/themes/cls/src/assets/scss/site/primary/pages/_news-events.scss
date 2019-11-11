@@ -154,9 +154,13 @@
         .entry-media-wrapper {
             margin-bottom: rem-calc(24);
         }
+
+        .has-featured-event + .section-posts {
+            margin-top: - rem-calc(30); // height of angle - diff
+        }
     
         .section-posts {
-            margin-top: - rem-calc(30); // height of angle - diff
+            // margin-top: - rem-calc(30); // height of angle - diff
 
             .posts-list {
                 grid-template-columns: 1fr 1fr;
