@@ -44,6 +44,10 @@
                         }
 
                     }
+
+                    .wp-block-button__link {
+                        @include button($background: $button-accent, $background-hover: $hover-primary);
+                    }
                 }
 
             }
