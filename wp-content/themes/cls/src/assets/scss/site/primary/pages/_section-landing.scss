@@ -6,8 +6,9 @@
      */
     .site-main {
         &> article {
-            .entry-content {
+            &> .entry-content {
                 padding-bottom: rem-calc(50);
+                // padding-bottom: 0;
 
                 .wp-block-custom-sections {
                     @include xy-grid;
@@ -107,9 +108,8 @@
         .site-main {
             &> article {
 
-                &> .entry-content {}
-
-                .entry-content {
+                &> .entry-content {
+                    // padding-bottom: 0;
                     padding-bottom: rem-calc(70);
                     
                     .wp-block-custom-sections {

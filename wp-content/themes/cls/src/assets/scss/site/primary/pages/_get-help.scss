@@ -13,8 +13,8 @@
         .site-main {
             &> article {
                 &> .entry-content {
-
-                    padding-bottom: rem-calc(43);
+                    padding-bottom: 0;
+                    // padding-bottom: rem-calc(43);
 
                     &> .has-2-columns {
                         .wp-block-column {
