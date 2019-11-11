@@ -27,8 +27,10 @@ if( !function_exists( 'have_rows' ) )  return; ?>
                                 <?php if ( $link = $event['link'] ) : ?>
                                     <a href="<?php echo esc_url( $link['url'] ); ?>"<?php echo ( $link['target'] ) ? ' target="_blank"' : ''; ?>>
                                 <?php endif; ?>
+                                    <?php if( $title = $event['title'] ) : ?>
                                     <?php echo apply_filters( 'the_title', $title ); ?>
-                                <?php if ( $link = $post['link'] ) : ?>
+                                    <?php endif; ?>
+                                <?php if ( $event['link'] ) : ?>
                                     </a>
                                 <?php endif; ?>
                             </h3>
