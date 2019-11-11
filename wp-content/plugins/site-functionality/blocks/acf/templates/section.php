@@ -20,7 +20,12 @@
                     </div>
                 <?php endif; ?>
                 <div class="section-body">
-                    <h3><?php echo apply_filters( 'the_title', get_sub_field( 'title' ) ); ?></h3>
+                    <h3 class="section-title">
+                        <?php if( $link = get_sub_field( 'link' ) ) : ?><a href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>"><?php endif; ?>
+                        <?php echo apply_filters( 'the_title', get_sub_field( 'title' ) ); ?></h3>
+                        <?php if( $link = get_sub_field( 'link' ) ) : ?>
+                            </a>
+                        <?php endif; ?>
                     <?php echo apply_filters( 'the_content', get_sub_field( 'content' ) ); ?>
                     <?php if( $link = get_sub_field( 'link' ) ) : ?>
                         <div class="wp-block-button">
