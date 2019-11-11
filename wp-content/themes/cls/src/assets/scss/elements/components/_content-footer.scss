@@ -97,7 +97,7 @@
     }
 
     h2 {
-        margin-bottom: rem-calc(30);
+        margin-bottom: rem-calc(20); //27 - (31 - 24) = 20
         font-weight: $font-weight-black;
         font-size: rem-calc(24);
         line-height: rem-calc(31);
