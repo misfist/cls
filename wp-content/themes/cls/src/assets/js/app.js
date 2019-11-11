@@ -19,7 +19,7 @@ function themeReady() {
         const list = [...links];
         const totalNumber = list.length;
         let numberOfPages = 1;
-        const pageSize = 15;
+        const pageSize = 12;
         let currentPage = 1;
         let start = 0;
         let stop = 9;
