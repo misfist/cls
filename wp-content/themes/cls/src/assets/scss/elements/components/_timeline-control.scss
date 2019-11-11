@@ -365,6 +365,7 @@ $arrow_svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
             text-align: center;
 
             .timeline-wrapper {
+                min-height: rem-calc(484);
                 width: rem-calc(85);
                 border-radius: rem-calc(50);
                 margin: 0;
