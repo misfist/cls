@@ -97,7 +97,7 @@ if ( ! function_exists( 'gutenberg_starter_theme_setup' ) ) :
 
 		add_image_size( 'staff-thumb', 166, 208, true );
 		add_image_size( 'event-flyer', 300, 450, true );
-		add_image_size( 'editorial-thumb', 334, 252, true );
+		add_image_size( 'editorial-thumb', 334, 252, array( 'center', 'top' ) );
 		add_image_size( 'banner', 1600,600, true );
 
 
