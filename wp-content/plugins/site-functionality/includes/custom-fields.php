@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if( function_exists( 'acf_add_local_field_group' ) ) {
 
+	/**
+	 * Event Pages
+	 */
 	acf_add_local_field_group( array(
 		'key' => 'group_event_details',
 		'title' => __( 'Event Details', 'site-functionality' ),
@@ -73,214 +76,216 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 
 	/**
 	 * Intro Section
+	 * @todo maybe hook this up
 	 */
-	acf_add_local_field_group(array(
-		'key' => 'group_alternate_intro',
-		'title' => __( 'Intro Section', 'site-function' ),
-		'fields' => array(
-			array(
-				'key' => 'field_5dc76f92f5d62',
-				'label' => __( 'Headline', 'site-function' ),
-				'name' => 'intro-title',
-				'type' => 'text',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'maxlength' => '',
-			),
-			array(
-				'key' => 'field_5dc76fa0f5d63',
-				'label' => __( 'Content', 'site-function' ),
-				'name' => 'intro-content',
-				'type' => 'wysiwyg',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => '',
-				'tabs' => 'all',
-				'toolbar' => 'basic',
-				'media_upload' => 0,
-				'delay' => 0,
-			),
-			array(
-				'key' => 'field_5dc76fb5f5d64',
-				'label' => __( 'Link', 'site-function' ),
-				'name' => 'intro-link',
-				'type' => 'link',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'return_format' => 'array',
-			),
-			array(
-				'key' => 'field_5dc7760015098',
-				'label' => __( 'File Link', 'site-function' ),
-				'name' => 'intro-file',
-				'type' => 'file',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'return_format' => 'array',
-				'library' => 'all',
-				'min_size' => '',
-				'max_size' => '',
-				'mime_types' => 'pdf',
-			),
-			array(
-				'key' => 'field_intro-file-text',
-				'label' => __( 'File Link Text', 'site-function' ),
-				'name' => 'intro-file-text',
-				'type' => 'text',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'maxlength' => '',
-			),
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'page_template',
-					'operator' => '=',
-					'value' => 'page-templates/locations.php',
-				),
-			),
-		),
-		'menu_order' => 1,
-		'position' => 'acf_after_title',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => array(
-			0 => 'discussion',
-			1 => 'comments',
-			2 => 'revisions',
-			3 => 'author',
-			4 => 'format',
-			5 => 'categories',
-			6 => 'tags',
-			7 => 'send-trackbacks',
-		),
-		'active' => true,
-		'description' => '',
-	));
+	// acf_add_local_field_group(array(
+	// 	'key' => 'group_alternate_intro',
+	// 	'title' => __( 'Intro Section', 'site-function' ),
+	// 	'fields' => array(
+	// 		array(
+	// 			'key' => 'field_5dc76f92f5d62',
+	// 			'label' => __( 'Headline', 'site-function' ),
+	// 			'name' => 'intro-title',
+	// 			'type' => 'text',
+	// 			'instructions' => '',
+	// 			'required' => 0,
+	// 			'conditional_logic' => 0,
+	// 			'wrapper' => array(
+	// 				'width' => '',
+	// 				'class' => '',
+	// 				'id' => '',
+	// 			),
+	// 			'default_value' => '',
+	// 			'placeholder' => '',
+	// 			'prepend' => '',
+	// 			'append' => '',
+	// 			'maxlength' => '',
+	// 		),
+	// 		array(
+	// 			'key' => 'field_5dc76fa0f5d63',
+	// 			'label' => __( 'Content', 'site-function' ),
+	// 			'name' => 'intro-content',
+	// 			'type' => 'wysiwyg',
+	// 			'instructions' => '',
+	// 			'required' => 0,
+	// 			'conditional_logic' => 0,
+	// 			'wrapper' => array(
+	// 				'width' => '',
+	// 				'class' => '',
+	// 				'id' => '',
+	// 			),
+	// 			'default_value' => '',
+	// 			'tabs' => 'all',
+	// 			'toolbar' => 'basic',
+	// 			'media_upload' => 0,
+	// 			'delay' => 0,
+	// 		),
+	// 		array(
+	// 			'key' => 'field_5dc76fb5f5d64',
+	// 			'label' => __( 'Link', 'site-function' ),
+	// 			'name' => 'intro-link',
+	// 			'type' => 'link',
+	// 			'instructions' => '',
+	// 			'required' => 0,
+	// 			'conditional_logic' => 0,
+	// 			'wrapper' => array(
+	// 				'width' => '',
+	// 				'class' => '',
+	// 				'id' => '',
+	// 			),
+	// 			'return_format' => 'array',
+	// 		),
+	// 		array(
+	// 			'key' => 'field_5dc7760015098',
+	// 			'label' => __( 'File Link', 'site-function' ),
+	// 			'name' => 'intro-file',
+	// 			'type' => 'file',
+	// 			'instructions' => '',
+	// 			'required' => 0,
+	// 			'conditional_logic' => 0,
+	// 			'wrapper' => array(
+	// 				'width' => '',
+	// 				'class' => '',
+	// 				'id' => '',
+	// 			),
+	// 			'return_format' => 'array',
+	// 			'library' => 'all',
+	// 			'min_size' => '',
+	// 			'max_size' => '',
+	// 			'mime_types' => 'pdf',
+	// 		),
+	// 		array(
+	// 			'key' => 'field_intro-file-text',
+	// 			'label' => __( 'File Link Text', 'site-function' ),
+	// 			'name' => 'intro-file-text',
+	// 			'type' => 'text',
+	// 			'instructions' => '',
+	// 			'required' => 0,
+	// 			'conditional_logic' => 0,
+	// 			'wrapper' => array(
+	// 				'width' => '',
+	// 				'class' => '',
+	// 				'id' => '',
+	// 			),
+	// 			'default_value' => '',
+	// 			'placeholder' => '',
+	// 			'prepend' => '',
+	// 			'append' => '',
+	// 			'maxlength' => '',
+	// 		),
+	// 	),
+	// 	'location' => array(
+	// 		array(
+	// 			array(
+	// 				'param' => 'page_template',
+	// 				'operator' => '=',
+	// 				'value' => 'page-templates/locations.php',
+	// 			),
+	// 		),
+	// 	),
+	// 	'menu_order' => 1,
+	// 	'position' => 'acf_after_title',
+	// 	'style' => 'default',
+	// 	'label_placement' => 'top',
+	// 	'instruction_placement' => 'label',
+	// 	'hide_on_screen' => array(
+	// 		0 => 'discussion',
+	// 		1 => 'comments',
+	// 		2 => 'revisions',
+	// 		3 => 'author',
+	// 		4 => 'format',
+	// 		5 => 'categories',
+	// 		6 => 'tags',
+	// 		7 => 'send-trackbacks',
+	// 	),
+	// 	'active' => true,
+	// 	'description' => '',
+	// ));
 
-	acf_add_local_field_group(array(
-		'key' => 'group_5dc76f87c06f9',
-		'title' => __( 'Intro Section', 'site-function' ),
-		'fields' => array(
-			array(
-				'key' => 'field_5dc76f92f5d62',
-				'label' => __( 'Headline', 'site-function' ),
-				'name' => 'intro-title',
-				'type' => 'text',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'maxlength' => '',
-			),
-			array(
-				'key' => 'field_5dc76fa0f5d63',
-				'label' => __( 'Content', 'site-function' ),
-				'name' => 'intro-content',
-				'type' => 'wysiwyg',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => '',
-				'tabs' => 'all',
-				'toolbar' => 'basic',
-				'media_upload' => 0,
-				'delay' => 0,
-			),
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'page_template',
-					'operator' => '!=',
-					'value' => 'page-templates/front-page.php',
-				),
-				array(
-					'param' => 'page_template',
-					'operator' => '!=',
-					'value' => 'page-templates/news-events.php',
-				),
-				array(
-					'param' => 'page_template',
-					'operator' => '!=',
-					'value' => 'page-templates/locations.php',
-				),
-			),
-		),
-		'menu_order' => 1,
-		'position' => 'acf_after_title',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => array(
-			0 => 'discussion',
-			1 => 'comments',
-			2 => 'revisions',
-			3 => 'author',
-			4 => 'format',
-			5 => 'categories',
-			6 => 'tags',
-			7 => 'send-trackbacks',
-		),
-		'active' => true,
-		'description' => '',
-	));
+	// acf_add_local_field_group(array(
+	// 	'key' => 'group_5dc76f87c06f9',
+	// 	'title' => __( 'Intro Section', 'site-function' ),
+	// 	'fields' => array(
+	// 		array(
+	// 			'key' => 'field_5dc76f92f5d62',
+	// 			'label' => __( 'Headline', 'site-function' ),
+	// 			'name' => 'intro-title',
+	// 			'type' => 'text',
+	// 			'instructions' => '',
+	// 			'required' => 0,
+	// 			'conditional_logic' => 0,
+	// 			'wrapper' => array(
+	// 				'width' => '',
+	// 				'class' => '',
+	// 				'id' => '',
+	// 			),
+	// 			'default_value' => '',
+	// 			'placeholder' => '',
+	// 			'prepend' => '',
+	// 			'append' => '',
+	// 			'maxlength' => '',
+	// 		),
+	// 		array(
+	// 			'key' => 'field_5dc76fa0f5d63',
+	// 			'label' => __( 'Content', 'site-function' ),
+	// 			'name' => 'intro-content',
+	// 			'type' => 'wysiwyg',
+	// 			'instructions' => '',
+	// 			'required' => 0,
+	// 			'conditional_logic' => 0,
+	// 			'wrapper' => array(
+	// 				'width' => '',
+	// 				'class' => '',
+	// 				'id' => '',
+	// 			),
+	// 			'default_value' => '',
+	// 			'tabs' => 'all',
+	// 			'toolbar' => 'basic',
+	// 			'media_upload' => 0,
+	// 			'delay' => 0,
+	// 		),
+	// 	),
+	// 	'location' => array(
+	// 		array(
+	// 			array(
+	// 				'param' => 'page_template',
+	// 				'operator' => '!=',
+	// 				'value' => 'page-templates/front-page.php',
+	// 			),
+	// 			array(
+	// 				'param' => 'page_template',
+	// 				'operator' => '!=',
+	// 				'value' => 'page-templates/news-events.php',
+	// 			),
+	// 			array(
+	// 				'param' => 'page_template',
+	// 				'operator' => '!=',
+	// 				'value' => 'page-templates/locations.php',
+	// 			),
+	// 		),
+	// 	),
+	// 	'menu_order' => 1,
+	// 	'position' => 'acf_after_title',
+	// 	'style' => 'default',
+	// 	'label_placement' => 'top',
+	// 	'instruction_placement' => 'label',
+	// 	'hide_on_screen' => array(
+	// 		0 => 'discussion',
+	// 		1 => 'comments',
+	// 		2 => 'revisions',
+	// 		3 => 'author',
+	// 		4 => 'format',
+	// 		5 => 'categories',
+	// 		6 => 'tags',
+	// 		7 => 'send-trackbacks',
+	// 	),
+	// 	'active' => true,
+	// 	'description' => '',
+	// ));
 
 	/**
 	 * Featured Event
+	 * Appears only on News & Events
 	 */
 	acf_add_local_field_group(array(
 		'key' => 'group_5dc77eb8e5e4a',
@@ -466,6 +471,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 
 	/**
 	 * Home Page Fields
+	 * Appears only on Home Page
 	 */
 	acf_add_local_field_group(array(
 		'key' => 'group_5dc7684d79aaa',
@@ -1012,6 +1018,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 	
 	/**
 	 * Landing Page Fields for Sections Block
+	 * Used for block added to Section Landing pages
 	 */
 	acf_add_local_field_group( array(
 		'key' => 'group_5dc70d75489e8',
@@ -1117,11 +1124,18 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 			),
 		),
 		'location' => array(
+			// array(
+			// 	array(
+			// 		'param' => 'page_template',
+			// 		'operator' => '==',
+			// 		'value' => 'page-templates/grid-content.php',
+			// 	),
+			// ),
 			array(
 				array(
-					'param' => 'page_template',
+					'param' => 'block',
 					'operator' => '==',
-					'value' => 'page-templates/grid-content.php',
+					'value' => 'acf/subsections',
 				),
 			),
 		),
