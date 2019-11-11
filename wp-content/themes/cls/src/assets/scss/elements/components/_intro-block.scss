@@ -23,6 +23,15 @@
      p {
         line-height: rem-calc(25);
 
+        a {
+            text-decoration: underline;
+            color: $white;
+
+            &:hover {
+                color: $white;
+            }
+        }
+
         &:last-of-type {
             margin-bottom: 0;
         }
@@ -39,8 +48,6 @@
             .inner-container {
                 @include xy-grid;
                 align-items: center;
-                // padding-top: rem-calc(46);
-                // padding-bottom: rem-calc(46);
             }
 
             .intro-content {
