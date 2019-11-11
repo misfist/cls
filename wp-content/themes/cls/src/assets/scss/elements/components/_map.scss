@@ -27,20 +27,23 @@
     /**
      * Structure
      */
-    .wpgmza_modern_infowindow {
+    .wpgmza_modern_infowindow,
+    .wpgmza-infowindow {
         width: 100%;
         top: $height !important;
         background-color: $white;
         margin: 0;
     }
     
-    .wpgmza_modern_infowindow_close {
+    .wpgmza_modern_infowindow_close,
+    .gm-ui-hover-effect {
         position: absolute;
         top: 0;
         right: 0;
     }
 
-    .wpgmza_iw_description {
+    .wpgmza_iw_description,
+    .wpgmza-infowindow {
         max-height: none !important;
 
         .phone-info {
@@ -52,15 +55,20 @@
         }
     }
 
+    .gm-style-iw {}
+
     /**
      * Style
      */
-    .wpgmza_modern_infowindow {
+    .wpgmza_modern_infowindow,
+    .gm-style-iw {
+        border-radius: 0;
         @include clipped-corner(bottom-right, $height: 44px, $width: 40px);
         font-family: $body-font-family;
     }
 
-    .wpgmza_modern_infowindow_close {
+    .wpgmza_modern_infowindow_close,
+    .gm-ui-hover-effect {
         height: 50px;
         width: 50px;
         background-color: $gray-border;
@@ -76,12 +84,16 @@
         }
     }
 
-    .wpgmza_iw_title {
+    .wpgmza_iw_title,
+    .wpgmza_infowindow_title {
         position: relative !important;
         float: none !important;
         padding: 0;
         margin-left: rem-calc(37);
         margin-bottom: rem-calc(10);
+        width: auto;
+        height: auto;
+
         background-color: transparent;
         font-weight: $font-weight-black;
         font-size: rem-calc(24);
@@ -100,8 +112,10 @@
         }
     }
 
-    .wpgmza_iw_address {
+    .wpgmza_iw_address,
+    .wpgmza_infowindow_address {
         margin-bottom: rem-calc(32);
+        width: 100%;
 
         p {
             font-weight: $font-weight-bold;
@@ -112,7 +126,13 @@
         }
     }
 
-    .wpgmza_iw_description {
+    .wpgmza_infowindow_address + p {
+        display: block;
+        width: 100%;
+    }
+
+    .wpgmza_iw_description,
+    .wpgmza-infowindow {
         max-height: auto;
         font-size: rem-calc(16);
         color: $black-8;
@@ -168,14 +188,13 @@
             }
         }
     }
-    /* Custom Fields */
 
+    /* Custom Fields */
     .wpgmza_iw_description {
         margin-bottom: 0;
         padding-top: rem-calc(26);
         padding-bottom: rem-calc(26);
         border-top: 2px solid $gray-border;
-        // border-bottom: 2px solid $gray-border;
         overflow-y: auto;
 
         display: flex !important;
@@ -244,6 +263,10 @@
         }
     }
 
+    .wpgmza_gd {
+        @include button($background: $button-accent, $background-hover: $hover-accent);
+    }
+
     .wpgmza-shadow {
         box-shadow: none;
     }
@@ -281,4 +304,25 @@
     }
 
     @include breakpoint(large) {}
+
+    /* Default Styling Overrides */
+    .gm-style-iw-t {
+        &:after {
+            content: none;
+        }
+    }
+
+    .gm-style-iw {
+        .wpgmza-infowindow {
+            @include xy-grid;
+        }
+
+        .wpgmza_infowindow_address + p {
+            // margin-bottom: 0;
+            padding-top: rem-calc(26);
+            padding-bottom: rem-calc(26);
+            margin-bottom: rem-calc(26);
+            border-bottom: 2px solid $gray-border;
+        }
+    }
 }
