@@ -8,6 +8,8 @@
     .kt-tabs-title-list,
     .kt-tabs-content-wrap {
         @include xy-grid-container;
+        margin-right: auto !important;
+        margin-left: auto !important;
         padding-right: 0;
         padding-left: 0;
     }
