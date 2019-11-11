@@ -13,7 +13,8 @@
     }
 
     .kt-tabs-title-list {
-        flex-wrap: nowrap;
+        @include xy-grid;
+        flex-wrap: nowrap !important;
 
         li {
             margin: 0;
@@ -109,9 +110,10 @@
 
     /* Content */
     .wp-block-kadence-tab {
-        border: none;
-        padding-top: rem-calc(27); // Add px active arrow
-        padding-bottom: rem-calc(57); // sic
+        border: none !important;
+        padding: rem-calc(27) 0 rem-calc(57) 0;
+        // padding-top: rem-calc(27); // Add px active arrow
+        // padding-bottom: rem-calc(57); // sic
         color: $black-7;
 
         h2 {
@@ -187,6 +189,7 @@
         */
         .kt-tabs-title-list {
             @include xy-grid-container;
+            margin-bottom: 0;
             
             li {
                 font-size: rem-calc(19.8); //sic
@@ -225,10 +228,12 @@
             }
         }
 
+        $tab-height: rem-calc(90);
+
         /* Make last tab look like it extends to edge */
         .kt-tabs-wrap {
             background: linear-gradient(225deg, $white, $white);
-            background-size: 50% 91px;
+            background-size: 50% $tab-height;
             background-position: 100% 0%;
             background-repeat: no-repeat;
         }
@@ -236,7 +241,7 @@
         .kt-tabs-has-2-tabs {
             &.kt-active-tab-2 {
                 background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
-                background-size: 50% 91px;
+                background-size: 50% $tab-height;
                 background-position: 100% 0%;
                 background-repeat: no-repeat;
             }
@@ -244,7 +249,7 @@
         .kt-tabs-has-3-tabs {
             &.kt-active-tab-3 {
                 background: linear-gradient(225deg, $secondary-dark-color, $secondary-dark-color);
-                background-size: 50% 91px;
+                background-size: 50% $tab-height;
                 background-position: 100% 0%;
                 background-repeat: no-repeat;
             }
@@ -271,7 +276,13 @@
         }
 
         /* Content */
+        .kt-tabs-content-wrap {
+            padding-top: rem-calc(10);
+        }
+
         .wp-block-kadence-tab {
+            padding-top: 0 !important;
+
             h2 { // Same as small 
             }
             
