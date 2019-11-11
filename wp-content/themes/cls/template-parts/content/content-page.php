@@ -18,6 +18,8 @@
 		<?php cls_the_content_no_block( 'custom/content-footer' ); ?>
 	</div><!-- .entry-content -->
 
+	<?php get_template_part( 'template-parts/content/page-footer/back-link', 'page' ); ?>
+
 	<?php get_template_part( 'template-parts/content/page-footer/page-footer' ); ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

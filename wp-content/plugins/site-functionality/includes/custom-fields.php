@@ -1055,11 +1055,11 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 	 */
 	acf_add_local_field_group( array(
 		'key' => 'group_5dc70d75489e8',
-		'title' => __( 'Main Page Sections', 'site-functions' ),
+		'title' => __( 'Main Page Sections', 'site-functionality' ),
 		'fields' => array(
 			array(
 				'key' => 'field_5dc70d98a3cbe',
-				'label' => __( 'Sections', 'site-functions' ),
+				'label' => __( 'Sections', 'site-functionality' ),
 				'name' => 'sections',
 				'type' => 'repeater',
 				'instructions' => '',
@@ -1181,6 +1181,78 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 		'active' => true,
 		'description' => '',
 	));
+
+	/**
+	 * Page Settings
+	 */
+	 /**
+     * Add Custom Field
+     */
+    acf_add_local_field_group(array(
+        'key' => 'group_page_color_settings',
+        'title' => __( 'Page Settings', 'site-functionality' ),
+        'fields' => array(
+            array(
+                'key' => 'field_page_color',
+                'label' => __( 'Page Color', 'site-functionality' ),
+                'name' => 'page-color',
+                'type' => 'swatch',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    '#F58B6F' => 'primary',
+                    '#8169B1' => 'secondary',
+                    '#1E4F92' => 'accent-light',
+                    '#EFEFEF' => 'gray-light',
+                    '#ffffff' => 'white',
+                ),
+                'allow_null' => 1,
+                'default_value' => 'secondary',
+                'layout' => 'horizontal',
+                'return_format' => 'label',
+                'other_choice' => 0,
+                'save_other_choice' => 0,
+			),
+			array(
+				'key' => 'field_5dc9d5af737a7',
+				'label' => __( 'Back to Link', 'site-functionality' ),
+				'name' => 'back_to_link',
+				'type' => 'link',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+			),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'page',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'side',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
 	
 
 	/**
