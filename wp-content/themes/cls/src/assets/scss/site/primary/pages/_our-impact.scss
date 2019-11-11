@@ -120,6 +120,18 @@
         }
     }
 
+    .wp-block-custom-content-footer {
+        li {
+            font-size: rem-calc(14);
+            font-weight: $font-weight-bold;
+            line-height: rem-calc(16);
+        }
+
+        li + li {
+            margin-top: rem-calc(8);
+        }
+    }
+
     @include breakpoint(small only) {
         .site-main {
             .entry-content {
@@ -265,17 +277,12 @@
             .wp-block-columns {
                 .wp-block-column {
                     &:first-child {
-                        p {
-                            // font-size: rem-calc(14); //sic
-                            // line-height: rem-calc(18);
-                        }
+                        p {}
                     }
                 }
             }
 
-            p + .wp-block-image {
-                // margin-top: rem-calc(38);
-            }
+            p + .wp-block-image {}
         }
 
         /**

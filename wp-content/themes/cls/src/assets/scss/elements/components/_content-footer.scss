@@ -50,9 +50,9 @@
             }
 
             li {
-                font-weight: $font-weight-bold;
+                // font-weight: $font-weight-bold;
                 font-size: rem-calc(14);
-                line-height: rem-calc(24);
+                // line-height: rem-calc(24);
             }
         }
     }
@@ -126,6 +126,11 @@
             &:last-child {
                 @include xy-cell(6, $gutters: 75, $gutter-type: padding, $gutter-position: left);
             }
+        }
+
+        h3 {
+            font-size: rem-calc(24);
+            line-height: rem-calc(31);
         }
     
         /**
