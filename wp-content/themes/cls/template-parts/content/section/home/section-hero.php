@@ -7,10 +7,9 @@
  * @package cls
  */
 
-if( !function_exists( 'have_rows' ) )  return; ?>
+if( !function_exists( 'get_row' ) )  return; ?>
 
-<?php if( have_rows( 'hero' ) ) : ?>
-    <?php while( have_rows('hero') ): the_row(); ?>
+<?php if( $hero = get_row( 'hero' ) ) : ?>
 
         <div class="wp-block-cover alignfull hero" style="background-image:url(<?php echo ( $image = get_sub_field( 'image' ) ) ? esc_url( $image['url'] ) : ''; ?>);">
             <div class="wp-block-cover__inner-container">
@@ -32,5 +31,4 @@ if( !function_exists( 'have_rows' ) )  return; ?>
             </div>
         </div>
 
-    <?php endwhile; ?>
 <?php endif; ?>

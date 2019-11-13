@@ -7,8 +7,9 @@
  * @package cls
  */
 ?>
-<?php if( have_rows( 'blurb' ) ): ?>
-    <?php while( have_rows( 'blurb' ) ): the_row(); ?>
+
+<?php if( have_rows( 'callout' ) ): ?>
+    <?php while( have_rows( 'callout' ) ): the_row(); ?>
     <aside class="wp-block-home-callout" >
         <div class="home-callout__inner-container inner-container">
             <?php if( $heading = get_sub_field( 'title' ) ) : ?>

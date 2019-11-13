@@ -7,6 +7,7 @@
  * @package cls
  */
 ?>
+
 <?php if( have_rows( 'posts' ) ): ?>
     <div class="wp-block-curated-posts adhoc-posts">
         <div class="curated-posts__inner-container inner-container">

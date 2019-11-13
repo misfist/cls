@@ -7,8 +7,7 @@
  * @package cls
  */
 ?>
-<?php if( $handle = get_field( 'twitter_handle' ) ) : ?>
-    Twite
+<?php if( $handle = get_sub_field( 'twitter_handle' ) ) : ?>
     <div class="wp-block-titter-timeline has-background-color">
         <div class="titter-timeline__inner-container inner-container">
             <header class="block-header">
