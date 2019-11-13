@@ -26,16 +26,17 @@ function cls_filter_custom_twitter_fields( $output, $tag ) {
     <div class="wp-block-titter-timeline has-background-color">
         <div class="titter-timeline__inner-container inner-container">
             <header class="block-header">
-                <h2 class="block-title"><a href="https://twitter.com/%1$s" rel="me" target="_blank">@%1$s</a></h2>
+                <h2 class="block-title"><a href="%1$s/%2$s" rel="me" target="_blank">@%2$s</a></h2>
             </header>
-            %2$s
+            %3$s
         </div>
     </div>',
+    esc_url( 'https://twitter.com' ),
     $options['usertimeline_text'],
     $output
     );
 }
-add_filter( 'do_shortcode_tag', 'cls_filter_custom_twitter_fields', 10, 2 );
+// add_filter( 'do_shortcode_tag', 'cls_filter_custom_twitter_fields', 10, 2 );
 
 /**
  * Filter occurences to only return future occurrences
