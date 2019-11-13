@@ -838,7 +838,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 					'layout_5dcadeed8d59b' => array(
 						'key' => 'layout_5dcadeed8d59b',
 						'name' => 'twitter-feed',
-						'label' => 'Twitter Feed',
+						'label' => __( 'Twitter Feed', 'site-functionality' ),
 						'display' => 'block',
 						'sub_fields' => array(
 							array(
@@ -846,7 +846,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 								'label' => 'Twitter Feed',
 								'name' => 'twitter_handle',
 								'type' => 'text',
-								'instructions' => '',
+								'instructions' => __( 'Remove value to hide Twitter feed from home page', 'site-functionality' ),
 								'required' => 0,
 								'conditional_logic' => 0,
 								'wrapper' => array(
@@ -1085,14 +1085,19 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 			),
         ),
         'location' => array(
-            array(
-                array(
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'page',
-                ),
-            ),
-        ),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'page',
+				),
+				array(
+					'param' => 'page_template',
+					'operator' => '!=',
+					'value' => 'page-templates/front-page.php',
+				),
+			),
+		),
         'menu_order' => 0,
         'position' => 'side',
         'style' => 'default',
