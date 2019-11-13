@@ -14,6 +14,14 @@
         padding-left: 0;
     }
 
+    .kt-tabs-content-wrap {
+        padding-bottom: rem-calc(56);
+    }
+
+    .wp-block-columns {
+        margin-bottom: 0;
+    }
+
     .kt-tabs-title-list {
         @include xy-grid;
         flex-wrap: nowrap !important;
@@ -277,13 +285,16 @@
             }
         }
 
+
+
         /* Content */
         .kt-tabs-content-wrap {
             padding-top: rem-calc(10);
+            padding-bottom: rem-calc(98);
         }
 
         .wp-block-kadence-tab {
-            padding-top: 0 !important;
+            padding: 0 !important;
 
             h2 { // Same as small 
             }
