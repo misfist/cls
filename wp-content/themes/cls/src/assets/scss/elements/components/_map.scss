@@ -259,12 +259,12 @@
 
     .wpgmza_iw_buttons {
         .wpgmza_button {
-            @include button($background: $button-accent, $background-hover: $hover-accent);
+            @include button($background: $button-accent, $background-hover: $hover-primary);
         }
     }
 
     .wpgmza_gd {
-        @include button($background: $button-accent, $background-hover: $hover-accent);
+        @include button($background: $button-accent, $background-hover: $hover-primary);
     }
 
     .wpgmza-shadow {
