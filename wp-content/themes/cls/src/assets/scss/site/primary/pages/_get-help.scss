@@ -6,6 +6,12 @@
     /**
      * Style
      */
+     .intro-content {
+        p {
+         font-size: rem-calc(20);
+         line-height: rem-calc(25);
+        }
+     }
 
     @include breakpoint(medium) {
         /* Target only main content area */
@@ -14,7 +20,6 @@
             &> article {
                 &> .entry-content {
                     padding-bottom: 0;
-                    // padding-bottom: rem-calc(43);
 
                     &> .has-2-columns {
                         .wp-block-column {
