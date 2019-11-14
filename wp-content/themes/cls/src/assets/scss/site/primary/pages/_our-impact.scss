@@ -129,6 +129,15 @@
     @include breakpoint(small only) {
         .site-main {
             .entry-content {
+
+                .wp-block-columns {
+                    margin-bottom: rem-calc(42);
+
+                    .wp-block-image {
+                        margin-bottom: rem-calc(42) !important;
+                    }
+                }
+
                 .has-2-columns {
 
                     .wp-block-column {
@@ -138,6 +147,7 @@
                         
                         &:last-child {
                             order: 1;
+
                         }
                     }
 
