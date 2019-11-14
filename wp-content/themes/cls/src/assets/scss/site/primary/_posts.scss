@@ -113,6 +113,12 @@
             order: 4;
         }
 
+        @include breakpoint(small only) {
+            .entry-body {
+                margin-bottom: rem-calc(42);
+            }
+        }
+
         @include breakpoint(medium) {
             &:not(:last-child) {
                 margin-bottom: rem-calc(52);
