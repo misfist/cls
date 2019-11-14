@@ -14,9 +14,7 @@
 
                     .section {
                         @include xy-cell($gutters: 0);
-                    }
 
-                    .section {
                         .wp-block-image {}
     
                         .wp-block-button + .wp-block-image {}
@@ -82,7 +80,7 @@
                 .entry-content {
 
                     .wp-block-custom-sections {
-                        margin-bottom: 0;
+                        margin-bottom: rem-calc(40);
 
                         .section {
                             margin-bottom: 0;
