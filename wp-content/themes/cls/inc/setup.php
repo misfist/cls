@@ -92,7 +92,7 @@ if ( ! function_exists( 'gutenberg_starter_theme_setup' ) ) :
 		update_option( 'thumbnail_crop', 1 );
 		update_option( 'medium_size_w', 600 );
 		update_option( 'medium_size_h', 360 );
-		update_option( 'medium_crop', 1 );
+		update_option( 'medium_crop', array( 'center', 'top' ) );
 		update_option( 'large_size_w', 1200 );
 		update_option( 'large_size_h', 900 );
 
