@@ -16,6 +16,7 @@
      .inner-container {}
 
      .block-title {
+        margin-bottom: rem-calc(20);
         font-weight: $font-weight-black;
         font-size: rem-calc(24);
         color: get-color(accent);
@@ -51,17 +52,6 @@
             line-height: 18px;
         }
      }
-
-    //  .read-more {
-    //     font-weight: $font-weight-bold;
-    //     font-size: rem-calc(14);
-    //     line-height: 18px;
-    //     color: $body-font-color;
-
-    //     &:hover {
-    //         color: $secondary-color;
-    //     }
-    //  }
 
      article {
         padding-bottom: rem-calc(43); //sic
