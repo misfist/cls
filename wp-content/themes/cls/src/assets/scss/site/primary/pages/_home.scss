@@ -27,12 +27,13 @@
             }
         }
  
-        .wp-block-columns {
+        .main-content {
              position: relative;
              @include xy-grid-container;
              @include xy-grid;
 
              margin-top: rem-calc(40);
+             margin-bottom: 0;
 
              .wp-block-column {
                  @include xy-cell(12, $gutters: 0);
@@ -45,6 +46,14 @@
              }
         }
 
+        @include breakpoint(small only) {
+            .main-content {
+                .wp-block-column + .wp-block-column {
+                    margin-top: rem-calc(70);
+                }
+            }
+        }
+
         /**
          * Large and up
          */
@@ -53,7 +62,7 @@
     
             .ugb-content-wrapper {}
     
-            .wp-block-columns {
+            .main-content {
                 margin-top: rem-calc(50);
 
                 .wp-block-column {
@@ -96,4 +105,5 @@
             }
         }
     }
+
 }
