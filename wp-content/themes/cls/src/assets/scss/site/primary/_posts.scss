@@ -267,7 +267,7 @@
             img {
                 background-color: $light-gray;
                 width: 100%;
-                height: auto;
+                height: rem-calc(250);
                 object-fit: cover;
             }
         }
