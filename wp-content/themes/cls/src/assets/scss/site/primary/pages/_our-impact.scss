@@ -13,6 +13,10 @@
                     &:last-child {}
                 }
             }
+
+            .has-3-columns {
+
+            }
         }
     }
 
@@ -91,6 +95,7 @@
 
                     img {
                         width: 100%;
+                        height: 100%;
                         object-fit: cover;
                     }
                 }
@@ -131,7 +136,12 @@
             .entry-content {
 
                 .wp-block-columns {
+                    @include xy-grid();
                     margin-bottom: rem-calc(42);
+
+                    .wp-block-column {
+                        @include xy-cell($gutters: 0);
+                    }
 
                     .wp-block-image {
                         margin-bottom: rem-calc(42) !important;
@@ -161,40 +171,23 @@
                 }
 
                 .has-4-columns {
-                    .wp-block-column {
-                        // margin-bottom: 0;
-                    }
+                    .wp-block-column {}
 
-                    .wp-block-column + .wp-block-column {
-                        // margin-top: rem-calc(34);
-                        // padding-top: rem-calc(39); //sic
-                        // border-top: 1px solid $gray-border;
-                    }
+                    .wp-block-column + .wp-block-column {}
                 }
             }
         }
 
         .wp-block-custom-content-footer {
-            h3 {
-                // margin-bottom: rem-calc(15);
-                // width: 90%;
-                // font-size: rem-calc(24); //sic
-                // line-height: rem-calc(31);
-            }
+            h3 {}
 
             .wp-block-column {
-                &:first-child {
-                    // margin-bottom: rem-calc(43);
-                }
+                &:first-child {}
 
-                &:last-child {
-                    // margin-top: 0;
-                }
+                &:last-child {}
             }
 
-            p + .wp-block-image {
-                // margin-top: rem-calc(44);
-            }
+            p + .wp-block-image {}
         }
     }
 
@@ -204,7 +197,6 @@
         */
         .site-main {
             .entry-content {
-
                 $overhang: rem-calc(48);
 
                 .has-2-columns {
@@ -294,6 +286,18 @@
         */
         .intro-heading {
             line-height: rem-calc(28);   
+        }
+
+        .site-main {
+            .entry-content {
+
+                .wp-block-image {
+                    &.alignfull {
+                        height: rem-calc(477);
+
+                    }
+                }
+            }
         }
 
      }
