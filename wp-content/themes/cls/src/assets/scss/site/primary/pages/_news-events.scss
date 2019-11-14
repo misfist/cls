@@ -67,6 +67,13 @@
     /**
      * Style
      */
+    /* Alternate intro text styling */
+    .intro-content {
+        p {
+            font-size: rem-calc(20);
+            line-height: rem-calc(25);
+        }
+    }
 
     .section-posts {
         article {}
@@ -198,8 +205,15 @@
         }
 
         /**
-        * Style
-        */
+         * Style
+         */
+        /* Alternate intro text styling */
+        .intro-content {
+            p {
+                line-height: rem-calc(27);
+            }
+        }
+
         .section-subtitle {
             font-size: rem-calc(20);
             line-height: 24px;

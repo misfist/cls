@@ -21,33 +21,24 @@
     }
 
      /**
-     * Styles
-     */
-    .wp-block-custom-intro {
-        .intro-content {
-            h2 {
-                font-weight: $font-weight-normal;
-                font-size: rem-calc(20);
-                line-height: rem-calc(25);
-            }
+      * Styles
+      */
     
-            p {
-                font-size: rem-calc(16);
-                line-height: rem-calc(20);
-            }
+     /* Alternate intro text styling */
+     .intro-content {
+        h2 {
+            font-weight: $font-weight-normal;
+            font-size: rem-calc(20);
+            line-height: rem-calc(25);
         }
 
-        .inner-container {
-            .intro-content {
-        
-                p {
-                    font-size: rem-calc(16);
-                    line-height: rem-calc(20);
-                }
-            }
-    
+        p {
+            font-size: rem-calc(16);
+            line-height: rem-calc(20);
         }
     }
+
+    .wp-block-custom-intro {}
 
     .site-main {
         overflow: hidden;
@@ -69,18 +60,7 @@
             .has-4-columns {
 
                 p {
-                    // font-size: rem-calc(18); //sic
-                    // line-height: rem-calc(23);
-                    // color: $black-8;
-
-                    &.h1 {
-                        // margin-bottom: rem-calc(21);
-                        // font-weight: $font-weight-black;
-                        // font-size: rem-calc(75.9); //sic
-                        // color: $primary-color;
-                        // letter-spacing: -1.26px;
-                        // line-height: rem-calc(46);
-                    }
+                    &.h1 {}
                 }
                 
 
@@ -114,10 +94,7 @@
             .wp-block-columns {
                 .wp-block-column {
                     &:first-child {
-                        p {
-                            // font-size: rem-calc(14);
-                            // line-height: rem-calc(18);
-                        }
+                        p {}
                     }
                 }
             }
@@ -284,9 +261,18 @@
         /**
         * Styles
         */
-        .intro-heading {
-            line-height: rem-calc(28);   
+
+        /* Alternate intro text styling */
+        .intro-content {
+            h2 {
+                line-height: rem-calc(28);
+            }
+
+            p {
+                line-height: rem-calc(27);
+            }
         }
+
 
         .site-main {
             .entry-content {

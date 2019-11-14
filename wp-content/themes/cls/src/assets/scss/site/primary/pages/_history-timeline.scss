@@ -29,7 +29,15 @@
                 }
             }
          }
-     }
+    }
+
+    /* Alternate intro text styling */
+    .intro-content {
+        p {
+            font-size: rem-calc(20);
+            line-height: rem-calc(25);
+        }
+    }
 
     @include breakpoint(small only) {
         /**
@@ -40,7 +48,6 @@
                 &> .entry-content {
 
                     
-
                     &> .entry-title {}
                 }
             }
@@ -88,6 +95,13 @@
                     }
 
                 }
+            }
+        }
+
+        /* Alternate intro text styling */
+        .intro-content {
+            p {
+                line-height: rem-calc(27);
             }
         }
 

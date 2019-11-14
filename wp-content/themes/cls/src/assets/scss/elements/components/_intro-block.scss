@@ -21,6 +21,7 @@
      * Style
      */
      p {
+        font-size: rem-calc(20);
         line-height: rem-calc(25);
 
         a {
@@ -64,11 +65,8 @@
         /**
         * Style
         */
-        .intro-content {
-           p {
-            font-size: rem-calc(20);
+        p {
             line-height: rem-calc(27);
-           }
         }
 
         h2 {
