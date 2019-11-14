@@ -88,6 +88,13 @@
         }
     }
 
+    .intro-content {
+        p {
+            font-size: rem-calc(20);
+            line-height: rem-calc(25);
+        }
+    }
+
     @include breakpoint(small only) {
         .site-main {
             .entry-content {
@@ -217,6 +224,12 @@
                     // @include clipped-corner($corner: bottom-right, $height: 100px, $width: 94px);
                     @include clipped-photo($size: large);
                 }
+            }
+        }
+
+        .intro-content {
+            p {
+                line-height: rem-calc(27);
             }
         }
 
