@@ -6,13 +6,13 @@
     /**
      * Style
      */
-     .intro-content {
+    .intro-content {
         p {
          font-size: rem-calc(20);
          line-height: rem-calc(25);
         }
-     }
-
+    }
+    
     @include breakpoint(medium) {
         /* Target only main content area */
 

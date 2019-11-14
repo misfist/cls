@@ -8,7 +8,6 @@
         &> article {
             &> .entry-content {
                 padding-bottom: rem-calc(50);
-                // padding-bottom: 0;
 
                 .wp-block-custom-sections {
                     @include xy-grid;
@@ -83,7 +82,6 @@
                 .entry-content {
 
                     .wp-block-custom-sections {
-                        // padding-bottom: rem-calc(88);
                         margin-bottom: 0;
 
                         .section {
@@ -93,6 +91,13 @@
                             .wp-block-button__link {
                                 margin-bottom: 0;
                             }
+                        }
+
+                        .column + .column {
+                            padding-top: rem-calc(52);
+                            margin-top: rem-calc(56);
+
+                            border-top: 2px solid $gray-border;
                         }
 
                         .wp-block-separator {

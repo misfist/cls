@@ -39,10 +39,9 @@
                 </div>
             </div>
             <?php if( get_row_index() == ceil( $count / 2 ) ) : ?>
-                </div><!-- .column -->
-                <div class="column">
+                </div><div class="column">
             <?php endif; ?>
         <?php endwhile; ?>
-        </div><!-- .column -->
+        </div>
     </div>
 <?php endif; ?>
