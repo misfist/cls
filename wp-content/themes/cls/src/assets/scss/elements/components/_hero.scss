@@ -61,11 +61,12 @@
      .wp-block-button {
          margin-top: rem-calc(40);
 
-        .wp-block-button__link {
+        .button {
             // line-height: 24px;
             font-weight: $font-weight-black;
             // font-size: 14px;
             letter-spacing: 0.4px;
+            text-transform: uppercase;
         }
      }
 
