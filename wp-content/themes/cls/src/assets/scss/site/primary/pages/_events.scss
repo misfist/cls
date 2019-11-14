@@ -13,7 +13,7 @@
     .site-main {
         .entry-content {
             .event-meta {
-                
+
                 font-size: rem-calc(16);
                 line-height: rem-calc(20);
             }
@@ -40,7 +40,7 @@
             }
 
             .date-details {
-                font-weight: $font-weight-bold;
+                // font-weight: $font-weight-bold;
             }
 
             h3 {
@@ -137,7 +137,9 @@
         */
         .site-main {
             .entry-content {
-                padding: 0 0 rem-calc(50) 0;
+                padding-top: 0;
+                margin-top: -10px;
+                // padding: 0 0 rem-calc(50) 0;
 
                 .event-date,
                 .event-time,
@@ -151,6 +153,10 @@
                     .date-details,
                     .time-details,
                     .event-address {}
+
+                    .date-details {
+                        @include xy-cell(auto, $gutters: 92, $gutter-type: padding, $gutter-position: right);
+                    }
                 }
             }
 
@@ -164,6 +170,7 @@
         */
         .site-main {
             .entry-content {}
+
         }
 
     }

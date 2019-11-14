@@ -33,6 +33,7 @@
         top: $height !important;
         background-color: $white;
         margin: 0;
+        padding: rem-calc(40) rem-calc(20) rem-calc(66) rem-calc(20);
     }
     
     .wpgmza_modern_infowindow_close,
@@ -116,9 +117,10 @@
     .wpgmza_infowindow_address {
         margin-bottom: rem-calc(32);
         width: 100%;
+        padding-right: rem-calc(100);
 
         p {
-            font-weight: $font-weight-bold;
+            // font-weight: $font-weight-bold;
             font-size: rem-calc(18);
             color: $black-8;
             line-height: rem-calc(24);
