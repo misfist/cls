@@ -10,7 +10,11 @@
 <article id="post-<?php echo $post->ID; ?>" <?php post_class(); ?>>
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="entry-media">
-			<?php the_post_thumbnail( 'editorial-thumb' ); ?>
+			<?php if( is_front_page() ) : ?>
+				<?php the_post_thumbnail( 'editorial-thumb' ); ?>
+			<?php else : ?>
+				<?php the_post_thumbnail( 'medium' ); ?>
+			<?php endif; ?>
 		</div>
 	<?php endif; ?>
 	<div class="entry-body">
