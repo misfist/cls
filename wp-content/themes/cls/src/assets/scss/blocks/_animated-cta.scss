@@ -1,7 +1,7 @@
 .wp-block-custom-cta,
 .wp-block-animated-cta {
     clear: both;
-    $size: rem-calc(75);
+    $size: rem-calc(100);
     height: $size;
 
     /**
@@ -24,7 +24,6 @@
         align-items: center;
         order: 2;
         position: relative;
-        // border: 1px dotted yellow;
     }
 
     .wrapper-r {
@@ -32,13 +31,13 @@
         align-items: center;
         padding-right: rem-calc(78);
         padding-left: rem-calc(22);
-        // border: 1px dotted pink;
     }
 
     .cta-image {
         position: absolute;
         top: 0;
-        left: -37.5px;
+        // left: -37.5px;
+        left: -50px; //half width
         mask-image: url('../images/icon-timeline-arrow.svg');
         mask-repeat: no-repeat;
         mask-position: top right;
@@ -96,7 +95,13 @@
      @include breakpoint(small only) {
         .wrapper-r {
             flex: 1 1 auto;
+            padding-left: rem-calc(10);
         }
+
+        .wrapper-l {
+            flex-basis: rem-calc(120);
+        }
+    
      }
 
     /**
@@ -200,7 +205,6 @@
                 bottom: 0;
                 right: 51px;
                 margin-right: 0;
-                // margin-right: 50px;
             }
         }
 
@@ -212,8 +216,6 @@
     
         .cta-text {
             a {
-                // padding-top: rem-calc(31);
-                // padding-bottom: rem-calc(36);
                 font-size: rem-calc(24);
                 line-height: rem-calc(35);
             }
@@ -223,10 +225,7 @@
     @include breakpoint(large) {
         
 
-        .cta-text {
-            // padding-left: rem-calc(75);
-            // padding-right: rem-calc(172);
-        }
+        .cta-text {}
         
     }
 
