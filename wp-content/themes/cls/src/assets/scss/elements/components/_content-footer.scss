@@ -71,6 +71,11 @@
             color: $white; 
         }
 
+        p {
+            font-size: rem-calc(20);
+            line-height: rem-calc(26);
+        }
+
         cite {
             text-align: right;
             font-weight: $font-weight-semi-bold;
