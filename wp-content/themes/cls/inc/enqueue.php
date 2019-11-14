@@ -46,7 +46,11 @@ function gutenberg_starter_theme_scripts() {
 
 	wp_enqueue_style( 'cls-base-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'cls-style', get_template_directory_uri() . '/dist/assets/css/style.css' );
+	if( is_page_template( 'page-templates/leadership.php' ) ) {
+		wp_enqueue_style( 'cls-style', get_template_directory_uri() . '/dist/assets/css/style.css', array( 'kadence-blocks-tabs' ) );
+	} else {
+		wp_enqueue_style( 'cls-style', get_template_directory_uri() . '/dist/assets/css/style.css' );
+	}
 
 	// wp_enqueue_style( 'cls-fonts', gutenberg_starter_theme_fonts_url(), null, null );
 
@@ -64,7 +68,6 @@ function gutenberg_starter_theme_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'gutenberg_starter_theme_scripts' );
-
 
 /**
  * Function to turn off inline tabs block css.
