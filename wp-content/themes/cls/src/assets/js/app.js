@@ -372,6 +372,7 @@ function themeReady() {
     if(cta) {
         const style = document.documentElement.style;
         const right = document.querySelector( '.wrapper-r' );
+        const link = cta.querySelector( '.cta-link' );
         function makeActive(event) {
             this.classList.add('is-active');
             style.setProperty('--tx', `${right.getBoundingClientRect().width - 99}px`);
@@ -380,8 +381,12 @@ function themeReady() {
         function removeActive(event) {
            this.classList.remove('is-active');
         }
+        function goToDestination(event) {
+            window.location = link.getAttribute('href');
+        }
         cta.addEventListener('mouseover', makeActive);
         cta.addEventListener('mouseout', removeActive);
+        cta.addEventListener('click', goToDestination);
     }
 
     /**
