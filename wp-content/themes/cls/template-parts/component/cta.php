@@ -7,7 +7,7 @@
  * @package cls
  */
 ?>
-<?php if( $link_text = get_post_meta( get_the_ID(), 'cta-text', true ) ) : ?>
+<?php if( $link = get_post_meta( get_the_ID(), 'cta_link', true ) ) : ?>
     <div class="wp-block-animated-cta">
         <div class="wp-block-animated-cta__inner-container inner-container">
             <div class="wrapper-l">
@@ -15,8 +15,8 @@
             </div><!-- .wrapper-l -->
             <div class="wrapper-r">
                 <div class="cta-text">
-                    <a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'cta-url', true ) ); ?>" class="cta-link"<?php echo ( $target = get_post_meta( get_the_ID(), 'cta-target', true ) ) ? ' target="_blank"  rel="noopener noreferrer"' : ''; ?>>
-                    <?php echo esc_html( $link_text ); ?></a>
+                    <a href="<?php echo esc_url( $link['url'] ); ?>" class="cta-link"<?php echo ( $link['target'] ) ? ' target="_blank"  rel="noopener noreferrer"' : ''; ?>>
+                    <?php echo esc_html( $link['title'] ); ?></a>
                 </div><!-- .cta-text -->
             </div><!-- .wrapper-r -->
         </div><!-- .inner-container -->

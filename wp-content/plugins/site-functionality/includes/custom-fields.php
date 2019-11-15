@@ -1083,13 +1083,33 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 				),
 				'return_format' => 'array',
 			),
+			array(
+				'key' => 'field_5dca333b105e3',
+				'label' => __( 'CTA Link', 'site-functionality' ),
+				'name' => 'cta_link',
+				'type' => 'link',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+			),
         ),
         'location' => array(
 			array(
 				array(
 					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'page',
+					'operator' => '!=',
+					'value' => 'event',
+				),
+				array(
+					'param' => 'post_type',
+					'operator' => '!=',
+					'value' => 'history',
 				),
 				array(
 					'param' => 'page_template',
