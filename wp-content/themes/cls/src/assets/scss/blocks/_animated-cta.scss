@@ -1,3 +1,10 @@
+:root {
+    --tx: 0;
+    --ty: 0;
+    --bwidth: 0;
+    --duration: .2s;
+}
+
 .wp-block-custom-cta,
 .wp-block-animated-cta {
     clear: both;
@@ -133,17 +140,6 @@
             justify-content: flex-end;
         }
 
-        .cta-image {
-            margin-left: unset;
-            margin-right: -49px;
-            mask-size: $lg-size;
-            min-width: $lg-size;
-            height: $lg-size;
-            position: initial;
-            transition: position 2s;
-            
-        }
-
         .cta-text {}
 
         a {
@@ -194,26 +190,36 @@
             background-image: linear-gradient($primary-color, $primary-color);
             background-size: 0 100%;
             background-repeat: no-repeat;
-            transition: background-size .1s ease-in-out;
+            transition: background-size var(--duration) linear;
         }
 
+        /**
+         * Animation
+         */
+        .cta-image {
+            transition: transform var(--duration) linear;
+            will-change: transform;
+            margin-left: unset;
+            margin-right: -49px;
+            mask-size: $lg-size;
+            min-width: $lg-size;
+            height: $lg-size;
+            transform: unset;
+            position: initial;
+        }
+
+        /** Animated State **/
         &.is-active {
             .cta-image {
-                animation: arrow-right .1s ease-in-out;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                right: 51px;
-                margin-right: 0;
+                transform: 
+                    translate3d(var(--tx), var(--ty), 0);
+            }
+
+            .wrapper-r {
+                background-size: calc(var(--bwidth) - 100px) 100%;
             }
         }
 
-        &.is-active {
-            .wrapper-r {
-                background-size: calc(100% - 100px) 100%;
-            }
-        }
-    
         .cta-text {
             a {
                 font-size: rem-calc(24);

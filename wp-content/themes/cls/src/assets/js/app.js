@@ -202,6 +202,7 @@ function themeReady() {
         /**
          * Kick it off
          * Only for medium & up
+         * @see https://foundation.zurb.com/sites/docs/media-queries.html#javascript-reference
          */
         if (Foundation.MediaQuery.atLeast('medium')) {
             pagerInit();
@@ -215,7 +216,6 @@ function themeReady() {
             }
         });
         
-
         /* Listen to Timeline Links */
         links.map( link => {
             link.addEventListener('click', function(event) {
@@ -226,7 +226,10 @@ function themeReady() {
                 let tick = document.querySelector(`li[data-tick=${date}]`);
                 tick.classList.add('is-active');
 
-                /* Use Foundation to detect breakpoint */
+                /**
+                 * Use Foundation to detect breakpoint
+                 * @see https://foundation.zurb.com/sites/docs/media-queries.html#javascript-reference
+                 */
                 if (Foundation.MediaQuery.is('small only')) {
                     /* Close Modal */
                     closeModal(event);
@@ -267,7 +270,10 @@ function themeReady() {
             timelineCloseButton.addEventListener( 'click', closeModal );
         }
 
-        /** Watching for Breakpoint Changes */
+        /**
+         * Watching for Breakpoint Changes
+         * @see https://foundation.zurb.com/sites/docs/media-queries.html#javascript-reference
+         */
         $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
             if('small' !== newSize) {
                 console.log(newSize);
@@ -289,7 +295,10 @@ function themeReady() {
     const headerElTop = headerEl.offsetTop;
 
     function stickyNavigation() {
-        /** Only on medium or larger */
+        /**
+         * Only on medium or larger
+         * @see https://foundation.zurb.com/sites/docs/media-queries.html#javascript-reference
+         */
         if(Foundation.MediaQuery.is('medium')) {
             const shrinkOn = 200;
 
@@ -316,6 +325,7 @@ function themeReady() {
     /**
      * Number Counter
      * Use CountUp.js to count up numbers
+     * @see https://inorganik.github.io/countUp.js/
      */
     const counterEls = document.querySelectorAll('.wp-block-number-counter .number-counter');
     if(counterEls) {
@@ -360,18 +370,24 @@ function themeReady() {
      */
     const cta = document.querySelector( '.wp-block-animated-cta' );
     if(cta) {
+        const style = document.documentElement.style;
+        const right = document.querySelector( '.wrapper-r' );
         function makeActive(event) {
             this.classList.add('is-active');
+            style.setProperty('--tx', `${right.getBoundingClientRect().width - 99}px`);
+            style.setProperty('--bwidth', `100%`);
         }
         function removeActive(event) {
            this.classList.remove('is-active');
         }
         cta.addEventListener('mouseover', makeActive);
-        cta.addEventListener('mouseout',removeActive);
+        cta.addEventListener('mouseout', removeActive);
     }
 
     /**
      * Home page animation
+     * Use AnimateOnScroll to animate homepage callout on scroll
+     * @see https://michalsnik.github.io/aos/
      */
     const homeCta = document.querySelector('.wp-block-home-callout');
     if(homeCta) {
