@@ -2290,9 +2290,9 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 	/**
 	 * Page Settings - Only CTA
 	 */
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' => 'group_5dcf16bb01d15',
-		'title' => 'Page Settings',
+		'title' => __( 'Page Settings', 'site-functionality' ),
 		'fields' => array(
 			array(
 				'key' => 'field_5dcf16bb061cf',
@@ -2383,7 +2383,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 	 */
 	acf_add_local_field_group(array(
 		'key' => 'group_5dcf174bc1061',
-		'title' => 'Page Settings',
+		'title' => __( 'Page Settings', 'site-functionality' ),
 		'fields' => array(
 			array(
 				'key' => 'field_5dcf174bc619c',
@@ -2442,7 +2442,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 		'hide_on_screen' => '',
 		'active' => true,
 		'description' => '',
-		// 'acfe_display_title' => 'CTA & Back to',
+		'acfe_display_title' => 'CTA & Back to',
 		'acfe_autosync' => '',
 		'acfe_permissions' => '',
 		'acfe_form' => 0,
