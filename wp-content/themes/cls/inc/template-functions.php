@@ -19,15 +19,6 @@ function gutenberg_starter_theme_body_classes( $classes ) {
 		global $post;
 		if ( isset( $post ) ) {
 			$classes[] = $post->post_type . '-' . $post->post_name;
-
-			if( function_exists( 'get_field' ) ) {
-				if( $page_color = get_field( 'page-color' ) ) {
-					$page_color = ( 'transparent' === $page_color ) ? 'white' : $page_color;
-					$classes[] = sprintf( 'has-%s-page-color', sanitize_title( $page_color ) );
-				} else {
-					$classes[] = sprintf( 'has-%s-page-color', esc_attr( 'white' ) );
-				}
-			}
 		}
 	}
 	return $classes;
@@ -62,7 +53,7 @@ function cls_register_post_type_args_page( $args, $post_type ) {
 	}
 	return $args;
 }
-add_filter( 'register_post_type_args', 'cls_register_post_type_args_page', 10, 2 );
+// add_filter( 'register_post_type_args', 'cls_register_post_type_args_page', 10, 2 );
 
 /**
  * Filter Query
