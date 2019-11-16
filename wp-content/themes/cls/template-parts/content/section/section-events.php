@@ -1,12 +1,18 @@
 <?php
 /**
- * Template part for displaying news posts
+ * Template part for displaying events
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package cls
  */
 
+/**
+ * Querying events
+ * 
+ * @see http://docs.wp-event-organiser.com/querying-events/overview/
+ * @see http://codex.wp-event-organiser.com/
+ */
 $paged = ( get_query_var( 'paged') ) ? get_query_var( 'paged' ) : 1;
 $args = array(
 	'post_type'              => array( 'event' ),
@@ -14,7 +20,7 @@ $args = array(
     'numberposts'            => 3,
     'posts_per_page'         => 3,
     'suppress_filters'       => false,
-    'group_events_by'        => 'series',
+    'group_events_by'        => 'series', //Group recurrent events
     'post_status'            => array( 'publish' ),
 );
 $query = new WP_Query( $args );
@@ -38,7 +44,7 @@ if ( $query->have_posts() ) : ?>
             while ( $query->have_posts() ) :
                 $query->the_post(); ?>
 
-                <?php get_template_part( 'template-parts/content/content-list', 'event' ); ?>
+                <?php get_template_part( 'template-parts/content/loop/content', get_post_type() ); ?>
 
             <?php
             endwhile; ?>
@@ -46,8 +52,8 @@ if ( $query->have_posts() ) : ?>
             <div class="section-footer">
                 <button class="button js-load-more-events" data-posts-per-page="<?php echo intval( $args['posts_per_page'] ); ?>" data-max-pages="<?php echo intval( $query->max_num_pages ); ?>"<?php echo ( $paged >= $query->max_num_pages ) ? ' disabled' : ''; ?>><?php esc_html_e( 'Load More', 'cls' ); ?></button>
             </div>
-        </div>
-    </div>
+        </div><!-- .inner-container -->
+    </div><!-- .section-events -->
 <?php endif;
 wp_reset_postdata();
 ?>

@@ -28,7 +28,7 @@
                         $post = $item['post'];
                         setup_postdata( $post ); ?>
 
-                        <?php get_template_part( 'template-parts/content/content', 'home-featured' ); ?>
+                        <?php get_template_part( 'template-parts/content/loop/content', 'home-featured' ); ?>
 
                         <?php wp_reset_postdata(); ?>
 
@@ -39,7 +39,7 @@
                             <?php if ( $image = $post['image'] ) : ?>
                                 <figure class="entry-media">
                                     <?php echo wp_get_attachment_image( $image['ID'], 'editorial-thumb' ); ?>
-                                </figure>
+                                </figure><!-- .entry-media -->
                             <?php endif; ?>
                             <div class="entry-body">
                                 <?php if ( $title = $post['title'] ) : ?>
@@ -53,20 +53,20 @@
                                                 </a>
                                             <?php endif; ?>
                                         </h3>
-                                    </header>
+                                    </header><!-- .entry-header -->
                                 <?php endif; ?>
                                 <div class="entry-content">
                                     <?php if( $excerpt = $post['content'] ) : ?>
                                         <?php echo apply_filters( 'the_content', $excerpt ); ?>
                                     <?php endif; ?>
-                                </div>
+                                </div><!-- .entry-content -->
                                 <footer class="entry-footer">
                                     <?php if ( $link = $post['link'] ) : ?>
                                         <a href="<?php echo esc_url( $link['url'] ); ?>" class="read-more"<?php echo ( $link['target'] ) ? ' target="_blank"' : ''; ?>><?php esc_html_e( 'Read More', 'cls' ); ?></a>
                                     <?php endif; ?>
-                                </footer>
-                            </div>
-                        </article>
+                                </footer><!-- .entry-footer -->
+                            </div><!-- .entry-body -->
+                        </article><!-- .post -->
 
                     <?php endif; ?>
                     
@@ -75,6 +75,6 @@
             <?php endif; ?>
 
          <?php endwhile; ?>
-        </div>
-    </div>
+        </div><!-- .inner-container -->
+    </div><!-- .wp-block-curated-posts -->
 <?php endif; ?>

@@ -36,7 +36,7 @@ if( !function_exists( 'get_field' ) )  return; ?>
                             $post = $item['post'];
                             setup_postdata( $post ); ?>
 
-                            <?php get_template_part( 'template-parts/content/content-list', 'footer-post' ); ?>
+                            <?php get_template_part( 'template-parts/content/loop/content', 'footer-post' ); ?>
 
                             <?php wp_reset_postdata(); ?>
 
