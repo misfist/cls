@@ -30,7 +30,8 @@
     .wpgmza_modern_infowindow,
     .wpgmza-infowindow {
         width: 100%;
-        top: $height !important;
+        // top: $height !important;
+        top: 0;
         background-color: $white;
         margin: 0;
         padding: rem-calc(40) rem-calc(20) rem-calc(66) rem-calc(20);
@@ -272,6 +273,16 @@
 
     .wpgmza-shadow {
         box-shadow: none;
+    }
+
+    @include breakpoint(small only) {
+        min-height: 281px;
+
+        .wpgmza_modern_infowindow,
+        .wpgmza-infowindow {
+            height: 100%;
+        }
+        
     }
 
     @include breakpoint(medium) {

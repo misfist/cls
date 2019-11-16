@@ -51,8 +51,18 @@
 
             p {}
 
-            .primary-color {
-                // color: $primary-color;
+            .primary-color {}
+
+            .has-2-columns {
+                .wp-block-image {
+                    @include clipped-photo($size: small);
+                }
+            }
+
+            .has-3-columns {
+                .wp-block-image {
+                    @include clipped-photo($size: small, $corner: top-right);
+                }
             }
 
             .has-3-columns {}
@@ -275,8 +285,21 @@
 
 
         .site-main {
+
             .entry-content {
 
+                .has-2-columns {
+                    .wp-block-image {
+                        @include clipped-photo($size: large);
+                    }
+                }
+
+                .has-3-columns {
+                    .wp-block-image {
+                        @include clipped-photo($size: large, $corner: top-right);
+                    }
+                }
+    
                 .wp-block-image {
                     &.alignfull {
                         height: rem-calc(477);
