@@ -83,6 +83,6 @@ add_filter( 'image_size_names_choose', 'cls_image_size_names_choose' );
  * @return int $length
  */
 function cls_excerpt_length( $length ) {
-    return 20;
+    return intval( 20 );
 }
 add_filter( 'excerpt_length', 'cls_excerpt_length', 999 );
