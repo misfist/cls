@@ -1670,7 +1670,182 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 	));
 	
 	/**
-	 * Section Landing Page (4A, 4B)
+	 * Section Landing Page - General (T4B)
+	 */
+	acf_add_local_field_group( array(
+		'key' => 'group_5dcf6e5e9208c',
+		'title' => __( 'Content Sections', 'site-functionality' ),
+		'fields' => array(
+			array(
+				'key' => 'field_5dcf6e5e96c54',
+				'label' => 'Intro',
+				'name' => 'intro',
+				'type' => 'group',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'acfe_permissions' => '',
+				'layout' => 'row',
+				'acfe_seemless_style' => 0,
+				'acfe_group_modal' => 0,
+				'sub_fields' => array(
+					array(
+						'key' => 'field_5dcf6e5e99072',
+						'label' => 'Heading',
+						'name' => 'title',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'acfe_permissions' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5dcf6e5e990c1',
+						'label' => 'Text',
+						'name' => 'content',
+						'type' => 'wysiwyg',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'acfe_permissions' => '',
+						'default_value' => '',
+						'tabs' => 'all',
+						'toolbar' => 'full',
+						'media_upload' => 1,
+						'delay' => 0,
+					),
+				),
+			),
+			array(
+				'key' => 'field_5dcf6e5e9e988',
+				'label' => 'Sections',
+				'name' => 'sections',
+				'type' => 'repeater',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'acfe_permissions' => '',
+				'acfe_repeater_stylised_button' => 0,
+				'collapsed' => '',
+				'min' => 0,
+				'max' => 0,
+				'layout' => 'row',
+				'button_label' => 'Add Section',
+				'sub_fields' => array(
+					array(
+						'key' => 'field_5dcf6e5ea0545',
+						'label' => 'Title',
+						'name' => 'title',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'acfe_permissions' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5dcf6e5ea0621',
+						'label' => 'Content',
+						'name' => 'content',
+						'type' => 'textarea',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'acfe_permissions' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'maxlength' => '',
+						'rows' => 4,
+						'new_lines' => '',
+						'acfe_textarea_code' => 0,
+					),
+					array(
+						'key' => 'field_5dcf6e5ea06dc',
+						'label' => 'Link',
+						'name' => 'link',
+						'type' => 'link',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'acfe_permissions' => '',
+						'return_format' => 'array',
+					),
+				),
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/landing-page.php',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'acfe_display_title' => 'Section Landing Page - General (T4B)',
+		'acfe_autosync' => array(
+			0 => 'php',
+		),
+		'acfe_permissions' => '',
+		'acfe_form' => 0,
+		'acfe_meta' => '',
+		'acfe_note' => '',
+	));
+	
+	/**
+	 * Section Landing Page - Get Help (T4A)
 	 */
 	acf_add_local_field_group( array(
 		'key' => 'group_5dcf0edd987b9',
@@ -1863,7 +2038,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 				'sub_fields' => array(
 					array(
 						'key' => 'field_5dcf0eddbf40f',
-						'label' => __( 'Heading', 'site-functionality' ),
+						'label' => 'Header',
 						'name' => 'title',
 						'type' => 'text',
 						'instructions' => '',
@@ -1918,7 +2093,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 						'acfe_repeater_stylised_button' => 0,
 						'collapsed' => 'field_5dc76d30594fc',
 						'min' => 0,
-						'max' => 2,
+						'max' => 0,
 						'layout' => 'row',
 						'button_label' => 'Add Post',
 						'sub_fields' => array(
@@ -2070,8 +2245,9 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 									'id' => '',
 								),
 								'post_type' => array(
-									0 => 'event',
-									1 => 'post',
+									0 => 'page',
+									1 => 'event',
+									2 => 'post',
 								),
 								'taxonomy' => '',
 								'allow_null' => 0,
@@ -2089,7 +2265,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 				array(
 					'param' => 'page_template',
 					'operator' => '==',
-					'value' => 'page-templates/grid-content.php',
+					'value' => 'page-templates/landing-page-get-help.php',
 				),
 			),
 		),
@@ -2101,7 +2277,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 		'hide_on_screen' => '',
 		'active' => true,
 		'description' => '',
-		'acfe_display_title' => 'Section Landing Page (T4A, T4B)',
+		'acfe_display_title' => 'Section Landing Page - Get Help (T4A)',
 		'acfe_autosync' => array(
 			0 => 'php',
 		),
