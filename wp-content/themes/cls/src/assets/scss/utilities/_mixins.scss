@@ -12,9 +12,6 @@
 
 @mixin clipped-corner($corner: bottom-right, $height: 58px, $width: 52px) {
 
-    // @include clipped-corner($corner: bottom-right, $height: 58px, $width: 52px);
-
-    // $height: 44px, $width: 40px
     @if $corner == top-left {
         clip-path: polygon(0 #{$height}, #{$width} 0, 100% 0, 100% 100%, 0 100%);
     } @else if $corner == top-right {
@@ -35,9 +32,7 @@
 
 }
 
-@mixin clipped-photo( $size: small ) {
-
-    $corner: bottom-right;
+@mixin clipped-photo( $size: small, $corner: bottom-right ) {
 
     @if $size == small {
         $height: 44px;
