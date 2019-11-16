@@ -12,12 +12,19 @@
 
 get_header(); ?>
 
-	<main id="primary" class="site-main<?php echo ( has_block( 'custom/intro' ) ) ? ' has-intro' : '' ; ?>">
+	<main id="primary" class="site-main<?php echo ( get_post_meta( get_the_ID(), 'intro_content', true ) ) ? ' has-intro' : '' ; ?>">
 
 		<?php
 		while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content/content-page' );
+
+			if( $map = get_post_meta( get_the_ID(), 'content', true ) ) : ?>
+
+				<?php echo do_shortcode( $map ); ?>
+				
+			<?php
+			endif;
 
 		endwhile; // End of the loop.
 		?>
