@@ -8,7 +8,7 @@
  */
 
 ?>
-<header class="entry-header page-content-header<?php echo ( has_block( 'custom/intro' ) ) ? ' has-intro' : '' ; ?>">
+<header class="entry-header page-content-header<?php echo ( get_post_meta( get_the_ID(), 'intro_content', true ) ) ? ' has-intro' : '' ; ?>">
 	<div class="container">
 		<div class="header-content">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
