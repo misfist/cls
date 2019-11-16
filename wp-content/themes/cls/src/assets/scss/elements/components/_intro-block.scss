@@ -1,6 +1,7 @@
-/* Intro Block */
+/* Intro Block - Base */
 .wp-block-custom-intro {
-    background-color: $primary-color;
+    /* Purple background */
+    background-color: get-color(secondary-dark);
     color: $white;
 
     .inner-container {
@@ -88,7 +89,40 @@
 
 }
 
-/* About Us Variation */
+/* Orange background */
+.page-our-clients {
+    .wp-block-custom-intro {
+        background-color: $primary-color;
+    }
+}
+
+/* Gray background */
+.page-get-help,
+.page-our-work {
+    .wp-block-custom-intro {
+        background-color: $light-gray;
+
+        /**
+         * Style
+         */
+        color: $accent-color;
+
+        p {
+            color: $accent-color;
+
+            a {
+                color: $accent-color;
+    
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+        }
+
+    }
+}
+
+/* Our Story - History Variant */
 .page-template-history-timeline {
     $height: calc( 100% - 46px );
 
@@ -96,6 +130,8 @@
     $width: calc( #{$start} + 44px );
 
     .wp-block-custom-intro {
+        background-color: get-color(accent-light);
+
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, $width 100%, $start $height, 0 $height);
 
         .inner-container {
@@ -151,7 +187,8 @@
 
 /* Basic Pages */
 .page-template-default,
-.page-template-grid-content {
+.page-template-landing-page,
+.page-template-landing-page-get-help {
     .wp-block-custom-intro {}
 
     @include breakpoint(medium) {
@@ -171,67 +208,4 @@
             }
         }
     }
-}
-
-.wp-block-custom-intro,
-.page-intro,
-.entry-intro {
-    background-color: $light-gray;
-
-    .intro-content {
-        p {
-            color: $accent-color;
-        }
-    }
-}
-
-
-@each $color, $code in $foundation-palette {
-  
-	.has-#{$color}-page-color {
-        .wp-block-custom-intro,
-        .page-intro,
-        .entry-intro {
-            background-color: $code;
-        }
-
-        .intro-content {
-            p {
-                color: $white;
-            }
-        }
-	}
-}
-
-.has-white-page-color,
-.has-gray-light-page-color {
-    .wp-block-custom-intro,
-    .page-intro,
-    .entry-intro {
-        color: $accent-color;
-    }
-}
-
-.has-secondary-page-color {
-    .wp-block-custom-intro,
-    .page-intro,
-    .entry-intro {}
-}
-
-.has-accent-page-color {
-    .wp-block-custom-intro,
-    .page-intro,
-    .entry-intro {}
-}
-
-.has-light-gray-page-color {
-    .wp-block-custom-intro,
-    .page-intro,
-    .entry-intro {}
-}
-
-.has-white-gray-page-color {
-    .wp-block-custom-intro,
-    .page-intro,
-    .entry-intro {}
 }

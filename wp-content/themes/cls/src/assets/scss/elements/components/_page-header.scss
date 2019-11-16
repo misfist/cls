@@ -42,9 +42,9 @@
     .header-content {}
 
     // variable color - based on 
-    .shape-separator {
-        background-color: $white;
-    }
+    // .shape-separator {
+    //     background-color: $white;
+    // }
 
     /**
      * Medium & up
@@ -87,25 +87,116 @@
 
 }
 
-@each $color, $code in $foundation-palette {
-	.has-#{$color}-page-color {
-        .page-content-header {
+/**
+ * Color Variations
+ */
 
-            background-color: $code;
+/* Base */
+.page-content-header {
+    $color: $white;
+
+    background-color: $color;
+
+    .shape-separator {
+        background-color: $color;
+        @include skew($deg: -40deg, $left: -20px, $width: 40px, $bg: #{$color});
+    }
+
+    @include breakpoint(medium) {
+        .shape-separator {
+            @include skew($deg: -40deg, $left: -34px, $width: 70px, $bg: #{$color});
+        }
+
+    }
+
+    /* Has Intro - Purple */
+    &.has-intro {
+        $color: get-color(secondary-dark);
+
+        background-color: $color;
+
+        .shape-separator {
+            background-color: $color;
+            @include skew($deg: -40deg, $left: -20px, $width: 40px, $bg: #{$color});
+        }
+
+        @include breakpoint(medium) {
+            .shape-separator {
+                @include skew($deg: -40deg, $left: -34px, $width: 70px, $bg: #{$color});
+            }
+
+        }
+    }
+}
+
+/* Color Variation - Gray */
+.page-get-help,
+.page-our-work {
+    .page-content-header{
+        &.has-intro {
+            $color: $light-gray;
+
+            background-color: $color;
 
             .shape-separator {
-                background-color: $code;
-                @include skew($deg: -40deg, $left: -20px, $width: 40px, $bg: #{$code});
+                background-color: $color;
+                @include skew($deg: -40deg, $left: -20px, $width: 40px, $bg: #{$color});
             }
 
             @include breakpoint(medium) {
                 .shape-separator {
-                    @include skew($deg: -40deg, $left: -34px, $width: 70px, $bg: #{$code});
+                    @include skew($deg: -40deg, $left: -34px, $width: 70px, $bg: #{$color});
                 }
 
             }
+        } 
+    }
+}
 
-        }
+
+/* Color Variation - Gray */
+.page-our-clients {
+    .page-content-header{
+        &.has-intro {
+            $color: $primary-color;
+
+            background-color: $color;
+
+            .shape-separator {
+                background-color: $color;
+                @include skew($deg: -40deg, $left: -20px, $width: 40px, $bg: #{$color});
+            }
+
+            @include breakpoint(medium) {
+                .shape-separator {
+                    @include skew($deg: -40deg, $left: -34px, $width: 70px, $bg: #{$color});
+                }
+
+            }
+        } 
+    }
+}
+
+/* Color Variation - Blue */
+.page-template-history-timeline {
+    .page-content-header{
+        &.has-intro {
+            $color: get-color(accent-light);
+
+            background-color: $color;
+
+            .shape-separator {
+                background-color: $color;
+                @include skew($deg: -40deg, $left: -20px, $width: 40px, $bg: #{$color});
+            }
+
+            @include breakpoint(medium) {
+                .shape-separator {
+                    @include skew($deg: -40deg, $left: -34px, $width: 70px, $bg: #{$color});
+                }
+
+            }
+        } 
     }
 }
 
@@ -249,7 +340,7 @@
 }
 
 /**
- * Single Event - Alternate Header
+ * Single Event - Variant
  */
 .single-event {
     /**
@@ -332,7 +423,7 @@
 }
 
 /**
- * Search Results - Alternate Header
+ * Search Results - Variant
  */
 .search-results,
 .error404,
@@ -413,11 +504,4 @@
 
     }
 
-}
-
-.single-post {}
-
-
-.page-content-header {
-    &:not(.has-intro):not(.has-featured-event) {}
 }

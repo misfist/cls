@@ -180,3 +180,37 @@
 
     }
 }
+
+/* Variant */
+// .page-template-landing-page,
+// .page-template-landing-page-get-help {
+//     .wp-block-custom-content-footer {
+//         .wp-block-columns {
+//             @include xy-grid;
+//         }
+
+//         @include breakpoint(medium) {
+//             .inner-container {
+//                 display: block;
+//                 @include xy-grid-container;
+//             }
+
+//             .has-2-columns {
+//                 flex-wrap: nowrap;
+
+//                 .wp-block-columns {
+
+//                     &:first-child {
+//                         @include xy-cell(6, $gutters: 75, $gutter-type: padding, $gutter-position: right);
+//                     }
+        
+//                     &:last-child {
+//                         @include xy-cell(6, $gutters: 75, $gutter-type: padding, $gutter-position: left);
+//                     }
+//                 }
+//             }
+//         }
+
+        
+//     }
+// }
