@@ -2337,13 +2337,6 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 				array(
 					'param' => 'page_template',
 					'operator' => '==',
-					'value' => 'page-templates/grid-content.php',
-				),
-			),
-			array(
-				array(
-					'param' => 'page_template',
-					'operator' => '==',
 					'value' => 'page-templates/locations.php',
 				),
 			),
@@ -2352,6 +2345,20 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 					'param' => 'page_template',
 					'operator' => '==',
 					'value' => 'page-templates/news-events.php',
+				),
+			),
+			array(
+				array(
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/landing-page-get-help.php',
+				),
+			),
+			array(
+				array(
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/landing-page.php',
 				),
 			),
 		),
