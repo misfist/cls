@@ -128,14 +128,15 @@
                     
                     .wp-block-custom-sections {
                         @include xy-grid;
+                        width: 100%;
 
                         .column {
                             &:first-of-type {
-                                @include xy-cell(1 of 2, $gutters: 80, $gutter-type: margin, $gutter-position: right);
+                                @include xy-cell(1 of 2, $gutters: 80, $gutter-type: padding, $gutter-position: right);
                             }
 
                             &:last-of-type {
-                                @include xy-cell(1 of 2, $gutters: 80, $gutter-type: margin, $gutter-position: left);
+                                @include xy-cell(1 of 2, $gutters: 80, $gutter-type: padding, $gutter-position: left);
                                 margin-top: rem-calc(94);
                             }
 
