@@ -87,7 +87,7 @@
     .history {
 
         &:not(:last-child) {
-            margin-bottom: rem-calc(48);
+            margin-bottom: rem-calc(42);
         }
 
         /* Layout */
@@ -115,7 +115,7 @@
 
         @include breakpoint(small only) {
             .entry-body {
-                margin-bottom: rem-calc(42);
+                // margin-bottom: rem-calc(42);
             }
         }
 
