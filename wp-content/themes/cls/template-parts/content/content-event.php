@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying a single event
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -28,7 +28,7 @@
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'cls' ),
+					__( 'Read More<span class="screen-reader-text"> "%s"</span>', 'cls' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -47,6 +47,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php get_template_part( 'template-parts/content/page-footer/back-link', 'events' ); ?>
+		<?php get_template_part( 'template-parts/content/page-footer/back-link', get_post_type() ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

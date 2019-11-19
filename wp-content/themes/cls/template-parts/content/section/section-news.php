@@ -30,13 +30,13 @@ if ( $query->have_posts() ) : ?>
                     esc_attr_x( 'in the news', 'cls' )
                 );
                 ?>
-            </header>
+            </header><!-- .section-header -->
             <div class="posts-list fade-in">
             <?php
             while ( $query->have_posts() ) :
                 $query->the_post(); ?>
 
-                <?php get_template_part( 'template-parts/content/content-list', 'news' ); ?>
+                <?php get_template_part( 'template-parts/content/loop/content', 'news' ); ?>
                 
             <?php
             endwhile; ?>
@@ -44,8 +44,8 @@ if ( $query->have_posts() ) : ?>
             <div class="section-footer">
                 <button class="button js-load-more-posts" data-posts-per-page="<?php echo intval( $args['posts_per_page'] ); ?>" data-max-pages="<?php echo intval( $query->max_num_pages ); ?>"<?php echo ( $paged >= $query->max_num_pages ) ? ' disabled' : ''; ?>><?php esc_html_e( 'Load More', 'cls' ); ?></button>
             </div>
-        </div>
-    </div>
+        </div><!-- .inner-container -->
+    </div><!-- .section-posts -->
 <?php endif;
 wp_reset_postdata();
 ?>

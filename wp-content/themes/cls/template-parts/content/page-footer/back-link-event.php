@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying back to events link
+ * Template part for displaying back to News & Events page
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *

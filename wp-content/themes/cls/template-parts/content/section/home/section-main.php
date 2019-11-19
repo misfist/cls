@@ -12,8 +12,8 @@ if( !function_exists( 'have_rows' ) )  return; ?>
 <div class="wp-block-columns has-2-columns main-content">
     <div class="wp-block-column">
         <?php get_template_part( 'template-parts/content/section/home/section-main', 'posts' ); ?>
-    </div>
+    </div><!-- .wp-block-column -->
     <div class="wp-block-column">
         <?php get_template_part( 'template-parts/content/section/home/section-main', 'callout' ); ?>
-    </div>
-</div>
+    </div><!-- .wp-block-column -->
+</div><!-- .wp-block-columns -->

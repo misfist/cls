@@ -16,6 +16,6 @@
             <?php 
             echo do_shortcode( '[custom-twitter-feeds]' );
             ?>
-        </div>
-    </div>
+        </div><!-- .inner-container -->
+    </div><!-- .wp-block-titter-timeline -->
 <?php endif; ?>

@@ -9,13 +9,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'fade-in' ); ?>>
-<?php if ( has_post_thumbnail() ) : ?>
-	<div class="entry-media">
-		
-		
-			<?php the_post_thumbnail(); ?>
+	<?php if ( has_post_thumbnail() ) : ?>
+		<div class="entry-media">
 			
-	</div><!-- .entry-media -->
+				<?php the_post_thumbnail(); ?>
+				
+		</div><!-- .entry-media -->
 	<?php endif; ?>
 	<div class="entry-body">
 		<header class="entry-header">

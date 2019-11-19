@@ -75,7 +75,7 @@ function cls_load_more_posts() {
       while( $posts_query->have_posts() ) :
         $posts_query->the_post();
 
-        get_template_part( 'template-parts/content/content-list', 'news' );
+        get_template_part( 'template-parts/content/loop/content', 'news' );
 
       endwhile;
 
@@ -143,7 +143,7 @@ function cls_load_more_events() {
       while( $posts_query->have_posts() ) :
         $posts_query->the_post();
 
-        get_template_part( 'template-parts/content/content-list', 'event' );
+        get_template_part( 'template-parts/content/loop/content', get_post_type() );
 
       endwhile;
 

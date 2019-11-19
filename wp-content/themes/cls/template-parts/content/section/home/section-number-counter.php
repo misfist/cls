@@ -9,7 +9,6 @@
 
 if( !function_exists( 'have_rows' ) )  return; ?>
 
-
 <?php if( have_rows( 'numbers' ) ) : ?>
 
     <div class="wp-block-number-counter has-background-color">
@@ -30,10 +29,10 @@ if( !function_exists( 'have_rows' ) )  return; ?>
                 <?php if( $content = get_sub_field( 'content' ) ) : ?>
                     <div class="block-content"><?php echo apply_filters( 'the_content', $content ); ?></div>
                 <?php endif; ?>
-            </div>
+            </div><!-- .number-counte -->
         <?php endwhile; ?>
 
-        </div>
-    </div>
+        </div><!-- .inner-container -->
+    </div><!-- .wp-block-number-counter -->
 
 <?php endif; ?>

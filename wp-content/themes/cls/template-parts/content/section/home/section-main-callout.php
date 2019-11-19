@@ -14,20 +14,20 @@
         <div class="home-callout__inner-container inner-container">
             <?php if( $heading = get_sub_field( 'title' ) ) : ?>
                 <header class="block-header" data-aos="zoom-in-right" data-aos-delay="0">
-                    <?php echo esc_textarea( $heading ); ?>
-                </header>
+                    <?php echo apply_filters( 'the_title', $heading ); ?>
+                </header><!-- .block-header -->
             <?php endif; ?>
             <?php if( $content = get_sub_field( 'content' ) ) : ?>
                 <div class="block-content" data-aos="zoom-in-left" data-aos-delay="300">
                     <?php echo apply_filters( 'the_content', $content ); ?>
-                </div>
+                </div><!-- .block-content -->
             <?php endif; ?>
             <?php if( $link = get_sub_field('link') ) : ?>
                 <footer class="block-footer" data-aos="zoom-in-right" data-aos-delay="600">
                     <a href="<?php echo esc_url( $link['url'] ); ?>"<?php echo ( $link['target'] ) ? ' target="_blank"' : ''; ?>><?php echo esc_textarea( $link['title'] ); ?><i class="icon arrow"></i></a>
-                </footer>
+                </footer><!-- .block-footer -->
             <?php endif; ?>
-        </div>
-    </aside>
+        </div><!-- .inner-container -->
+    </aside><!-- .wp-block-home-callout -->
     <?php endwhile; ?>
 <?php endif; ?>
