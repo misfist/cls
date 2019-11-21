@@ -67,6 +67,7 @@
 
                 .wp-block-column {
                     flex-basis: 50%;
+                    margin: 0;
 
                     &:first-of-type {
                         @include xy-cell(6, $gutters: 40, $gutter-type: padding, $gutter-position: right);
@@ -80,6 +81,11 @@
 
         }
 
+
+        @include ie-only( '.main-content .wp-block-column', (
+            flex-basis: 48%,
+            width: 48%
+        ));
 
         /**
          * Style

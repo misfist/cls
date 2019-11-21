@@ -121,3 +121,25 @@
 	max-width: 100vw;
 	width: 100vw;
 }
+
+/*--- Only IE ≤ 11 ---*/
+/**
+    How to use:
+        @include [Mixin_Name]( 'selector', (property: value) )
+	Example:
+        @include ie-only( '.my_element', (
+            background-color: green,
+            display: flex,
+            margin: 2rem,
+        ));
+
+ */
+@mixin ie-only($selector, $map) {
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		*::-ms-backdrop, #{$selector} {
+			@each $property, $value in ($map) {
+				#{$property}: $value+\0;
+			}
+		}
+	}
+}

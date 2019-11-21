@@ -25,6 +25,7 @@
         position: fixed;
         top: 0;
         left: 0;
+        bottom: auto;
         width: 100%;
         z-index: 4;
 
@@ -43,6 +44,8 @@
         margin-top: $header-height;
     }
 }
+
+// @media screen and()
 
 $header-height: rem-calc(112);
 $minimized-height: rem-calc(87); //sic
@@ -117,6 +120,7 @@ $minimized-height: rem-calc(87); //sic
             position: fixed;
             top: 0;
             left: 0;
+            bottom: auto;
             width: 100%;
             box-shadow: 0 1px 5px 0 rgba($black,0.21);
         }
