@@ -284,3 +284,18 @@
     }
 
 }
+
+/**
+ * IE-specific styling
+ */
+ _:-ms-lang(x), .wp-block-titter-timeline {
+    .inner-container {
+
+    }
+
+    .block-title {
+        z-index: 2;
+        background-size: 90px 85px;
+        background-position: left top;
+    }
+ }

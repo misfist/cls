@@ -81,11 +81,15 @@
 
         }
 
+        @include ie-only() {
+            .main-content {
+                .wp-block-column {
+                    flex-basis: calc( 50% - 20px );
+                    width: calc( 50% - 20px );
+                }
+            }
+        }
 
-        @include ie-only( '.main-content .wp-block-column', (
-            flex-basis: 48%,
-            width: 48%
-        ));
 
         /**
          * Style

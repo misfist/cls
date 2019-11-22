@@ -118,28 +118,34 @@
 @mixin fullwidth() {
     margin-right: calc(50% - 50vw);
     margin-left: calc(50% - 50vw);
+    min-width: 100vw;
 	max-width: 100vw;
 	width: 100vw;
 }
 
 /*--- Only IE ≤ 11 ---*/
 /**
-    How to use:
-        @include [Mixin_Name]( 'selector', (property: value) )
-	Example:
-        @include ie-only( '.my_element', (
-            background-color: green,
-            display: flex,
-            margin: 2rem,
-        ));
-
+ * Mixin to add IE-specific styles
  */
-@mixin ie-only($selector, $map) {
-	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-		*::-ms-backdrop, #{$selector} {
-			@each $property, $value in ($map) {
-				#{$property}: $value+\0;
-			}
-		}
-	}
+@mixin ie-only($breakpoint: none) {
+    @if $breakpoint == none {
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            @content;
+        }
+    }
+    @if $breakpoint == small {
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), (min-width: map-get($breakpoints, small)) {
+            @content;
+        }
+    }
+    @else if $breakpoint = medium {
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), (min-width: map-get($breakpoints, medium)) {
+            @content;
+        }
+    }
+    @else if $breakpoint = large {
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), (min-width: map-get($breakpoints, large)) {
+            @content;
+        }
+    }
 }
