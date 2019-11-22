@@ -46,11 +46,15 @@
         top: 0;
         // left: -37.5px;
         left: -50px; //half width
-        mask-image: url('../images/icon-timeline-arrow.svg');
-        mask-repeat: no-repeat;
-        mask-position: top right;
-        mask-size: $size;
-        background-color: $white;
+        // mask-image: url('../images/icon-cta-arrow.svg');
+        // mask-repeat: no-repeat;
+        // mask-position: top right;
+        // mask-size: $size;
+        // background-color: $white;
+        background-image: url('../images/icon-cta-arrow.svg');
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: $size;
         min-width: $size;
         height: $size;
     }
