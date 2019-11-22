@@ -509,14 +509,17 @@
 /**
  * IE-specific styling
  */
- _:-ms-lang(x), .page-content-header {
+ body:not(.page-template-news-events) {
 
-    @include breakpoint(medium) {
-        .header-content {
-            .entry-title {
-                margin-bottom: - rem-calc(130);
+    _:-ms-lang(x), .page-content-header {
+        
+        @include breakpoint(medium) {
+            .header-content {
+                .entry-title {
+                    margin-bottom: - rem-calc(130);
+                }
+        
             }
-    
         }
     }
 

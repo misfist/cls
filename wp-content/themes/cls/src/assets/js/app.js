@@ -402,8 +402,6 @@ function themeReady() {
     //     window.addEventListener('scroll', stickyNavigation, false);
     // }
 
-    var $headerEl = $('#masthead');
-
     function shrinkNavigation() {
         /**
          * Only on medium or larger
@@ -421,18 +419,6 @@ function themeReady() {
         }
     }
     $(document).on( 'scroll', shrinkNavigation );
-
-    // $(document).on("scroll", function(){
-	// 	if
-    //   ($(document).scrollTop() > 100){
-	// 	  $("header").addClass("shrink");
-	// 	}
-	// 	else
-	// 	{
-	// 		$("header").removeClass("shrink");
-	// 	}
-	// });
-
 
     /**
      * Number Counter
