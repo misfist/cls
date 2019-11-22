@@ -425,11 +425,64 @@
  
 }
 
+/**
+ * IE Specific styling
+ */
+_:-ms-lang(x), .main-navigation {
+  @include breakpoint(medium down) {
 
-// .nav-previous {
-//   float:left;
-// }
+    /* Class added when mobile nav clicked */
+    &.is-open {
+      
+      /* Layout */
+      .main-menu {
+        @include xy-grid;
 
-// .nav-next {
-//   float:right;
-// }
+        &> li {
+          @include xy-cell( 1 of 2, $gutters: 0 );
+
+          &.about,
+          &:first-child {}
+
+          &.espanol,
+          &:nth-child(4) {}
+
+          &.what-we-do,
+          &:nth-child(2) {}
+
+          &.donate,
+          &:nth-last-child(2) {}
+
+          &.get-help,
+          &:last-child {}
+
+          &.get-involved,
+          &:nth-child(3) {}
+    
+          &.highlighted {}
+        }
+
+        /**
+         * Style
+         */
+
+         &> li:not(.highlighted):not(.muted) {
+          &> a {}
+         }
+
+         .sub-menu {
+           li {
+            a {}
+           }
+
+         }
+
+         .highlighted {
+           a {}
+         }
+        
+      }
+    }
+
+  }
+}
