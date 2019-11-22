@@ -473,8 +473,8 @@
             $origin: calc( 55% + #{$padding-calc} );
 
             /**
-            * Structure
-            */
+             * Structure
+             */
             height: rem-calc(182);
 
             /**
@@ -502,6 +502,22 @@
         */
         .page-content-header {}
 
+    }
+
+}
+
+/**
+ * IE-specific styling
+ */
+ _:-ms-lang(x), .page-content-header {
+
+    @include breakpoint(medium) {
+        .header-content {
+            .entry-title {
+                margin-bottom: - rem-calc(130);
+            }
+    
+        }
     }
 
 }

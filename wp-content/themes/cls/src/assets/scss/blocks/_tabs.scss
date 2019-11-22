@@ -379,17 +379,7 @@
 
         .wp-block-kadence-tab {
 
-            .wp-block-column {
-                
-                &:first-child {
-                    flex-basis: auto;
-                }
-
-                &:last-child {
-                    flex-basis: auto;
-                }
-            }
-
+            .wp-block-column {}
 
         }
      }
