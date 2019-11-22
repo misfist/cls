@@ -315,10 +315,23 @@ _:-ms-lang(x), .page-template-news-events {
         }
 
     }
+
+    .section-title {
+
+        .separator {
+            background-image: url('../images/separator-section-title.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 22px 36px; //sic
+            background-color: transparent;
+        }
+    }
+
         
     @include breakpoint(medium) {
 
         .section-posts {
+            margin-top: rem-calc(42) !important;
             
             article {
             
