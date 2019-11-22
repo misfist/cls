@@ -371,36 +371,68 @@ function themeReady() {
     /**
      * Sticky Nav
      */
-    const headerEl = document.querySelector('#masthead');
-    const headerElTop = headerEl.offsetTop;
+    // const headerEl = document.querySelector('#masthead');
+    // const headerElTop = headerEl.offsetTop;
 
-    function stickyNavigation() {
+    // function stickyNavigation() {
+    //     /**
+    //      * Only on medium or larger
+    //      * @see https://foundation.zurb.com/sites/docs/media-queries.html#javascript-reference
+    //      */
+    //     if(Foundation.MediaQuery.is('medium')) {
+    //         const shrinkOn = 200;
+
+    //         /** Stick Header */
+    //         // if (window.scrollY >= headerElTop) {
+    //         //     document.body.classList.add('is-fixed');
+    //         // } else {
+    //         //     document.body.style.paddingTop = 0;
+    //         //     document.body.classList.remove('is-fixed');
+    //         // }
+
+    //         /** Shrink Header */
+    //         if (window.scrollY > shrinkOn) {
+    //             document.body.classList.add("is-minimized");
+    //         } else {
+    //             document.body.classList.remove("is-minimized");
+    //         }
+    //     }
+    // }
+    // if(headerEl) {
+    //     window.addEventListener('scroll', stickyNavigation, false);
+    // }
+
+    var $headerEl = $('#masthead');
+
+    function shrinkNavigation() {
         /**
          * Only on medium or larger
          * @see https://foundation.zurb.com/sites/docs/media-queries.html#javascript-reference
          */
-        if(Foundation.MediaQuery.is('medium')) {
-            const shrinkOn = 200;
-
-            /** Stick Header */
-            // if (window.scrollY >= headerElTop) {
-            //     document.body.classList.add('is-fixed');
-            // } else {
-            //     document.body.style.paddingTop = 0;
-            //     document.body.classList.remove('is-fixed');
-            // }
+        if( Foundation.MediaQuery.is( 'medium' ) ) {
+            var shrinkOn = 200;
 
             /** Shrink Header */
-            if (window.scrollY > shrinkOn) {
-                document.body.classList.add("is-minimized");
+            if ( $(document).scrollTop() > shrinkOn) {
+                $('body').addClass('is-minimized');
             } else {
-                document.body.classList.remove("is-minimized");
+                $('body').removeClass('is-minimized');
             }
         }
     }
-    if(headerEl) {
-        window.addEventListener('scroll', stickyNavigation, false);
-    }
+    $(document).on( 'scroll', shrinkNavigation );
+
+    // $(document).on("scroll", function(){
+	// 	if
+    //   ($(document).scrollTop() > 100){
+	// 	  $("header").addClass("shrink");
+	// 	}
+	// 	else
+	// 	{
+	// 		$("header").removeClass("shrink");
+	// 	}
+	// });
+
 
     /**
      * Number Counter
