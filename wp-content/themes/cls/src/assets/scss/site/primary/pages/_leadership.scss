@@ -97,12 +97,13 @@
 
                     &:first-child {
                         @include xy-cell(51.5%, $gutters: 100, $gutter-type: padding, $gutter-position: right);
+                        flex-basis: auto;
                     }
 
                     &:last-child {
                         @include xy-cell(48.5%, $gutters: 100, $gutter-type: padding, $gutter-position: left);
+                        flex-basis: auto;
                         margin-left: 0;
-
                         border-left: 1px solid $medium-gray;
 
                         .wp-block-image {
@@ -152,4 +153,23 @@
         }
 
     }
+}
+
+/**
+ * IE-specific styling
+ */
+_:-ms-lang(x), .page-template-leadership {
+
+    @include breakpoint(medium) {
+        .content-body {
+            .wp-block-column {
+    
+                &:first-child {}
+    
+                &:last-child {}
+            }
+    
+        }
+    }
+
 }

@@ -298,8 +298,6 @@
             }
         }
 
-
-
         /* Content */
         .kt-tabs-content-wrap {
             padding-top: rem-calc(10);
@@ -372,3 +370,27 @@
     }
 
 }
+
+/**
+ * IE-specific styling
+ */
+ _:-ms-lang(x), .wp-block-kadence-tabs {
+     @include breakpoint(medium) {
+
+        .wp-block-kadence-tab {
+
+            .wp-block-column {
+                
+                &:first-child {
+                    flex-basis: auto;
+                }
+
+                &:last-child {
+                    flex-basis: auto;
+                }
+            }
+
+
+        }
+     }
+ }
