@@ -402,6 +402,10 @@ function themeReady() {
     //     window.addEventListener('scroll', stickyNavigation, false);
     // }
 
+    /**
+     * Minimize fixed header when scrolling down page.
+     * Converted to jQuery for IE-compatibility
+     */
     function shrinkNavigation() {
         /**
          * Only on medium or larger
