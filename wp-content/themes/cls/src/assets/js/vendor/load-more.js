@@ -7,8 +7,8 @@
 
 	console.log('load more loaded');
 
-	let postPage = 1;
-	let eventPage = 1;
+	let postPage = 2;
+	let eventPage = 2;
 
 	const postsList = document.querySelector( '.section-posts .posts-list' );
 	if( postsList ) {
@@ -19,7 +19,7 @@
 			event.preventDefault();
 
 			if( maxPages > postPage ) {
-				get_posts( { paged: postPage + 1 } );
+				get_posts( { paged: postPage } );
 			} else {
 				document.querySelector( '.js-load-more-posts' ).setAttribute( 'disabled', true );
 			}
@@ -37,7 +37,7 @@
 			event.preventDefault();
 
 			if( maxPages > eventPage ) {
-				get_events( { paged: eventPage + 1 } );
+				get_events( { paged: eventPage } );
 			} else {
 				document.querySelector( '.js-load-more-events' ).setAttribute( 'disabled', true );
 				console.log( 'there are no more' );
@@ -64,7 +64,7 @@
 		})
 		.success( function( response, textStatus, XMLHttpRequest ) {
 			postsList.insertAdjacentHTML( 'beforeend', response.content );
-			console.log( response );
+			// console.log( response );
 		})
 		.error( function( response ) {
 			//console.log('error', response);
@@ -101,7 +101,7 @@
 		})
 		.success( function( response, textStatus, XMLHttpRequest ) {
 			eventsList.insertAdjacentHTML( 'beforeend', response.content );
-			console.log( response );
+			// console.log( response );
 		})
 		.error( function( response ) {
 			//console.log('error', response);
@@ -113,7 +113,7 @@
 			} else {
 				document.querySelector( '.js-load-more-events' ).setAttribute( 'disabled', true );
 			}
-			console.log( 'complete', maxPages, eventPage, maxPages >= eventPage );
+			// console.log( 'complete', maxPages, eventPage, maxPages >= eventPage );
 		});
 
 	}
