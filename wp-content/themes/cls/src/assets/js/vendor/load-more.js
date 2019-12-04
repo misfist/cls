@@ -5,7 +5,7 @@
  */
 ( function($) {
 
-	console.log('load more loaded');
+	// console.log('load more loaded');
 
 	let postPage = 2;
 	let eventPage = 2;
@@ -73,13 +73,14 @@
 		})
 		.complete( function( response ) {
 			const maxPages = document.querySelector( '.js-load-more-posts' ).getAttribute( 'data-max-pages' );
-			if( maxPages > postPage ) {
-				postPage++;
-			} else {
+			postPage++;
+
+			// console.log( postPage, maxPages );
+
+			if( postPage >= maxPages  ) {
 				document.querySelector( '.js-load-more-posts' ).setAttribute( 'disabled', true );
+				document.querySelector( '.js-load-more-posts' ).setAttribute( 'aria-disabled', true );
 			}
-			
-			// console.log( maxPages > postPage );
 		});
 
 	}
@@ -110,12 +111,14 @@
 		})
 		.complete( function( response ) {
 			const maxPages = document.querySelector( '.js-load-more-events' ).getAttribute( 'data-max-pages' );
-			if( maxPages > eventPage ) {
-				eventPage++;
-			} else {
+			eventPage++;
+
+			// console.log( eventPage, maxPages );
+
+			if( eventPage >= maxPages ) {
 				document.querySelector( '.js-load-more-events' ).setAttribute( 'disabled', true );
+				document.querySelector( '.js-load-more-events' ).setAttribute( 'aria-disabled', true );
 			}
-			// console.log( 'complete', maxPages, eventPage, maxPages >= eventPage );
 		});
 
 	}
