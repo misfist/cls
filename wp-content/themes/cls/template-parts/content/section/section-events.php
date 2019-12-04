@@ -50,7 +50,7 @@ if ( $query->have_posts() ) : ?>
             endwhile; ?>
             </div><!-- .posts-list -->
             <div class="section-footer">
-                <button class="button js-load-more-events" data-posts-per-page="<?php echo intval( $args['posts_per_page'] ); ?>" data-max-pages="<?php echo intval( $query->max_num_pages ); ?>"<?php echo ( $paged >= $query->max_num_pages ) ? ' disabled' : ''; ?>><?php esc_html_e( 'Load More', 'cls' ); ?></button>
+                <button class="button js-load-more-events" data-posts-per-page="<?php echo intval( $args['posts_per_page'] ); ?>" data-max-pages="<?php echo intval( $query->max_num_pages ); ?>"<?php echo ( $paged >= $query->max_num_pages ) ? ' disabled="true" aria-disabled="true"' : ''; ?>><?php esc_html_e( 'Load More', 'cls' ); ?></button>
             </div>
         </div><!-- .inner-container -->
     </div><!-- .section-events -->

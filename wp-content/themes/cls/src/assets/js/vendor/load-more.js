@@ -22,6 +22,7 @@
 				get_posts( { paged: postPage } );
 			} else {
 				document.querySelector( '.js-load-more-posts' ).setAttribute( 'disabled', true );
+				document.querySelector( '.js-load-more-posts' ).setAttribute( 'aria-disabled', true );
 			}
 			
 		} );
@@ -40,6 +41,7 @@
 				get_events( { paged: eventPage } );
 			} else {
 				document.querySelector( '.js-load-more-events' ).setAttribute( 'disabled', true );
+				document.querySelector( '.js-load-more-events' ).setAttribute( 'aria-disabled', true );
 				console.log( 'there are no more' );
 			}
 		} );
