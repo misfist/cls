@@ -40,7 +40,7 @@ function site_functions_post_type_args( $args, $post_type ) {
  
     return $args;
 }
-add_filter( 'register_post_type_args', 'site_functions_post_type_args', 10, 2 );
+// add_filter( 'register_post_type_args', 'site_functions_post_type_args', 10, 2 );
 
 /**
  * Add REST API support to an already registered taxonomy
@@ -55,4 +55,4 @@ function site_functions_modify_taxonomy() {
         register_taxonomy( 'event-category', 'event', $taxonomy );
     }
 }
-add_action( 'init', 'site_functions_modify_taxonomy', 11 );
+// add_action( 'init', 'site_functions_modify_taxonomy', 11 );
