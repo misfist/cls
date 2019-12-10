@@ -16,10 +16,6 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/content/content', get_post_type() );
 
-		the_post_navigation( array(
-			'prev_text' => '&larr; %title',
-			'next_text' => '%title &rarr;',
-		) );
 
 	endwhile; // End of the loop.
 	?>
