@@ -8,7 +8,7 @@
  /**
  * Register Google Fonts
  */
-function gutenberg_starter_theme_fonts_url() {
+function cls_theme_fonts() {
 	$fonts_url = '';
 
 	/*
@@ -20,8 +20,8 @@ function gutenberg_starter_theme_fonts_url() {
 
 	if ( 'off' !== $raleway ) {
 		$font_families = array();
-		// $font_families[] = 'Raleway:400,600,700,800,900';
-		$font_families[] = 'Raleway:900';
+		$font_families[] = 'Raleway:400,600,700,800,900';
+		// $font_families[] = 'Raleway:900';
 
 		$query_args = array(
 			'family'  => urlencode( implode( '|', $font_families ) ),
@@ -52,7 +52,7 @@ function gutenberg_starter_theme_scripts() {
 		wp_enqueue_style( 'cls-style', get_template_directory_uri() . '/dist/assets/css/style.css' );
 	}
 
-	// wp_enqueue_style( 'cls-fonts', gutenberg_starter_theme_fonts_url(), null, null );
+	wp_enqueue_style( 'cls-fonts', cls_theme_fonts(), null, null );
 
 	// wp_enqueue_script( 'cls-navigation', get_template_directory_uri() . '/dist/js/navigation.js', array(), '20151215', true );
 
