@@ -14,6 +14,7 @@
         height: 0;
         bottom: 44px;
         padding: rem-calc(35) rem-calc(24);
+        z-index: -1;
     }
 
     &.is-open {
@@ -21,6 +22,7 @@
             height: calc(100% - 44px);
             opacity: 1;
             top: 0;
+            z-index: 1;
         }
     }
 
