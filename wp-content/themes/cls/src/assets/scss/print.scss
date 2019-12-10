@@ -36,7 +36,7 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 	body {
 		font: 13pt Georgia, "Times New Roman", Times, serif;
 		line-height: 1.3;
-		background: #fff !important;
+		background: rgb(3, 3, 3) !important;
 		color: #000;
 	}
 
@@ -124,7 +124,7 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 	.social-navigation,
 	.site-branding-container:before,
 	.entry .entry-title:before,
-	.entry-footer,
+	// .entry-footer,
 	.author-description:before,
 	.post-navigation,
 	.widget-area,
@@ -177,6 +177,25 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 			min-height: 0;
 			max-width: 100%;
 			margin-top: 1rem;
+		}
+	}
+
+	/* Home Twitter */
+	.ctf-tweets {
+		.ctf-author-box {
+			display: none;
+		}
+	}
+
+	/* Site Footer */
+	.site-footer .widget-area {
+		display: block;
+
+		.widget-column {
+			width: 100%;
+			margin-right: 0;
+			margin-left: 0;
+			border: none;
 		}
 	}
 

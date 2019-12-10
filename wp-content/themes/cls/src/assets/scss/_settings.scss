@@ -185,7 +185,8 @@ $breakpoints: (
   xlarge: 1320px,
   xxlarge: 1600px,
 );
-$print-breakpoint: large;
+$print-breakpoint: medium;
+// $print-breakpoint: large;
 $breakpoint-classes: (small medium large);
 $breakpoint-large: map-get($breakpoints, large );
 

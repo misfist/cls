@@ -52,6 +52,8 @@ function gutenberg_starter_theme_scripts() {
 		wp_enqueue_style( 'cls-style', get_template_directory_uri() . '/dist/assets/css/style.css' );
 	}
 
+	wp_enqueue_style( 'cls-print', get_template_directory_uri() . '/dist/assets/css/print.css' );
+
 	wp_enqueue_style( 'cls-fonts', cls_theme_fonts(), null, null );
 
 	// wp_enqueue_script( 'cls-navigation', get_template_directory_uri() . '/dist/js/navigation.js', array(), '20151215', true );
