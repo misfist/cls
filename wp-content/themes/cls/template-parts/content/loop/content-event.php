@@ -23,7 +23,44 @@ $class = ( eo_recurs() ) ? 'has-occurances fade-in' : 'fade-in' ;
 				the_post_thumbnail( 'event-flyer' );
 			endif; ?>
 		</div>
-		<?php if( eo_recurs() ) : ?>
+		<?php 
+		/** Manually-entered dates and locations */
+		if( function_exists( 'have_rows' ) && have_rows( 'dates_locations' ) ) : ?>
+			<div class="event-dates">
+				<table>
+					<thead>
+						<tr>
+						<?php
+						if( get_field( 'dates_locations_0_date' ) ) : ?>
+							<th><h4 class="event-dates-title"><?php esc_html_e( 'Dates', 'cls' ); ?></h4></th>
+						<?php endif; ?>
+						<?php if( get_field( 'dates_locations_0_location' ) ) : ?>
+							<th><h4 class="event-dates-title"><?php esc_html_e( 'Locations', 'cls' ); ?></h4></th>
+						<?php endif; ?>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						while ( have_rows( 'dates_locations' ) ) : the_row(); ?>
+							<tr>
+							<?php if( get_field( 'dates_locations_0_date' ) ) : ?>
+								<td><?php 
+									$date_string = get_sub_field( 'date' );
+									$date = DateTime::createFromFormat( 'Ymd', $date_string );
+									echo $date->format( get_option( 'date_format' ) ); ?></td>
+							<?php endif; ?>
+							<?php if( get_field( 'dates_locations_0_location' ) ) : ?>
+								<td><?php  the_sub_field( 'location' ); ?></td>
+							<?php endif; ?>
+							</tr>
+						<?php 
+						endwhile; ?>
+					</tbody>
+				</table>
+			</div><!-- .event-dates -->
+		<?php
+		/** Dynamic dates */
+		elseif( eo_recurs() ) : ?>
 			<?php
 			if( $occurrences = eo_get_the_occurrences_of( $post->ID ) ) : ?>
 				<div class="event-dates">
@@ -39,10 +76,10 @@ $class = ( eo_recurs() ) ? 'has-occurances fade-in' : 'fade-in' ;
 			<?php endif; ?>
 		<?php endif; ?>
 		<div class="entry-media-banner">
-			<?php if( eo_recurs() ) : ?>
+			<?php if( $hover_text = get_post_meta( $post->ID, 'link_text', true ) ) : ?>
+				<a href="#" class="js-hover"><span class="link-text"><?php esc_html_e( $hover_text, 'cls' ); ?></span><i class="icon triangle"></i></a>
+			<?php elseif( eo_recurs() ) : ?>
 				<a href="#" class="js-hover"><span class="link-text"><?php esc_html_e( 'Dates', 'cls' ); ?></span><i class="icon triangle"></i></a>
-			<?php else : ?>
-				<span class="link-text">No recurrances, so what goes?</span>
 			<?php endif; ?>
 		</div>
 	</div>
@@ -59,21 +96,7 @@ $class = ( eo_recurs() ) ? 'has-occurances fade-in' : 'fade-in' ;
 		<a href="<?php echo esc_url( get_permalink() ); ?>" class="read-more" rel="bookmark"><?php esc_html_e( 'Read More', 'cls' ); ?></a>
 	</footer><!-- .entry-footer -->
 	<?php
-	// $occurrences = eo_get_the_occurrences_of( $post->ID );
-	// if( $occurrences ) {
-	// 	echo '<pre>';
-	// 	var_dump( $occurrences );
-	// 	echo '</pre>';
-	// 	// echo '<ul>';
-	// 	// foreach( $occurrences as $occurrence) {
-	// 	// 	var_dump( $occurrence );
-	// 	// 	//  $start = eo_format_datetime( $occurrence['start'] , 'jS F ga' );
-	// 	// 	//  $end = eo_format_datetime( $occurrence['end'] , 'jS F ga' );
-	// 	// 	//  printf( '<li> This event starts on the %s and ends on the %s </li>', $start, $end );
-	// 	// 	//  echo eo_format_datetime( $include_date['start'], 'c' );
-	// 	// }
-	// 	// echo '</ul>';
-	// }
+
 	?>
 	
 </article><!-- #post-<?php the_ID(); ?> -->

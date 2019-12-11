@@ -77,6 +77,31 @@
 
         color: $white;
         transition: all .5s ease-in-out;
+
+        /* Displays as table when manually entered */
+        table,
+        thead, 
+        tbody, 
+        tfoot {
+            padding: 0;
+            margin: 0;
+            border: none;
+            background-color: transparent;
+            color: $white;
+
+            tr {
+                &:nth-child(2n) {
+                    background-color: transparent;
+                    color: $white;
+                }
+            }
+
+            th,
+            td {
+                padding: 0;
+                margin: 0;
+            }
+        }
     }
 
     .entry-media-banner {
@@ -113,9 +138,13 @@
         }
     }
 
-    .event-dates li {
-        font-size: rem-calc(15);
-        line-height: 22px;
+    .event-dates {
+        li,
+        td,
+        th {
+            font-size: rem-calc(15);
+            line-height: 22px;
+        }
     }
 
     .event-dates-title {
