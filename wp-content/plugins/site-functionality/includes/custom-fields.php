@@ -73,12 +73,123 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 		'active' => true,
 		'description' => '',
 	));
+	acf_add_local_field_group( array(
+		'key' => 'group_5df12e5fc5976',
+		'title' => __( 'Date & Location Details', 'site-functionality' ),
+		'fields' => array(
+			array(
+				'key' => 'field_5df12e68d97a2',
+				'label' => __( 'Hover Text', 'site-functionality' ),
+				'name' => 'link_text',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'acfe_permissions' => '',
+				'default_value' => '',
+				'placeholder' => __( 'Dates & Locations', 'site-functionality' ),
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+			array(
+				'key' => 'field_5df12f3cd97a3',
+				'label' => __( 'Dates & Locations', 'site-functionality' ),
+				'name' => 'dates_locations',
+				'type' => 'repeater',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'acfe_permissions' => '',
+				'acfe_repeater_stylised_button' => 0,
+				'collapsed' => 'field_5df12f5ed97a4',
+				'min' => 1,
+				'max' => 6,
+				'layout' => 'table',
+				'button_label' => __( 'Date & Location', 'site-functionality' ),
+				'sub_fields' => array(
+					array(
+						'key' => 'field_5df12f5ed97a4',
+						'label' => __( 'Date', 'site-functionality' ),
+						'name' => 'date',
+						'type' => 'date_picker',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'acfe_permissions' => '',
+						'display_format' => 'F j, Y',
+						'return_format' => 'Ymd',
+						'first_day' => 1,
+					),
+					array(
+						'key' => 'field_5df13017d97a5',
+						'label' => __( 'Location', 'site-functionality' ),
+						'name' => 'location',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'acfe_permissions' => '',
+						'default_value' => '',
+						'placeholder' => __( 'Location', 'site-functionality' ),
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+				),
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'event',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'left',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => __( 'Details that appear on hover on the News & Events page.', 'site-functionality' ),
+		'acfe_display_title' => '',
+		'acfe_autosync' => '',
+		'acfe_permissions' => '',
+		'acfe_form' => 0,
+		'acfe_meta' => '',
+		'acfe_note' => __( 'Details that appear on hover on the News & Events page.', 'site-functionality' ),
+	));
+	
 
 	/**
 	 * Home Page Fields
 	 * Appears only on Home Page
 	 */
-	acf_add_local_field_group(array(
+	acf_add_local_field_group( array(
 		'key' 			=> 'group_5dc7684d79aaa',
 		'title' 		=> __( 'Home Sections', 'site-functionality' ),
 		'fields' 		=> array(
