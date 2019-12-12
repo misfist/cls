@@ -18,7 +18,7 @@
 			</div>
 			<?php if( $file = get_post_meta( get_the_ID(), 'intro_link_url', true ) ) : ?>
 				<div class="intro-button">
-					<a href="<?php echo wp_get_attachment_url( $file ); ?>" class="button accent large"><?php echo ( $link_text = get_post_meta( get_the_ID(), 'intro_link_text', true ) ) ? esc_html_e( $link_text ) : esc_html_e( 'Download Locations' ) ; ?></a>
+					<a href="<?php echo wp_get_attachment_url( $file ); ?>" class="button accent large" target="_blank"><?php echo ( $link_text = get_post_meta( get_the_ID(), 'intro_link_text', true ) ) ? esc_html_e( $link_text ) : esc_html_e( 'Download Locations' ) ; ?></a>
 				</div>
 			<?php endif; ?>
 		</div>
