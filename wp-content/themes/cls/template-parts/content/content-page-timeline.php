@@ -13,9 +13,16 @@
 	<?php get_template_part( 'template-parts/content/page-header/page-header' ); ?>
 
 	<div class="entry-content">
+	
 		<?php 
-			cls_render_block( 'core/heading' );
+			if( $content_heading = get_post_meta( $post->ID, 'content_heading', true ) ) : ?>
 
+				<h2 class="entry-title"><?php echo apply_filters( 'the_title', $content_heading ); ?></h2>
+
+			<?php 
+			endif; ?>
+
+			<?php 
 			get_template_part( 'template-parts/component/component', 'timeline' );
 		?>
 	</div><!-- .entry-content -->
