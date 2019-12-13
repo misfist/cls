@@ -113,7 +113,7 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 				'acfe_permissions' => '',
 				'acfe_repeater_stylised_button' => 0,
 				'collapsed' => 'field_5df12f5ed97a4',
-				'min' => 1,
+				'min' => 0,
 				'max' => 6,
 				'layout' => 'table',
 				'button_label' => __( 'Date & Location', 'site-functionality' ),
