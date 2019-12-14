@@ -425,6 +425,18 @@ function themeReady() {
     $(document).on( 'scroll', shrinkNavigation );
 
     /**
+     * Site Notice
+     * On click remove `.has-site-notice` from body
+     */
+    var $site_notice = $('.site-notice');
+    if( $site_notice ) {
+        var $close_button = $('.site-notice .close-button');
+        $close_button.click(function(event) {
+            $('body').removeClass('has-site-notice');
+        });
+    }
+
+    /**
      * Number Counter
      * Use CountUp.js to count up numbers
      * @see https://inorganik.github.io/countUp.js/

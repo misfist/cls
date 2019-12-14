@@ -1,0 +1,23 @@
+.site-notice {
+    margin-bottom: 0;
+    padding-left: rem-calc(20);
+    background-color: map-get($button-palette, accent);
+    color: $white;
+
+    &:hover {
+        background-color: map-get($hover-palette, accent);
+    }
+
+    a {
+        color: $white;
+        text-decoration: underline;
+    }
+
+    .close-button {
+        color: $white;
+    }
+
+    @include breakpoint(large) {
+
+    }
+}

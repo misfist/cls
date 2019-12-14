@@ -22,8 +22,14 @@
 <body <?php body_class( 'is-fixed' ); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cls' ); ?></a>
-		<header id="masthead" class="site-header">
-			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 
-			<?php get_template_part( 'template-parts/header/site', 'navigation' ); ?>
-		</header><!-- #masthead -->
+	<header id="masthead" class="site-header">
+
+		<?php if( get_theme_mod( 'notice_text' ) ) : ?>
+			<?php get_template_part( 'template-parts/header/site', 'notice' ); ?>
+		<?php endif; ?>
+
+		<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+
+		<?php get_template_part( 'template-parts/header/site', 'navigation' ); ?>
+	</header><!-- #masthead -->

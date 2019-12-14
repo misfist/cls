@@ -20,10 +20,12 @@ PATHS:
   assets:
     - "src/assets/**/*"
     - "!src/assets/{images,images/**/*,js,js/**/*,scss,scss/**/*}"
+    - "src/assets/js/customizer/*"
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
     - "node_modules/foundation-sites/scss"
     - "node_modules/motion-ui/src"
+    - "node_modules/aos/src/sass"
   # Paths to JavaScript entry points for webpack to bundle modules
   entries:
     - "src/assets/js/app.js"

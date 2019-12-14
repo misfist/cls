@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ * Branding
  */
 ?>
 <div class="site-branding">

@@ -21,6 +21,9 @@ function gutenberg_starter_theme_body_classes( $classes ) {
 			$classes[] = $post->post_type . '-' . $post->post_name;
 		}
 	}
+	if( get_theme_mod( 'notice_text' ) ) {
+		$classes[] = 'has-site-notice';
+	}
 	return $classes;
 }
 add_filter( 'body_class', 'gutenberg_starter_theme_body_classes' );
