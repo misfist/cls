@@ -1,6 +1,6 @@
 .site-notice {
     margin-bottom: 0;
-    padding-left: rem-calc(20);
+    padding: 0 rem-calc(20);
     background-color: map-get($button-palette, accent);
     color: $white;
 
@@ -13,8 +13,25 @@
         text-decoration: underline;
     }
 
+    p {
+        padding-right: rem-calc(60);
+    }
+
     .close-button {
+        right: rem-calc(20);
         color: $white;
+        height: rem-calc(16);
+        width: rem-calc(16);
+
+        .icon {
+            height: rem-calc(16);
+            width: rem-calc(16);
+            background-image: url('..//images/close-button.svg');
+            background-size: rem-calc(16);
+            background-position: center;
+            background-repeat: no-repeat;
+            display: inline-block;
+        }
     }
 
     @include breakpoint(large) {
