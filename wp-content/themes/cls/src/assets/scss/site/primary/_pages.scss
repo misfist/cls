@@ -120,7 +120,6 @@
  * Default Styling
  */
 .page-template-default,
-.page-template-narrow,
 .page-template-width-wide,
 .post-template-default,
 .search-results {
@@ -160,6 +159,11 @@
                 margin-top: rem-calc(23); //sic
             }
 
+            a {
+                color: $body-font-color;
+                text-decoration: underline;
+            }
+
             ul {
                 list-style: none;
                 margin-left: 0;
@@ -195,6 +199,13 @@
 
       }
 }
+
+/**
+ * Default Styling
+ */
+ .page-template-default {
+
+ }
 
 /**
  * Custom Templates
