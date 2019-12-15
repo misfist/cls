@@ -13,6 +13,7 @@ import webpack2      from 'webpack';
 import named         from 'vinyl-named';
 import log           from 'fancy-log';
 import colors        from 'ansi-colors';
+import purify        from 'gulp-purifycss';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -82,14 +83,15 @@ function sass() {
     .pipe($.sass({
       includePaths: PATHS.sass
     })
-      .on('error', $.sass.logError))
+    .on('error', $.sass.logError))
     .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
 
-    .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
+    .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie10' })))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev()))
+    // .pipe(purify(['./src/assets/js/**/*.js', './**/*.php']))
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))
     .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev.manifest()))
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))

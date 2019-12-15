@@ -15,9 +15,15 @@
 
     p {
         padding-right: rem-calc(60);
+        margin-bottom: 0;
+    }
+
+    p + p {
+        margin-top: 1rem;
     }
 
     .close-button {
+        top: rem-calc(20);
         right: rem-calc(20);
         color: $white;
         height: rem-calc(16);

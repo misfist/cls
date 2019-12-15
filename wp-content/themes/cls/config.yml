@@ -20,7 +20,6 @@ PATHS:
   assets:
     - "src/assets/**/*"
     - "!src/assets/{images,images/**/*,js,js/**/*,scss,scss/**/*}"
-    - "src/assets/js/customizer/*"
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
     - "node_modules/foundation-sites/scss"
@@ -29,6 +28,7 @@ PATHS:
   # Paths to JavaScript entry points for webpack to bundle modules
   entries:
     - "src/assets/js/app.js"
+    - "src/assets/js/customizer.js"
   # Paths for the package task to include/exclude in .zip archive
   package:
     - "**/*"

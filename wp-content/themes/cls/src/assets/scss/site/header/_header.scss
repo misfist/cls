@@ -84,7 +84,7 @@ $notice-height: rem-calc(78);
         padding-left: rem-calc(20);
         justify-content: space-between;
         height:  $header-height;
-        transition: all 0.3s ease;
+        transition: height 0.2s ease-in-out;
     }
 
     .has-site-notice {
@@ -186,7 +186,9 @@ $notice-height: rem-calc(78);
     }
 
     .site-notice {
-        padding-left: rem-calc(130)
+        p {
+            padding-left: rem-calc(130);
+        }
     }
 
 }
