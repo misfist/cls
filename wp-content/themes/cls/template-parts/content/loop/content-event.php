@@ -13,6 +13,7 @@ if( !function_exists( 'eo_get_the_occurrences_of' ) ) {
 }
 
 $class = ( eo_recurs() ) ? 'has-occurances fade-in' : 'fade-in' ;
+$date_format = 'n/j/Y';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?> data-animation-in="fade-in">
 
@@ -47,7 +48,7 @@ $class = ( eo_recurs() ) ? 'has-occurances fade-in' : 'fade-in' ;
 								<td><?php 
 									$date_string = get_sub_field( 'date' );
 									$date = DateTime::createFromFormat( 'Ymd', $date_string );
-									echo $date->format( get_option( 'date_format' ) ); ?></td>
+									echo $date->format( $date_format ); ?></td>
 							<?php endif; ?>
 							<?php if( get_field( 'dates_locations_0_location' ) ) : ?>
 								<td><?php  the_sub_field( 'location' ); ?></td>
@@ -69,7 +70,7 @@ $class = ( eo_recurs() ) ? 'has-occurances fade-in' : 'fade-in' ;
 						<?php
 						$limit = 6;
 						foreach( $occurrences as $occurrence ) : ?>
-							<li><?php echo eo_format_datetime( $occurrence['start'], get_option( 'date_format' ) ); ?></li>
+							<li><?php echo eo_format_datetime( $occurrence['start'], $date_format ); ?></li>
 						<?php endforeach; ?>
 					</ul>
 				</div>
