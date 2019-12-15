@@ -3698,7 +3698,8 @@ body.modal-open, body.mobile-menu-open {
     .main-navigation ul ul a {
       color: #000; }
   .main-navigation .muted a {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
+    font-weight: 700;
     color: #1B3E70;
     text-transform: uppercase; }
   .main-navigation .highlighted a {
@@ -4170,7 +4171,6 @@ a {
  * Default Styling
  */
 .page-template-default,
-.page-template-narrow,
 .page-template-width-wide,
 .post-template-default,
 .search-results {
@@ -4178,14 +4178,12 @@ a {
       * Style
       */ }
   .page-template-default .site-main .entry-content,
-  .page-template-narrow .site-main .entry-content,
   .page-template-width-wide .site-main .entry-content,
   .post-template-default .site-main .entry-content,
   .search-results .site-main .entry-content {
     font-size: 1rem;
     line-height: 1.3125rem; }
     .page-template-default .site-main .entry-content h2,
-    .page-template-narrow .site-main .entry-content h2,
     .page-template-width-wide .site-main .entry-content h2,
     .post-template-default .site-main .entry-content h2,
     .search-results .site-main .entry-content h2 {
@@ -4194,7 +4192,6 @@ a {
       line-height: 1.9375rem;
       color: #1B3E70; }
     .page-template-default .site-main .entry-content h3,
-    .page-template-narrow .site-main .entry-content h3,
     .page-template-width-wide .site-main .entry-content h3,
     .post-template-default .site-main .entry-content h3,
     .search-results .site-main .entry-content h3 {
@@ -4204,26 +4201,28 @@ a {
       line-height: 1.3125rem;
       color: #1B3E70; }
     .page-template-default .site-main .entry-content *,
-    .page-template-narrow .site-main .entry-content *,
     .page-template-width-wide .site-main .entry-content *,
     .post-template-default .site-main .entry-content *,
     .search-results .site-main .entry-content * {
       font-size: 1rem;
       line-height: 1.3125rem; }
     .page-template-default .site-main .entry-content p,
-    .page-template-narrow .site-main .entry-content p,
     .page-template-width-wide .site-main .entry-content p,
     .post-template-default .site-main .entry-content p,
     .search-results .site-main .entry-content p {
       line-height: 1.3125rem; }
     .page-template-default .site-main .entry-content p + h3,
-    .page-template-narrow .site-main .entry-content p + h3,
     .page-template-width-wide .site-main .entry-content p + h3,
     .post-template-default .site-main .entry-content p + h3,
     .search-results .site-main .entry-content p + h3 {
       margin-top: 1.4375rem; }
+    .page-template-default .site-main .entry-content a,
+    .page-template-width-wide .site-main .entry-content a,
+    .post-template-default .site-main .entry-content a,
+    .search-results .site-main .entry-content a {
+      color: #000;
+      text-decoration: underline; }
     .page-template-default .site-main .entry-content ul,
-    .page-template-narrow .site-main .entry-content ul,
     .page-template-width-wide .site-main .entry-content ul,
     .post-template-default .site-main .entry-content ul,
     .search-results .site-main .entry-content ul {
@@ -4231,19 +4230,16 @@ a {
       margin-left: 0;
       margin-bottom: 3rem; }
     .page-template-default .site-main .entry-content li,
-    .page-template-narrow .site-main .entry-content li,
     .page-template-width-wide .site-main .entry-content li,
     .post-template-default .site-main .entry-content li,
     .search-results .site-main .entry-content li {
       color: #3d3d3d; }
     .page-template-default .site-main .entry-content li + li,
-    .page-template-narrow .site-main .entry-content li + li,
     .page-template-width-wide .site-main .entry-content li + li,
     .post-template-default .site-main .entry-content li + li,
     .search-results .site-main .entry-content li + li {
       margin-top: 1.75rem; }
     .page-template-default .site-main .entry-content .wp-block-image img,
-    .page-template-narrow .site-main .entry-content .wp-block-image img,
     .page-template-width-wide .site-main .entry-content .wp-block-image img,
     .post-template-default .site-main .entry-content .wp-block-image img,
     .search-results .site-main .entry-content .wp-block-image img {
@@ -4253,7 +4249,6 @@ a {
       object-fit: cover; }
   @media print, screen and (min-width: 58.375em) {
     .page-template-default,
-    .page-template-narrow,
     .page-template-width-wide,
     .post-template-default,
     .search-results {
@@ -8042,6 +8037,15 @@ _:-ms-lang(x), .wp-block-cover.hero {
       .entry-media-wrapper .event-dates tfoot td {
         padding: 0;
         margin: 0; }
+        .entry-media-wrapper .event-dates table th:nth-child(2n),
+        .entry-media-wrapper .event-dates table td:nth-child(2n),
+        .entry-media-wrapper .event-dates thead th:nth-child(2n),
+        .entry-media-wrapper .event-dates thead td:nth-child(2n),
+        .entry-media-wrapper .event-dates tbody th:nth-child(2n),
+        .entry-media-wrapper .event-dates tbody td:nth-child(2n),
+        .entry-media-wrapper .event-dates tfoot th:nth-child(2n),
+        .entry-media-wrapper .event-dates tfoot td:nth-child(2n) {
+          padding-left: 1rem; }
   .entry-media-wrapper .entry-media-banner {
     padding-right: 1.5625rem;
     padding-left: 1.5625rem;

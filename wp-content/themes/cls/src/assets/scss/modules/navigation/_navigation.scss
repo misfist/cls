@@ -38,7 +38,8 @@
   /* Menu item with class muted - used for En Espanol */
   .muted {
     a {
-      font-size: rem-calc(13); //sic
+      font-size: rem-calc(14);
+      font-weight: $font-weight-bold;
       color: $anchor-color;
       text-transform: uppercase;
     }
