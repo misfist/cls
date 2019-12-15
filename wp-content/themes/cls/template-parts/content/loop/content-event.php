@@ -13,7 +13,7 @@ if( !function_exists( 'eo_get_the_occurrences_of' ) ) {
 }
 
 $class = ( eo_recurs() ) ? 'has-occurances fade-in' : 'fade-in' ;
-$date_format = 'n/j/Y';
+$date_format = 'n/j/y'; // format: 1/13/20
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?> data-animation-in="fade-in">
 
