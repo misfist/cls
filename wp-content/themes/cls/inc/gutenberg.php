@@ -13,6 +13,12 @@ function cls_exclude_from_gutenberg( $id = false ) {
 
 	$excluded_templates = array(
 		'page-templates/front-page.php',
+		'page-templates/history-timeline.php',
+		'page-templates/landing-page-get-help.php',
+		'page-templates/landing-page.php',
+		'page-templates/leadership.php',
+		'page-templates/locations.php',
+		'page-templates/news-events.php'
 	);
 
 	$excluded_ids = array(
