@@ -162,6 +162,10 @@
             a {
                 color: $body-font-color;
                 text-decoration: underline;
+
+                &:hover {
+                    color: $hover-secondary;
+                }
             }
 
             ul {
