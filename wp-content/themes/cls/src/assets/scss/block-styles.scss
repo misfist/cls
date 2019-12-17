@@ -1,0 +1,21 @@
+@import 'settings';
+
+@import 'utilities/util';
+
+.is-style-clipped {
+	@include clipped-photo;
+}
+
+.is-style-clipped-top {
+	@include clipped-photo($corner: top-right);
+}
+
+@include breakpoint( medium ) {
+	.is-style-clipped {
+		@include clipped-photo($size: medium);
+	}
+
+	.is-style-clipped-top {
+		@include clipped-photo($size: medium, $corner: top-right);
+	}
+}

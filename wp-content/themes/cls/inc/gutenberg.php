@@ -51,3 +51,27 @@ function cls_disable_gutenberg( $can_edit, $post_type ) {
 }
 add_filter( 'gutenberg_can_edit_post_type', 'cls_disable_gutenberg', 10, 2 );
 add_filter( 'use_block_editor_for_post_type', 'cls_disable_gutenberg', 10, 2 );
+
+/**
+ * Enqueue Block Styles Javascript
+ */
+function cls_enqueue_block_editor_assets() {
+	wp_enqueue_script(
+		'cls-block-styles', 
+		get_template_directory_uri() . '/dist/assets/js/block-styles.js', 
+		array( 'wp-blocks', 'wp-dom' ), 
+		filemtime( get_stylesheet_directory() . '/dist/assets/js/block-styles.js' ),
+		true
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'cls_enqueue_block_editor_assets' );
+
+/**
+ * Enqueue Block Styles Stylesheet
+ */
+function cls_enqueue_block_assets() {
+	wp_enqueue_style( 'cls-block-styles',
+		get_template_directory_uri() . '/dist/assets/css/block-styles.css'
+	);
+}
+add_action( 'enqueue_block_assets', 'cls_enqueue_block_assets' );

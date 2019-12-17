@@ -5,7 +5,6 @@
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
-
 wp.domReady( () => {
 
 	wp.blocks.registerBlockStyle( 'core/image', [ 
@@ -17,11 +16,18 @@ wp.domReady( () => {
 		{
 			name: 'clipped',
 			label: 'Clipped Corner - Bottom',
+			isDefault: false,
         },
         {
 			name: 'clipped-top',
 			label: 'Clipped Corner - Top',
+			isDefault: false,
 		}
 	]);
+
+	wp.blocks.unregisterBlockStyle(
+		'core/image',
+		[ 'circle-mask' ]
+	);
 } );
 
