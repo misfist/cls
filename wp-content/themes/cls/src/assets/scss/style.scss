@@ -3,6 +3,7 @@
 
 @import 'settings';
 @import 'foundation';
+@import '../js/vendor/aos/src/sass/aos';
 // @import 'motion-ui';
 
 @include foundation-global-styles;

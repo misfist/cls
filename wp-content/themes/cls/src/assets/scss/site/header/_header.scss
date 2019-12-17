@@ -7,6 +7,7 @@
     z-index: 500;
     background-color: $white;
 
+     /* Optional Site Notice/Announcement */
     .site-notice {
         width: 100%;
         display: flex;
@@ -45,7 +46,8 @@
           width: auto;
         }
     }
-
+    
+    /* Optional Site Notice/Announcement */
     &.has-site-notice {
         .site-notice {
             height: $notice-height;
@@ -66,6 +68,7 @@
         margin-top: $header-height;
     }
 
+     /* Optional Site Notice/Announcement */
     &.has-site-notice {
         .site-main {
             margin-top: calc(#{$mobile-header-height} + #{$notice-height});
@@ -87,14 +90,16 @@ $notice-height: rem-calc(78);
         transition: height 0.2s ease-in-out;
     }
 
+    /* Optional Site Notice/Announcement */
     .has-site-notice {
-        .site-notice {
-            height: $notice-height;
-            @include fullwidth;
-            padding-left: rem-calc(20);
-        }
         .site-header {
             height:  calc(#{$header-height} + #{$notice-height});
+        }
+        
+        .site-notice {
+            height: $notice-height;
+            width: 100vw;
+            margin-left: - rem-calc(20);
         }
     }
 
@@ -122,6 +127,8 @@ $notice-height: rem-calc(78);
         .site-main {
             margin-top: $header-height;
         }
+
+         /* Optional Site Notice/Announcement */
         &.has-site-notice {
             .site-main {
                 margin-top: calc(#{$header-height} + #{$notice-height});
@@ -150,6 +157,8 @@ $notice-height: rem-calc(78);
                 }
             }
         }
+
+         /* Optional Site Notice/Announcement */
         &.has-site-notice {
             .site-header {
                 height: calc(#{$minimized-height} + #{$notice-height});  
@@ -185,6 +194,7 @@ $notice-height: rem-calc(78);
         margin-left: rem-calc(130);
     }
 
+     /* Optional Site Notice/Announcement */
     .site-notice {
         p {
             padding-left: rem-calc(130);

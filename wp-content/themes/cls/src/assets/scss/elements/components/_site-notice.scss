@@ -40,7 +40,5 @@
         }
     }
 
-    @include breakpoint(large) {
-
-    }
+    @include breakpoint(large) {}
 }
