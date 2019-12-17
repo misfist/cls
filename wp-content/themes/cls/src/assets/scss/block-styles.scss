@@ -2,6 +2,9 @@
 
 @import 'utilities/util';
 
+/**
+ * Image Styles
+ */
 .is-style-clipped {
 	@include clipped-photo;
 }
@@ -17,5 +20,19 @@
 
 	.is-style-clipped-top {
 		@include clipped-photo($size: medium, $corner: top-right);
+	}
+}
+
+/**
+ * List Styles
+ */
+.is-style-bullets {
+	list-style: initial !important;
+	margin-left: 1rem !important;
+	
+	li {}
+
+	li + li {
+		margin-top: .5rem !important;
 	}
 }
