@@ -75,6 +75,13 @@ function copy() {
     .pipe(gulp.dest(PATHS.dist + '/assets'));
 }
 
+// Copy files out of the assets folder
+// This task is for js that shouldn't be bundled
+function copyCustomJS() {
+  return gulp.src(PATHS.custom)
+    .pipe(gulp.dest(PATHS.dist + '/assets/js'));
+}
+
 // Compile Sass into CSS
 // In production, the CSS is compressed
 function sass() {
@@ -238,6 +245,7 @@ function reload(done) {
 
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
+  gulp.watch(PATHS.custom, copyCustomJS, reload);
   gulp.watch(PATHS.assets, copy);
   gulp.watch('src/assets/scss/**/*.scss', sass)
     .on('change', path => log('File ' + colors.bold(colors.magenta(path)) + ' changed.'))

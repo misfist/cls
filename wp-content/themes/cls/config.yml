@@ -30,6 +30,8 @@ PATHS:
     - "src/assets/js/app.js"
     - "src/assets/js/customizer.js"
     - "src/assets/js/block-styles.js"
+  custom:
+    - "src/assets/js/vendor/load-more.js"
   # Paths for the package task to include/exclude in .zip archive
   package:
     - "**/*"
