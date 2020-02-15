@@ -36,9 +36,10 @@
 
      /**
       * Serve different background image to mobile
+      * This has been moved to inline css so that we can upload a different for mobile
       */
      @include breakpoint(small only) {
-        background-image: url('../images/hero-bg-mobile.jpg') !important;
+        // background-image: url('../images/hero-bg-mobile.jpg') !important;
      }
 
      .wp-block-cover__inner-container {
