@@ -21,7 +21,7 @@
     */
     if( is_page_template( 'page-templates/news-events.php' ) ) {
       wp_deregister_script( 'jquery-slim' );
-      wp_enqueue_script( 'cls-load-more', get_stylesheet_directory_uri() . '/src/assets/js/vendor/load-more.js', array( 'jquery' ), null, true );
+      wp_enqueue_script( 'cls-load-more', get_stylesheet_directory_uri() . '/dist/assets/js/load-more.js', array( 'jquery' ), null, true );
 
       wp_localize_script( 'cls-load-more', 'clsLoadMore',
         array(
@@ -122,12 +122,12 @@ function cls_load_more_events() {
 
     $args = array(
         'post_type'              => array( 'event' ),
+        'post_status'            => array( 'publish' ),
         'nopaging'               => false,
-        'numberposts'            => 3,
         'posts_per_page'         => 3,
         'suppress_filters'       => false,
-        'group_events_by'        => 'series',
-        'post_status'            => array( 'publish' ),
+        'group_events_by'        => 'series', //Group recurrent events
+        'event_start_after'      => 'today',
     );
 
     if( $_POST['args']['paged'] ) {
@@ -166,12 +166,3 @@ function cls_load_more_events() {
   }
   add_action( 'wp_ajax_do_load_more_events', 'cls_load_more_events' ); // part after `wp_ajax_` corresponds to action called in JS
   add_action( 'wp_ajax_nopriv_do_load_more_events', 'cls_load_more_events' ); // part after `wp_ajax_nopriv_` corresponds to action called in JS
-
-
-//   $args = array(
-// 	'post_type'              => array( 'event' ),
-// 	'nopaging'               => false,
-//     'posts_per_page'         => 3,
-//     'suppress_filters'       => false,
-//     'group_events_by'        => 'series'
-// );
