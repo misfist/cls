@@ -23,11 +23,9 @@ if ( $query->have_posts() ) : ?>
                 <?php
                 echo sprintf( '
                     <h2 class="section-title">%s <span class="separator"></span></h2>
-                    <div class="section-subtitle">%s %s</div>
-                    ',
-                    esc_attr_x( 'News', 'cls' ),
-                    get_bloginfo( 'name' ),
-                    esc_attr_x( 'in the news', 'cls' )
+                    <div class="section-subtitle">%s</div>',
+                    get_post_meta( $post->ID, 'section_title_news', true ),
+                    get_post_meta( $post->ID, 'section_subheading_news', true )
                 );
                 ?>
             </header><!-- .section-header -->

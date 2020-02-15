@@ -819,17 +819,17 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 	));
 
 	/**
-	 * Featured Event
+	 * News & Events Page
 	 * Appears only on News & Events
 	 */
 	acf_add_local_field_group(array(
-		'key' => 'group_5dc77eb8e5e4a',
-		'title' => __( 'Event Details', 'site-functionality' ),
-		'fields' => array(
+		'key' 		=> 'group_5e4838759643d',
+		'title' 	=> __( 'News Details', 'site-functionality' ),
+		'fields' 	=> array(
 			array(
-				'key' => 'field_5e46e04ab5a5d',
+				'key' => 'field_5e483875ad023',
 				'label' => __( 'Section Title', 'site-functionality' ),
-				'name' => 'section_title',
+				'name' => 'section_title_news',
 				'type' => 'text',
 				'instructions' => '',
 				'required' => 0,
@@ -840,16 +840,91 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 					'id' => '',
 				),
 				'acfe_permissions' => '',
-				'default_value' => 'Events',
+				'default_value' => __( 'News', 'site-functionality' ),
 				'placeholder' => '',
 				'prepend' => '',
 				'append' => '',
 				'maxlength' => '',
 			),
 			array(
-				'key' 	=> 'field_5e46dc19a27a4',
+				'key' => 'field_5e483875adcea',
 				'label' => __( 'Subheading', 'site-functionality' ),
-				'name' 	=> 'section_subheading',
+				'name' => 'section_subheading_news',
+				'type' => 'wysiwyg',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'acfe_permissions' => '',
+				'default_value' => __( 'Connecticut Legal Services in the news', 'site-functionality' ),
+				'tabs' => 'all',
+				'toolbar' => 'basic',
+				'media_upload' => 0,
+				'delay' => 0,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/news-events.php',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'acf_after_title',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => array(
+			0 => 'the_content',
+		),
+		'active' => true,
+		'description' => '',
+		'acfe_display_title' => '',
+		'acfe_autosync' => array(
+			0 => 'php',
+		),
+		'acfe_permissions' => '',
+		'acfe_form' => 0,
+		'acfe_meta' => '',
+		'acfe_note' => '',
+	));
+
+
+	acf_add_local_field_group( array(
+		'key' 		=> 'group_5dc77eb8e5e4a',
+		'title' 	=> __( 'Event Details', 'site-functionality' ),
+		'fields' 	=> array(
+			array(
+				'key' => 'field_section_title_events',
+				'label' => __( 'Section Title', 'site-functionality' ),
+				'name' => 'section_title_events',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'acfe_permissions' => '',
+				'default_value' => __( 'Events', 'site-functionality' ),
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+			array(
+				'key' 	=> 'field_section_subheading_events',
+				'label' => __( 'Subheading', 'site-functionality' ),
+				'name' 	=> 'section_subheading_events',
 				'type' 	=> 'wysiwyg',
 				'instructions' => '',
 				'required' => 0,
@@ -1251,16 +1326,16 @@ if( function_exists( 'acf_add_local_field_group' ) ) {
 				),
 			),
 		),
-		'menu_order' => 0,
-		'position' => 'acf_after_title',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => array(
+		'menu_order' 				=> 5,
+		'position' 					=> 'acf_after_title',
+		'style' 					=> 'default',
+		'label_placement' 			=> 'top',
+		'instruction_placement' 	=> 'label',
+		'hide_on_screen' 			=> array(
 			0 => 'the_content',
 		),
-		'active' => true,
-		'description' => '',
+		'active' 					=> true,
+		'description' 				=> '',
 	));
 
 
