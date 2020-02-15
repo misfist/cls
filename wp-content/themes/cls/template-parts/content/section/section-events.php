@@ -32,10 +32,9 @@ if ( $query->have_posts() ) : ?>
                 <?php
                 echo sprintf( '
                     <h2 class="section-title">%s <span class="separator"></span></h2>
-                    <div class="section-subtitle">%s</div>
-                    ',
-                    esc_attr_x( 'Events', 'cls' ),
-                    esc_attr_x( 'CLS can help you know your rights and how to enforce those rights.  Please come to one of our free events and let us help you.', 'cls' )
+                    <div class="section-subtitle">%s</div>',
+                    get_post_meta( $post->ID, 'section_title', true ),
+                    get_post_meta( $post->ID, 'section_subheading', true )
                 );
                 ?>
             </header>
