@@ -468,13 +468,14 @@ function themeReady() {
             }
         };
         const observer = new MutationObserver( mutationObserverCallback );
-        observer.observe( targetNode, {
+        if ( targetNode && observer  ) {
+            observer.observe(targetNode, {
             attributes: false,
             childList: true,
             subtree: false
-        } );
+            } );
+        }
     }
-
 
     /**
      * CTA Animation
@@ -510,8 +511,8 @@ function themeReady() {
         AOS.init({
             once: true,
             duration: 1000,
-        });    
+        }); 
     }
-
+    
 }
 document.addEventListener( "DOMContentLoaded", themeReady );
