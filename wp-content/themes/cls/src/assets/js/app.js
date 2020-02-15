@@ -369,40 +369,6 @@ function themeReady() {
     }
 
     /**
-     * Sticky Nav
-     */
-    // const headerEl = document.querySelector('#masthead');
-    // const headerElTop = headerEl.offsetTop;
-
-    // function stickyNavigation() {
-    //     /**
-    //      * Only on medium or larger
-    //      * @see https://foundation.zurb.com/sites/docs/media-queries.html#javascript-reference
-    //      */
-    //     if(Foundation.MediaQuery.is('medium')) {
-    //         const shrinkOn = 200;
-
-    //         /** Stick Header */
-    //         // if (window.scrollY >= headerElTop) {
-    //         //     document.body.classList.add('is-fixed');
-    //         // } else {
-    //         //     document.body.style.paddingTop = 0;
-    //         //     document.body.classList.remove('is-fixed');
-    //         // }
-
-    //         /** Shrink Header */
-    //         if (window.scrollY > shrinkOn) {
-    //             document.body.classList.add("is-minimized");
-    //         } else {
-    //             document.body.classList.remove("is-minimized");
-    //         }
-    //     }
-    // }
-    // if(headerEl) {
-    //     window.addEventListener('scroll', stickyNavigation, false);
-    // }
-
-    /**
      * Minimize fixed header when scrolling down page.
      * Converted to jQuery for IE-compatibility
      */
@@ -459,25 +425,56 @@ function themeReady() {
     }
 
     /**
-     * Event Hover
+     * Event List Hover
      * 
      */
-    const eventHoverEls = document.querySelectorAll('.entry-media-wrapper a');
-    if(eventHoverEls) {
-        const items = Array.from(eventHoverEls);
+    let eventHoverEls = document.querySelectorAll('.entry-media-wrapper a');
+    if( eventHoverEls ) {
+        let items = Array.from( eventHoverEls );
 
-        function toggleHover(event) {
+        function toggleHover( event ) {
             event.preventDefault();
             let parent = event.target.closest('.entry-media-wrapper');
             parent.classList.toggle('is-open');
         }
 
-        items.forEach(function(item, index) {
-            // item.addEventListener('mouseover', toggleHover);
-            // item.addEventListener('mouseout', toggleHover);
-            item.addEventListener('click', toggleHover);
-        });
+        function initToggleHover( items ) {
+            items.forEach( function( item, index ) {
+                item.addEventListener( 'click', toggleHover );
+            })
+        }
+
+        function removeToggleHover( items ) {
+            items.forEach( function( item, index ) {
+                item.removeEventListener( 'click', toggleHover );
+            });
+        }
+
+        initToggleHover(items);
+
+        /**
+         * Update event listeners when more events are loaded
+         */
+        const targetNode = document.getElementById('events-list');
+        const mutationObserverCallback = function( mutationsList, observer ) {
+            // Use traditional 'for loops' for IE 11
+            for( let mutation of mutationsList ) {
+                if ( mutation.type === 'childList' ) {
+                    removeToggleHover( items );
+                    eventHoverEls = targetNode.querySelectorAll('.entry-media-wrapper a');
+                    items = Array.from( eventHoverEls );
+                    initToggleHover( items );
+                }
+            }
+        };
+        const observer = new MutationObserver( mutationObserverCallback );
+        observer.observe( targetNode, {
+            attributes: false,
+            childList: true,
+            subtree: false
+        } );
     }
+
 
     /**
      * CTA Animation
