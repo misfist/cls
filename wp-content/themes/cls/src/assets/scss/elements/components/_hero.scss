@@ -39,6 +39,7 @@
       * This has been moved to inline css so that we can upload a different for mobile
       */
      @include breakpoint(small only) {
+         
         // background-image: url('../images/hero-bg-mobile.jpg') !important;
      }
 
