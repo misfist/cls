@@ -1,1 +1,3 @@
-<svg/>
+<svg id="vertical-line">
+  <line id="line" stroke-linecap="round"/>
+</svg>
