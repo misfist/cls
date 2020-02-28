@@ -27,6 +27,8 @@ const DEV = !!(yargs.argv.dev);
 // Load settings from settings.yml
 const { BROWSERSYNC, COMPATIBILITY, REVISIONING, PATHS } = loadConfig();
 
+const siteMap = require('./.sitemap.json');
+
 // Check if file exists synchronously
 function checkFileExists(filepath) {
   let flag = true;
