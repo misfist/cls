@@ -39,12 +39,8 @@ function cls_enqueue_scripts() {
 
 	wp_enqueue_style( 'cls-base-style', get_stylesheet_uri() );
 
-	if ( 'production' === WP_ENVIRONMENT && file_exists( get_template_directory() . '/dist/assets/css/style.pure.css' ) ) {
-		$cls_style = get_template_directory_uri() . '/dist/assets/css/style.pure.css';
-	} else {
-		$cls_style = get_template_directory_uri() . '/dist/assets/css/style.css';
-	}
-
+	$cls_style = get_template_directory_uri() . '/dist/assets/css/style.css';
+	
 	if( is_page_template( 'page-templates/leadership.php' ) ) {
 		wp_enqueue_style( 'cls-style', $cls_style, array( 'kadence-blocks-tabs' ) );
 	} else {
