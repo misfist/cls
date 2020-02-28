@@ -31,6 +31,7 @@ wp-content/plugins/*
 # specify (see the commented-out example for a hint on how to do this.)
 wp-content/themes/*
 !/wp-content/themes/cls/
+/wp-content/themes/cls/.sitemap.json
 
 # ignore OS generated files
 ehthumbs.db
