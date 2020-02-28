@@ -108,10 +108,10 @@
         width: auto;
         height: auto;
 
-        background-color: transparent;
+        background-color: transparent !important;
         font-weight: $font-weight-black;
         font-size: rem-calc(24);
-        color: $accent-color;
+        color: $accent-color !important;
         opacity: 1;
         line-height: rem-calc(34);
 
@@ -218,7 +218,7 @@
     }
 
     p[data-custom-field-name="Phone"],
-    p[data-custom-field-name="Fax"] { }
+    p[data-custom-field-name="Fax"] {}
 
     p[data-custom-field-name="Phone"] {
         @include xy-cell(1 of 2, $gutters: 72, $gutter-type: padding, $gutter-position: right);

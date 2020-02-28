@@ -45,6 +45,11 @@ function cls_enqueue_scripts() {
 		wp_enqueue_style( 'cls-style', get_template_directory_uri() . '/dist/assets/css/style.css' );
 	}
 
+	if( !is_singular( 'event' ) ) {
+		wp_dequeue_style( 'eo-leaflet.js' );
+		wp_dequeue_script( 'eo-leaflet.js' );
+	}
+
 	/** Mobile image on home page */
 	/*
 		medium: 934px
